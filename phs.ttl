@@ -1,0 +1,97 @@
+# My first TTL file
+# SJP 11 Feb 2020
+@prefix foaf: <http://xmlns.com/foaf/0.1/>
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+@prefix skos: <http://www.w3.org/2004/02/skos/core#>
+@prefix dc: <http://purl.org/dc/terms/>             # DCMI gently encourages use of the /terms/ namespace (over /elements/1.1/)
+@prefix dwc: <http://rs.tdwg.org/dwc/terms/>
+@prefix tgn: <http://vocab.getty.edu/tgn/>          # Getty Thesaurus of Geographic Names
+# See https://prefix.cc/ for rdf namespace lookups
+
+# Author: Stephen J Pratt
+# Contact: stephen.pratt@awe.gov.au
+#
+# This vocabulary describes information objects relating to plant health surveillance using RDF (Resource Description Framework).
+# It is written (serialised) in Terse RDF Triple Language (Turtle).
+# 
+# Plant health surveillance involves field observations 
+#
+# See: https://en.wikipedia.org/wiki/Resource_Description_Framework
+# 
+
+#Classes
+
+#Properties
+
+datasetID
+datasetName
+institutionCode
+ProgramName
+OrganisationName
+basisOfRecord
+modified
+municipality
+locality
+locationID
+georeferenceSources
+georeferencedDate
+geodeticDatum
+decimalLatitude
+decimalLongitude
+footprintWKT
+footprintSRS
+coordinateUncertaintyInMeters
+GeographyLevelID
+higherGeographyID
+higherGeography
+stateProvince
+Substrate_Name
+host_taxonID
+NonTaxaSubstrateID
+Substrate_OccurrenceID
+Substrate_datasetName
+Substrate_recordNumber
+Substrate_Quantity
+Substrate_QuantityType
+Substrate_RiskCharacters
+samplingProtocol
+samplingProtocolID
+eventDate
+eventEndDate
+eventID
+fieldNumber
+ActivityDescription
+sampleSizeUnit
+sampleSizeValue
+scientificName
+taxonID
+higherClassification
+occurrenceStatus
+occurrenceID
+recordedBy
+recordNumber
+catalogNumber
+lifeStage
+reproductiveCondition
+behavior
+organismQuantity
+organismQuantityType
+occurrenceRemarks
+identificationID
+identificationQualifier
+IdentificationMethod
+IdentificationResult
+dateIdentified
+identifiedBy
+hostCommonName
+hostTaxonName
+targetCommonName
+targetTaxonName
+trapType
+lureType
+activityClass
+nonTargetPresent
+nonTargetName
+comments
+sampleType
