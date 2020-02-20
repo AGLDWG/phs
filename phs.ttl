@@ -1,14 +1,5 @@
 # My first TTL file
 # SJP 11 Feb 2020
-@prefix foaf: <http://xmlns.com/foaf/0.1/>
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
-@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-@prefix skos: <http://www.w3.org/2004/02/skos/core#>
-@prefix dc: <http://purl.org/dc/terms/>             # DCMI gently encourages use of the /terms/ namespace (over /elements/1.1/)
-@prefix dwc: <http://rs.tdwg.org/dwc/terms/>
-@prefix tgn: <http://vocab.getty.edu/tgn/>          # Getty Thesaurus of Geographic Names
-# See https://prefix.cc/ for rdf namespace lookups
-
 # Author: Stephen J Pratt
 # Contact: stephen.pratt@awe.gov.au
 #
@@ -20,32 +11,65 @@
 # See: https://en.wikipedia.org/wiki/Resource_Description_Framework
 # 
 
+# Prefix for this namespace is 'phs', for Plant Health Surveillance
+#TODO # Ideally, this should be altered to linked.data.gov.au for persistence 
+@prefix phs: <https://github.com/F3RR3T/PlantHealthSurveillanceOntology/blob/master/phs.ttl
+
+@prefix foaf: <http://xmlns.com/foaf/0.1/>
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+@prefix skos: <http://www.w3.org/2004/02/skos/core#>
+@prefix dc: <http://purl.org/dc/terms/>             # DCMI gently encourages use of the /terms/ namespace (over /elements/1.1/)
+@prefix dwc: <http://rs.tdwg.org/dwc/terms/>
+@prefix tgn: <http://vocab.getty.edu/tgn/>          # Getty Thesaurus of Geographic Names
+# See https://prefix.cc/ for rdf namespace lookups
+ 
 #Classes
+phs:InsectTrap
+  a owl:Class ;
+  rdfs:label "A device that catches or collects insects" ;
+
+phs:Lure
+  a owl:Class ;
+  rdfs:label "An attractant that may be placed in an InsectTrap"
 
 #Properties
+phs:trapType
+  a owl:DatatypeProperty ;
+  rdfs:domain phs:InsectTrap ;
+  rdfs:label "The make or model of a trap" ;
 
-datasetID
-datasetName
-institutionCode
+# Might be better to create the term 'TrapModel' for commercial names of trap.
+# That would leave 'TrapType' for ['Light trap', 'Pitfall trap', 'Adhesive trap',
+#   'Flying insect trap', ...]
+phs:TrapTypes
+  a skos:Collection ;
+  rdfs:label "Collection of allowed names for trap types" ;
+  skos:member ffly:Lyndfield ;
+  skos:member ffly:Peyton;
+  skos:member ffly:AnotherOne;
+
+# I have introduced the ffly namespace specificaly for fruit fly terms
+ffly:Lyndfield
+  a phs:trapType
+
+ffly:Peyton
+  a phs:trapType
+
+ffly:AnotherOne
+  a phs:trapType
+
+phs:lureType
+  a owl:DatatypeProperty ;
+  rdfs:domain phs:Lure
+
+# Make a Canoncial collection of lure type
+# TODO - Alias list to collect wild-type variations of accepted terms
+
+
+
 ProgramName
 OrganisationName
-basisOfRecord
-modified
-municipality
-locality
-locationID
-georeferenceSources
-georeferencedDate
-geodeticDatum
-decimalLatitude
-decimalLongitude
-footprintWKT
-footprintSRS
-coordinateUncertaintyInMeters
-GeographyLevelID
-higherGeographyID
-higherGeography
-stateProvince
 Substrate_Name
 host_taxonID
 NonTaxaSubstrateID
@@ -57,41 +81,65 @@ Substrate_QuantityType
 Substrate_RiskCharacters
 samplingProtocol
 samplingProtocolID
-eventDate
-eventEndDate
-eventID
-fieldNumber
 ActivityDescription
-sampleSizeUnit
-sampleSizeValue
-scientificName
-taxonID
-higherClassification
-occurrenceStatus
-occurrenceID
-recordedBy
-recordNumber
-catalogNumber
-lifeStage
-reproductiveCondition
-behavior
-organismQuantity
-organismQuantityType
-occurrenceRemarks
-identificationID
-identificationQualifier
-IdentificationMethod
-IdentificationResult
-dateIdentified
-identifiedBy
 hostCommonName
 hostTaxonName
 targetCommonName
 targetTaxonName
-trapType
 lureType
 activityClass
 nonTargetPresent
 nonTargetName
 comments
 sampleType
+
+# Host
+
+
+# Darwin Core terms
+dwc:datasetID
+dwc:datasetName
+dwc:institutionCode
+dwc:basisOfRecord
+dwc:modified
+dwc:municipality
+dwc:locality
+dwc:locationID
+dwc:georeferenceSources
+dwc:georeferencedDate
+dwc:geodeticDatum
+dwc:decimalLatitude
+dwc:decimalLongitude
+dwc:footprintWKT
+dwc:footprintSRS
+dwc:coordinateUncertaintyInMeters
+dwc:GeographyLevelID
+dwc:higherGeographyID
+dwc:higherGeography
+dwc:stateProvince
+dwc:eventDate
+dwc:eventEndDate
+dwc:eventID
+dwc:fieldNumber
+dwc:sampleSizeUnit
+dwc:sampleSizeValue
+dwc:scientificName
+dwc:taxonID
+dwc:higherClassification
+dwc:occurrenceStatus
+dwc:occurrenceID
+dwc:recordedBy
+dwc:recordNumber
+dwc:catalogNumber
+dwc:lifeStage
+dwc:reproductiveCondition
+dwc:behavior
+dwc:organismQuantity
+dwc:organismQuantityType
+dwc:occurrenceRemarks
+dwc:identificationID
+dwc:identificationQualifier
+dwc:IdentificationMethod
+dwc:IdentificationResult
+dwc:dateIdentified
+dwc:identifiedBy
