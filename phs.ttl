@@ -28,6 +28,7 @@
 phs:InsectTrap
   a owl:Class ;
   rdfs:label "A device that catches or collects insects" ;
+  rdfs:seeAlso <http://dbpedia.org/resource/Insect_trap> ;
 .
 phs:Lure
   a owl:Class ;
@@ -65,7 +66,7 @@ phs:TrapTypes
   skos:member ffly:Peyton;
   skos:member ffly:AnotherOne;
 .
-# I have introduced the ffly namespace specificaly for fruit fly terms
+# I have introduced the ffly namespace specifically for fruit fly terms
 ffly:Lyndfield
   a phs:trapType ;
 .
