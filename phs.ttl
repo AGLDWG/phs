@@ -80,7 +80,7 @@ phs:lureType
   a owl:DatatypeProperty ;
   rdfs:domain phs:Lure ;
 .
-# Make a Canoncial collection of lure type
+# Make a Canonical collection of lure type
 # TODO - Alias list to collect wild-type variations of accepted terms
 # TaxaaS (Taxonomy as a Service) has been depricated by the dept, so I'll use it 
 # to refer to the API of any taxonomic reference system (GBIF, ALA, 'TRS').
