@@ -13,53 +13,87 @@
 
 # Prefix for this namespace is 'phs', for Plant Health Surveillance
 #TODO # Ideally, this should be altered to linked.data.gov.au for persistence 
-@prefix phs: <https://github.com/F3RR3T/PlantHealthSurveillanceOntology/blob/master/phs.ttl .
+@prefix phs: <https://example.org/PlantHealthSurveillanceOntology#> .
+@prefix ffly: <https://example.org/def/fruitfly> .
 
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
-@prefix dc: <http://purl.org/dc/terms/> .           # DCMI gently encourages use of the /terms/ namespace (over /elements/1.1/)
+@prefix dcterms: <http://purl.org/dc/terms/> .           # DCMI gently encourages use of the /terms/ namespace (over /elements/1.1/)
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix tgn: <http://vocab.getty.edu/tgn/> .         # Getty Thesaurus of Geographic Names
+@prefix sosa: <http://www.w3.org/ns/sosa/> .
+@prefix ssn: <http://www.w3.org/ns/ssn/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 # See https://prefix.cc/ for rdf namespace lookups
  
 #Classes
+phs:Trap
+  a owl:Class ;
+  rdfs:subClassOf sosa:Sampler ;
+  rdfs:label "Trap" ;
+  rdfs:comment "A device that catches or collects organisms or evidence of them" ;
+.
 phs:InsectTrap
   a owl:Class ;
   rdfs:label "A device that catches or collects insects" ;
   rdfs:seeAlso <http://dbpedia.org/resource/Insect_trap> ;
+  rdfs:subClassOf phs:Trap ;
+  rdfs:label "Insect Trap" ;
+  rdfs:comment "A device that catches or collects insects" ;
 .
 phs:Lure
   a owl:Class ;
-  rdfs:label "An attractant that may be placed in an InsectTrap" ;
+  rdfs:label "Lure" ;
+  rdfs:comment "An attractant that may be placed in an InsectTrap" ;
 .
 phs:Stratum
-  a rdfs:Thing ;
-  rdfs:label "Thing or material on which a pest is searched for or found upon. A superclass for host or substrate." ;
+  a owl:Class ;
+  rdfs:label "Stratum" ;
+  rdfs:comment "Thing or material on which a pest is searched for or found upon. A superclass for host or substrate." ;
 .
 phs:Substrate 
   a owl:Class ;
   rdfs:subClassOf phs:Stratum ;
-  rdfs:label "A non-living thing on which a pest may be found." ;
+  rdfs:label "Substrate" ;
+  rdfs:comment "A non-living thing on which a pest may be found." ;
 .
-rdfs:Host
+phs:Host
+  a owl:Class ;
   rdfs:subClassOf phs:Stratum ;
   rdfs:subClassOf dwc:Taxon ;
-  rdfs:label "A plant on (or in) which a pest may be found." ;
+  rdfs:label "Host" ;
+  rdfs:comment "A plant on (or in) which a pest may be found." ;
+.
+phs:TrapType 
+  a owl:Class ;
+  rdfs:subClassOf skos:Concept ;
+  rdfs:label "Trap Type" ;
 .
 #Properties
 phs:trapType
-  a owl:DatatypeProperty ;
+  a owl:ObjectProperty ;
   rdfs:domain phs:InsectTrap ;
+  rdfs:range phs:TrapType ;
   rdfs:comment "should we declarea range here for allowed types?" ;
-  rdfs:label "The make or model of a trap" ;
+  rdfs:comment "The make or model of a trap" ;
 .
 # Might be better to create the term 'TrapModel' for commercial names of trap.
 # That would leave 'TrapType' for ['Light trap', 'Pitfall trap', 'Adhesive trap',
 #   'Flying insect trap', ...]
 # Or do we use the RANGE to define allowed values?
-phs:TrapTypes
+phs:lureType
+  a owl:ObjectProperty ;
+  rdfs:domain phs:Lure ;
+  rdfs:range skos:Concept ;  # an item from a controlled vocabaulary - placeholder until a LureType specialization is defined
+.
+# Individuals
+ffly:TrapTypes
   a skos:Collection ;
   rdfs:label "Collection of allowed names for trap types" ;
   skos:member ffly:Lyndfield ;
@@ -68,17 +102,13 @@ phs:TrapTypes
 .
 # I have introduced the ffly namespace specifically for fruit fly terms
 ffly:Lyndfield
-  a phs:trapType ;
+  a phs:TrapType ;
 .
 ffly:Peyton
-  a phs:trapType ;
+  a phs:TrapType ;
 .
 ffly:AnotherOne
-  a phs:trapType ;
-.
-phs:lureType
-  a owl:DatatypeProperty ;
-  rdfs:domain phs:Lure ;
+  a phs:TrapType ;
 .
 # Make a Canonical collection of lure type
 # TODO - Alias list to collect wild-type variations of accepted terms
@@ -90,35 +120,35 @@ phs:lureType
 phs:TargetPest 
   a dwc:Taxon ;
   owl:equivalentClass dwc:Taxon ;
-  rdfs:label "The pest taxon that is is the subject of surveillance. Can have more than one target." ;
+  rdfs:comment "The pest taxon that is is the subject of surveillance. Can have more than one target." ;
 .
 phs:targetTaxonomicReferenceSource
-  a dc:Dataset ;
-  rdfs:label "The name of the taxonomic reference system used for this target" ;
+  a dcterms:Dataset ;
+  rdfs:comment "The name of the taxonomic reference system used for this target" ;
   rdfs:comment "Placeholder Class relationship" ;
 .
 phs:targetTaxonID
   a phs:TargetPest ;
-  rdfs:label "Identifier for taxon proprties (including the following) of the Target Pest" ;
+  rdfs:comment "Identifier for taxon proprties (including the following) of the Target Pest" ;
   owl:equivalentProperty dwc:taxonID ;
   rdfs:comment "Automatically populated by TaxaaS. Unsure whether we need taxonID AND taxonConceptID" ;
 .
 phs:targetTaxonConceptID
   a phs:TargetPest ;
-  rdfs:label "Identifier for taxonomic CONCEPT (not nomenclature) of the Target Pest" ;
+  rdfs:comment "Identifier for taxonomic CONCEPT (not nomenclature) of the Target Pest" ;
   owl:equivalentProperty dwc:taxonConceptID ;
   rdfs:comment "Automatically populated by TaxaaS. Unsure whether we need taxonID AND taxonConceptID" ;
 .
 phs:targetCommonName
   a phs:TargetPest ;
-  rdfs:label "The vernacular (common) name for the Target Pest" ;
+  rdfs:comment "The vernacular (common) name for the Target Pest" ;
   owl:equivalentProperty dwc:vernacularName ;
   rdfs:comment "I'd prefer to use targetVernacularName and then do a 'common sameas vernacular'" ;
 .
 phs:targetScientificName
   a phs:TargetPest ;
   owl:equivalentProperty dwc:scientificName ;
-  rdfs:label "The scientific name of the target pest" ;
+  rdfs:comment "The scientific name of the target pest" ;
   rdfs:comment "I changed this from taxonName to align with DwC'" ;
 .
 # Other properties such as rank, parent taxon can be inferred from TaxaaS.
@@ -127,107 +157,107 @@ phs:targetScientificName
 phs:Host
   a dwc:Taxon ;
   owl:equivalentClass dwc:Taxon ;
-  rdfs:label "The host taxon that is is the subject of surveillance. Can have more than one host." ;
+  rdfs:comment "The host taxon that is is the subject of surveillance. Can have more than one host." ;
 .
 phs:hostTaxonomicReferenceSource
-  a dc:Dataset ;
-  rdfs:label "The name of the taxonomic reference system used for this host" ;
+  a dcterms:Dataset ;
+  rdfs:comment "The name of the taxonomic reference system used for this host" ;
   rdfs:comment "Placeholder Class relationship" ;
 .
 phs:hostTaxonID
   a phs:Host ;
-  rdfs:label "Identifier for taxon properties (including the following) of the host" ;
+  rdfs:comment "Identifier for taxon properties (including the following) of the host" ;
   owl:equivalentProperty dwc:taxonID ;
   rdfs:comment "Automatically populated by TaxaaS. Unsure whether we need taxonID AND taxonConceptID" ;
 .
 phs:hostTaxonConceptID
   a phs:Host ;
-  rdfs:label "Identifier for taxonomic CONCEPT (not nomenclature) of the host" ;
+  rdfs:comment "Identifier for taxonomic CONCEPT (not nomenclature) of the host" ;
   owl:equivalentProperty dwc:taxonConceptID ;
   rdfs:comment "Automatically populated by TaxaaS. Unsure whether we need taxonID AND taxonConceptID" ;
-
+.
 phs:hostCommonName
   a phs:Host ;
-  rdfs:label "The vernacular (common) name for the host" ;
+  rdfs:comment "The vernacular (common) name for the host" ;
   owl:equivalentProperty dwc:vernacularName ;
   rdfs:comment "I'd prefer to use hostVernacularName and then do a 'common sameas vernacular'" ;
 .
 phs:hostScientificName
   a phs:Host ;
   owl:equivalentProperty dwc:scientificName ;
-  rdfs:label "The scientific name of the host" ;
+  rdfs:comment "The scientific name of the host" ;
   rdfs:comment "I changed this from taxonName to align with DwC'" ;
 .
 # Other properties such as rank, parent taxon can be inferred from TaxaaS.
-
-
-ProgramName
-OrganisationName
-samplingProtocol
-samplingProtocolID
-ActivityDescription
-activityClass
-nonTargetPresent
-nonTargetName
-comments
-sampleType
-
-# Substrate
-
-Substrate_Name
-
-NonTaxaSubstrateID
-Substrate_OccurrenceID
-Substrate_datasetName
-Substrate_recordNumber
-Substrate_Quantity
-Substrate_QuantityType
-Substrate_RiskCharacters
-
-# Darwin Core terms
-dwc:datasetID
-dwc:datasetName
-dwc:institutionCode
-dwc:basisOfRecord
-dwc:modified
-dwc:municipality
-dwc:locality
-dwc:locationID
-dwc:georeferenceSources
-dwc:georeferencedDate
-dwc:geodeticDatum
-dwc:decimalLatitude
-dwc:decimalLongitude
-dwc:footprintWKT
-dwc:footprintSRS
-dwc:coordinateUncertaintyInMeters
-dwc:GeographyLevelID
-dwc:higherGeographyID
-dwc:higherGeography
-dwc:stateProvince
-dwc:eventDate
-dwc:eventEndDate
-dwc:eventID
-dwc:fieldNumber
-dwc:sampleSizeUnit
-dwc:sampleSizeValue
-dwc:scientificName
-dwc:taxonID
-dwc:higherClassification
-dwc:occurrenceStatus
-dwc:occurrenceID
-dwc:recordedBy
-dwc:recordNumber
-dwc:catalogNumber
-dwc:lifeStage
-dwc:reproductiveCondition
-dwc:behavior
-dwc:organismQuantity
-dwc:organismQuantityType
-dwc:occurrenceRemarks
-dwc:identificationID
-dwc:identificationQualifier
-dwc:IdentificationMethod
-dwc:IdentificationResult
-dwc:dateIdentified
-dwc:identifiedBy
+#
+#
+#ProgramName
+#OrganisationName
+#samplingProtocol
+#samplingProtocolID
+#ActivityDescription
+#activityClass
+#nonTargetPresent
+#nonTargetName
+#comments
+#sampleType
+#
+## Substrate
+#
+#Substrate_Name
+#
+#NonTaxaSubstrateID
+#Substrate_OccurrenceID
+#Substrate_datasetName
+#Substrate_recordNumber
+#Substrate_Quantity
+#Substrate_QuantityType
+#Substrate_RiskCharacters
+#
+## Darwin Core terms
+#dwc:datasetID
+#dwc:datasetName
+#dwc:institutionCode
+#dwc:basisOfRecord
+#dwc:modified
+#dwc:municipality
+#dwc:locality
+#dwc:locationID
+#dwc:georeferenceSources
+#dwc:georeferencedDate
+#dwc:geodeticDatum
+#dwc:decimalLatitude
+#dwc:decimalLongitude
+#dwc:footprintWKT
+#dwc:footprintSRS
+#dwc:coordinateUncertaintyInMeters
+#dwc:GeographyLevelID
+#dwc:higherGeographyID
+#dwc:higherGeography
+#dwc:stateProvince
+#dwc:eventDate
+#dwc:eventEndDate
+#dwc:eventID
+#dwc:fieldNumber
+#dwc:sampleSizeUnit
+#dwc:sampleSizeValue
+#dwc:scientificName
+#dwc:taxonID
+#dwc:higherClassification
+#dwc:occurrenceStatus
+#dwc:occurrenceID
+#dwc:recordedBy
+#dwc:recordNumber
+#dwc:catalogNumber
+#dwc:lifeStage
+#dwc:reproductiveCondition
+#dwc:behavior
+#dwc:organismQuantity
+#dwc:organismQuantityType
+#dwc:occurrenceRemarks
+#dwc:identificationID
+#dwc:identificationQualifier
+#dwc:IdentificationMethod
+#dwc:IdentificationResult
+#dwc:dateIdentified
+#dwc:identifiedBy
