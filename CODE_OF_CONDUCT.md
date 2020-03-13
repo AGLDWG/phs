@@ -2,7 +2,7 @@
 
 ## Our Pledge
 
-We love code.
+We love data standards.
 
 ## Our Standards
 
