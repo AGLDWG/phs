@@ -46,7 +46,7 @@
     a sdo:Person ;
     sdo:email <mailto:stephen.pratt@awe.gov.au> ;
     sdo:jobTitle "Project Manager: Implementation of Plant Health Surveillance Data Store" ;
-    sdo:affiliation <https://www.csiro.au.com> ;
+    sdo:affiliation <https://www.awe.gov.au> ;
     sdo:name "Stephen J. Pratt" ;
   ] ;
   dcterms:contributor 
@@ -140,11 +140,10 @@ phs:TrapType
   rdfs:label "Trap Type" ;
 .
 #Properties
-phs:trapType
-  a owl:ObjectProperty ;
+phs:trapType  # Should we de
+  rdfs:label "Trap Type" ;
   rdfs:domain phs:InsectTrap ;
   rdfs:range phs:TrapType ;
-  rdfs:comment "should we declarea range here for allowed types?" ;
   rdfs:comment "The make or model of a trap" ;
 .
 # Might be better to create the term 'TrapModel' for commercial names of trap.
@@ -183,34 +182,40 @@ ffly:AnotherOne
 #TARGET PEST
 phs:TargetPest 
   a dwc:Taxon ;
+  rdfs:label "Target Pest" ;
   owl:equivalentClass dwc:Taxon ;
   rdfs:comment "The pest taxon that is is the subject of surveillance. Can have more than one target." ;
 .
 phs:targetTaxonomicReferenceSource
   a dcterms:Dataset ;
+  rdfs:label "Target Taxonomic Reference Source" ;
   rdfs:comment "The name of the taxonomic reference system used for this target" ;
   rdfs:comment "Placeholder Class relationship" ;
 .
 phs:targetTaxonID
   a phs:TargetPest ;
+  rdfs:label "Target Taxon ID" ;
   rdfs:comment "Identifier for taxon proprties (including the following) of the Target Pest" ;
   owl:equivalentProperty dwc:taxonID ;
   rdfs:comment "Automatically populated by TaxaaS. Unsure whether we need taxonID AND taxonConceptID" ;
 .
 phs:targetTaxonConceptID
   a phs:TargetPest ;
+  rdfs:label "Target Taxon Concept ID" ;
   rdfs:comment "Identifier for taxonomic CONCEPT (not nomenclature) of the Target Pest" ;
   owl:equivalentProperty dwc:taxonConceptID ;
   rdfs:comment "Automatically populated by TaxaaS. Unsure whether we need taxonID AND taxonConceptID" ;
 .
 phs:targetCommonName
   a phs:TargetPest ;
+  rdfs:label "Target Common Name" ;
   rdfs:comment "The vernacular (common) name for the Target Pest" ;
   owl:equivalentProperty dwc:vernacularName ;
   rdfs:comment "I'd prefer to use targetVernacularName and then do a 'common sameas vernacular'" ;
 .
 phs:targetScientificName
   a phs:TargetPest ;
+  rdfs:label "Target Scientific Name" ;
   owl:equivalentProperty dwc:scientificName ;
   rdfs:comment "The scientific name of the target pest" ;
   rdfs:comment "I changed this from taxonName to align with DwC'" ;
@@ -220,34 +225,40 @@ phs:targetScientificName
 # HOST
 phs:Host
   a dwc:Taxon ;
+  rdfs:label "Host" ;
   owl:equivalentClass dwc:Taxon ;
   rdfs:comment "The host taxon that is is the subject of surveillance. Can have more than one host." ;
 .
 phs:hostTaxonomicReferenceSource
   a dcterms:Dataset ;
+  rdfs:label "Host Taxonomic Reference Source" ;
   rdfs:comment "The name of the taxonomic reference system used for this host" ;
   rdfs:comment "Placeholder Class relationship" ;
 .
 phs:hostTaxonID
   a phs:Host ;
+  rdfs:label "Host Taxon ID" ;
   rdfs:comment "Identifier for taxon properties (including the following) of the host" ;
   owl:equivalentProperty dwc:taxonID ;
   rdfs:comment "Automatically populated by TaxaaS. Unsure whether we need taxonID AND taxonConceptID" ;
 .
 phs:hostTaxonConceptID
   a phs:Host ;
+  rdfs:label "Host Taxon Concept ID" ;
   rdfs:comment "Identifier for taxonomic CONCEPT (not nomenclature) of the host" ;
   owl:equivalentProperty dwc:taxonConceptID ;
   rdfs:comment "Automatically populated by TaxaaS. Unsure whether we need taxonID AND taxonConceptID" ;
 .
 phs:hostCommonName
   a phs:Host ;
+  rdfs:label "Host Common Name" ;
   rdfs:comment "The vernacular (common) name for the host" ;
   owl:equivalentProperty dwc:vernacularName ;
   rdfs:comment "I'd prefer to use hostVernacularName and then do a 'common sameas vernacular'" ;
 .
 phs:hostScientificName
   a phs:Host ;
+  rdfs:label "Host Scientific Name" ;
   owl:equivalentProperty dwc:scientificName ;
   rdfs:comment "The scientific name of the host" ;
   rdfs:comment "I changed this from taxonName to align with DwC'" ;
