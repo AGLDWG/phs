@@ -23,15 +23,79 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .           # DCMI gently encourages use of the /terms/ namespace (over /elements/1.1/)
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix tgn: <http://vocab.getty.edu/tgn/> .         # Getty Thesaurus of Geographic Names
+@prefix sdo: <https://schema.org/> .
 @prefix sosa: <http://www.w3.org/ns/sosa/> .
 @prefix ssn: <http://www.w3.org/ns/ssn/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 # See https://prefix.cc/ for rdf namespace lookups
- 
+
+# Ontology declaration
+<https://example.org/PlantHealthSurveillanceOntology>
+  a owl:Ontology ;
+  rdfs:label "Plant Health Surveillance Ontology"@en ;
+  rdfs:comment "An ontology about surveillance to determine plant health, such as fruit fly trapping."@en ;
+  dcterms:created "2020-02-11"^^xsd:date ;
+  dcterms:modified "2020-03-18"^^xsd:date ;
+  dcterms:creator [
+    a owl:NamedIndividual ;
+    a sdo:Person ;
+    sdo:email <mailto:stephen.pratt@awe.gov.au> ;
+    sdo:jobTitle "Project Manager: Implementation of Plant Health Surveillance Data Store" ;
+    sdo:affiliation <https://www.awe.gov.au> ;
+    sdo:name "Stephen J. Pratt" ;
+  ] ;
+  dcterms:contributor 
+    <http://orcid.org/0000-0002-8742-7730> , 
+    <https://orcid.org/0000-0002-3884-3420> ;
+  owl:versionIRI <https://example.org/PlantHealthSurveillanceOntology/0.1> ;
+  owl:versionInfo "Initial version" ;
+  sdo:codeRepository <https://github.com/F3RR3T/PlantHealthSurveillanceOntology> ;
+  vann:preferredNamespacePrefix "phs" ;
+.
+
+<https://www.awe.gov.au>  # to be replaced with a more persistent org URI when we get it from AGOR / Linked Data WG
+  a owl:NamedIndividual ;
+  a sdo:Organization ;
+  sdo:name "Department of Agriculture, Water and the Environment" ;
+  sdo:url <https://www.awe.gov.au> ;
+.
+<https://orcid.org/0000-0002-3884-3420>
+  a owl:NamedIndividual ;
+  a sdo:Person ;
+  sdo:email <mailto:simon.cox@surroundaustralia.com> ;
+  sdo:jobTitle "Research Scientist" ;
+  sdo:affiliation <https://www.csiro.au.com> ;
+  sdo:name "Simon J.D. Cox" ;
+.
+
+<https://www.csiro.au.com>
+  a owl:NamedIndividual ;
+  a sdo:Organization ;
+  sdo:name "CSIRO" ;
+  sdo:url <https://www.csiro.au.com> ;
+.
+
+<http://orcid.org/0000-0002-8742-7730>
+  a owl:NamedIndividual ;
+  a sdo:Person ;
+  sdo:email <mailto:nicholas.car@surroundaustralia.com> ;
+  sdo:jobTitle "Data Systems Architect" ;
+  sdo:affiliation <https://surroundaustralia.com> ;
+  sdo:name "Nicholas J. Car" ;
+.
+
+<https://surroundaustralia.com>
+  a owl:NamedIndividual ;
+  a sdo:Organization ;
+  sdo:name "SURROUND Australia Pty Ltd" ;
+  sdo:url <https://surroundaustralia.com> ;
+.
+
 #Classes
 phs:Trap
   a owl:Class ;
@@ -76,11 +140,10 @@ phs:TrapType
   rdfs:label "Trap Type" ;
 .
 #Properties
-phs:trapType
-  a owl:ObjectProperty ;
+phs:trapType  # Should we de
+  rdfs:label "Trap Type" ;
   rdfs:domain phs:InsectTrap ;
   rdfs:range phs:TrapType ;
-  rdfs:comment "should we declarea range here for allowed types?" ;
   rdfs:comment "The make or model of a trap" ;
 .
 # Might be better to create the term 'TrapModel' for commercial names of trap.
@@ -119,34 +182,40 @@ ffly:AnotherOne
 #TARGET PEST
 phs:TargetPest 
   a dwc:Taxon ;
+  rdfs:label "Target Pest" ;
   owl:equivalentClass dwc:Taxon ;
   rdfs:comment "The pest taxon that is is the subject of surveillance. Can have more than one target." ;
 .
 phs:targetTaxonomicReferenceSource
   a dcterms:Dataset ;
+  rdfs:label "Target Taxonomic Reference Source" ;
   rdfs:comment "The name of the taxonomic reference system used for this target" ;
   rdfs:comment "Placeholder Class relationship" ;
 .
 phs:targetTaxonID
   a phs:TargetPest ;
+  rdfs:label "Target Taxon ID" ;
   rdfs:comment "Identifier for taxon proprties (including the following) of the Target Pest" ;
   owl:equivalentProperty dwc:taxonID ;
   rdfs:comment "Automatically populated by TaxaaS. Unsure whether we need taxonID AND taxonConceptID" ;
 .
 phs:targetTaxonConceptID
   a phs:TargetPest ;
+  rdfs:label "Target Taxon Concept ID" ;
   rdfs:comment "Identifier for taxonomic CONCEPT (not nomenclature) of the Target Pest" ;
   owl:equivalentProperty dwc:taxonConceptID ;
   rdfs:comment "Automatically populated by TaxaaS. Unsure whether we need taxonID AND taxonConceptID" ;
 .
 phs:targetCommonName
   a phs:TargetPest ;
+  rdfs:label "Target Common Name" ;
   rdfs:comment "The vernacular (common) name for the Target Pest" ;
   owl:equivalentProperty dwc:vernacularName ;
   rdfs:comment "I'd prefer to use targetVernacularName and then do a 'common sameas vernacular'" ;
 .
 phs:targetScientificName
   a phs:TargetPest ;
+  rdfs:label "Target Scientific Name" ;
   owl:equivalentProperty dwc:scientificName ;
   rdfs:comment "The scientific name of the target pest" ;
   rdfs:comment "I changed this from taxonName to align with DwC'" ;
@@ -156,34 +225,40 @@ phs:targetScientificName
 # HOST
 phs:Host
   a dwc:Taxon ;
+  rdfs:label "Host" ;
   owl:equivalentClass dwc:Taxon ;
   rdfs:comment "The host taxon that is is the subject of surveillance. Can have more than one host." ;
 .
 phs:hostTaxonomicReferenceSource
   a dcterms:Dataset ;
+  rdfs:label "Host Taxonomic Reference Source" ;
   rdfs:comment "The name of the taxonomic reference system used for this host" ;
   rdfs:comment "Placeholder Class relationship" ;
 .
 phs:hostTaxonID
   a phs:Host ;
+  rdfs:label "Host Taxon ID" ;
   rdfs:comment "Identifier for taxon properties (including the following) of the host" ;
   owl:equivalentProperty dwc:taxonID ;
   rdfs:comment "Automatically populated by TaxaaS. Unsure whether we need taxonID AND taxonConceptID" ;
 .
 phs:hostTaxonConceptID
   a phs:Host ;
+  rdfs:label "Host Taxon Concept ID" ;
   rdfs:comment "Identifier for taxonomic CONCEPT (not nomenclature) of the host" ;
   owl:equivalentProperty dwc:taxonConceptID ;
   rdfs:comment "Automatically populated by TaxaaS. Unsure whether we need taxonID AND taxonConceptID" ;
 .
 phs:hostCommonName
   a phs:Host ;
+  rdfs:label "Host Common Name" ;
   rdfs:comment "The vernacular (common) name for the host" ;
   owl:equivalentProperty dwc:vernacularName ;
   rdfs:comment "I'd prefer to use hostVernacularName and then do a 'common sameas vernacular'" ;
 .
 phs:hostScientificName
   a phs:Host ;
+  rdfs:label "Host Scientific Name" ;
   owl:equivalentProperty dwc:scientificName ;
   rdfs:comment "The scientific name of the host" ;
   rdfs:comment "I changed this from taxonName to align with DwC'" ;
