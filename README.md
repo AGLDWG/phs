@@ -29,6 +29,11 @@ One of the aims of the PRS is to document and define the data elements that must
 
 Another function of the PRS is to enable the plant health surveillance to define the data quality standards for graph databases such as the **Plant Health Surveillance Data Store**, which aggregates plant health surveillance observations from various sources and allows them to be analysed and reported upon.
 
+## Participation
+This is a public repository, released under the Creative Commons Attribution 4.0 International Licence ([CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)). It permits almost any use, subject to providing credit and license notice. 
+
+If you wish to contribute to the development of the Pest Record Specification, you are welcome to clone or fork this repository and submit your work using a pull request. There is a [wealth of tutorials and references](https://duckduckgo.com/?q=best+practice+git+collaboration+pull+request&atb=v141-1&ia=web) on the internet, but this is a [good start](https://www.thinkful.com/learn/github-pull-request-tutorial/). 
+
 ## TODO
 * Confirm that policy documentation is cleared for public viewing (in this repository)
 * Copy policy doco to this repo, either directly into this file (preferred) or other documents.
