@@ -1,0 +1,35 @@
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX prof: <http://www.w3.org/ns/dx/prof/>
+PREFIX sdo: <https://schema.org/>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX role: <http://www.w3.org/ns/prov#>
+
+
+<http://linked.data.gov.au/def/phs>
+    a prof:Profile ;
+    prof:isProfileOf 
+        <http://www.opengis.net/doc/IS/geosparql/1.0> , # GeoSPARQL
+        <https://www.w3.org/TR/vocab-ssn/> ,            # SOSA (within SSN)
+        <https://www.w3.org/TR/prov-o/> ,               # PROV-O
+        <http://dx.doi.org/10.5281/zenodo.46972> ;      # Darwin Semantic Web (https://github.com/darwin-sw/dsw/)
+    dcterms:conformsTo <http://linked.data.gov.au/def/agio> ; # this ontology conforms to AGIO
+    dcterms:title "Plant Health Surveillance Ontology"@en ;
+    dcterms:description """This ontology is a data model for plant health surveillance conducted by Australian biosecurity agencies and industry to maintain food quality, prevent the spread of pests and facilitate trade in foodstuffs."""@en ;
+    prof:hasResource [
+        prof:hasRole role:guidance ;
+        prof:hasArtifact <http://linked.data.gov.au/def/phs> ;
+    ] ,
+    [
+        prof:hasRole role:schema ;
+        prof:hasArtifact <http://linked.data.gov.au/def/phs.ttl> ;
+    ] ;
+.
+
+
+
+<https://www.w3.org/TR/vocab-ssn/>
+    a prof:Profile ;
+    prof:isProfileOf <https://www.w3.org/TR/prov-o/> ;
+    dcterms:title "Semantic Sensor Network Ontology"@en ;
+    skos:scopeNote "SSN, and SOSA within it, profiles PROV and an alignment is given within SSN"@en ;
+.
