@@ -1,0 +1,18 @@
+targetPestGroupID,targetPestGroupName,targetTaxonIRI
+tpg-1,Anoplophora,https://uat-ag-bie.oztaxa.com/ws/taxon/53362
+tpg-2,Fall and Southern armyworm,https://uat-ag-bie.oztaxa.com/ws/taxon/59671
+tpg-2,Fall and Southern armyworm,https://uat-ag-bie.oztaxa.com/ws/taxon/63096
+tpg-3,Brown marmorated stink bug,https://uat-ag-bie.oztaxa.com/ws/taxon/70201
+tpg-4,Citrus canker,https://uat-ag-bie.oztaxa.com/ws/taxon/69972
+tpg-5,Fire blight,https://uat-ag-bie.oztaxa.com/ws/taxon/52972
+tpg-6,Gypsy moth,https://uat-ag-bie.oztaxa.com/ws/taxon/59355
+tpg-7,"Exotic, economic fruit fly",https://uat-ag-bie.oztaxa.com/ws/taxon/54820
+tpg-8,HLB,https://api.gbif.org/v1/species/159997747
+tpg-9,HLB vectors,
+tpg-10,Khapra beetle,https://uat-ag-bie.oztaxa.com/ws/taxon/54194
+tpg-11,Sawyer beetle,https://uat-ag-bie.oztaxa.com/ws/taxon/69671
+tpg-12,Pine wilt nematode,https://uat-ag-bie.oztaxa.com/ws/taxon/69667
+tpg-13,Xylella fastidiosa,https://uat-ag-bie.oztaxa.com/ws/taxon/53057
+tpg-14,Xylella vectors,
+tpg-15,Exotic invasive ants,
+tpg-16,Exotic invasive snails,
