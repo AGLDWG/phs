@@ -119,7 +119,7 @@ phs:Lure
 phs:Stratum
   a owl:Class ;
   rdfs:label "Stratum" ;
-  rdfs:comment "Thing or material on which a pest is searched for or found upon. A superclass for host or substrate." ;
+  rdfs:comment "Thing or material on which a pest is searched for or found. A superclass for host or substrate. Stratum is a 'terminological', not an 'instance' class; observation records ('instances') should use either 'Host' or 'Substrate'." ;
 .
 phs:Substrate 
   a owl:Class ;
@@ -132,7 +132,8 @@ phs:Host
   rdfs:subClassOf phs:Stratum ;
   rdfs:subClassOf dwc:Taxon ;
   rdfs:label "Host" ;
-  rdfs:comment "A plant on (or in) which a pest may be found." ;
+  rdfs:comment "A plant on (or in) which a pest may be found. " ;
+  rdfs:comment "Note: there may be cases where the host is not a plant. e.g. a Varroa Mite found in a bee's trachea. For consideration: expand the definition of host to include non-plants OR create a new class for non-plant hosts. (SJP votes for the former)." ;
 .
 phs:TrapType 
   a owl:Class ;
