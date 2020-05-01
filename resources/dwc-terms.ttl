@@ -1,0 +1,660 @@
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
+@prefix dwciri: <http://rs.tdwg.org/dwc/iri/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix tdwgutility: <http://rs.tdwg.org/dwc/terms/attributes/> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://rs.tdwg.org/dwc/terms.ttl> a foaf:document ;
+    dc:creator "Biodiversity Information Standards (TDWG)" ;
+    dc:format "text/turtle" ;
+    dcterms:modified "2018-10-01T21:17:00-05:00"^^xsd:dateTime ;
+    dcterms:references dwc: .
+
+dwc:Event dcterms:isPartOf dwc: .
+
+dwc:FossilSpecimen dcterms:isPartOf dwc: .
+
+dwc:GeologicalContext dcterms:isPartOf dwc: .
+
+dwc:HumanObservation dcterms:isPartOf dwc: .
+
+dwc:Identification dcterms:isPartOf dwc: .
+
+dwc:LivingSpecimen dcterms:isPartOf dwc: .
+
+dwc:MachineObservation dcterms:isPartOf dwc: .
+
+dwc:MaterialSample dcterms:isPartOf dwc: .
+
+dwc:MeasurementOrFact dcterms:isPartOf dwc: .
+
+dwc:Occurrence dcterms:isPartOf dwc: .
+
+dwc:Organism dcterms:isPartOf dwc: .
+
+dwc:PreservedSpecimen dcterms:isPartOf dwc: .
+
+dwc:ResourceRelationship dcterms:isPartOf dwc: .
+
+dwc:Taxon dcterms:isPartOf dwc: .
+
+dwc:acceptedNameUsage dcterms:isPartOf dwc: .
+
+dwc:acceptedNameUsageID dcterms:isPartOf dwc: .
+
+dwc:accordingTo dcterms:isPartOf dwc: .
+
+dwc:associatedMedia dcterms:isPartOf dwc: .
+
+dwc:associatedOccurrences dcterms:isPartOf dwc: .
+
+dwc:associatedOrganisms dcterms:isPartOf dwc: .
+
+dwc:associatedReferences dcterms:isPartOf dwc: .
+
+dwc:associatedSequences dcterms:isPartOf dwc: .
+
+dwc:associatedTaxa dcterms:isPartOf dwc: .
+
+dwc:basisOfRecord dcterms:isPartOf dwc: .
+
+dwc:bed dcterms:isPartOf dwc: .
+
+dwc:behavior dcterms:isPartOf dwc: .
+
+dwc:catalogNumber dcterms:isPartOf dwc: .
+
+dwc:class dcterms:isPartOf dwc: .
+
+dwc:collectionCode dcterms:isPartOf dwc: .
+
+dwc:collectionID dcterms:isPartOf dwc: .
+
+dwc:continent dcterms:isPartOf dwc: .
+
+dwc:coordinatePrecision dcterms:isPartOf dwc: .
+
+dwc:coordinateUncertaintyInMeters dcterms:isPartOf dwc: .
+
+dwc:country dcterms:isPartOf dwc: .
+
+dwc:countryCode dcterms:isPartOf dwc: .
+
+dwc:county dcterms:isPartOf dwc: .
+
+dwc:dataGeneralizations dcterms:isPartOf dwc: .
+
+dwc:datasetID dcterms:isPartOf dwc: .
+
+dwc:datasetName dcterms:isPartOf dwc: .
+
+dwc:dateIdentified dcterms:isPartOf dwc: .
+
+dwc:day dcterms:isPartOf dwc: .
+
+dwc:decimalLatitude dcterms:isPartOf dwc: .
+
+dwc:decimalLongitude dcterms:isPartOf dwc: .
+
+dwc:disposition dcterms:isPartOf dwc: .
+
+dwc:dynamicProperties dcterms:isPartOf dwc: .
+
+dwc:earliestAgeOrLowestStage dcterms:isPartOf dwc: .
+
+dwc:earliestEonOrLowestEonothem dcterms:isPartOf dwc: .
+
+dwc:earliestEpochOrLowestSeries dcterms:isPartOf dwc: .
+
+dwc:earliestEraOrLowestErathem dcterms:isPartOf dwc: .
+
+dwc:earliestPeriodOrLowestSystem dcterms:isPartOf dwc: .
+
+dwc:endDayOfYear dcterms:isPartOf dwc: .
+
+dwc:establishmentMeans dcterms:isPartOf dwc: .
+
+dwc:eventDate dcterms:isPartOf dwc: .
+
+dwc:eventID dcterms:isPartOf dwc: .
+
+dwc:eventRemarks dcterms:isPartOf dwc: .
+
+dwc:eventTime dcterms:isPartOf dwc: .
+
+dwc:family dcterms:isPartOf dwc: .
+
+dwc:fieldNotes dcterms:isPartOf dwc: .
+
+dwc:fieldNumber dcterms:isPartOf dwc: .
+
+dwc:footprintSRS dcterms:isPartOf dwc: .
+
+dwc:footprintSpatialFit dcterms:isPartOf dwc: .
+
+dwc:footprintWKT dcterms:isPartOf dwc: .
+
+dwc:formation dcterms:isPartOf dwc: .
+
+dwc:genus dcterms:isPartOf dwc: .
+
+dwc:geodeticDatum dcterms:isPartOf dwc: .
+
+dwc:geologicalContextID dcterms:isPartOf dwc: .
+
+dwc:georeferenceProtocol dcterms:isPartOf dwc: .
+
+dwc:georeferenceRemarks dcterms:isPartOf dwc: .
+
+dwc:georeferenceSources dcterms:isPartOf dwc: .
+
+dwc:georeferenceVerificationStatus dcterms:isPartOf dwc: .
+
+dwc:georeferencedBy dcterms:isPartOf dwc: .
+
+dwc:georeferencedDate dcterms:isPartOf dwc: .
+
+dwc:group dcterms:isPartOf dwc: .
+
+dwc:habitat dcterms:isPartOf dwc: .
+
+dwc:higherClassification dcterms:isPartOf dwc: .
+
+dwc:higherGeography dcterms:isPartOf dwc: .
+
+dwc:higherGeographyID dcterms:isPartOf dwc: .
+
+dwc:highestBiostratigraphicZone dcterms:isPartOf dwc: .
+
+dwc:identificationID dcterms:isPartOf dwc: .
+
+dwc:identificationQualifier dcterms:isPartOf dwc: .
+
+dwc:identificationReferences dcterms:isPartOf dwc: .
+
+dwc:identificationRemarks dcterms:isPartOf dwc: .
+
+dwc:identificationVerificationStatus dcterms:isPartOf dwc: .
+
+dwc:identifiedBy dcterms:isPartOf dwc: .
+
+dwc:individualCount dcterms:isPartOf dwc: .
+
+dwc:informationWithheld dcterms:isPartOf dwc: .
+
+dwc:infraspecificEpithet dcterms:isPartOf dwc: .
+
+dwc:institutionCode dcterms:isPartOf dwc: .
+
+dwc:institutionID dcterms:isPartOf dwc: .
+
+dwc:island dcterms:isPartOf dwc: .
+
+dwc:islandGroup dcterms:isPartOf dwc: .
+
+dwc:kingdom dcterms:isPartOf dwc: .
+
+dwc:latestAgeOrHighestStage dcterms:isPartOf dwc: .
+
+dwc:latestEonOrHighestEonothem dcterms:isPartOf dwc: .
+
+dwc:latestEpochOrHighestSeries dcterms:isPartOf dwc: .
+
+dwc:latestEraOrHighestErathem dcterms:isPartOf dwc: .
+
+dwc:latestPeriodOrHighestSystem dcterms:isPartOf dwc: .
+
+dwc:lifeStage dcterms:isPartOf dwc: .
+
+dwc:lithostratigraphicTerms dcterms:isPartOf dwc: .
+
+dwc:locality dcterms:isPartOf dwc: .
+
+dwc:locationAccordingTo dcterms:isPartOf dwc: .
+
+dwc:locationID dcterms:isPartOf dwc: .
+
+dwc:locationRemarks dcterms:isPartOf dwc: .
+
+dwc:lowestBiostratigraphicZone dcterms:isPartOf dwc: .
+
+dwc:materialSampleID dcterms:isPartOf dwc: .
+
+dwc:maximumDepthInMeters dcterms:isPartOf dwc: .
+
+dwc:maximumDistanceAboveSurfaceInMeters dcterms:isPartOf dwc: .
+
+dwc:maximumElevationInMeters dcterms:isPartOf dwc: .
+
+dwc:measurementAccuracy dcterms:isPartOf dwc: .
+
+dwc:measurementDeterminedBy dcterms:isPartOf dwc: .
+
+dwc:measurementDeterminedDate dcterms:isPartOf dwc: .
+
+dwc:measurementID dcterms:isPartOf dwc: .
+
+dwc:measurementMethod dcterms:isPartOf dwc: .
+
+dwc:measurementRemarks dcterms:isPartOf dwc: .
+
+dwc:measurementType dcterms:isPartOf dwc: .
+
+dwc:measurementUnit dcterms:isPartOf dwc: .
+
+dwc:measurementValue dcterms:isPartOf dwc: .
+
+dwc:member dcterms:isPartOf dwc: .
+
+dwc:minimumDepthInMeters dcterms:isPartOf dwc: .
+
+dwc:minimumDistanceAboveSurfaceInMeters dcterms:isPartOf dwc: .
+
+dwc:minimumElevationInMeters dcterms:isPartOf dwc: .
+
+dwc:month dcterms:isPartOf dwc: .
+
+dwc:municipality dcterms:isPartOf dwc: .
+
+dwc:nameAccordingTo dcterms:isPartOf dwc: .
+
+dwc:nameAccordingToID dcterms:isPartOf dwc: .
+
+dwc:namePublishedIn dcterms:isPartOf dwc: .
+
+dwc:namePublishedInID dcterms:isPartOf dwc: .
+
+dwc:namePublishedInYear dcterms:isPartOf dwc: .
+
+dwc:nomenclaturalCode dcterms:isPartOf dwc: .
+
+dwc:nomenclaturalStatus dcterms:isPartOf dwc: .
+
+dwc:occurrenceID dcterms:isPartOf dwc: .
+
+dwc:occurrenceRemarks dcterms:isPartOf dwc: .
+
+dwc:occurrenceStatus dcterms:isPartOf dwc: .
+
+dwc:order dcterms:isPartOf dwc: .
+
+dwc:organismID dcterms:isPartOf dwc: .
+
+dwc:organismName dcterms:isPartOf dwc: .
+
+dwc:organismQuantity dcterms:isPartOf dwc: .
+
+dwc:organismQuantityType dcterms:isPartOf dwc: .
+
+dwc:organismRemarks dcterms:isPartOf dwc: .
+
+dwc:organismScope dcterms:isPartOf dwc: .
+
+dwc:originalNameUsage dcterms:isPartOf dwc: .
+
+dwc:originalNameUsageID dcterms:isPartOf dwc: .
+
+dwc:otherCatalogNumbers dcterms:isPartOf dwc: .
+
+dwc:ownerInstitutionCode dcterms:isPartOf dwc: .
+
+dwc:parentEventID dcterms:isPartOf dwc: .
+
+dwc:parentNameUsage dcterms:isPartOf dwc: .
+
+dwc:parentNameUsageID dcterms:isPartOf dwc: .
+
+dwc:phylum dcterms:isPartOf dwc: .
+
+dwc:pointRadiusSpatialFit dcterms:isPartOf dwc: .
+
+dwc:preparations dcterms:isPartOf dwc: .
+
+dwc:previousIdentifications dcterms:isPartOf dwc: .
+
+dwc:recordNumber dcterms:isPartOf dwc: .
+
+dwc:recordedBy dcterms:isPartOf dwc: .
+
+dwc:relatedResourceID dcterms:isPartOf dwc: .
+
+dwc:relationshipAccordingTo dcterms:isPartOf dwc: .
+
+dwc:relationshipEstablishedDate dcterms:isPartOf dwc: .
+
+dwc:relationshipOfResource dcterms:isPartOf dwc: .
+
+dwc:relationshipRemarks dcterms:isPartOf dwc: .
+
+dwc:reproductiveCondition dcterms:isPartOf dwc: .
+
+dwc:resourceID dcterms:isPartOf dwc: .
+
+dwc:resourceRelationshipID dcterms:isPartOf dwc: .
+
+dwc:sampleSizeUnit dcterms:isPartOf dwc: .
+
+dwc:sampleSizeValue dcterms:isPartOf dwc: .
+
+dwc:samplingEffort dcterms:isPartOf dwc: .
+
+dwc:samplingProtocol dcterms:isPartOf dwc: .
+
+dwc:scientificName dcterms:isPartOf dwc: .
+
+dwc:scientificNameAuthorship dcterms:isPartOf dwc: .
+
+dwc:scientificNameID dcterms:isPartOf dwc: .
+
+dwc:sex dcterms:isPartOf dwc: .
+
+dwc:specificEpithet dcterms:isPartOf dwc: .
+
+dwc:startDayOfYear dcterms:isPartOf dwc: .
+
+dwc:stateProvince dcterms:isPartOf dwc: .
+
+dwc:subgenus dcterms:isPartOf dwc: .
+
+dwc:taxonConceptID dcterms:isPartOf dwc: .
+
+dwc:taxonID dcterms:isPartOf dwc: .
+
+dwc:taxonRank dcterms:isPartOf dwc: .
+
+dwc:taxonRemarks dcterms:isPartOf dwc: .
+
+dwc:taxonomicStatus dcterms:isPartOf dwc: .
+
+dwc:typeStatus dcterms:isPartOf dwc: .
+
+dwc:verbatimCoordinateSystem dcterms:isPartOf dwc: .
+
+dwc:verbatimCoordinates dcterms:isPartOf dwc: .
+
+dwc:verbatimDepth dcterms:isPartOf dwc: .
+
+dwc:verbatimElevation dcterms:isPartOf dwc: .
+
+dwc:verbatimEventDate dcterms:isPartOf dwc: .
+
+dwc:verbatimLatitude dcterms:isPartOf dwc: .
+
+dwc:verbatimLocality dcterms:isPartOf dwc: .
+
+dwc:verbatimLongitude dcterms:isPartOf dwc: .
+
+dwc:verbatimSRS dcterms:isPartOf dwc: .
+
+dwc:verbatimTaxonRank dcterms:isPartOf dwc: .
+
+dwc:vernacularName dcterms:isPartOf dwc: .
+
+dwc:waterBody dcterms:isPartOf dwc: .
+
+dwc:year dcterms:isPartOf dwc: .
+
+<http://rs.tdwg.org/dwc/version/terms/2008-11-19> dcterms:isVersionOf dwc: .
+
+<http://rs.tdwg.org/dwc/version/terms/2009-01-18> dcterms:isVersionOf dwc: .
+
+<http://rs.tdwg.org/dwc/version/terms/2009-01-21> dcterms:isVersionOf dwc: .
+
+<http://rs.tdwg.org/dwc/version/terms/2009-01-23> dcterms:isVersionOf dwc: .
+
+<http://rs.tdwg.org/dwc/version/terms/2009-04-24> dcterms:isVersionOf dwc: .
+
+<http://rs.tdwg.org/dwc/version/terms/2009-04-29> dcterms:isVersionOf dwc: .
+
+<http://rs.tdwg.org/dwc/version/terms/2009-05-18> dcterms:isVersionOf dwc: .
+
+<http://rs.tdwg.org/dwc/version/terms/2009-07-06> dcterms:isVersionOf dwc: .
+
+<http://rs.tdwg.org/dwc/version/terms/2009-08-24> dcterms:isVersionOf dwc: .
+
+<http://rs.tdwg.org/dwc/version/terms/2009-09-11> dcterms:isVersionOf dwc: .
+
+<http://rs.tdwg.org/dwc/version/terms/2009-09-17> dcterms:isVersionOf dwc: .
+
+<http://rs.tdwg.org/dwc/version/terms/2009-09-21> dcterms:isVersionOf dwc: .
+
+<http://rs.tdwg.org/dwc/version/terms/2009-12-07> dcterms:isVersionOf dwc: .
+
+<http://rs.tdwg.org/dwc/version/terms/2011-10-16> dcterms:isVersionOf dwc: .
+
+<http://rs.tdwg.org/dwc/version/terms/2013-03-28> dcterms:isVersionOf dwc: .
+
+<http://rs.tdwg.org/dwc/version/terms/2013-05-25> dcterms:isVersionOf dwc: .
+
+<http://rs.tdwg.org/dwc/version/terms/2014-10-23> dcterms:isVersionOf dwc: .
+
+<http://rs.tdwg.org/dwc/version/terms/2014-12-23> dcterms:isVersionOf dwc: .
+
+dwc: a tdwgutility:TermList ;
+    rdfs:label "Core terms defined by Darwin Core"@en ;
+    dc:publisher "Biodiversity Information Standards (TDWG)"@en ;
+    dcterms:created "2008-11-19"^^xsd:date ;
+    dcterms:description "This term list includes all currently valid terms that have been defined in the core Darwin Core namespace dwc:.  To comment on this schema, please create a new issue in https://github.com/tdwg/dwc/issues"@en ;
+    dcterms:hasPart dwc:Event,
+        dwc:FossilSpecimen,
+        dwc:GeologicalContext,
+        dwc:HumanObservation,
+        dwc:Identification,
+        dwc:LivingSpecimen,
+        dwc:MachineObservation,
+        dwc:MaterialSample,
+        dwc:MeasurementOrFact,
+        dwc:Occurrence,
+        dwc:Organism,
+        dwc:PreservedSpecimen,
+        dwc:ResourceRelationship,
+        dwc:Taxon,
+        dwc:acceptedNameUsage,
+        dwc:acceptedNameUsageID,
+        dwc:accordingTo,
+        dwc:associatedMedia,
+        dwc:associatedOccurrences,
+        dwc:associatedOrganisms,
+        dwc:associatedReferences,
+        dwc:associatedSequences,
+        dwc:associatedTaxa,
+        dwc:basisOfRecord,
+        dwc:bed,
+        dwc:behavior,
+        dwc:catalogNumber,
+        dwc:class,
+        dwc:collectionCode,
+        dwc:collectionID,
+        dwc:continent,
+        dwc:coordinatePrecision,
+        dwc:coordinateUncertaintyInMeters,
+        dwc:country,
+        dwc:countryCode,
+        dwc:county,
+        dwc:dataGeneralizations,
+        dwc:datasetID,
+        dwc:datasetName,
+        dwc:dateIdentified,
+        dwc:day,
+        dwc:decimalLatitude,
+        dwc:decimalLongitude,
+        dwc:disposition,
+        dwc:dynamicProperties,
+        dwc:earliestAgeOrLowestStage,
+        dwc:earliestEonOrLowestEonothem,
+        dwc:earliestEpochOrLowestSeries,
+        dwc:earliestEraOrLowestErathem,
+        dwc:earliestPeriodOrLowestSystem,
+        dwc:endDayOfYear,
+        dwc:establishmentMeans,
+        dwc:eventDate,
+        dwc:eventID,
+        dwc:eventRemarks,
+        dwc:eventTime,
+        dwc:family,
+        dwc:fieldNotes,
+        dwc:fieldNumber,
+        dwc:footprintSRS,
+        dwc:footprintSpatialFit,
+        dwc:footprintWKT,
+        dwc:formation,
+        dwc:genus,
+        dwc:geodeticDatum,
+        dwc:geologicalContextID,
+        dwc:georeferenceProtocol,
+        dwc:georeferenceRemarks,
+        dwc:georeferenceSources,
+        dwc:georeferenceVerificationStatus,
+        dwc:georeferencedBy,
+        dwc:georeferencedDate,
+        dwc:group,
+        dwc:habitat,
+        dwc:higherClassification,
+        dwc:higherGeography,
+        dwc:higherGeographyID,
+        dwc:highestBiostratigraphicZone,
+        dwc:identificationID,
+        dwc:identificationQualifier,
+        dwc:identificationReferences,
+        dwc:identificationRemarks,
+        dwc:identificationVerificationStatus,
+        dwc:identifiedBy,
+        dwc:individualCount,
+        dwc:informationWithheld,
+        dwc:infraspecificEpithet,
+        dwc:institutionCode,
+        dwc:institutionID,
+        dwc:island,
+        dwc:islandGroup,
+        dwc:kingdom,
+        dwc:latestAgeOrHighestStage,
+        dwc:latestEonOrHighestEonothem,
+        dwc:latestEpochOrHighestSeries,
+        dwc:latestEraOrHighestErathem,
+        dwc:latestPeriodOrHighestSystem,
+        dwc:lifeStage,
+        dwc:lithostratigraphicTerms,
+        dwc:locality,
+        dwc:locationAccordingTo,
+        dwc:locationID,
+        dwc:locationRemarks,
+        dwc:lowestBiostratigraphicZone,
+        dwc:materialSampleID,
+        dwc:maximumDepthInMeters,
+        dwc:maximumDistanceAboveSurfaceInMeters,
+        dwc:maximumElevationInMeters,
+        dwc:measurementAccuracy,
+        dwc:measurementDeterminedBy,
+        dwc:measurementDeterminedDate,
+        dwc:measurementID,
+        dwc:measurementMethod,
+        dwc:measurementRemarks,
+        dwc:measurementType,
+        dwc:measurementUnit,
+        dwc:measurementValue,
+        dwc:member,
+        dwc:minimumDepthInMeters,
+        dwc:minimumDistanceAboveSurfaceInMeters,
+        dwc:minimumElevationInMeters,
+        dwc:month,
+        dwc:municipality,
+        dwc:nameAccordingTo,
+        dwc:nameAccordingToID,
+        dwc:namePublishedIn,
+        dwc:namePublishedInID,
+        dwc:namePublishedInYear,
+        dwc:nomenclaturalCode,
+        dwc:nomenclaturalStatus,
+        dwc:occurrenceID,
+        dwc:occurrenceRemarks,
+        dwc:occurrenceStatus,
+        dwc:order,
+        dwc:organismID,
+        dwc:organismName,
+        dwc:organismQuantity,
+        dwc:organismQuantityType,
+        dwc:organismRemarks,
+        dwc:organismScope,
+        dwc:originalNameUsage,
+        dwc:originalNameUsageID,
+        dwc:otherCatalogNumbers,
+        dwc:ownerInstitutionCode,
+        dwc:parentEventID,
+        dwc:parentNameUsage,
+        dwc:parentNameUsageID,
+        dwc:phylum,
+        dwc:pointRadiusSpatialFit,
+        dwc:preparations,
+        dwc:previousIdentifications,
+        dwc:recordNumber,
+        dwc:recordedBy,
+        dwc:relatedResourceID,
+        dwc:relationshipAccordingTo,
+        dwc:relationshipEstablishedDate,
+        dwc:relationshipOfResource,
+        dwc:relationshipRemarks,
+        dwc:reproductiveCondition,
+        dwc:resourceID,
+        dwc:resourceRelationshipID,
+        dwc:sampleSizeUnit,
+        dwc:sampleSizeValue,
+        dwc:samplingEffort,
+        dwc:samplingProtocol,
+        dwc:scientificName,
+        dwc:scientificNameAuthorship,
+        dwc:scientificNameID,
+        dwc:sex,
+        dwc:specificEpithet,
+        dwc:startDayOfYear,
+        dwc:stateProvince,
+        dwc:subgenus,
+        dwc:taxonConceptID,
+        dwc:taxonID,
+        dwc:taxonRank,
+        dwc:taxonRemarks,
+        dwc:taxonomicStatus,
+        dwc:typeStatus,
+        dwc:verbatimCoordinateSystem,
+        dwc:verbatimCoordinates,
+        dwc:verbatimDepth,
+        dwc:verbatimElevation,
+        dwc:verbatimEventDate,
+        dwc:verbatimLatitude,
+        dwc:verbatimLocality,
+        dwc:verbatimLongitude,
+        dwc:verbatimSRS,
+        dwc:verbatimTaxonRank,
+        dwc:vernacularName,
+        dwc:waterBody,
+        dwc:year ;
+    dcterms:hasVersion <http://rs.tdwg.org/dwc/version/terms/2008-11-19>,
+        <http://rs.tdwg.org/dwc/version/terms/2009-01-18>,
+        <http://rs.tdwg.org/dwc/version/terms/2009-01-21>,
+        <http://rs.tdwg.org/dwc/version/terms/2009-01-23>,
+        <http://rs.tdwg.org/dwc/version/terms/2009-04-24>,
+        <http://rs.tdwg.org/dwc/version/terms/2009-04-29>,
+        <http://rs.tdwg.org/dwc/version/terms/2009-05-18>,
+        <http://rs.tdwg.org/dwc/version/terms/2009-07-06>,
+        <http://rs.tdwg.org/dwc/version/terms/2009-08-24>,
+        <http://rs.tdwg.org/dwc/version/terms/2009-09-11>,
+        <http://rs.tdwg.org/dwc/version/terms/2009-09-17>,
+        <http://rs.tdwg.org/dwc/version/terms/2009-09-21>,
+        <http://rs.tdwg.org/dwc/version/terms/2009-12-07>,
+        <http://rs.tdwg.org/dwc/version/terms/2011-10-16>,
+        <http://rs.tdwg.org/dwc/version/terms/2013-03-28>,
+        <http://rs.tdwg.org/dwc/version/terms/2013-05-25>,
+        <http://rs.tdwg.org/dwc/version/terms/2014-10-23>,
+        <http://rs.tdwg.org/dwc/version/terms/2014-12-23> ;
+    dcterms:publisher <https://www.grid.ac/institutes/grid.480498.9> ;
+    dcterms:title "Core terms defined by Darwin Core"@en ;
+    vann:preferredNamespacePrefix "dwc" ;
+    vann:preferredNamespaceUri "http://rs.tdwg.org/dwc/terms/" ;
+    rdfs:comment "This term list includes all currently valid terms that have been defined in the core Darwin Core namespace dwc:.  To comment on this schema, please create a new issue in https://github.com/tdwg/dwc/issues"@en .
