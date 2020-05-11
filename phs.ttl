@@ -1,339 +1,364 @@
-# My first TTL file
-# SJP 11 Feb 2020
-# Author: Stephen J Pratt
-# Contact: stephen.pratt@awe.gov.au
-#
-# This vocabulary describes information objects relating to plant health surveillance using RDF (Resource Description Framework).
-# It is written (serialised) in Terse RDF Triple Language (Turtle).
-# 
-# Plant health surveillance involves field observations 
-#
-# See: https://en.wikipedia.org/wiki/Resource_Description_Framework
-# 
-
-# Prefix for this namespace is 'phs', for Plant Health Surveillance
-#TODO # Ideally, this should be altered to linked.data.gov.au for persistence 
-@prefix phs: <https://example.org/PlantHealthSurveillanceOntology#> .
-@prefix ffly: <https://example.org/def/fruitfly> .
-
-@prefix foaf: <http://xmlns.com/foaf/0.1/> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
-@prefix dcterms: <http://purl.org/dc/terms/> .           # DCMI gently encourages use of the /terms/ namespace (over /elements/1.1/)
+@prefix : <http://linked.data.gov.au/def/phs#> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
-@prefix tgn: <http://vocab.getty.edu/tgn/> .         # Getty Thesaurus of Geographic Names
-@prefix sdo: <https://schema.org/> .
-@prefix sosa: <http://www.w3.org/ns/sosa/> .
-@prefix ssn: <http://www.w3.org/ns/ssn/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix phs: <https://example.org/PlantHealthSurveillanceOntology#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix sdo: <https://schema.org/> .
+@prefix ssn: <http://www.w3.org/ns/ssn/> .
+@prefix tgn: <http://vocab.getty.edu/tgn/> .
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-# See https://prefix.cc/ for rdf namespace lookups
+@prefix ffly: <https://example.org/def/fruitfly> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix sosa: <http://www.w3.org/ns/sosa/> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@base <http://linked.data.gov.au/def/phs> .
 
-# Ontology declaration
-<https://example.org/PlantHealthSurveillanceOntology>
-  a owl:Ontology ;
-  rdfs:label "Plant Health Surveillance Ontology"@en ;
-  rdfs:comment "An ontology about surveillance to determine plant health, such as fruit fly trapping."@en ;
-  dcterms:created "2020-02-11"^^xsd:date ;
-  dcterms:modified "2020-03-18"^^xsd:date ;
-  dcterms:creator [
-    a owl:NamedIndividual ;
-    a sdo:Person ;
-    sdo:email <mailto:stephen.pratt@awe.gov.au> ;
-    sdo:jobTitle "Project Manager: Implementation of Plant Health Surveillance Data Store" ;
-    sdo:affiliation <https://www.awe.gov.au> ;
-    sdo:name "Stephen J. Pratt" ;
-  ] ;
-  dcterms:contributor 
-    <http://orcid.org/0000-0002-8742-7730> , 
-    <https://orcid.org/0000-0002-3884-3420> ;
-  owl:versionIRI <https://example.org/PlantHealthSurveillanceOntology/0.1> ;
-  owl:versionInfo "Initial version" ;
-  sdo:codeRepository <https://github.com/F3RR3T/PlantHealthSurveillanceOntology> ;
-  vann:preferredNamespacePrefix "phs" ;
-.
+<http://linked.data.gov.au/def/phs> rdf:type owl:Ontology ;
+                                     owl:versionIRI <http://linked.data.gov.au/def/phs/1.0> ;
+                                     dcterms:contributor <http://orcid.org/0000-0002-8742-7730> ,
+                                                         <https://orcid.org/0000-0002-3884-3420> ;
+                                     dcterms:created "2020-02-11"^^xsd:date ;
+                                     dcterms:creator [ rdf:type sdo:Person ;
+                                                       sdo:affiliation <http://linked.data.gov.au/org/awe> ;
+                                                       sdo:email <mailto:stephen.pratt@awe.gov.au> ;
+                                                       sdo:jobTitle "Project Manager: Implementation of Plant Health Surveillance Data Store" ;
+                                                       sdo:name "Stephen J. Pratt"
+                                                     ] ;
+                                     dcterms:modified "2020-05-11"^^xsd:date ;
+                                     vann:preferredNamespacePrefix "phs" ;
+                                     rdfs:comment "An ontology about surveillance to determine plant health, such as fruit fly trapping."@en ;
+                                     rdfs:label "Plant Health Surveillance Ontology"@en ;
+                                     owl:versionInfo "Initial version" ;
+                                     sdo:codeRepository <https://github.com/AGLDWG/phs-ont> .
 
-<https://www.awe.gov.au>  # to be replaced with a more persistent org URI when we get it from AGOR / Linked Data WG
-  a owl:NamedIndividual ;
-  a sdo:Organization ;
-  sdo:name "Department of Agriculture, Water and the Environment" ;
-  sdo:url <https://www.awe.gov.au> ;
-.
-<https://orcid.org/0000-0002-3884-3420>
-  a owl:NamedIndividual ;
-  a sdo:Person ;
-  sdo:email <mailto:simon.cox@surroundaustralia.com> ;
-  sdo:jobTitle "Research Scientist" ;
-  sdo:affiliation <https://www.csiro.au.com> ;
-  sdo:name "Simon J.D. Cox" ;
-.
+#################################################################
+#    Annotation properties
+#################################################################
 
-<https://www.csiro.au.com>
-  a owl:NamedIndividual ;
-  a sdo:Organization ;
-  sdo:name "CSIRO" ;
-  sdo:url <https://www.csiro.au.com> ;
-.
-
-<http://orcid.org/0000-0002-8742-7730>
-  a owl:NamedIndividual ;
-  a sdo:Person ;
-  sdo:email <mailto:nicholas.car@surroundaustralia.com> ;
-  sdo:jobTitle "Data Systems Architect" ;
-  sdo:affiliation <https://surroundaustralia.com> ;
-  sdo:name "Nicholas J. Car" ;
-.
-
-<https://surroundaustralia.com>
-  a owl:NamedIndividual ;
-  a sdo:Organization ;
-  sdo:name "SURROUND Australia Pty Ltd" ;
-  sdo:url <https://surroundaustralia.com> ;
-.
-
-#Classes
-phs:Trap
-  a owl:Class ;
-  rdfs:subClassOf sosa:Sampler ;
-  rdfs:label "Trap" ;
-  rdfs:comment "A device that catches or collects organisms or evidence of them" ;
-.
-phs:InsectTrap
-  a owl:Class ;
-  rdfs:label "A device that catches or collects insects" ;
-  rdfs:seeAlso <http://dbpedia.org/resource/Insect_trap> ;
-  rdfs:subClassOf phs:Trap ;
-  rdfs:label "Insect Trap" ;
-  rdfs:comment "A device that catches or collects insects" ;
-.
-phs:Lure
-  a owl:Class ;
-  rdfs:label "Lure" ;
-  rdfs:comment "An attractant that may be placed in an InsectTrap" ;
-.
-phs:Stratum
-  a owl:Class ;
-  rdfs:label "Stratum" ;
-  rdfs:comment "Thing or material on which a pest is searched for or found. A superclass for host or substrate. Stratum is a 'terminological', not an 'instance' class; observation records ('instances') should use either 'Host' or 'Substrate'." ;
-.
-phs:Substrate 
-  a owl:Class ;
-  rdfs:subClassOf phs:Stratum ;
-  rdfs:label "Substrate" ;
-  rdfs:comment "A non-living thing on which a pest may be found." ;
-.
-phs:Host
-  a owl:Class ;
-  rdfs:subClassOf phs:Stratum ;
-  rdfs:subClassOf dwc:Taxon ;
-  rdfs:label "Host" ;
-  rdfs:comment "A plant on (or in) which a pest may be found. " ;
-  rdfs:comment "Note: there may be cases where the host is not a plant. e.g. a Varroa Mite found in a bee's trachea. For consideration: expand the definition of host to include non-plants OR create a new class for non-plant hosts. (SJP votes for the former)." ;
-.
-phs:TrapType 
-  a owl:Class ;
-  rdfs:subClassOf skos:Concept ;
-  rdfs:label "Trap Type" ;
-.
-#Properties
-phs:trapType  # Should we de
-  rdfs:label "Trap Type" ;
-  rdfs:domain phs:InsectTrap ;
-  rdfs:range phs:TrapType ;
-  rdfs:comment "The make or model of a trap" ;
-.
-# Might be better to create the term 'TrapModel' for commercial names of trap.
-# That would leave 'TrapType' for ['Light trap', 'Pitfall trap', 'Adhesive trap',
-#   'Flying insect trap', ...]
-# Or do we use the RANGE to define allowed values?
-phs:lureType
-  a owl:ObjectProperty ;
-  rdfs:domain phs:Lure ;
-  rdfs:range skos:Concept ;  # an item from a controlled vocabaulary - placeholder until a LureType specialization is defined
-.
-# Individuals
-ffly:TrapTypes
-  a skos:Collection ;
-  rdfs:label "Collection of allowed names for trap types" ;
-  skos:member ffly:Lyndfield ;
-  skos:member ffly:Peyton;
-  skos:member ffly:AnotherOne;
-.
-# I have introduced the ffly namespace specifically for fruit fly terms
-ffly:Lyndfield
-  a phs:TrapType ;
-.
-ffly:Peyton
-  a phs:TrapType ;
-.
-ffly:AnotherOne
-  a phs:TrapType ;
-.
-# Make a Canonical collection of lure type
-# TODO - Alias list to collect wild-type variations of accepted terms
-# TaxaaS (Taxonomy as a Service) has been depricated by the dept, so I'll use it 
-# to refer to the API of any taxonomic reference system (GBIF, ALA, 'TRS').
+###  http://purl.org/dc/terms/contributor
+dcterms:contributor rdf:type owl:AnnotationProperty .
 
 
-#TARGET PEST
-phs:TargetPest 
-  a dwc:Taxon ;
-  rdfs:label "Target Pest" ;
-  owl:equivalentClass dwc:Taxon ;
-  rdfs:comment "The pest taxon that is is the subject of surveillance. Can have more than one target." ;
-.
-phs:targetTaxonomicReferenceSource
-  a dcterms:Dataset ;
-  rdfs:label "Target Taxonomic Reference Source" ;
-  rdfs:comment "The name of the taxonomic reference system used for this target" ;
-  rdfs:comment "Placeholder Class relationship" ;
-.
-phs:targetTaxonID
-  a phs:TargetPest ;
-  rdfs:label "Target Taxon ID" ;
-  rdfs:comment "Identifier for taxon proprties (including the following) of the Target Pest" ;
-  owl:equivalentProperty dwc:taxonID ;
-  rdfs:comment "Automatically populated by TaxaaS. Unsure whether we need taxonID AND taxonConceptID" ;
-.
-phs:targetTaxonConceptID
-  a phs:TargetPest ;
-  rdfs:label "Target Taxon Concept ID" ;
-  rdfs:comment "Identifier for taxonomic CONCEPT (not nomenclature) of the Target Pest" ;
-  owl:equivalentProperty dwc:taxonConceptID ;
-  rdfs:comment "Automatically populated by TaxaaS. Unsure whether we need taxonID AND taxonConceptID" ;
-.
-phs:targetCommonName
-  a phs:TargetPest ;
-  rdfs:label "Target Common Name" ;
-  rdfs:comment "The vernacular (common) name for the Target Pest" ;
-  owl:equivalentProperty dwc:vernacularName ;
-  rdfs:comment "I'd prefer to use targetVernacularName and then do a 'common sameas vernacular'" ;
-.
-phs:targetScientificName
-  a phs:TargetPest ;
-  rdfs:label "Target Scientific Name" ;
-  owl:equivalentProperty dwc:scientificName ;
-  rdfs:comment "The scientific name of the target pest" ;
-  rdfs:comment "I changed this from taxonName to align with DwC'" ;
-.
-# Other properties such as rank, parent taxon can be inferred from TaxaaS.
+###  http://purl.org/dc/terms/created
+dcterms:created rdf:type owl:AnnotationProperty .
 
-# HOST
-phs:Host
-  a dwc:Taxon ;
-  rdfs:label "Host" ;
-  owl:equivalentClass dwc:Taxon ;
-  rdfs:comment "The host taxon that is is the subject of surveillance. Can have more than one host." ;
-.
-phs:hostTaxonomicReferenceSource
-  a dcterms:Dataset ;
-  rdfs:label "Host Taxonomic Reference Source" ;
-  rdfs:comment "The name of the taxonomic reference system used for this host" ;
-  rdfs:comment "Placeholder Class relationship" ;
-.
-phs:hostTaxonID
-  a phs:Host ;
-  rdfs:label "Host Taxon ID" ;
-  rdfs:comment "Identifier for taxon properties (including the following) of the host" ;
-  owl:equivalentProperty dwc:taxonID ;
-  rdfs:comment "Automatically populated by TaxaaS. Unsure whether we need taxonID AND taxonConceptID" ;
-.
-phs:hostTaxonConceptID
-  a phs:Host ;
-  rdfs:label "Host Taxon Concept ID" ;
-  rdfs:comment "Identifier for taxonomic CONCEPT (not nomenclature) of the host" ;
-  owl:equivalentProperty dwc:taxonConceptID ;
-  rdfs:comment "Automatically populated by TaxaaS. Unsure whether we need taxonID AND taxonConceptID" ;
-.
-phs:hostCommonName
-  a phs:Host ;
-  rdfs:label "Host Common Name" ;
-  rdfs:comment "The vernacular (common) name for the host" ;
-  owl:equivalentProperty dwc:vernacularName ;
-  rdfs:comment "I'd prefer to use hostVernacularName and then do a 'common sameas vernacular'" ;
-.
-phs:hostScientificName
-  a phs:Host ;
-  rdfs:label "Host Scientific Name" ;
-  owl:equivalentProperty dwc:scientificName ;
-  rdfs:comment "The scientific name of the host" ;
-  rdfs:comment "I changed this from taxonName to align with DwC'" ;
-.
-# Other properties such as rank, parent taxon can be inferred from TaxaaS.
-#
-#
-#ProgramName
-#OrganisationName
-#samplingProtocol
-#samplingProtocolID
-#ActivityDescription
-#activityClass
-#nonTargetPresent
-#nonTargetName
-#comments
-#sampleType
-#
-## Substrate
-#
-#Substrate_Name
-#
-#NonTaxaSubstrateID
-#Substrate_OccurrenceID
-#Substrate_datasetName
-#Substrate_recordNumber
-#Substrate_Quantity
-#Substrate_QuantityType
-#Substrate_RiskCharacters
-#
-## Darwin Core terms
-#dwc:datasetID
-#dwc:datasetName
-#dwc:institutionCode
-#dwc:basisOfRecord
-#dwc:modified
-#dwc:municipality
-#dwc:locality
-#dwc:locationID
-#dwc:georeferenceSources
-#dwc:georeferencedDate
-#dwc:geodeticDatum
-#dwc:decimalLatitude
-#dwc:decimalLongitude
-#dwc:footprintWKT
-#dwc:footprintSRS
-#dwc:coordinateUncertaintyInMeters
-#dwc:GeographyLevelID
-#dwc:higherGeographyID
-#dwc:higherGeography
-#dwc:stateProvince
-#dwc:eventDate
-#dwc:eventEndDate
-#dwc:eventID
-#dwc:fieldNumber
-#dwc:sampleSizeUnit
-#dwc:sampleSizeValue
-#dwc:scientificName
-#dwc:taxonID
-#dwc:higherClassification
-#dwc:occurrenceStatus
-#dwc:occurrenceID
-#dwc:recordedBy
-#dwc:recordNumber
-#dwc:catalogNumber
-#dwc:lifeStage
-#dwc:reproductiveCondition
-#dwc:behavior
-#dwc:organismQuantity
-#dwc:organismQuantityType
-#dwc:occurrenceRemarks
-#dwc:identificationID
-#dwc:identificationQualifier
-#dwc:IdentificationMethod
-#dwc:IdentificationResult
-#dwc:dateIdentified
-#dwc:identifiedBy
+
+###  http://purl.org/dc/terms/creator
+dcterms:creator rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/modified
+dcterms:modified rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/vocab/vann/preferredNamespacePrefix
+vann:preferredNamespacePrefix rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2004/02/skos/core#member
+skos:member rdf:type owl:AnnotationProperty .
+
+
+###  https://schema.org/affiliation
+sdo:affiliation rdf:type owl:AnnotationProperty .
+
+
+###  https://schema.org/codeRepository
+sdo:codeRepository rdf:type owl:AnnotationProperty .
+
+
+###  https://schema.org/email
+sdo:email rdf:type owl:AnnotationProperty .
+
+
+###  https://schema.org/jobTitle
+sdo:jobTitle rdf:type owl:AnnotationProperty .
+
+
+###  https://schema.org/name
+sdo:name rdf:type owl:AnnotationProperty .
+
+
+###  https://schema.org/url
+sdo:url rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://linked.data.gov.au/def/phs#lureType
+:lureType rdf:type owl:ObjectProperty ;
+          rdfs:domain :Lure ;
+          rdfs:range skos:Concept .
+
+
+###  http://linked.data.gov.au/def/phs#trapType
+:trapType rdf:type owl:ObjectProperty ;
+          rdfs:domain :InsectTrap ;
+          rdfs:range :TrapType ;
+          rdfs:comment "The make or model of a trap" ;
+          rdfs:label "Trap Type" .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://linked.data.gov.au/def/phs#Host
+:Host rdf:type owl:Class ;
+      owl:equivalentClass dwc:Taxon ;
+      rdfs:subClassOf :Stratum ,
+                      dwc:Taxon .
+
+
+###  http://linked.data.gov.au/def/phs#InsectTrap
+:InsectTrap rdf:type owl:Class ;
+            rdfs:subClassOf :Trap ;
+            rdfs:comment "A device that catches or collects insects" ;
+            rdfs:label "A device that catches or collects insects" ,
+                       "Insect Trap" ;
+            rdfs:seeAlso <http://dbpedia.org/resource/Insect_trap> .
+
+
+###  http://linked.data.gov.au/def/phs#Lure
+:Lure rdf:type owl:Class ;
+      rdfs:comment "An attractant that may be placed in an InsectTrap" ;
+      rdfs:label "Lure" .
+
+
+###  http://linked.data.gov.au/def/phs#Stratum
+:Stratum rdf:type owl:Class ;
+         rdfs:comment "Thing or material on which a pest is searched for or found. A superclass for host or substrate. Stratum is a 'terminological', not an 'instance' class; observation records ('instances') should use either 'Host' or 'Substrate'." ;
+         rdfs:label "Stratum" .
+
+
+###  http://linked.data.gov.au/def/phs#Substrate
+:Substrate rdf:type owl:Class ;
+           rdfs:subClassOf :Stratum ;
+           rdfs:comment "A non-living thing on which a pest may be found." ;
+           rdfs:label "Substrate" .
+
+
+###  http://linked.data.gov.au/def/phs#TargetPest
+:TargetPest rdf:type owl:Class ;
+            owl:equivalentClass dwc:Taxon .
+
+
+###  http://linked.data.gov.au/def/phs#Trap
+:Trap rdf:type owl:Class ;
+      rdfs:subClassOf sosa:Sampler ;
+      rdfs:comment "A device that catches or collects organisms or evidence of them" ;
+      rdfs:label "Trap" .
+
+
+###  http://linked.data.gov.au/def/phs#TrapType
+:TrapType rdf:type owl:Class ;
+          rdfs:subClassOf skos:Concept ;
+          rdfs:label "Trap Type" .
+
+
+###  http://purl.org/dc/terms/Dataset
+dcterms:Dataset rdf:type owl:Class .
+
+
+###  http://rs.tdwg.org/dwc/terms/Taxon
+dwc:Taxon rdf:type owl:Class .
+
+
+###  http://www.w3.org/2004/02/skos/core#Collection
+skos:Collection rdf:type owl:Class .
+
+
+###  http://www.w3.org/2004/02/skos/core#Concept
+skos:Concept rdf:type owl:Class .
+
+
+###  http://www.w3.org/ns/sosa/Sampler
+sosa:Sampler rdf:type owl:Class .
+
+
+###  https://schema.org/Organization
+sdo:Organization rdf:type owl:Class .
+
+
+###  https://schema.org/Person
+sdo:Person rdf:type owl:Class .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://linked.data.gov.au/def/phs#Host
+:Host rdf:type owl:NamedIndividual ,
+               dwc:Taxon .
+
+
+###  http://linked.data.gov.au/def/phs#TargetPest
+:TargetPest rdf:type owl:NamedIndividual ,
+                     dwc:Taxon .
+
+
+###  http://linked.data.gov.au/def/phs#hostCommonName
+:hostCommonName rdf:type owl:NamedIndividual ,
+                         :Host ;
+                rdfs:comment "I'd prefer to use hostVernacularName and then do a 'common sameas vernacular'" ,
+                             "The vernacular (common) name for the host" ;
+                rdfs:label "Host Common Name" .
+
+
+###  http://linked.data.gov.au/def/phs#hostScientificName
+:hostScientificName rdf:type owl:NamedIndividual ,
+                             :Host ;
+                    rdfs:comment "I changed this from taxonName to align with DwC'" ,
+                                 "The scientific name of the host" ;
+                    rdfs:label "Host Scientific Name" .
+
+
+###  http://linked.data.gov.au/def/phs#hostTaxonConceptID
+:hostTaxonConceptID rdf:type owl:NamedIndividual ,
+                             :Host ;
+                    rdfs:comment "Automatically populated by TaxaaS. Unsure whether we need taxonID AND taxonConceptID" ,
+                                 "Identifier for taxonomic CONCEPT (not nomenclature) of the host" ;
+                    rdfs:label "Host Taxon Concept ID" .
+
+
+###  http://linked.data.gov.au/def/phs#hostTaxonID
+:hostTaxonID rdf:type owl:NamedIndividual ,
+                      :Host ;
+             rdfs:comment "Automatically populated by TaxaaS. Unsure whether we need taxonID AND taxonConceptID" ,
+                          "Identifier for taxon properties (including the following) of the host" ;
+             rdfs:label "Host Taxon ID" .
+
+
+###  http://linked.data.gov.au/def/phs#hostTaxonomicReferenceSource
+:hostTaxonomicReferenceSource rdf:type owl:NamedIndividual ,
+                                       dcterms:Dataset ;
+                              rdfs:comment "Placeholder Class relationship" ,
+                                           "The name of the taxonomic reference system used for this host" ;
+                              rdfs:label "Host Taxonomic Reference Source" .
+
+
+###  http://linked.data.gov.au/def/phs#targetCommonName
+:targetCommonName rdf:type owl:NamedIndividual ,
+                           :TargetPest ;
+                  rdfs:comment "I'd prefer to use targetVernacularName and then do a 'common sameas vernacular'" ,
+                               "The vernacular (common) name for the Target Pest" ;
+                  rdfs:label "Target Common Name" .
+
+
+###  http://linked.data.gov.au/def/phs#targetScientificName
+:targetScientificName rdf:type owl:NamedIndividual ,
+                               :TargetPest ;
+                      rdfs:comment "I changed this from taxonName to align with DwC'" ,
+                                   "The scientific name of the target pest" ;
+                      rdfs:label "Target Scientific Name" .
+
+
+###  http://linked.data.gov.au/def/phs#targetTaxonConceptID
+:targetTaxonConceptID rdf:type owl:NamedIndividual ,
+                               :TargetPest ;
+                      rdfs:comment "Automatically populated by TaxaaS. Unsure whether we need taxonID AND taxonConceptID" ,
+                                   "Identifier for taxonomic CONCEPT (not nomenclature) of the Target Pest" ;
+                      rdfs:label "Target Taxon Concept ID" .
+
+
+###  http://linked.data.gov.au/def/phs#targetTaxonID
+:targetTaxonID rdf:type owl:NamedIndividual ,
+                        :TargetPest ;
+               rdfs:comment "Automatically populated by TaxaaS. Unsure whether we need taxonID AND taxonConceptID" ,
+                            "Identifier for taxon proprties (including the following) of the Target Pest" ;
+               rdfs:label "Target Taxon ID" .
+
+
+###  http://linked.data.gov.au/def/phs#targetTaxonomicReferenceSource
+:targetTaxonomicReferenceSource rdf:type owl:NamedIndividual ,
+                                         dcterms:Dataset ;
+                                rdfs:comment "Placeholder Class relationship" ,
+                                             "The name of the taxonomic reference system used for this target" ;
+                                rdfs:label "Target Taxonomic Reference Source" .
+
+
+###  http://linked.data.gov.au/org/awe
+<http://linked.data.gov.au/org/awe> rdf:type owl:NamedIndividual ,
+                                             sdo:Organization ;
+                                    sdo:name "Department of Agriculture, Water and the Environment" ;
+                                    sdo:url <https://www.awe.gov.au> .
+
+
+###  http://orcid.org/0000-0002-8742-7730
+<http://orcid.org/0000-0002-8742-7730> rdf:type owl:NamedIndividual ,
+                                                sdo:Person ;
+                                       sdo:affiliation <https://surroundaustralia.com> ;
+                                       sdo:email <mailto:nicholas.car@surroundaustralia.com> ;
+                                       sdo:jobTitle "Data Systems Architect" ;
+                                       sdo:name "Nicholas J. Car" .
+
+
+###  https://surroundaustralia.com
+<https://surroundaustralia.com> rdf:type owl:NamedIndividual ,
+                                         sdo:Organization ;
+                                sdo:name "SURROUND Australia Pty Ltd" ;
+                                sdo:url <https://surroundaustralia.com> .
+
+
+###  https://www.csiro.au.com
+<https://www.csiro.au.com> rdf:type owl:NamedIndividual ,
+                                    sdo:Organization ;
+                           sdo:name "CSIRO" ;
+                           sdo:url <https://www.csiro.au.com> .
+
+
+###  https://example.org/def/fruitflyAnotherOne
+ffly:AnotherOne rdf:type owl:NamedIndividual ,
+                         :TrapType .
+
+
+###  https://example.org/def/fruitflyLyndfield
+ffly:Lyndfield rdf:type owl:NamedIndividual ,
+                        :TrapType .
+
+
+###  https://example.org/def/fruitflyPeyton
+ffly:Peyton rdf:type owl:NamedIndividual ,
+                     :TrapType .
+
+
+###  https://example.org/def/fruitflyTrapTypes
+ffly:TrapTypes rdf:type owl:NamedIndividual ,
+                        skos:Collection ;
+               rdfs:label "Collection of allowed names for trap types" ;
+               skos:member ffly:AnotherOne ,
+                           ffly:Lyndfield ,
+                           ffly:Peyton .
+
+
+###  https://orcid.org/0000-0002-3884-3420
+<https://orcid.org/0000-0002-3884-3420> rdf:type owl:NamedIndividual ,
+                                                 sdo:Person ;
+                                        sdo:affiliation <https://www.csiro.au.com> ;
+                                        sdo:email <mailto:simon.cox@surroundaustralia.com> ;
+                                        sdo:jobTitle "Research Scientist" ;
+                                        sdo:name "Simon J.D. Cox" .
+
+
+#################################################################
+#    Annotations
+#################################################################
+
+:Host rdfs:label "Host" ;
+       rdfs:comment "A plant on (or in) which a pest may be found. " ,
+                    "The host taxon that is is the subject of surveillance. Can have more than one host." ,
+                    "Note: there may be cases where the host is not a plant. e.g. a Varroa Mite found in a bee's trachea. For consideration: expand the definition of host to include non-plants OR create a new class for non-plant hosts. (SJP votes for the former)." .
+
+
+:TargetPest rdfs:label "Target Pest" ;
+            rdfs:comment "The pest taxon that is is the subject of surveillance. Can have more than one target." .
+
+
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi

@@ -1,1 +1,4 @@
 *.txt
+
+# exclude Mac indexes
+.DS_Store
