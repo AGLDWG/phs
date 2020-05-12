@@ -1,0 +1,14 @@
+@prefix geo: <http://www.opengis.net/ont/geosparql#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@base <https://data.surroundaustralia.com/shapes/vocabulary/> .
+
+
+<FeatureGeometryShape>
+	a sh:NodeShape ;
+	sh:targetClass geo:Feature ;
+    sh:property [
+        sh:path geo:hasGeometry;
+        sh:class geo:Geometry ;       
+        sh:message "If GeoSPARQL Feature hasa a geo:hasGeometry property, must indicate a geo:Geometry instance" ;
+    ] ;
+.
