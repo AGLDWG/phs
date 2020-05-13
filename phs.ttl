@@ -112,6 +112,7 @@ sdo:url rdf:type owl:AnnotationProperty .
 ###  http://linked.data.gov.au/def/phs#Host
 :Host rdf:type owl:Class ;
       owl:equivalentClass dwc:Taxon ;
+      owl:disjointWith :Substrate;
       rdfs:subClassOf :Stratum ,
                       dwc:Taxon .
 
@@ -120,8 +121,7 @@ sdo:url rdf:type owl:AnnotationProperty .
 :InsectTrap rdf:type owl:Class ;
             rdfs:subClassOf :Trap ;
             rdfs:comment "A device that catches or collects insects" ;
-            rdfs:label "A device that catches or collects insects" ,
-                       "Insect Trap" ;
+            rdfs:label "Insect Trap" ;
             rdfs:seeAlso <http://dbpedia.org/resource/Insect_trap> .
 
 
@@ -140,7 +140,8 @@ sdo:url rdf:type owl:AnnotationProperty .
 ###  http://linked.data.gov.au/def/phs#Substrate
 :Substrate rdf:type owl:Class ;
            rdfs:subClassOf :Stratum ;
-           rdfs:comment "A non-living thing on which a pest may be found." ;
+           owl:disjointWith :Host;
+           rdfs:comment "A (usually) non-living thing on which a pest may be found. Compare with Host, for which the taxonomic identity of the host is a) known and b) considered germaine." ;
            rdfs:label "Substrate" .
 
 
@@ -239,8 +240,8 @@ sdo:Person rdf:type owl:Class .
 ###  http://linked.data.gov.au/def/phs#hostTaxonomicReferenceSource
 :hostTaxonomicReferenceSource rdf:type owl:NamedIndividual ,
                                        dcterms:Dataset ;
-                              rdfs:comment "Placeholder Class relationship" ,
-                                           "The name of the taxonomic reference system used for this host" ;
+                              rdfs:comment "Placeholder Class relationship." ,
+                                           "The URI of the taxonomic reference system used for this host" ;
                               rdfs:label "Host Taxonomic Reference Source" .
 
 
