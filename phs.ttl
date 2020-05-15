@@ -117,14 +117,6 @@ sdo:url rdf:type owl:AnnotationProperty .
               rdfs:label "blahLabel" .
 
 
-###  http://linked.data.gov.au/def/phs#scientificName
-:scientificName rdf:type owl:DatatypeProperty ;
-                rdfs:domain :Host ,
-                            :TargetPest ;
-                rdfs:comment "A scientific name (latin name) for a host or pest is its binominal nomenclature genus and species" ;
-                rdfs:label "scientific name" .
-
-
 ###  http://linked.data.gov.au/def/phs#taxonomicReferenceSource
 :taxonomicReferenceSource rdf:type owl:DatatypeProperty ;
                           rdfs:domain :Host ,
