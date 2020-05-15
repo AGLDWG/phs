@@ -195,7 +195,7 @@ In this case, a superclass of e.g. 'bait' could be created.""" ;
 ###  http://linked.data.gov.au/def/phs#TargetPest
 :TargetPest rdf:type owl:Class ;
             rdfs:subClassOf dwc:Taxon ;
-            rdfs:comment "A Taxon of pest that is the subject of surveillance. Can have more than one target." ;
+            rdfs:comment "A Taxon of pest that is the subject of surveillance. An observation can have more than one target." ;
             rdfs:label "Target Pest" .
 
 
