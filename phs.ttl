@@ -109,17 +109,6 @@ sdo:url rdf:type owl:AnnotationProperty .
 #    Data properties
 #################################################################
 
-###  http://linked.data.gov.au/def/phs#blahProperty
-:blahProperty rdf:type owl:DatatypeProperty ;
-                  rdfs:domain [
-                        rdf:type owl:Class ;
-                        owl:unionOf (
-                        :Host
-                        :TargetPest
-                        ) ;
-                  ] ;
-              rdfs:range xsd:string ;
-              rdfs:label "blahLabel" .
 
 
 ###  http://linked.data.gov.au/def/phs#taxonomicReferenceSource
