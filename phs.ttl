@@ -18,7 +18,7 @@
 @base <http://linked.data.gov.au/def/phs> .
 
 <http://linked.data.gov.au/def/phs> rdf:type owl:Ontology ;
-                                     owl:versionIRI <http://linked.data.gov.au/def/phs/1.0> ;
+                                     owl:versionIRI <http://linked.data.gov.au/def/phs/0.1> ;
                                      dcterms:contributor <http://orcid.org/0000-0002-8742-7730> ,
                                                          <https://orcid.org/0000-0002-3884-3420> ;
                                      dcterms:created "2020-02-11"^^xsd:date ;
@@ -28,11 +28,11 @@
                                                        sdo:jobTitle "Project Manager: Implementation of Plant Health Surveillance Data Store" ;
                                                        sdo:name "Stephen J. Pratt"
                                                      ] ;
-                                     dcterms:modified "2020-05-11"^^xsd:date ;
+                                     dcterms:modified "2020-05-15"^^xsd:date ;
                                      vann:preferredNamespacePrefix "phs" ;
-                                     rdfs:comment "An ontology about surveillance to determine plant health, such as fruit fly trapping."@en ;
+                                     rdfs:comment "An ontology about surveillance to determine plant health."@en ;
                                      rdfs:label "Plant Health Surveillance Ontology"@en ;
-                                     owl:versionInfo "Initial version" ;
+                                     owl:versionInfo "Developmental version, not final until reviewed." ;
                                      sdo:codeRepository <https://github.com/AGLDWG/phs-ont> .
 
 #################################################################
@@ -102,19 +102,69 @@ sdo:url rdf:type owl:AnnotationProperty .
           rdfs:domain :InsectTrap ;
           rdfs:range :TrapType ;
           rdfs:comment "The make or model of a trap" ;
-          rdfs:label "Trap Type" .
+          rdfs:label "trap Type" .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://linked.data.gov.au/def/phs#blahProperty
+:blahProperty rdf:type owl:DatatypeProperty ;
+              rdfs:domain :Host ,
+                          :TargetPest ;
+              rdfs:range xsd:string ;
+              rdfs:label "blahLabel" .
+
+
+###  http://linked.data.gov.au/def/phs#scientificName
+:scientificName rdf:type owl:DatatypeProperty ;
+                rdfs:domain :Host ,
+                            :TargetPest ;
+                rdfs:comment "The scientific name for the host or pest" ;
+                rdfs:label "scientific name" .
+
+
+###  http://linked.data.gov.au/def/phs#taxonID
+:taxonID rdf:type owl:DatatypeProperty ;
+         rdfs:domain :Host ,
+                     :TargetPest ;
+         rdfs:comment "Identifier of the taxon in the taxonomic reference system" ;
+         rdfs:label "taxon ID" .
+
+
+###  http://linked.data.gov.au/def/phs#taxonomicReferenceSource
+:taxonomicReferenceSource rdf:type owl:DatatypeProperty ;
+                          rdfs:domain :Host ,
+                                      :TargetPest ;
+                          rdfs:comment "" ;
+                          rdfs:label "taxonomic reference source" .
+
+
+###  http://linked.data.gov.au/def/phs#vernacularName
+:vernacularName rdf:type owl:DatatypeProperty ;
+                rdfs:domain :Host ,
+                            :TargetPest ;
+                rdfs:comment "The vernacular (common) name for the host or pest" ;
+                rdfs:label "vernacular name" .
 
 
 #################################################################
 #    Classes
 #################################################################
 
+###  http://linked.data.gov.au/def/phs#FruitFlyTrap
+:FruitFlyTrap rdf:type owl:Class ;
+              rdfs:subClassOf :InsectTrap ;
+              rdfs:comment "A trap designed to catch economically important fruit flies." ;
+              rdfs:label "Fruit Fly Trap" .
+
+
 ###  http://linked.data.gov.au/def/phs#Host
 :Host rdf:type owl:Class ;
-      owl:equivalentClass dwc:Taxon ;
-      owl:disjointWith :Substrate;
-      rdfs:subClassOf :Stratum ,
-                      dwc:Taxon .
+      rdfs:subClassOf :Plant ,
+                      :Stratum ;
+      owl:disjointWith :Substrate .
 
 
 ###  http://linked.data.gov.au/def/phs#InsectTrap
@@ -127,8 +177,15 @@ sdo:url rdf:type owl:AnnotationProperty .
 
 ###  http://linked.data.gov.au/def/phs#Lure
 :Lure rdf:type owl:Class ;
-      rdfs:comment "An attractant that may be placed in an InsectTrap" ;
+      rdfs:comment "An attractant that may be placed in an InsectTrap" ,
+                   """We may wish to split this concept into true lures, which are volatile pure substances that elecit responses in only certain species, and attractants, which release volatile substances that attract many species, such as by mimicing food sources.
+In this case, a superclass of e.g. 'bait' could be created.""" ;
       rdfs:label "Lure" .
+
+
+###  http://linked.data.gov.au/def/phs#Plant
+:Plant rdf:type owl:Class ;
+       rdfs:subClassOf dwc:Taxon .
 
 
 ###  http://linked.data.gov.au/def/phs#Stratum
@@ -140,14 +197,13 @@ sdo:url rdf:type owl:AnnotationProperty .
 ###  http://linked.data.gov.au/def/phs#Substrate
 :Substrate rdf:type owl:Class ;
            rdfs:subClassOf :Stratum ;
-           owl:disjointWith :Host;
            rdfs:comment "A (usually) non-living thing on which a pest may be found. Compare with Host, for which the taxonomic identity of the host is a) known and b) considered germaine." ;
            rdfs:label "Substrate" .
 
 
 ###  http://linked.data.gov.au/def/phs#TargetPest
 :TargetPest rdf:type owl:Class ;
-            owl:equivalentClass dwc:Taxon .
+            rdfs:subClassOf dwc:Taxon .
 
 
 ###  http://linked.data.gov.au/def/phs#Trap
@@ -169,6 +225,10 @@ dcterms:Dataset rdf:type owl:Class .
 
 ###  http://rs.tdwg.org/dwc/terms/Taxon
 dwc:Taxon rdf:type owl:Class .
+
+
+###  http://www.w3.org/1999/02/22-rdf-syntax-ns#dataProperty
+rdf:dataProperty rdf:type owl:Class .
 
 
 ###  http://www.w3.org/2004/02/skos/core#Collection
@@ -205,86 +265,6 @@ sdo:Person rdf:type owl:Class .
                      dwc:Taxon .
 
 
-###  http://linked.data.gov.au/def/phs#hostCommonName
-:hostCommonName rdf:type owl:NamedIndividual ,
-                         :Host ;
-                rdfs:comment "I'd prefer to use hostVernacularName and then do a 'common sameas vernacular'" ,
-                             "The vernacular (common) name for the host" ;
-                rdfs:label "Host Common Name" .
-
-
-###  http://linked.data.gov.au/def/phs#hostScientificName
-:hostScientificName rdf:type owl:NamedIndividual ,
-                             :Host ;
-                    rdfs:comment "I changed this from taxonName to align with DwC'" ,
-                                 "The scientific name of the host" ;
-                    rdfs:label "Host Scientific Name" .
-
-
-###  http://linked.data.gov.au/def/phs#hostTaxonConceptID
-:hostTaxonConceptID rdf:type owl:NamedIndividual ,
-                             :Host ;
-                    rdfs:comment "Automatically populated by TaxaaS. Unsure whether we need taxonID AND taxonConceptID" ,
-                                 "Identifier for taxonomic CONCEPT (not nomenclature) of the host" ;
-                    rdfs:label "Host Taxon Concept ID" .
-
-
-###  http://linked.data.gov.au/def/phs#hostTaxonID
-:hostTaxonID rdf:type owl:NamedIndividual ,
-                      :Host ;
-             rdfs:comment "Automatically populated by TaxaaS. Unsure whether we need taxonID AND taxonConceptID" ,
-                          "Identifier for taxon properties (including the following) of the host" ;
-             rdfs:label "Host Taxon ID" .
-
-
-###  http://linked.data.gov.au/def/phs#hostTaxonomicReferenceSource
-:hostTaxonomicReferenceSource rdf:type owl:NamedIndividual ,
-                                       dcterms:Dataset ;
-                              rdfs:comment "Placeholder Class relationship." ,
-                                           "The URI of the taxonomic reference system used for this host" ;
-                              rdfs:label "Host Taxonomic Reference Source" .
-
-
-###  http://linked.data.gov.au/def/phs#targetCommonName
-:targetCommonName rdf:type owl:NamedIndividual ,
-                           :TargetPest ;
-                  rdfs:comment "I'd prefer to use targetVernacularName and then do a 'common sameas vernacular'" ,
-                               "The vernacular (common) name for the Target Pest" ;
-                  rdfs:label "Target Common Name" .
-
-
-###  http://linked.data.gov.au/def/phs#targetScientificName
-:targetScientificName rdf:type owl:NamedIndividual ,
-                               :TargetPest ;
-                      rdfs:comment "I changed this from taxonName to align with DwC'" ,
-                                   "The scientific name of the target pest" ;
-                      rdfs:label "Target Scientific Name" .
-
-
-###  http://linked.data.gov.au/def/phs#targetTaxonConceptID
-:targetTaxonConceptID rdf:type owl:NamedIndividual ,
-                               :TargetPest ;
-                      rdfs:comment "Automatically populated by TaxaaS. Unsure whether we need taxonID AND taxonConceptID" ,
-                                   "Identifier for taxonomic CONCEPT (not nomenclature) of the Target Pest" ;
-                      rdfs:label "Target Taxon Concept ID" .
-
-
-###  http://linked.data.gov.au/def/phs#targetTaxonID
-:targetTaxonID rdf:type owl:NamedIndividual ,
-                        :TargetPest ;
-               rdfs:comment "Automatically populated by TaxaaS. Unsure whether we need taxonID AND taxonConceptID" ,
-                            "Identifier for taxon proprties (including the following) of the Target Pest" ;
-               rdfs:label "Target Taxon ID" .
-
-
-###  http://linked.data.gov.au/def/phs#targetTaxonomicReferenceSource
-:targetTaxonomicReferenceSource rdf:type owl:NamedIndividual ,
-                                         dcterms:Dataset ;
-                                rdfs:comment "Placeholder Class relationship" ,
-                                             "The name of the taxonomic reference system used for this target" ;
-                                rdfs:label "Target Taxonomic Reference Source" .
-
-
 ###  http://linked.data.gov.au/org/awe
 <http://linked.data.gov.au/org/awe> rdf:type owl:NamedIndividual ,
                                              sdo:Organization ;
@@ -312,31 +292,7 @@ sdo:Person rdf:type owl:Class .
 <https://www.csiro.au.com> rdf:type owl:NamedIndividual ,
                                     sdo:Organization ;
                            sdo:name "CSIRO" ;
-                           sdo:url <https://www.csiro.au.com> .
-
-
-###  https://example.org/def/fruitflyAnotherOne
-ffly:AnotherOne rdf:type owl:NamedIndividual ,
-                         :TrapType .
-
-
-###  https://example.org/def/fruitflyLyndfield
-ffly:Lyndfield rdf:type owl:NamedIndividual ,
-                        :TrapType .
-
-
-###  https://example.org/def/fruitflyPeyton
-ffly:Peyton rdf:type owl:NamedIndividual ,
-                     :TrapType .
-
-
-###  https://example.org/def/fruitflyTrapTypes
-ffly:TrapTypes rdf:type owl:NamedIndividual ,
-                        skos:Collection ;
-               rdfs:label "Collection of allowed names for trap types" ;
-               skos:member ffly:AnotherOne ,
-                           ffly:Lyndfield ,
-                           ffly:Peyton .
+                           sdo:url <https://www.csiro.au> .
 
 
 ###  https://orcid.org/0000-0002-3884-3420
@@ -347,6 +303,34 @@ ffly:TrapTypes rdf:type owl:NamedIndividual ,
                                         sdo:jobTitle "Research Scientist" ;
                                         sdo:name "Simon J.D. Cox" .
 
+
+[ rdf:type sdo:Person ;
+  sdo:affiliation <http://linked.data.gov.au/org/awe> ;
+  sdo:email <mailto:stephen.pratt@awe.gov.au> ;
+  sdo:jobTitle "Project Manager: Implementation of Plant Health Surveillance Data Store" ;
+  sdo:name "Stephen J. Pratt"
+] .
+
+[ rdf:type sdo:Person ;
+   sdo:affiliation <http://linked.data.gov.au/org/awe> ;
+   sdo:email <mailto:stephen.pratt@awe.gov.au> ;
+   sdo:jobTitle "Project Manager: Implementation of Plant Health Surveillance Data Store" ;
+   sdo:name "Stephen J. Pratt"
+ ] .
+
+[ rdf:type sdo:Person ;
+   sdo:affiliation <http://linked.data.gov.au/org/awe> ;
+   sdo:email <mailto:stephen.pratt@awe.gov.au> ;
+   sdo:jobTitle "Project Manager: Implementation of Plant Health Surveillance Data Store" ;
+   sdo:name "Stephen J. Pratt"
+ ] .
+
+[ rdf:type sdo:Person ;
+   sdo:affiliation <http://linked.data.gov.au/org/awe> ;
+   sdo:email <mailto:stephen.pratt@awe.gov.au> ;
+   sdo:jobTitle "Project Manager: Implementation of Plant Health Surveillance Data Store" ;
+   sdo:name "Stephen J. Pratt"
+ ] .
 
 #################################################################
 #    Annotations
