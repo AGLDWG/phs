@@ -127,7 +127,7 @@ sdo:url rdf:type owl:AnnotationProperty .
 
 ###  http://linked.data.gov.au/def/phs#taxonID
 :taxonID rdf:type owl:DatatypeProperty ;
-         rdfs:domain :Taxon ;
+         rdfs:domain dwc:Taxon ;
          rdfs:comment "An identifier of the taxon in the taxonomic reference system" ;
          rdfs:label "taxon ID" .
 
@@ -161,7 +161,7 @@ sdo:url rdf:type owl:AnnotationProperty .
 
 ###  http://linked.data.gov.au/def/phs#Host
 :Host rdf:type owl:Class ;
-      rdfs:subClassOf :Taxon ,
+      rdfs:subClassOf dwc:Taxon ,
                       :Stratum ;
       rdfs:comment "A Plant or Animal (a Taxon) that is also a Stratum." ;
       owl:disjointWith :Substrate ;
