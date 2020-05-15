@@ -2,3 +2,5 @@
 
 # exclude Mac indexes
 .DS_Store
+
+catalog*
