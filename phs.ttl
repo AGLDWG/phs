@@ -111,24 +111,39 @@ sdo:url rdf:type owl:AnnotationProperty .
 
 ###  http://linked.data.gov.au/def/phs#blahProperty
 :blahProperty rdf:type owl:DatatypeProperty ;
-              rdfs:domain :Host ,
-                          :TargetPest ;
+                  rdfs:domain [
+                        rdf:type owl:Class ;
+                        owl:unionOf (
+                        :Host
+                        :TargetPest
+                        ) ;
+                  ] ;
               rdfs:range xsd:string ;
               rdfs:label "blahLabel" .
 
 
 ###  http://linked.data.gov.au/def/phs#taxonomicReferenceSource
 :taxonomicReferenceSource rdf:type owl:DatatypeProperty ;
-                          rdfs:domain :Host ,
-                                      :TargetPest ;
+                              rdfs:domain [
+                                    rdf:type owl:Class ;
+                                    owl:unionOf (
+                                    :Host
+                                    :TargetPest
+                                    ) ;
+                              ] ;
                           rdfs:comment "" ;
                           rdfs:label "taxonomic reference source" .
 
 
 ###  http://linked.data.gov.au/def/phs#vernacularName
 :vernacularName rdf:type owl:DatatypeProperty ;
-                rdfs:domain :Host ,
-                            :TargetPest ;
+                  rdfs:domain [
+                        rdf:type owl:Class ;
+                        owl:unionOf (
+                        :Host
+                        :TargetPest
+                        ) ;
+                  ] ;
                 rdfs:comment "The vernacular (common) name for the host or pest" ;
                 rdfs:label "vernacular name" .
 
@@ -151,7 +166,7 @@ sdo:url rdf:type owl:AnnotationProperty .
       rdfs:comment "A Plant or Animal (a Taxon) that is also a Stratum." ;
       owl:disjointWith :Substrate ;
       rdfs:label "Host" ;
-      skos:example "Bee; a Varroa Mite may be found in a bee's trachea"
+      skos:example "Bee; a Varroa Mite may be found in a bee's trachea" .
 
 
 ###  http://linked.data.gov.au/def/phs#InsectTrap
