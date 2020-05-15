@@ -125,13 +125,6 @@ sdo:url rdf:type owl:AnnotationProperty .
                 rdfs:label "scientific name" .
 
 
-###  http://linked.data.gov.au/def/phs#taxonID
-:taxonID rdf:type owl:DatatypeProperty ;
-         rdfs:domain dwc:Taxon ;
-         rdfs:comment "An identifier of the taxon in the taxonomic reference system" ;
-         rdfs:label "taxon ID" .
-
-
 ###  http://linked.data.gov.au/def/phs#taxonomicReferenceSource
 :taxonomicReferenceSource rdf:type owl:DatatypeProperty ;
                           rdfs:domain :Host ,
