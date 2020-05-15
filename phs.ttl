@@ -102,7 +102,7 @@ sdo:url rdf:type owl:AnnotationProperty .
           rdfs:domain :InsectTrap ;
           rdfs:range :TrapType ;
           rdfs:comment "The make or model of a trap" ;
-          rdfs:label "trap Type" .
+          rdfs:label "trap type" .
 
 
 #################################################################
@@ -121,15 +121,14 @@ sdo:url rdf:type owl:AnnotationProperty .
 :scientificName rdf:type owl:DatatypeProperty ;
                 rdfs:domain :Host ,
                             :TargetPest ;
-                rdfs:comment "The scientific name for the host or pest" ;
+                rdfs:comment "A scientific name (latin name) for a host or pest is its binominal nomenclature genus and species" ;
                 rdfs:label "scientific name" .
 
 
 ###  http://linked.data.gov.au/def/phs#taxonID
 :taxonID rdf:type owl:DatatypeProperty ;
-         rdfs:domain :Host ,
-                     :TargetPest ;
-         rdfs:comment "Identifier of the taxon in the taxonomic reference system" ;
+         rdfs:domain :Taxon ;
+         rdfs:comment "An identifier of the taxon in the taxonomic reference system" ;
          rdfs:label "taxon ID" .
 
 
@@ -156,21 +155,24 @@ sdo:url rdf:type owl:AnnotationProperty .
 ###  http://linked.data.gov.au/def/phs#FruitFlyTrap
 :FruitFlyTrap rdf:type owl:Class ;
               rdfs:subClassOf :InsectTrap ;
-              rdfs:comment "A trap designed to catch economically important fruit flies." ;
+              rdfs:comment "An Insect Trap that catches fruit flies." ;
               rdfs:label "Fruit Fly Trap" .
 
 
 ###  http://linked.data.gov.au/def/phs#Host
 :Host rdf:type owl:Class ;
-      rdfs:subClassOf :Plant ,
+      rdfs:subClassOf :Taxon ,
                       :Stratum ;
-      owl:disjointWith :Substrate .
+      rdfs:comment "A Plant or Animal (a Taxon) that is also a Stratum." ;
+      owl:disjointWith :Substrate ;
+      rdfs:label "Host" ;
+      skos:example "Bee; a Varroa Mite may be found in a bee's trachea"
 
 
 ###  http://linked.data.gov.au/def/phs#InsectTrap
 :InsectTrap rdf:type owl:Class ;
             rdfs:subClassOf :Trap ;
-            rdfs:comment "A device that catches or collects insects" ;
+            rdfs:comment "A Trap that catches insects" ;
             rdfs:label "Insect Trap" ;
             rdfs:seeAlso <http://dbpedia.org/resource/Insect_trap> .
 
@@ -190,26 +192,28 @@ In this case, a superclass of e.g. 'bait' could be created.""" ;
 
 ###  http://linked.data.gov.au/def/phs#Stratum
 :Stratum rdf:type owl:Class ;
-         rdfs:comment "Thing or material on which a pest is searched for or found. A superclass for host or substrate. Stratum is a 'terminological', not an 'instance' class; observation records ('instances') should use either 'Host' or 'Substrate'." ;
+         rdfs:comment "Thing or material on which a pest is searched for or found. Stratum is abstract: instances should use either 'Host' or 'Substrate'." ;
          rdfs:label "Stratum" .
 
 
 ###  http://linked.data.gov.au/def/phs#Substrate
 :Substrate rdf:type owl:Class ;
            rdfs:subClassOf :Stratum ;
-           rdfs:comment "A (usually) non-living thing on which a pest may be found. Compare with Host, for which the taxonomic identity of the host is a) known and b) considered germaine." ;
+           rdfs:comment "A Stratum that is not a Plant." ;
            rdfs:label "Substrate" .
 
 
 ###  http://linked.data.gov.au/def/phs#TargetPest
 :TargetPest rdf:type owl:Class ;
-            rdfs:subClassOf dwc:Taxon .
+            rdfs:subClassOf dwc:Taxon ;
+            rdfs:comment "A Taxon of pest that is the subject of surveillance. Can have more than one target." ;
+            rdfs:label "Target Pest" .
 
 
 ###  http://linked.data.gov.au/def/phs#Trap
 :Trap rdf:type owl:Class ;
       rdfs:subClassOf sosa:Sampler ;
-      rdfs:comment "A device that catches or collects organisms or evidence of them" ;
+      rdfs:comment "A device that catches or collects organisms or evidence of them." ;
       rdfs:label "Trap" .
 
 
@@ -255,16 +259,6 @@ sdo:Person rdf:type owl:Class .
 #    Individuals
 #################################################################
 
-###  http://linked.data.gov.au/def/phs#Host
-:Host rdf:type owl:NamedIndividual ,
-               dwc:Taxon .
-
-
-###  http://linked.data.gov.au/def/phs#TargetPest
-:TargetPest rdf:type owl:NamedIndividual ,
-                     dwc:Taxon .
-
-
 ###  http://linked.data.gov.au/org/awe
 <http://linked.data.gov.au/org/awe> rdf:type owl:NamedIndividual ,
                                              sdo:Organization ;
@@ -302,48 +296,6 @@ sdo:Person rdf:type owl:Class .
                                         sdo:email <mailto:simon.cox@surroundaustralia.com> ;
                                         sdo:jobTitle "Research Scientist" ;
                                         sdo:name "Simon J.D. Cox" .
-
-
-[ rdf:type sdo:Person ;
-  sdo:affiliation <http://linked.data.gov.au/org/awe> ;
-  sdo:email <mailto:stephen.pratt@awe.gov.au> ;
-  sdo:jobTitle "Project Manager: Implementation of Plant Health Surveillance Data Store" ;
-  sdo:name "Stephen J. Pratt"
-] .
-
-[ rdf:type sdo:Person ;
-   sdo:affiliation <http://linked.data.gov.au/org/awe> ;
-   sdo:email <mailto:stephen.pratt@awe.gov.au> ;
-   sdo:jobTitle "Project Manager: Implementation of Plant Health Surveillance Data Store" ;
-   sdo:name "Stephen J. Pratt"
- ] .
-
-[ rdf:type sdo:Person ;
-   sdo:affiliation <http://linked.data.gov.au/org/awe> ;
-   sdo:email <mailto:stephen.pratt@awe.gov.au> ;
-   sdo:jobTitle "Project Manager: Implementation of Plant Health Surveillance Data Store" ;
-   sdo:name "Stephen J. Pratt"
- ] .
-
-[ rdf:type sdo:Person ;
-   sdo:affiliation <http://linked.data.gov.au/org/awe> ;
-   sdo:email <mailto:stephen.pratt@awe.gov.au> ;
-   sdo:jobTitle "Project Manager: Implementation of Plant Health Surveillance Data Store" ;
-   sdo:name "Stephen J. Pratt"
- ] .
-
-#################################################################
-#    Annotations
-#################################################################
-
-:Host rdfs:label "Host" ;
-       rdfs:comment "A plant on (or in) which a pest may be found. " ,
-                    "The host taxon that is is the subject of surveillance. Can have more than one host." ,
-                    "Note: there may be cases where the host is not a plant. e.g. a Varroa Mite found in a bee's trachea. For consideration: expand the definition of host to include non-plants OR create a new class for non-plant hosts. (SJP votes for the former)." .
-
-
-:TargetPest rdfs:label "Target Pest" ;
-            rdfs:comment "The pest taxon that is is the subject of surveillance. Can have more than one target." .
 
 
 ###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
