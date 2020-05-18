@@ -18,14 +18,18 @@ PREFIX role: <http://www.w3.org/ns/prov#>
     dcterms:description """This ontology is a data model for plant health surveillance conducted by Australian biosecurity agencies and industry to maintain food quality, prevent the spread of pests and facilitate trade in foodstuffs."""@en ;
     prof:hasResource [
         prof:hasRole role:guidance ;
+        dcterms:format "text/html" ;
         prof:hasArtifact <http://linked.data.gov.au/def/phs> ;
     ] ,
     [
         prof:hasRole role:schema ;
+        dcterms:format "text/turtle" ;
         prof:hasArtifact <http://linked.data.gov.au/def/phs.ttl> ;
     ] ,
     [
         prof:hasRole role:validator ;
+        dcterms:format "text/turtle" ;
+        dcterms:conformsTo <https://www.w3.org/TR/shacl/> ;
         prof:hasArtifact <http://linked.data.gov.au/def/validator.shape.ttl> ;
     ] ;
 .
