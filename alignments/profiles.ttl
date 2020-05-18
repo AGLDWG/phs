@@ -27,7 +27,7 @@ PREFIX role: <http://www.w3.org/ns/prov#>
         prof:hasArtifact <http://linked.data.gov.au/def/phs.ttl> ;
     ] ,
     [
-        prof:hasRole role:validator ;
+        prof:hasRole role:validation ;
         dcterms:format "text/turtle" ;
         dcterms:conformsTo <https://www.w3.org/TR/shacl/> ;
         prof:hasArtifact <http://linked.data.gov.au/def/validator.shape.ttl> ;
