@@ -5,6 +5,8 @@
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix oztax: <https://uat-ag-bie.oztaxa.com/ws/taxon/> .
+@prefix phs: <http://linked.data.gov.au/def/phs#> .
+@prefix tpg: <http://linked.data.gov.au/def/phs/voc/tpg/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 <http://linked.data.gov.au/def/phs/voc/traps> 
@@ -28,12 +30,32 @@
 .
 
 :ant-refuge
-    a skos:Concept ;
+    a skos:Concept , phs:Trap ;
     skos:prefLabel "Ant refuge"@en ;    
     skos:definition ""@en ;
     skos:notation "" ;
     skos:inScheme <http://linked.data.gov.au/def/phs/voc/traps> ;
     skos:topConceptOf <http://linked.data.gov.au/def/phs/voc/traps> ;
+    phs:targetsPest tpg:exotic-invasive-ants ;  # crosslink!!!!
+.
+
+# broad terms with a narrower term
+<http://linked.data.gov.au/def/phs/voc/traps/snail-refuge>
+    a skos:Concept ;
+    skos:prefLabel "Snail Refuge"@en ;    
+    skos:definition ""@en ;
+    skos:inScheme <http://linked.data.gov.au/def/phs/voc/traps> ;
+    skos:topConceptOf <http://linked.data.gov.au/def/phs/voc/traps> ;
+    skos:narrower :besser-block ;  # inverse of below term's broader
+.
+
+# narrower term of above
+<http://linked.data.gov.au/def/phs/voc/traps/besser-block>
+    a skos:Concept ;
+    skos:prefLabel "Besser Block"@en ;    
+    skos:definition ""@en ;
+    skos:inScheme <http://linked.data.gov.au/def/phs/voc/traps> ;
+    skos:broader :snail-refuge ;  # inverse of above term's narrower
 .
 
 
