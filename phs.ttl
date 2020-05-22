@@ -29,6 +29,7 @@
                                                        sdo:name "Stephen J. Pratt"
                                                      ] ;
                                      dcterms:modified "2020-05-15"^^xsd:date ;
+                                     dcterms:publisher 
                                      vann:preferredNamespacePrefix "phs" ;
                                      rdfs:comment "An ontology about surveillance to determine plant health."@en ;
                                      rdfs:label "Plant Health Surveillance Ontology"@en ;
@@ -270,6 +271,11 @@ sdo:Person rdf:type owl:Class .
                                 sdo:name "SURROUND Australia Pty Ltd" ;
                                 sdo:url <https://surroundaustralia.com> .
 
+###  http://linked.data.gov.au/org/dawe
+<http://linked.data.gov.au/org/dawe> rdf:type owl:NamedIndividual ,
+                                         sdo:Organization ;
+                                sdo:name "Department of Agriculture, Water and the Environment" ;
+                                sdo:url <https://www.awe.gov.au/> .
 
 ###  https://www.csiro.au.com
 <https://www.csiro.au.com> rdf:type owl:NamedIndividual ,
