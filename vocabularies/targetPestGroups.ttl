@@ -1,0 +1,72 @@
+@prefix : <http://linked.data.gov.au/def/phs/voc/tpg/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sdo: <https://schema.org/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix oztax: <https://uat-ag-bie.oztaxa.com/ws/taxon/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://linked.data.gov.au/def/phs/voc/tpg> 
+    a owl:Ontology , skos:ConceptScheme ;
+    dcterms:contributor <http://orcid.org/0000-0002-8742-7730> ;
+    dcterms:created "2020-05-22"^^xsd:date ;
+    dcterms:creator [ a sdo:Person ;
+                    sdo:affiliation <http://linked.data.gov.au/org/awe> ;
+                    sdo:email <mailto:stephen.pratt@awe.gov.au> ;
+                    sdo:jobTitle "Project Manager: Implementation of Plant Health Surveillance Data Store" ;
+                    sdo:name "Stephen J. Pratt"
+                    ] ;
+    dcterms:modified "2020-05-22"^^xsd:date ;
+    dcterms:publisher <http://linked.data.gov.au/org/dawe> ;
+    dcterms:source "??" ;
+    skos:definition "Taxons of pests targeted by PHS traps"@en ;
+    skos:prefLabel "Target Pest Groups"@en ;
+    owl:versionIRI <http://linked.data.gov.au/def/phs/voc/tpg/1.0> ;
+    skos:hasTopConcept 
+        oztax:53362 ,
+        oztax:59671 ,
+        oztax:63096 ;
+.
+
+oztax:53362
+    a skos:Concept ;
+    skos:prefLabel "Anoplophora"@en ;    
+    skos:altLabel "Anoplophora"@la ;
+    skos:definition "Anoplophora is a genus of beetles in the longhorn beetle family. They are native to Asia. Most are large and colorful and thus are depicted in artwork and sought after by beetle collectors. The genus also includes several notorious pest insects."@en ;
+    skos:notation "" ;
+    skos:inScheme <http://linked.data.gov.au/def/phs/voc/tpg> ;
+    skos:topConceptOf <http://linked.data.gov.au/def/phs/voc/tpg> ;
+    owl:sameAs <https://uat-ag-bie.oztaxa.com/ws/taxon/53362> ;
+.
+
+oztax:59671
+    a skos:Concept ;
+    skos:prefLabel "Corn Leafworm"@en ;
+    skos:altLabel "Spodoptera frugiperda"@la , "Fall armyworm"@en ; 
+    skos:definition "The fall armyworm is a species in the order Lepidoptera and is the larval life stage of a fall armyworm moth. The term 'armyworm' can refer to several species, often describing the large-scale invasive behavior of the species' larval stage."@en ;
+    skos:inScheme <http://linked.data.gov.au/def/phs/voc/tpg> ;
+    skos:topConceptOf <http://linked.data.gov.au/def/phs/voc/tpg> ;
+.
+
+oztax:63096
+    a skos:Concept ;
+    skos:prefLabel "Fall and Southern armyworm"@en ;
+    skos:altLabel "Southern Armyworm"@en , "Semi-Tropical Armyworm"@en , "Spodoptera eridania"@la ;
+    skos:definition "Spodoptera eridania is a moth, the worms of which are known to be a cropping pest. They are one of the most important defoliators in the tropical and subtropical regions of the western hemisphere that feed heavily on plants while they are young, often resulting in skeleton leaves on their food plants."@en ;
+    skos:inScheme <http://linked.data.gov.au/def/phs/voc/tpg> ;
+    skos:topConceptOf <http://linked.data.gov.au/def/phs/voc/tpg> ;
+. 
+
+
+<http://linked.data.gov.au/org/dawe> a owl:NamedIndividual ,
+                                         sdo:Organization ;
+                                sdo:name "Department of Agriculture, Water and the Environment" ;
+                                sdo:url <https://www.awe.gov.au/> .
+
+<http://orcid.org/0000-0002-8742-7730> a owl:NamedIndividual ,
+                                                sdo:Person ;
+                                       sdo:affiliation <https://surroundaustralia.com> ;
+                                       sdo:email <mailto:nicholas.car@surroundaustralia.com> ;
+                                       sdo:jobTitle "Data Systems Architect" ;
+                                       sdo:name "Nicholas J. Car" .                                
