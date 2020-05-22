@@ -1,7 +1,8 @@
 @prefix : <http://linked.data.gov.au/def/phs/voc/tpg/> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
-@prefix oztax: <https://uat-ag-bie.oztaxa.com/ws/taxon/> .
+@prefix taxaas: <https://uat-ag-bie.oztaxa.com/ws/taxon/> .
 @prefix phs: <http://linked.data.gov.au/def/phs#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix sdo: <https://schema.org/> .
@@ -24,10 +25,6 @@
     skos:definition "Taxons and groupings of taxa which are pests as per PHS"@en ;
     skos:prefLabel "Target Pest Groups"@en ;
     owl:versionIRI <http://linked.data.gov.au/def/phs/voc/tpg/1.0> ;
-    skos:hasTopConcept 
-        :anoplophora ,
-        :corn-leafworm ,
-        :fall-and-southern-armyworm ;
 .
 
 :anoplophora
@@ -35,13 +32,9 @@
     skos:prefLabel "Anoplophora"@en ;    
     skos:altLabel "Anoplophora"@la ;
     skos:definition "Anoplophora is a genus of beetles in the longhorn beetle family. They are native to Asia. Most are large and colorful and thus are depicted in artwork and sought after by beetle collectors. The genus also includes several notorious pest insects."@en ;
-    # skos:notation "53362"^^oxtaxa ;
-    # skos:notation "tpg-1" ;
-    skos:inScheme <http://linked.data.gov.au/def/phs/voc/tpg> ;
+    # skos:notation "53362"^^taxaas ;
     skos:topConceptOf <http://linked.data.gov.au/def/phs/voc/tpg> ;
-    owl:sameAs oztax:53362 ;
-    # skos:broader <> ;
-    # skos:narrower <> ;
+    dwc:taxonID  taxaas:53362 ;
     # dcterms:modified "2020-05-22"^^xsd:date ;
     # skos:editorNote "fjewrhferkwjhf" ;
     # dcterms:isReplacedBy <x>
@@ -50,14 +43,14 @@
 # <x> a skos:Concepts....
 #  dcterms:replaces :53362
 
-:corn-leafworm
+:fall-armyworm
     a skos:Concept , phs:TargetPest ;
-    skos:prefLabel "Corn Leafworm"@en ;
+    skos:prefLabel "Fall armyworm"@en ;
     skos:altLabel "Spodoptera frugiperda"@la , "Fall armyworm"@en ; 
     skos:definition "The fall armyworm is a species in the order Lepidoptera and is the larval life stage of a fall armyworm moth. The term 'armyworm' can refer to several species, often describing the large-scale invasive behavior of the species' larval stage."@en ;
     skos:inScheme <http://linked.data.gov.au/def/phs/voc/tpg> ;
     skos:topConceptOf <http://linked.data.gov.au/def/phs/voc/tpg> ;
-    owl:sameAs oztax:59671 ;
+    dwc:taxonid taxaas:59671 ;
 .
 
 :fall-and-southern-armyworm
@@ -67,8 +60,11 @@
     skos:definition "Spodoptera eridania is a moth, the worms of which are known to be a cropping pest. They are one of the most important defoliators in the tropical and subtropical regions of the western hemisphere that feed heavily on plants while they are young, often resulting in skeleton leaves on their food plants."@en ;
     skos:inScheme <http://linked.data.gov.au/def/phs/voc/tpg> ;
     skos:topConceptOf <http://linked.data.gov.au/def/phs/voc/tpg> ;
-    owl:sameAs oztax:63096 ;
+    dwc:taxonid taxaas:59671 ;  # can we do this, have two same as properties?
+    dwc:taxonid taxaas:63096 ;
 . 
+
+
 
 
 <http://linked.data.gov.au/org/dawe> a owl:NamedIndividual ,
