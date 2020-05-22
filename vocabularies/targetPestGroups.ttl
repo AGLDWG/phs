@@ -1,10 +1,11 @@
 @prefix : <http://linked.data.gov.au/def/phs/voc/tpg/> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix oztax: <https://uat-ag-bie.oztaxa.com/ws/taxon/> .
+@prefix phs: <http://linked.data.gov.au/def/phs#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix sdo: <https://schema.org/> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
-@prefix owl: <http://www.w3.org/2002/07/owl#> .
-@prefix oztax: <https://uat-ag-bie.oztaxa.com/ws/taxon/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 <http://linked.data.gov.au/def/phs/voc/tpg> 
@@ -30,7 +31,7 @@
 .
 
 oztax:53362
-    a skos:Concept ;
+    a skos:Concept , phs:TargetPest ;
     skos:prefLabel "Anoplophora"@en ;    
     skos:altLabel "Anoplophora"@la ;
     skos:definition "Anoplophora is a genus of beetles in the longhorn beetle family. They are native to Asia. Most are large and colorful and thus are depicted in artwork and sought after by beetle collectors. The genus also includes several notorious pest insects."@en ;
@@ -41,7 +42,7 @@ oztax:53362
 .
 
 oztax:59671
-    a skos:Concept ;
+    a skos:Concept , phs:TargetPest ;
     skos:prefLabel "Corn Leafworm"@en ;
     skos:altLabel "Spodoptera frugiperda"@la , "Fall armyworm"@en ; 
     skos:definition "The fall armyworm is a species in the order Lepidoptera and is the larval life stage of a fall armyworm moth. The term 'armyworm' can refer to several species, often describing the large-scale invasive behavior of the species' larval stage."@en ;
@@ -50,7 +51,7 @@ oztax:59671
 .
 
 oztax:63096
-    a skos:Concept ;
+    a skos:Concept , phs:TargetPest ;
     skos:prefLabel "Fall and Southern armyworm"@en ;
     skos:altLabel "Southern Armyworm"@en , "Semi-Tropical Armyworm"@en , "Spodoptera eridania"@la ;
     skos:definition "Spodoptera eridania is a moth, the worms of which are known to be a cropping pest. They are one of the most important defoliators in the tropical and subtropical regions of the western hemisphere that feed heavily on plants while they are young, often resulting in skeleton leaves on their food plants."@en ;
