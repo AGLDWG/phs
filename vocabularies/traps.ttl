@@ -4,12 +4,13 @@
 @prefix sdo: <https://schema.org/> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
-@prefix oztax: <https://uat-ag-bie.oztaxa.com/ws/taxon/> .
+@prefix taxaas: <https://uat-ag-bie.oztaxa.com/ws/taxon/> .
 @prefix phs: <http://linked.data.gov.au/def/phs#> .
 @prefix tpg: <http://linked.data.gov.au/def/phs/voc/tpg/> .
+@prefix traps: <http://linked.data.gov.au/def/phs/voc/traps/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<http://linked.data.gov.au/def/phs/voc/traps> 
+:trap 
     a owl:Ontology , skos:ConceptScheme ;
     dcterms:contributor <http://orcid.org/0000-0002-8742-7730> ;
     dcterms:created "2020-05-22"^^xsd:date ;
@@ -22,11 +23,9 @@
     dcterms:modified "2020-05-22"^^xsd:date ;
     dcterms:publisher <http://linked.data.gov.au/org/dawe> ;
     dcterms:source "??" ;
-    skos:definition "Traps used to catch crop pest insects"@en ;
+    skos:definition "Traps used to catch plant health pests"@en ;
     skos:prefLabel "Traps"@en ;
     owl:versionIRI <http://linked.data.gov.au/def/phs/voc/traps/1.0> ;
-    skos:hasTopConcept 
-        :ant-refuge ;
 .
 
 :ant-refuge
@@ -34,29 +33,186 @@
     skos:prefLabel "Ant refuge"@en ;    
     skos:definition ""@en ;
     skos:notation "" ;
-    skos:inScheme <http://linked.data.gov.au/def/phs/voc/traps> ;
-    skos:topConceptOf <http://linked.data.gov.au/def/phs/voc/traps> ;
-    phs:targetsPest tpg:exotic-invasive-ants ;  # crosslink!!!!
+    skos:inScheme :traps ;
+    skos:topConceptOf :traps;
+    phs:targetsPest tpg:ants ;  # crosslink!!!!
+.
+:vial
+    a skos:Concept , phs:Trap ;
+    skos:prefLabel "Ant refuge - vial"@en ;    
+    skos:definition ""@en ;
+    skos:notation "" ;
+    skos:inScheme :traps ;
+    phs:targetsPest tpg:ants ;
+    skos:broader :ant-refuge
 .
 
 # broad terms with a narrower term
-<http://linked.data.gov.au/def/phs/voc/traps/snail-refuge>
-    a skos:Concept ;
-    skos:prefLabel "Snail Refuge"@en ;    
-    skos:definition ""@en ;
-    skos:inScheme <http://linked.data.gov.au/def/phs/voc/traps> ;
-    skos:topConceptOf <http://linked.data.gov.au/def/phs/voc/traps> ;
-    skos:narrower :besser-block ;  # inverse of below term's broader
+:snail-refuge
+    a skos:Concept , phs:Trap ;
+    skos:prefLabel "Snail refuge"@en ;    
+    skos:definition "Objects that can be used to trap snails"@en ;
+    skos:inScheme :traps ;
+    skos:topConceptOf :traps;
 .
 
-# narrower term of above
-<http://linked.data.gov.au/def/phs/voc/traps/besser-block>
-    a skos:Concept ;
-    skos:prefLabel "Besser Block"@en ;    
-    skos:definition ""@en ;
-    skos:inScheme <http://linked.data.gov.au/def/phs/voc/traps> ;
+:besser-block
+    a skos:Concept , phs:Trap ;
+    skos:prefLabel "Besser block"@en ;    
+    skos:definition "A concrete block that is cheap and common, within which snails may lodge"@en ;
+    skos:inScheme :traps ;
     skos:broader :snail-refuge ;  # inverse of above term's narrower
+    phs:targetsPest tpg:snails
 .
+
+:polystyrene
+    a skos:Concept , phs:Trap ;
+    skos:prefLabel "polystyrene"@en ;    
+    skos:definition "Expanded polystyrene items of arbitrary dimensions"@en ;
+    skos:inScheme :traps ;
+    skos:broader :snail-refuge ;  # inverse of above term's narrower
+    phs:targetsPest tpg:snails
+.
+
+:tile
+    a skos:Concept , phs:Trap ;
+    skos:prefLabel "tile"@en ;    
+    skos:definition "Ceramic or concrete tiles"@en ;
+    skos:inScheme :traps ;
+    skos:broader :snail-refuge ; 
+    phs:targetsPest tpg:snails
+.
+
+:sticky
+    a skos:Concept , phs:Trap ;
+    skos:prefLabel "Sticky trap"@en ;    
+    skos:definition ""@en ;
+    skos:inScheme :traps ;
+    skos:topConceptOf :traps;
+.
+
+:clear
+    a skos:Concept , phs:Trap ;
+    skos:prefLabel "Clear sticky trap"@en ;    
+    skos:definition ""@en ;
+    skos:inScheme :traps ;
+    skos:broader :sticky ; 
+    phs:targetsPest tpg:bmsb ;
+    phs:targetsPest tpg:agm ;
+.
+
+:yellow
+    a skos:Concept , phs:Trap ;
+    skos:prefLabel "Yellow sticky trap"@en ;    
+    skos:definition ""@en ;
+    skos:inScheme :traps ;
+    skos:broader :sticky ; 
+    phs:targetsPest tpg:bmsb ;
+    phs:targetsPest tpg:agm ;
+    phs:targetsPest tpg:hlb-vectors ;
+    phs:targetsPest tpg:xylella-vectors ;
+.
+
+:bucket
+    a skos:Concept , phs:Trap ;
+    skos:prefLabel "Bucket trap"@en ;    
+    skos:definition ""@en ;
+    skos:topConceptOf :traps;
+    phs:targetsPest tpg:fall-and-southern-armyworm ;
+.
+
+:delta
+    a skos:Concept , phs:Trap ;
+    skos:prefLabel "Delta trap"@en ;    
+    skos:definition ""@en ;
+    skos:topConceptOf :traps;
+    phs:targetsPest tpg:fall-and-southern-armyworm ;
+.
+
+:heliothis
+    a skos:Concept , phs:Trap ;
+    skos:prefLabel "Heliothis mesh net trap"@en ;    
+    skos:definition ""@en ;
+    skos:topConceptOf :traps;
+    phs:targetsPest tpg:fall-and-southern-armyworm ;
+.
+
+:homemade
+    a skos:Concept , phs:Trap ;
+    skos:prefLabel "Homemade trap"@en ;    
+    skos:definition ""@en ;
+    skos:topConceptOf :traps;
+    phs:targetsPest tpg:fall-and-southern-armyworm ;
+.
+
+
+:dome
+    a skos:Concept , phs:Trap ;
+    skos:prefLabel "Dome trap"@en ;    
+    skos:definition ""@en ;
+    skos:topConceptOf :traps;
+    phs:targetsPest tpg:khapra ;
+.
+:wall
+    a skos:Concept , phs:Trap ;
+    skos:prefLabel "Wall trap"@en ;    
+    skos:definition ""@en ;
+    skos:topConceptOf :traps;
+    phs:targetsPest tpg:khapra ;
+.
+
+:lynfield
+    a skos:Concept , phs:Trap ;
+    skos:prefLabel "Lynfield trap"@en ;    
+    skos:definition ""@en ;
+    skos:topConceptOf :traps;
+    phs:targetsPest tpg:fruit-fly ;
+.
+
+:patton
+    a skos:Concept , phs:Trap ;
+    skos:prefLabel "Patton trap"@en ;    
+    skos:definition ""@en ;
+    skos:topConceptOf :traps;
+    phs:targetsPest tpg:fruit-fly ;
+.
+
+:steiner
+    a skos:Concept , phs:Trap ;
+    skos:prefLabel "steiner trap"@en ;    
+    skos:definition ""@en ;
+    skos:topConceptOf :traps;
+    phs:targetsPest tpg:fruit-fly ;
+.
+
+:panel
+    a skos:Concept , phs:Trap ;
+    skos:prefLabel "Panel trap"@en ;    
+    skos:definition ""@en ;
+    skos:inScheme :traps ;
+    skos:topConceptOf :traps;
+.
+
+:cross-vane
+    a skos:Concept , phs:Trap ;
+    skos:prefLabel "Cross vane trap"@en ;    
+    skos:definition ""@en ;
+    skos:inScheme :traps ;
+    skos:broader :panel ; 
+    phs:targetsPest tpg:sawyer-beetle ;
+.
+
+:tall-black-pyramid
+    a skos:Concept , phs:Trap ;
+    skos:prefLabel "Tall black pyramid trap"@en ;    
+    skos:definition ""@en ;
+    skos:inScheme :traps ;
+    skos:broader :panel ; 
+    phs:targetsPest tpg:bmsb ;
+    phs:targetsPest tpg:agm ;
+.
+
+
 
 
 
