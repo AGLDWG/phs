@@ -23,7 +23,7 @@
     dcterms:modified "2020-05-22"^^xsd:date ;
     dcterms:publisher <http://linked.data.gov.au/org/dawe> ;
     dcterms:source "??" ;
-    skos:definition "Taxons and groupings of taxa which are pests as per PHS"@en ;
+    skos:definition "Taxa and groupings of taxa which are pests and therefore targets for surveillance"@en ;
     skos:prefLabel "Target Pest Groups"@en ;
     owl:versionIRI <http://linked.data.gov.au/def/phs/voc/tpg/1.0> ;
 .
