@@ -16,7 +16,7 @@
                                                          <https://orcid.org/0000-0002-3884-3420> ;
                                      dcterms:created "2020-02-11"^^xsd:date ;
                                      dcterms:creator [ rdf:type sdo:Person ;
-                                                       sdo:affiliation <http://linked.data.gov.au/org/awe> ;
+                                                       sdo:affiliation <http://linked.data.gov.au/org/dawe> ;
                                                        sdo:email <mailto:stephen.pratt@awe.gov.au> ;
                                                        sdo:jobTitle "Project Manager: Implementation of Plant Health Surveillance Data Store" ;
                                                        sdo:name "Stephen J. Pratt"
@@ -247,8 +247,8 @@ sdo:Person rdf:type owl:Class .
 #    Individuals
 #################################################################
 
-###  http://linked.data.gov.au/org/awe
-<http://linked.data.gov.au/org/awe> rdf:type owl:NamedIndividual ,
+###  http://linked.data.gov.au/org/dawe
+<http://linked.data.gov.au/org/dawe> rdf:type owl:NamedIndividual ,
                                              sdo:Organization ;
                                     sdo:name "Department of Agriculture, Water and the Environment" ;
                                     sdo:url <https://www.awe.gov.au> .

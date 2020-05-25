@@ -15,7 +15,7 @@
     dcterms:contributor <http://orcid.org/0000-0002-8742-7730> ;
     dcterms:created "2020-05-22"^^xsd:date ;
     dcterms:creator [ a sdo:Person ;
-                    sdo:affiliation <http://linked.data.gov.au/org/awe> ;
+                    sdo:affiliation <http://linked.data.gov.au/org/dawe> ;
                     sdo:email <mailto:stephen.pratt@awe.gov.au> ;
                     sdo:jobTitle "Project Manager: Implementation of Plant Health Surveillance Data Store" ;
                     sdo:name "Stephen J. Pratt"
