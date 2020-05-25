@@ -1,0 +1,237 @@
+@prefix : <http://linked.data.gov.au/def/phs/voc/susbtrates/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sdo: <https://schema.org/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix taxaas: <https://uat-ag-bie.oztaxa.com/ws/taxon/> .
+@prefix phs: <http://linked.data.gov.au/def/phs#> .
+@prefix tpg: <http://linked.data.gov.au/def/phs/voc/tpg/> .
+@prefix traps: <http://linked.data.gov.au/def/phs/voc/traps/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://linked.data.gov.au/def//phs/voc/substrates>
+    a owl:Ontology , skos:ConceptScheme ;
+    dcterms:contributor <http://orcid.org/0000-0002-8742-7730> ;
+    dcterms:created "2020-05-25"^^xsd:date ;
+    dcterms:creator [ a sdo:Person ;
+                    sdo:affiliation <http://linked.data.gov.au/org/dawe> ;
+                    sdo:email <mailto:stephen.pratt@awe.gov.au> ;
+                    sdo:jobTitle "Project Manager: Implementation of Plant Health Surveillance Data Store" ;
+                    sdo:name "Stephen J. Pratt"
+                    ] ;
+    dcterms:modified "2020-05-25"^^xsd:date ;
+    dcterms:publisher <http://linked.data.gov.au/org/dawe> ;
+    dcterms:source "??" ;
+    skos:definition "Traps used to catch plant health pests"@en ;
+    skos:prefLabel "Traps"@en ;
+    owl:versionIRI <http://linked.data.gov.au/def//phs/voc/substrates/1.0> ;
+.
+
+:container
+    a skos:Concept , phs:Trap ;
+    skos:prefLabel "Ant refuge"@en ;    
+    skos:definition ""@en ;
+    skos:notation "" ;
+    skos:inScheme <http://linked.data.gov.au/def//phs/voc/substrates> ;
+    skos:topConceptOf <http://linked.data.gov.au/def//phs/voc/substrates>;
+    phs:supportsPest tpg:bmsb ;
+    phs:supportsPest tpg:gypsy-moth ;
+    phs:supportsPest tpg:snails ;
+    phs:supportsPest tpg:ants ;
+.
+
+:general-goods
+    a skos:Concept , phs:Trap ;
+    skos:prefLabel "General goods"@en ;    
+    skos:definition ""@en ;
+    skos:notation "" ;
+    skos:inScheme <http://linked.data.gov.au/def//phs/voc/substrates> ;
+    skos:topConceptOf <http://linked.data.gov.au/def//phs/voc/substrates>;
+    phs:supportsPest tpg:bmsb ;
+    phs:supportsPest tpg:gypsy-moth ;
+    phs:supportsPest tpg:snails ;
+.
+
+:machinery
+    a skos:Concept , phs:Trap ;
+    skos:prefLabel "Machinery"@en ;    
+    skos:definition ""@en ;
+    skos:notation "" ;
+    skos:inScheme <http://linked.data.gov.au/def//phs/voc/substrates> ;
+    skos:topConceptOf <http://linked.data.gov.au/def//phs/voc/substrates>;
+    phs:supportsPest tpg:bmsb ;
+    phs:supportsPest tpg:gypsy-moth ;
+    phs:supportsPest tpg:snails ;
+    phs:supportsPest tpg:ants ;
+.
+
+:premises
+    a skos:Concept , phs:Trap ;
+    skos:prefLabel "Premises"@en ;    
+    skos:definition ""@en ;
+    skos:notation "" ;
+    skos:inScheme <http://linked.data.gov.au/def//phs/voc/substrates> ;
+    skos:topConceptOf <http://linked.data.gov.au/def//phs/voc/substrates>;
+    phs:supportsPest tpg:bmsb ;
+    phs:supportsPest tpg:gypsy-moth ;
+    phs:supportsPest tpg:snails ;
+    phs:supportsPest tpg:ants ;
+.
+
+:vehicles
+    a skos:Concept , phs:Trap ;
+    skos:prefLabel "Vehicles"@en ;    
+    skos:definition ""@en ;
+    skos:notation "" ;
+    skos:inScheme <http://linked.data.gov.au/def//phs/voc/substrates> ;
+    skos:topConceptOf <http://linked.data.gov.au/def//phs/voc/substrates>;
+    phs:supportsPest tpg:bmsb ;
+    phs:supportsPest tpg:gypsy-moth ;
+    phs:supportsPest tpg:snails ;
+    phs:supportsPest tpg:ants ;
+.
+
+:timber
+    a skos:Concept , phs:Trap ;
+    skos:prefLabel "Timber"@en ;    
+    skos:definition ""@en ;
+    skos:notation "" ;
+    skos:inScheme <http://linked.data.gov.au/def//phs/voc/substrates> ;
+    skos:topConceptOf <http://linked.data.gov.au/def//phs/voc/substrates> ;
+.
+
+:furniture
+    a skos:Concept , phs:Trap ;
+    skos:prefLabel "Furniture"@en ;    
+    skos:definition ""@en ;
+    skos:notation "" ;
+    skos:inScheme <http://linked.data.gov.au/def//phs/voc/substrates> ;
+    skos:broader :timber ;
+    phs:supportsPest tpg:anoplophora ;
+    phs:supportsPest tpg:sawyer-beetle ;
+.
+
+:packaging
+    a skos:Concept , phs:Trap ;
+    skos:prefLabel "Packaging"@en ;    
+    skos:definition ""@en ;
+    skos:notation "" ;
+    skos:inScheme <http://linked.data.gov.au/def//phs/voc/substrates> ;
+    skos:broader :timber ;
+    phs:supportsPest tpg:anoplophora ;
+    phs:supportsPest tpg:sawyer-beetle ;
+.
+
+:pallets
+    a skos:Concept , phs:Trap ;
+    skos:prefLabel "Pallets"@en ;    
+    skos:definition ""@en ;
+    skos:notation "" ;
+    skos:inScheme <http://linked.data.gov.au/def//phs/voc/substrates> ;
+    skos:broader :timber ;
+    phs:supportsPest tpg:anoplophora ;
+    phs:supportsPest tpg:sawyer-beetle ;
+.
+
+:cut-flowers
+    a skos:Concept , phs:Trap ;
+    skos:prefLabel "Cut flowers"@en ;    
+    skos:definition ""@en ;
+    skos:notation "" ;
+    skos:inScheme <http://linked.data.gov.au/def//phs/voc/substrates> ;
+    skos:topConceptOf <http://linked.data.gov.au/def//phs/voc/substrates>;
+    phs:supportsPest tpg:xylella-vectors ;
+.
+
+:fresh-fruit
+    a skos:Concept , phs:Trap ;
+    skos:prefLabel "Fresh fruit"@en ;    
+    skos:definition ""@en ;
+    skos:notation "" ;
+    skos:inScheme <http://linked.data.gov.au/def//phs/voc/substrates> ;
+    skos:topConceptOf <http://linked.data.gov.au/def//phs/voc/substrates>;
+    phs:supportsPest tpg:xylella-vectors ;
+.
+
+:fresh-vegetables
+    a skos:Concept , phs:Trap ;
+    skos:prefLabel "Fresh vegetables"@en ;    
+    skos:definition ""@en ;
+    skos:notation "" ;
+    skos:inScheme <http://linked.data.gov.au/def//phs/voc/substrates> ;
+    skos:topConceptOf <http://linked.data.gov.au/def//phs/voc/substrates>;
+    phs:supportsPest tpg:xylella-vectors ;
+.
+
+:cut-flowers
+    a skos:Concept , phs:Trap ;
+    skos:prefLabel "Cut Flowers"@en ;    
+    skos:definition ""@en ;
+    skos:notation "" ;
+    skos:inScheme <http://linked.data.gov.au/def//phs/voc/substrates> ;
+    skos:topConceptOf <http://linked.data.gov.au/def//phs/voc/substrates>;
+    phs:supportsPest tpg:xylella-vectors ;
+.
+
+:domestic-grain-storage
+    a skos:Concept , phs:Trap ;
+    skos:prefLabel "Domestic grain storage"@en ;    
+    skos:definition ""@en ;
+    skos:notation "" ;
+    skos:inScheme <http://linked.data.gov.au/def//phs/voc/substrates> ;
+    skos:topConceptOf <http://linked.data.gov.au/def//phs/voc/substrates>;
+    phs:supportsPest tpg:khapra-beetle ;
+.
+
+:non-food-goods
+    a skos:Concept , phs:Trap ;
+    skos:prefLabel "Non-food goods"@en ;    
+    skos:definition ""@en ;
+    skos:notation "" ;
+    skos:inScheme <http://linked.data.gov.au/def//phs/voc/substrates> ;
+    skos:topConceptOf <http://linked.data.gov.au/def//phs/voc/substrates>;
+    phs:supportsPest tpg:khapra-beetle ;
+.
+
+:stored-product-premises
+    a skos:Concept , phs:Trap ;
+    skos:prefLabel "Stored product premises"@en ;    
+    skos:definition ""@en ;
+    skos:notation "" ;
+    skos:inScheme <http://linked.data.gov.au/def//phs/voc/substrates> ;
+    skos:topConceptOf <http://linked.data.gov.au/def//phs/voc/substrates>;
+    phs:supportsPest tpg:khapra-beetle ;
+.
+
+:leaf-litter
+    a skos:Concept , phs:Trap ;
+    skos:prefLabel "Leaf litter"@en ;    
+    skos:definition ""@en ;
+    skos:notation "" ;
+    skos:inScheme <http://linked.data.gov.au/def//phs/voc/substrates> ;
+    skos:topConceptOf <http://linked.data.gov.au/def//phs/voc/substrates>;
+    phs:supportsPest tpg:pine-wilt-nematode ;
+.
+
+:root
+    a skos:Concept , phs:Trap ;
+    skos:prefLabel "Root"@en ;    
+    skos:definition ""@en ;
+    skos:notation "" ;
+    skos:inScheme <http://linked.data.gov.au/def//phs/voc/substrates> ;
+    skos:topConceptOf <http://linked.data.gov.au/def//phs/voc/substrates>;
+    phs:supportsPest tpg:pine-wilt-nematode ;
+.
+
+trunk-core
+    a skos:Concept , phs:Trap ;
+    skos:prefLabel "Trunk core"@en ;    
+    skos:definition ""@en ;
+    skos:notation "" ;
+    skos:inScheme <http://linked.data.gov.au/def//phs/voc/substrates> ;
+    skos:topConceptOf <http://linked.data.gov.au/def//phs/voc/substrates>;
+    phs:supportsPest tpg:pine-wilt-nematode ;
+.
+
+
