@@ -1,0 +1,126 @@
+@prefix : <http://linked.data.gov.au/def/phs/voc/obsMethods/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sdo: <https://schema.org/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix taxaas: <https://uat-ag-bie.oztaxa.com/ws/taxon/> .
+@prefix phs: <http://linked.data.gov.au/def/phs#> .
+@prefix tpg: <http://linked.data.gov.au/def/phs/voc/tpg/> .
+@prefix traps: <http://linked.data.gov.au/def/phs/voc/traps/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://linked.data.gov.au/def/phs/voc/obsMethods>
+    a owl:Ontology , skos:ConceptScheme ;
+    dcterms:contributor <http://orcid.org/0000-0002-8742-7730> ;
+    dcterms:created "2020-05-22"^^xsd:date ;
+    dcterms:creator [ a sdo:Person ;
+                    sdo:affiliation <http://linked.data.gov.au/org/dawe> ;
+                    sdo:email <mailto:stephen.pratt@awe.gov.au> ;
+                    sdo:jobTitle "Project Manager: Implementation of Plant Health Surveillance Data Store" ;
+                    sdo:name "Stephen J. Pratt"
+                    ] ;
+    dcterms:modified "2020-05-22"^^xsd:date ;
+    dcterms:publisher <http://linked.data.gov.au/org/dawe> ;
+    dcterms:source "??" ;
+    skos:definition "Traps used to catch plant health pests"@en ;
+    skos:prefLabel "Traps"@en ;
+    owl:versionIRI <http://linked.data.gov.au/def/phs/voc/obsMethods/1.0> ;
+.
+
+:beating-tray
+    a skos:Concept , phs:ObservationMethod ;
+    skos:prefLabel "Beating tray"@en ;    
+    skos:definition "A tray is held under a branch or shrub and the plant is beaten to dislodge insects, which fall onto the tray."@en ;
+    skos:notation "" ;
+    skos:inScheme <http://linked.data.gov.au/def/phs/voc/obsMethods> ;
+    skos:topConceptOf <http://linked.data.gov.au/def/phs/voc/obsMethods>;
+    phs:detectsPest tpg:bmsb ;  
+    phs:detectsPest tpg:xylella-vectors ;  
+.
+
+
+:brush-and-vacuum
+    a skos:Concept , phs:ObservationMethod ;
+    skos:prefLabel "Brush and vacuum"@en ;    
+    skos:definition "Areas are vacuumed and the collected debris is inspected for target pests"@en ;
+    skos:notation "" ;
+    skos:inScheme <http://linked.data.gov.au/def/phs/voc/obsMethods> ;
+    skos:topConceptOf <http://linked.data.gov.au/def/phs/voc/obsMethods>;
+    phs:detectsPest tpg:khapra-beetle ;  
+.
+
+:isolation-from-vector
+    a skos:Concept , phs:ObservationMethod ;
+    skos:prefLabel "Isolation from vector"@en ;    
+    skos:definition "After a vector (usually an insect) is captured, it is treated in such a way as to expose the target pest. Procedures vary according to the circumstances. As an example, in 'sugar shaking', bees (the vector) are placed in a plastic bag with castor sugar and shaken. The surviving bees are released. The sugar is dissolved and filtered, leaving mites on the filter paper."@en ;
+    skos:notation "" ;
+    skos:inScheme <http://linked.data.gov.au/def/phs/voc/obsMethods> ;
+    skos:topConceptOf <http://linked.data.gov.au/def/phs/voc/obsMethods>;
+    phs:detectsPest tpg:pine-wilt-nematode ;  
+.
+
+:sweep-netting
+    a skos:Concept , phs:ObservationMethod ;
+    skos:prefLabel "Sweep netting"@en ;    
+    skos:definition "A light net is dragged across the tops of plants or directly aimed at flying insects. The archetypal method for collecting insects."@en ;
+    skos:notation "" ;
+    skos:inScheme <http://linked.data.gov.au/def/phs/voc/obsMethods> ;
+    skos:topConceptOf <http://linked.data.gov.au/def/phs/voc/obsMethods>;
+    phs:detectsPest tpg:bmsb ;  
+    phs:detectsPest tpg:khapra-beetle ;  
+    phs:detectsPest tpg:xylella-vectors ;  
+.
+
+:tissue-sampling
+    a skos:Concept , phs:ObservationMethod ;
+    skos:prefLabel "Tissue sampling"@en ;    
+    skos:definition "This might better be described as a diagnostic method."@en ;
+    skos:notation "" ;
+    skos:inScheme <http://linked.data.gov.au/def/phs/voc/obsMethods> ;
+    skos:topConceptOf <http://linked.data.gov.au/def/phs/voc/obsMethods>;
+    phs:detectsPest tpg:pine-wilt-nematode ;  
+.
+
+:trapping
+    a skos:Concept , phs:ObservationMethod ;
+    skos:prefLabel "Trapping"@en ;    
+    skos:definition "A trap is placed in a likely location and revisited after some period, which can vary from hours to weeks"@en ;
+    skos:notation "" ;
+    skos:inScheme <http://linked.data.gov.au/def/phs/voc/obsMethods> ;
+    skos:topConceptOf <http://linked.data.gov.au/def/phs/voc/obsMethods> ;
+    phs:detectsPest tpg:fall-and-southern-armyworm ;  
+    phs:detectsPest tpg:bmsb ;  
+    phs:detectsPest tpg:citrus-canker ;  
+    phs:detectsPest tpg:fire-blight ;  
+    phs:detectsPest tpg:khapra-beetle ;  
+    phs:detectsPest tpg:saywer-beetle;  
+    phs:detectsPest tpg:xylella-vectors ;  
+    phs:detectsPest tpg:ants ;  
+    phs:detectsPest tpg:snails ;  
+.
+
+:visual
+    a skos:Concept , phs:ObservationMethod ;
+    skos:prefLabel "Visual"@en ;    
+    skos:definition ""@en ;
+    skos:notation "" ;
+    skos:inScheme <http://linked.data.gov.au/def/phs/voc/obsMethods> ;
+    skos:topConceptOf <http://linked.data.gov.au/def/phs/voc/obsMethods> ;
+    phs:detectsPest tpg:anaplophora ;  
+    phs:detectsPest tpg:fall-and-southern-armyworm ;  
+    phs:detectsPest tpg:bmsb ;  
+    phs:detectsPest tpg:citrus-canker ;  
+    phs:detectsPest tpg:fire-blight ;  
+    phs:detectsPest tpg:gypsy-moth ;  
+    phs:detectsPest tpg:fruit-fly ;  
+    phs:detectsPest tpg:hlb ;  
+    phs:detectsPest tpg:hlb-vectors ;  
+    phs:detectsPest tpg:khapra-beetle ;  
+    phs:detectsPest tpg:saywer-beetle;  
+    phs:detectsPest tpg:pine-wilt-nematode ;  
+    phs:detectsPest tpg:xylella-fastidiosa ;  
+    phs:detectsPest tpg:xylella-vectors ;  
+    phs:detectsPest tpg:ants ;  
+    phs:detectsPest tpg:snails ;  
+.
