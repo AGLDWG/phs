@@ -295,3 +295,11 @@ sdo:Person rdf:type owl:Class .
   rdfs:domain :Trap ;
   rdfs:range :TargetPest ;
 .
+
+:hostsPest 
+  a owl:ObjectProperty ;
+  rdfs:label "hosts pest"@en ;
+  rdfs:comment "A living thing (usually a plant) on which target pests may be found"@en ; 
+  rdfs:domain :Host ;
+  rdfs:range :TargetPest ;
+.
