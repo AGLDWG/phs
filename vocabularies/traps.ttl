@@ -35,7 +35,7 @@
     skos:notation "" ;
     skos:inScheme <http://linked.data.gov.au/def/phs/voc/traps> ;
     skos:topConceptOf <http://linked.data.gov.au/def/phs/voc/traps>;
-    phs:targetsPest tpg:ants ;  # crosslink!!!!
+    phs:catchesPest tpg:ants ;  # crosslink!!!!
 .
 :vial
     a skos:Concept , phs:Trap ;
@@ -43,7 +43,7 @@
     skos:definition ""@en ;
     skos:notation "" ;
     skos:inScheme <http://linked.data.gov.au/def/phs/voc/traps> ;
-    phs:targetsPest tpg:ants ;
+    phs:catchesPest tpg:ants ;
     skos:broader :ant-refuge
 .
 
@@ -62,7 +62,7 @@
     skos:definition "A concrete block that is cheap and common, within which snails may lodge"@en ;
     skos:inScheme <http://linked.data.gov.au/def/phs/voc/traps> ;
     skos:broader :snail-refuge ;  # inverse of above term's narrower
-    phs:targetsPest tpg:snails
+    phs:catchesPest tpg:snails
 .
 
 :polystyrene
@@ -71,7 +71,7 @@
     skos:definition "Expanded polystyrene items of arbitrary dimensions"@en ;
     skos:inScheme <http://linked.data.gov.au/def/phs/voc/traps> ;
     skos:broader :snail-refuge ;  # inverse of above term's narrower
-    phs:targetsPest tpg:snails
+    phs:catchesPest tpg:snails
 .
 
 :tile
@@ -80,7 +80,7 @@
     skos:definition "Ceramic or concrete tiles"@en ;
     skos:inScheme <http://linked.data.gov.au/def/phs/voc/traps> ;
     skos:broader :snail-refuge ; 
-    phs:targetsPest tpg:snails
+    phs:catchesPest tpg:snails
 .
 
 :sticky
@@ -97,8 +97,8 @@
     skos:definition ""@en ;
     skos:inScheme <http://linked.data.gov.au/def/phs/voc/traps> ;
     skos:broader :sticky ; 
-    phs:targetsPest tpg:bmsb ;
-    phs:targetsPest tpg:agm ;
+    phs:catchesPest tpg:bmsb ;
+    phs:catchesPest tpg:agm ;
 .
 
 :yellow
@@ -107,10 +107,10 @@
     skos:definition ""@en ;
     skos:inScheme <http://linked.data.gov.au/def/phs/voc/traps> ;
     skos:broader :sticky ; 
-    phs:targetsPest tpg:bmsb ;
-    phs:targetsPest tpg:agm ;
-    phs:targetsPest tpg:hlb-vectors ;
-    phs:targetsPest tpg:xylella-vectors ;
+    phs:catchesPest tpg:bmsb ;
+    phs:catchesPest tpg:agm ;
+    phs:catchesPest tpg:hlb-vectors ;
+    phs:catchesPest tpg:xylella-vectors ;
 .
 
 :bucket
@@ -118,7 +118,7 @@
     skos:prefLabel "Bucket trap"@en ;    
     skos:definition ""@en ;
     skos:topConceptOf <http://linked.data.gov.au/def/phs/voc/traps>;
-    phs:targetsPest tpg:fall-and-southern-armyworm ;
+    phs:catchesPest tpg:fall-and-southern-armyworm ;
 .
 
 :delta
@@ -126,7 +126,7 @@
     skos:prefLabel "Delta trap"@en ;    
     skos:definition ""@en ;
     skos:topConceptOf <http://linked.data.gov.au/def/phs/voc/traps>;
-    phs:targetsPest tpg:fall-and-southern-armyworm ;
+    phs:catchesPest tpg:fall-and-southern-armyworm ;
 .
 
 :heliothis
@@ -134,7 +134,7 @@
     skos:prefLabel "Heliothis mesh net trap"@en ;    
     skos:definition ""@en ;
     skos:topConceptOf <http://linked.data.gov.au/def/phs/voc/traps>;
-    phs:targetsPest tpg:fall-and-southern-armyworm ;
+    phs:catchesPest tpg:fall-and-southern-armyworm ;
 .
 
 :homemade
@@ -142,7 +142,7 @@
     skos:prefLabel "Homemade trap"@en ;    
     skos:definition ""@en ;
     skos:topConceptOf <http://linked.data.gov.au/def/phs/voc/traps>;
-    phs:targetsPest tpg:fall-and-southern-armyworm ;
+    phs:catchesPest tpg:fall-and-southern-armyworm ;
 .
 
 
@@ -151,14 +151,14 @@
     skos:prefLabel "Dome trap"@en ;    
     skos:definition ""@en ;
     skos:topConceptOf <http://linked.data.gov.au/def/phs/voc/traps>;
-    phs:targetsPest tpg:khapra ;
+    phs:catchesPest tpg:khapra ;
 .
 :wall
     a skos:Concept , phs:Trap ;
     skos:prefLabel "Wall trap"@en ;    
     skos:definition ""@en ;
     skos:topConceptOf <http://linked.data.gov.au/def/phs/voc/traps>;
-    phs:targetsPest tpg:khapra ;
+    phs:catchesPest tpg:khapra ;
 .
 
 :lynfield
@@ -166,7 +166,7 @@
     skos:prefLabel "Lynfield trap"@en ;    
     skos:definition ""@en ;
     skos:topConceptOf <http://linked.data.gov.au/def/phs/voc/traps>;
-    phs:targetsPest tpg:fruit-fly ;
+    phs:catchesPest tpg:fruit-fly ;
 .
 
 :patton
@@ -174,7 +174,7 @@
     skos:prefLabel "Patton trap"@en ;    
     skos:definition ""@en ;
     skos:topConceptOf <http://linked.data.gov.au/def/phs/voc/traps>;
-    phs:targetsPest tpg:fruit-fly ;
+    phs:catchesPest tpg:fruit-fly ;
 .
 
 :steiner
@@ -182,7 +182,7 @@
     skos:prefLabel "steiner trap"@en ;    
     skos:definition ""@en ;
     skos:topConceptOf <http://linked.data.gov.au/def/phs/voc/traps>;
-    phs:targetsPest tpg:fruit-fly ;
+    phs:catchesPest tpg:fruit-fly ;
 .
 
 :panel
@@ -199,7 +199,7 @@
     skos:definition ""@en ;
     skos:inScheme <http://linked.data.gov.au/def/phs/voc/traps> ;
     skos:broader :panel ; 
-    phs:targetsPest tpg:sawyer-beetle ;
+    phs:catchesPest tpg:sawyer-beetle ;
 .
 
 :tall-black-pyramid
@@ -208,8 +208,8 @@
     skos:definition ""@en ;
     skos:inScheme <http://linked.data.gov.au/def/phs/voc/traps> ;
     skos:broader :panel ; 
-    phs:targetsPest tpg:bmsb ;
-    phs:targetsPest tpg:agm ;
+    phs:catchesPest tpg:bmsb ;
+    phs:catchesPest tpg:agm ;
 .
 
 
