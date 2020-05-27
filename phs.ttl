@@ -296,7 +296,8 @@ sdo:Person rdf:type owl:Class .
 :catchesPest 
   a owl:ObjectProperty ;
   rdfs:label "catches pest"@en ;
-  rdfs:comment "A Trap is designed to capture certain Pests - their targets"@en ;
+  rdfs:comment "A device that is designed to catch the target pest"@en ;
+  rdfs:comment "An object which provides refuge to the target pest, and can thus be used as a trap"@en ;
   rdfs:domain :Trap ;
   rdfs:range :TargetPest ;
 .
@@ -304,15 +305,15 @@ sdo:Person rdf:type owl:Class .
 :hostsPest 
   a owl:ObjectProperty ;
   rdfs:label "hosts pest"@en ;
-  rdfs:comment "A living thing (usually a plant) on which target pests may be found"@en ; 
+  rdfs:comment "A living thing (usually a plant) on which the target pest may be found"@en ; 
   rdfs:domain :Host ;
   rdfs:range :TargetPest ;
 .
 
 :supportsPest 
   a owl:ObjectProperty ;
-  rdfs:label "suports pest"@en ;
-  rdfs:comment "A substrate on which target pests are more likely be found"@en ; 
+  rdfs:label "supports pest"@en ;
+  rdfs:comment "A substrate on which the target pest likely be found, if it was present"@en ; 
   rdfs:domain :Substrate ;
   rdfs:range :TargetPest ;
 .
@@ -320,7 +321,15 @@ sdo:Person rdf:type owl:Class .
 :detectsPest 
   a owl:ObjectProperty ;
   rdfs:label "detects pest"@en ;
-  rdfs:comment "The pest/s for which the observation method is useful"@en ; 
-  rdfs:domain :"ObservationMethod" ;
+  rdfs:comment "The pest for which the observation method is useful"@en ; 
+  rdfs:domain :ObservationMethod ;
+  rdfs:range :TargetPest ;
+.
+
+:luresPest 
+  a owl:ObjectProperty ;
+  rdfs:label "lures pest"@en ;
+  rdfs:comment "The target pest which is attracted by this lure"@en ; 
+  rdfs:domain :Lure ;
   rdfs:range :TargetPest ;
 .
