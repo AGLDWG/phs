@@ -206,8 +206,13 @@ In this case, a superclass of e.g. 'bait' could be created.""" ;
           rdfs:label "Trap Type" .
 
 :ObservationMethod a owl:Class ;
-      rdfs:label "Observation Method" ;
+      rdfs:label "Observation method" ;
       rdfs:comment "A technique used to carry out an act of surveillance. Observation methods are chosen according to the target pest and/or host|substrate. The sensitivity of an observation may depend on the method that was used." ;
+.
+
+:DiagnosticMethod a owl:Class ;
+      rdfs:label "Diagnostic method" ;
+      rdfs:comment "A procedure or method used to determine the taxonomic identity of a plant pest. May be carried out in the field, or more usually, in a laboratory." ;
 .
 
 
@@ -331,5 +336,13 @@ sdo:Person rdf:type owl:Class .
   rdfs:label "lures pest"@en ;
   rdfs:comment "The target pest which is attracted by this lure"@en ; 
   rdfs:domain :Lure ;
+  rdfs:range :TargetPest ;
+.
+
+:identifiesPest 
+  a owl:ObjectProperty ;
+  rdfs:label "Identifies pest"@en ;
+  rdfs:comment "This diagnostic method is appropriate for the target pest"@en ; 
+  rdfs:domain :DiagnosticMethod ;
   rdfs:range :TargetPest ;
 .
