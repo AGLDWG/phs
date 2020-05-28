@@ -93,7 +93,7 @@ sdo:url rdf:type owl:AnnotationProperty .
 
 ###  http://linked.data.gov.au/def/phs#trapType
 :trapType rdf:type owl:ObjectProperty ;
-          rdfs:domain :InsectTrap ;
+          rdfs:domain :Trap ;
           rdfs:range :TrapType ;
           rdfs:comment "The make or model of a trap" ;
           rdfs:label "trap type" .
