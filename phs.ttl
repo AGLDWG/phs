@@ -313,7 +313,7 @@ sdo:Person rdf:type owl:Class .
 :supportsPest 
   a owl:ObjectProperty ;
   rdfs:label "supports pest"@en ;
-  rdfs:comment "A substrate on which the target pest likely be found, if it was present"@en ; 
+  rdfs:comment "A substrate on which the target pest is likely be found, if it were present"@en ; 
   rdfs:domain :Substrate ;
   rdfs:range :TargetPest ;
 .
