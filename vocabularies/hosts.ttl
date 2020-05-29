@@ -44,7 +44,6 @@ hosts:
     a skos:Concept , phs:Host ;
     skos:prefLabel "Apocynaceae"@en ;    
     skos:definition "Apocynaceae is a family of flowering plants that includes trees, shrubs, herbs, stem succulents, and vines, commonly called the dogbane family, after the American plant known as dogbane, Apocynum cannabinum. Members of the family are native to European, Asian, African, Australian, and American tropics or subtropics, with some temperate members. The family Asclepiadaceae (now known as Asclepiadoideae) is considered a subfamily of Apocynaceae and contains 348 genera."@en ;
-    skos:notation "" ;
     skos:inScheme hosts: ;
     skos:topConceptOf hosts:;
     dwc:taxonid taxaas:70619;
@@ -56,7 +55,6 @@ hosts:
     a skos:Concept , phs:Host ;
     skos:prefLabel "Betulaceae"@en ;    
     skos:definition "The birch family, the Betulaceae, includes six genera of deciduous nut-bearing trees and shrubs, including the birches, alders, hazels, hornbeams, hazel-hornbeam, and hop-hornbeams numbering a total of 167 species. They are mostly natives of the temperate Northern Hemisphere, with a few species reaching the Southern Hemisphere in the Andes in South America. Their typical flowers are catkins and often appear before leaves."@en ;
-    skos:notation "" ;
     skos:inScheme hosts: ;
     skos:topConceptOf hosts:;
     dwc:taxonid taxaas:82476;
@@ -68,7 +66,6 @@ hosts:
     a skos:Concept , phs:Host ;
     skos:prefLabel "Citrus"@en ;    
     skos:definition "Citrus is a genus of flowering trees and shrubs in the rue family, Rutaceae. Plants in the genus produce citrus fruits, including important crops like oranges, lemons, grapefruit, and limes. The most recent research indicates an origin in Australia, New Caledonia and New Guinea. Some researchers believe that the origin is in the part of Southeast Asia bordered by Northeast India, Burma (Myanmar) and the Yunnan province of China, and it is in this region that some commercial species such as oranges, mandarins, and lemons originated. Citrus fruit has been cultivated in an ever-widening area since ancient times."@en ;
-    skos:notation "" ;
     skos:inScheme hosts: ;
     skos:topConceptOf hosts:;
     dwc:taxonid taxaas:82423;
@@ -80,7 +77,6 @@ hosts:
     a skos:Concept , phs:Host ;
     skos:prefLabel "Convolvulaceae"@en ;    
     skos:definition "Convolvulaceae, known commonly as the bindweed or morning glory family, is a family of about 60 genera and more than 1,650 species of mostly herbaceous vines, but also trees, shrubs and herbs."@en ;
-    skos:notation "" ;
     skos:inScheme hosts: ;
     skos:topConceptOf hosts:;
     dwc:taxonid taxaas:65223;
@@ -92,7 +88,6 @@ hosts:
     a skos:Concept , phs:Host ;
     skos:prefLabel "Fortunella"@en ;    
     skos:definition ""@en ;
-    skos:notation "" ;
     skos:inScheme hosts: ;
     skos:topConceptOf hosts:;
     dwc:taxonid taxaas:82593;
@@ -116,30 +111,28 @@ hosts:
     a skos:Concept , phs:Host ;
     skos:prefLabel "Plantae"@en ;    
     skos:definition "Any member of the Plant Kingdom"@en ;
-    skos:notation "" ;
     skos:inScheme hosts: ;
     skos:topConceptOf hosts:;
-    phs:hostsPest tpg:anoplophora ;  
-    phs:hostsPest tpg:fall-and-southern-armyworm ;  
-    phs:hostsPest tpg:bmsb ;  
-    phs:hostsPest tpg:fire-blight ;  
-    phs:hostsPest tpg:gypsy-moth ;  
-    phs:hostsPest tpg:xylella-fastidiosa ;  
-    phs:hostsPest tpg:xylella-vectors ;  
-    phs:hostsPest tpg:ants ;  
-    phs:hostsPest tpg:snails ;  
+    phs:hostsPest 
+        tpg:anoplophora , 
+        tpg:fall-and-southern-armyworm , 
+        tpg:bmsb , 
+        tpg:fire-blight , 
+        tpg:gypsy-moth , 
+        tpg:xylella-fastidiosa , 
+        tpg:xylella-vectors , 
+        tpg:ants , 
+        tpg:snails ;  
 .
 
 :pinaceae
     a skos:Concept , phs:Host ;
     skos:prefLabel "Pinaceae"@en ;    
     skos:definition "The Pinaceae (pine family) are trees or shrubs, including many of the well-known conifers of commercial importance such as cedars, firs, hemlocks, larches, pines and spruces. The family is included in the order Pinales, formerly known as Coniferales. Pinaceae are supported as monophyletic by their protein-type sieve cell plastids, pattern of proembryogeny, and lack of bioflavonoids. They are the largest extant conifer family in species diversity, with between 220 and 250 species (depending on taxonomic opinion) in 11 genera, and the second-largest (after Cupressaceae) in geographical range, found in most of the Northern Hemisphere, with the majority of the species in temperate climates, but ranging from subarctic to tropical. The family often forms the dominant component of boreal, coastal, and montane forests. One species, Pinus merkusii, grows just south of the equator in Southeast Asia. Major centres of diversity are found in the mountains of southwest China, Mexico, central Japan, and California. "@en ;
-    skos:notation "" ;
     skos:inScheme hosts: ;
     skos:topConceptOf hosts:;
     dwc:taxonid taxaas:82854;
-    phs:hostsPest tpg:sawyer-beetle ;  
-    phs:hostsPest tpg:pine-wilt-nematode ;  
+    phs:hostsPest tpg:sawyer-beetle , tpg:pine-wilt-nematode ;  
     rdfs:seeAlso <http://dbpedia.org/resource/Pinaceae> ;
 .
 
@@ -147,7 +140,6 @@ hosts:
     a skos:Concept , phs:Host ;
     skos:prefLabel "Rosaceae"@en ;    
     skos:definition "The Rosaceae (rose) family is a medium-sized family of flowering plants, including about 2,950 known species in 91 genera. The name is derived from the type genus Rosa. Among the most species-rich genera are Alchemilla (270), Sorbus (260), Crataegus (260), Cotoneaster (260), Rubus (250), and Prunus (plums, cherries, peaches, apricots, and almonds) with about 200 species. However, all of these numbers should be seen as estimates – much taxonomic work remains."@en ;
-    skos:notation "" ;
     skos:inScheme hosts: ;
     skos:topConceptOf hosts:;
     dwc:taxonid taxaas:82145;
@@ -159,12 +151,10 @@ hosts:
     a skos:Concept , phs:Host ;
     skos:prefLabel "Rutaceae"@en ;    
     skos:definition ""@en ;
-    skos:notation "" ;
     skos:inScheme hosts: ;
     skos:topConceptOf hosts:;
     dwc:taxonid taxaas:68687;
-    phs:hostsPest tpg:citrus-canker;  
-    phs:hostsPest tpg:hlb ;  
+    phs:hostsPest tpg:citrus-canker , tpg:hlb ;  
     rdfs:seeAlso <http://dbpedia.org/resource/Rutaceae> ;
 .
 
@@ -172,7 +162,6 @@ hosts:
     a skos:Concept , phs:Host ;
     skos:prefLabel "Solanaceae"@en ;    
     skos:definition "The Solanaceae, or nightshades, are an economically important family of flowering plants. The family ranges from annual and perennial herbs to vines, lianas, epiphytes, shrubs, and trees, and includes a number of important agricultural crops, medicinal plants, spices, weeds, and ornamentals. Many members of the family contain potent alkaloids, and some are highly toxic, but many cultures eat nightshades, in some cases as staple foods. The family belongs to the order Solanales, in the asterid group dicotyledons (Magnoliopsida). The Solanaceae consists of about 98 genera and some 2,700 species, with a great diversity of habitats, morphology and ecology."@en ;
-    skos:notation "" ;
     skos:inScheme hosts: ;
     skos:topConceptOf hosts:;
     dwc:taxonid taxaas:67176;
