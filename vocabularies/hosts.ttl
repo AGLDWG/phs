@@ -27,35 +27,17 @@ hosts:
     skos:prefLabel "Hosts"@en ;
     owl:versionIRI <http://linked.data.gov.au/def/phs/voc/hosts/1.0> ;
     skos:hasTopConcept 
-        :plantae , 
         :apocynaceae ,
         :betulaceae ,
         :citrus ,
-        :fortunella ,
         :convolvulaceae ,
-        :solanaceae ,
+        :fortunella ,        
         :monochamus ,
+        :plantae , 
         :pinaceae ,
         :rosaceae ,
-        :rutaceae ;
-.
-
-:plantae
-    a skos:Concept , phs:Host ;
-    skos:prefLabel "Plantae"@en ;    
-    skos:definition "Any member of the Plant Kingdom"@en ;
-    skos:notation "" ;
-    skos:inScheme hosts: ;
-    skos:topConceptOf hosts:;
-    phs:hostsPest tpg:anoplophora ;  
-    phs:hostsPest tpg:fall-and-southern-armyworm ;  
-    phs:hostsPest tpg:bmsb ;  
-    phs:hostsPest tpg:fire-blight ;  
-    phs:hostsPest tpg:gypsy-moth ;  
-    phs:hostsPest tpg:xylella-fastidiosa ;  
-    phs:hostsPest tpg:xylella-vectors ;  
-    phs:hostsPest tpg:ants ;  
-    phs:hostsPest tpg:snails ;  
+        :rutaceae ,
+        :solanaceae ;
 .
 
 :apocynaceae
@@ -94,18 +76,6 @@ hosts:
     rdfs:seeAlso <http://dbpedia.org/resource/Citrus> ;
 .
 
-:fortunella
-    a skos:Concept , phs:Host ;
-    skos:prefLabel "Fortunella"@en ;    
-    skos:definition ""@en ;
-    skos:notation "" ;
-    skos:inScheme hosts: ;
-    skos:topConceptOf hosts:;
-    dwc:taxonid taxaas:82593;
-    phs:hostsPest tpg:citrus-canker ;  
-    rdfs:seeAlso <http://dbpedia.org/resource/Fortunella> ;
-.
-
 :convolvulaceae
     a skos:Concept , phs:Host ;
     skos:prefLabel "Convolvulaceae"@en ;    
@@ -118,16 +88,16 @@ hosts:
     rdfs:seeAlso <http://dbpedia.org/resource/Convolvulaceae> ;
 .
 
-:solanaceae
+:fortunella
     a skos:Concept , phs:Host ;
-    skos:prefLabel "Solanaceae"@en ;    
-    skos:definition "The Solanaceae, or nightshades, are an economically important family of flowering plants. The family ranges from annual and perennial herbs to vines, lianas, epiphytes, shrubs, and trees, and includes a number of important agricultural crops, medicinal plants, spices, weeds, and ornamentals. Many members of the family contain potent alkaloids, and some are highly toxic, but many cultures eat nightshades, in some cases as staple foods. The family belongs to the order Solanales, in the asterid group dicotyledons (Magnoliopsida). The Solanaceae consists of about 98 genera and some 2,700 species, with a great diversity of habitats, morphology and ecology."@en ;
+    skos:prefLabel "Fortunella"@en ;    
+    skos:definition ""@en ;
     skos:notation "" ;
     skos:inScheme hosts: ;
     skos:topConceptOf hosts:;
-    dwc:taxonid taxaas:67176;
-    phs:hostsPest tpg:hlb ;  
-    rdfs:seeAlso <http://dbpedia.org/resource/Solanaceae> ;
+    dwc:taxonid taxaas:82593;
+    phs:hostsPest tpg:citrus-canker ;  
+    rdfs:seeAlso <http://dbpedia.org/resource/Fortunella> ;
 .
 
 :monochamus
@@ -140,6 +110,24 @@ hosts:
     dwc:taxonid taxaas:69671;
     phs:hostsPest tpg:pine-wilt-nematode ;  
     rdfs:seeAlso <http://dbpedia.org/resource/Monochamus> ;
+.
+
+:plantae
+    a skos:Concept , phs:Host ;
+    skos:prefLabel "Plantae"@en ;    
+    skos:definition "Any member of the Plant Kingdom"@en ;
+    skos:notation "" ;
+    skos:inScheme hosts: ;
+    skos:topConceptOf hosts:;
+    phs:hostsPest tpg:anoplophora ;  
+    phs:hostsPest tpg:fall-and-southern-armyworm ;  
+    phs:hostsPest tpg:bmsb ;  
+    phs:hostsPest tpg:fire-blight ;  
+    phs:hostsPest tpg:gypsy-moth ;  
+    phs:hostsPest tpg:xylella-fastidiosa ;  
+    phs:hostsPest tpg:xylella-vectors ;  
+    phs:hostsPest tpg:ants ;  
+    phs:hostsPest tpg:snails ;  
 .
 
 :pinaceae
@@ -178,4 +166,16 @@ hosts:
     phs:hostsPest tpg:citrus-canker;  
     phs:hostsPest tpg:hlb ;  
     rdfs:seeAlso <http://dbpedia.org/resource/Rutaceae> ;
+.
+
+:solanaceae
+    a skos:Concept , phs:Host ;
+    skos:prefLabel "Solanaceae"@en ;    
+    skos:definition "The Solanaceae, or nightshades, are an economically important family of flowering plants. The family ranges from annual and perennial herbs to vines, lianas, epiphytes, shrubs, and trees, and includes a number of important agricultural crops, medicinal plants, spices, weeds, and ornamentals. Many members of the family contain potent alkaloids, and some are highly toxic, but many cultures eat nightshades, in some cases as staple foods. The family belongs to the order Solanales, in the asterid group dicotyledons (Magnoliopsida). The Solanaceae consists of about 98 genera and some 2,700 species, with a great diversity of habitats, morphology and ecology."@en ;
+    skos:notation "" ;
+    skos:inScheme hosts: ;
+    skos:topConceptOf hosts:;
+    dwc:taxonid taxaas:67176;
+    phs:hostsPest tpg:hlb ;  
+    rdfs:seeAlso <http://dbpedia.org/resource/Solanaceae> ;
 .
