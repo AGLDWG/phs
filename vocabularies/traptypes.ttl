@@ -23,13 +23,13 @@ traps:
                     ] ;
     dcterms:modified "2020-05-22"^^xsd:date ;
     dcterms:publisher <http://linked.data.gov.au/org/dawe> ;
-    skos:definition "Traps used to catch plant health pests"@en ;
-    skos:prefLabel "Traps"@en ;
+    skos:definition "Types of Trap used to catch plant health pests"@en ;
+    skos:prefLabel "Traps Types"@en ;
     owl:versionIRI <http://linked.data.gov.au/def/phs/voc/traps/1.0> ;
 .
 
 :ant-refuge
-    a skos:Concept , phs:Trap ;
+    a skos:Concept , phs:TrapType ;
     skos:prefLabel "Ant refuge"@en ;    
     skos:definition ""@en ;
     skos:inScheme traps: ;

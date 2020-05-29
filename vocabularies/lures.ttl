@@ -22,8 +22,7 @@ lures:
                     ] ;
     dcterms:modified "2020-05-27"^^xsd:date ;
     dcterms:publisher <http://linked.data.gov.au/org/dawe> ;
-    dcterms:source "??" ;
-    skos:definition "A substance or mixture that attracts target pests."@en ;
+    skos:definition "Substances that attracts target pests."@en ;
     skos:prefLabel "Lures"@en ;
     owl:versionIRI <http://linked.data.gov.au/def/phs/voc/lures/1.0> ;
     skos:hasTopconcept :lure , :attractant , :mixture ;

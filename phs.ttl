@@ -162,8 +162,8 @@ sdo:url rdf:type owl:AnnotationProperty .
 
 ###  http://linked.data.gov.au/def/phs#Lure
 :Lure rdf:type owl:Class ;
-      rdfs:comment "An attractant that may be placed in an InsectTrap" ,
-                   """We may wish to split this concept into true lures, which are volatile pure substances that elecit responses in only certain species, and attractants, which release volatile substances that attract many species, such as by mimicing food sources.
+      rdfs:comment "A substances that attracts target pests." ;
+      skos:editoralNote """We may wish to split this concept into true lures, which are volatile pure substances that elecit responses in only certain species, and attractants, which release volatile substances that attract many species, such as by mimicing food sources.
 In this case, a superclass of e.g. 'bait' could be created.""" ;
       rdfs:label "Lure" .
 

@@ -1,0 +1,15 @@
+@prefix phs: <http://linked.data.gov.au/def/phs#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix traps: <http://linked.data.gov.au/def/phs/voc/traps/> .
+
+
+:122434523
+    a sosa:Sampling ;
+    sosa:hasSample ...
+    sosa:madeBySampler trap:DavesTrap ;
+    ...
+    sosa:resultTime "2020-05-29T14:25:01"^^xsd:dateTime ;
+    sosa:hasFeatureOfInterest :Taxon??
+    
+
+
