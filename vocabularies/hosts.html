@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Hosts</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    
+    <style>
+        #pylode {
+            position: fixed;
+            top: 130px;
+            left: -60px;
+            font-size: small;
+            transform: rotate(-90deg);
+            color: grey;
+        }
+        #pylode a {
+            font-size: 2em;
+            font-weight: bold;
+            text-decoration: none;
+            color: #005A9C;
+        }
+        #pylode a:hover {
+            color: #333;
+        }
+
+        .cardinality {
+            font-style: italic;
+            color: #aa00aa;
+        }
+
+        dt {
+            font-weight: bold;
+            padding: 5px 0 5px 0;
+        }
+
+        ul.hlist {
+            list-style-type: none;
+            border: 1px solid navy;
+            padding:5px;
+            background-color: #F4FFFF;
+        }
+
+        ul.hierarchy {
+            border: 1px solid navy;
+            padding: 5px 25px 5px 25px;
+            background-color: #F4FFFF;
+        }
+
+
+        ul.hlist li {
+            display: inline;
+            margin-right: 10px;
+        }
+
+        .entity {
+            border: 1px solid navy;
+            margin:5px 0 5px 0;
+            padding: 5px;
+        }
+
+        .entity th {
+            width: 150px;
+            vertical-align: top;
+        }
+
+        .entity th,
+        .entity td {
+            padding-bottom: 20px;
+        }
+
+        .entity table th {
+            text-align: left;
+        }
+
+        section#overview img {
+            max-width: 1000px;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            text-align: left
+        }
+        h1, h2, h3 {
+            color: #005A9C; background: white
+        }
+        h1 {
+            font: 170% sans-serif;
+            line-height: 110%;
+        }
+        h2 {
+            font: 140% sans-serif;
+            margin-top:40px;
+        }
+        h3 {
+            font: 120% sans-serif;
+            margin-top: 3px;
+            padding-bottom: 5px;
+            border-bottom: 1px solid navy;
+        }
+        h4 { font: bold 100% sans-serif }
+        h5 { font: italic 100% sans-serif }
+        h6 { font: small-caps 100% sans-serif }
+
+
+        body {
+            padding: 2em 70px 2em 70px;
+            margin: 0;
+            font-family: sans-serif;
+            color: black;
+            background: white;
+            background-position: top left;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+            text-align: justify;
+        }
+
+        section {
+            max-width: 1500px;
+        }
+
+        .figure {
+            margin-bottom: 20px;
+        }
+
+        :link { color: #00C; background: transparent }
+        :visited { color: #609; background: transparent }
+        a:active { color: #C00; background: transparent }
+
+        .sup-c,
+        .sup-op,
+        .sup-fp,
+        .sup-dp,
+        .sup-ap,
+        .sup-p,
+        .sup-ni,
+        .sup-cp,
+        .sup-cl {
+            cursor:help;
+            margin-left: 3px;
+        }
+
+        .sup-c {
+            color:orange;
+        }
+
+        .sup-op {
+            color:navy;
+        }
+
+        .sup-fp {
+            color:lightskyblue;
+        }
+
+        .sup-dp {
+            color:green;
+        }
+
+        .sup-ap {
+            color:darkred;
+        }
+
+        .sup-p {
+            color:black;
+        }
+
+        .sup-ni {
+            color:brown;
+        }
+
+        .sup-cp {
+            color:orange;
+        }
+
+        .sup-cl {
+            color:darkred;
+        }
+
+        code {
+            font-size: large;
+            color: darkred;
+        }
+
+    </style>
+    
+    <script type="application/ld+json">
+      [
+  {
+    "@id": "http://linked.data.gov.au/def/phs/voc/hosts",
+    "@type": [
+      "https://schema.org/DefinedTermSet"
+    ],
+    "https://schema.org/description": [
+      {
+        "@value": "<p>Hosts of plant pests, the latter being targets of surveillance according to a given protocol</p>"
+      }
+    ],
+    "https://schema.org/name": [
+      {
+        "@value": "Hosts"
+      }
+    ]
+  }
+]
+    </script>
+</head>
+<body>
+  <div id="pylode">made by <a href="http://github.com/rdflib/pyLODE">
+    <span style="color:#329545;">p</span><span style="color:#f9cb33;">y</span>LODE</a>
+    <span style="font-size:smaller;">2.4</span>
+  </div>
+  <h1>Hosts</h1>
+<h3><em>A taxonomy</em></h3>
+  <section id="conceptscheme">
+      <h2 style="display:none;">Concept Scheme</h2>
+      <dl>
+          <dt>IRI</dt>
+          <dd><code>http://linked.data.gov.au/def/phs/voc/hosts</code></dd>
+          <dt>Publisher(s)</dt>
+          <dd>
+              
+    <a href="http://linked.data.gov.au/org/dawe">Department of Agriculture, Water and the Environment</a><br/>
+          </dd>
+          <dt>Creator(s)</dt>
+          <dd>
+              
+    Stephen J. Pratt
+    (<a href="mailto:stephen.pratt@awe.gov.au">stephen.pratt@awe.gov.au</a>) of 
+    <a href="https://www.awe.gov.au/">Department of Agriculture, Water and the Environment</a><br/>
+          </dd>
+          <dt>Contributors(s)</dt>
+          <dd>
+              
+    <a href="http://orcid.org/0000-0002-8742-7730">Nicholas J. Car</a>
+    <a href="http://orcid.org/0000-0002-8742-7730"><svg width="15px" height="15px" viewBox="0 0 72 72" version="1.1"
+    xmlns="http://www.w3.org/2000/svg"
+    xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Orcid logo</title>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="hero" transform="translate(-924.000000, -72.000000)" fill-rule="nonzero">
+            <g id="Group-4">
+                <g id="vector_iD_icon" transform="translate(924.000000, 72.000000)">
+                    <path d="M72,36 C72,55.884375 55.884375,72 36,72 C16.115625,72 0,55.884375 0,36 C0,16.115625 16.115625,0 36,0 C55.884375,0 72,16.115625 72,36 Z" id="Path" fill="#A6CE39"></path>
+                    <g id="Group" transform="translate(18.868966, 12.910345)" fill="#FFFFFF">
+                        <polygon id="Path" points="5.03734929 39.1250878 0.695429861 39.1250878 0.695429861 9.14431787 5.03734929 9.14431787 5.03734929 22.6930505 5.03734929 39.1250878"></polygon>
+                        <path d="M11.409257,9.14431787 L23.1380784,9.14431787 C34.303014,9.14431787 39.2088191,17.0664074 39.2088191,24.1486995 C39.2088191,31.846843 33.1470485,39.1530811 23.1944669,39.1530811 L11.409257,39.1530811 L11.409257,9.14431787 Z M15.7511765,35.2620194 L22.6587756,35.2620194 C32.49858,35.2620194 34.7541226,27.8438084 34.7541226,24.1486995 C34.7541226,18.1301509 30.8915059,13.0353795 22.4332213,13.0353795 L15.7511765,13.0353795 L15.7511765,35.2620194 Z" id="Shape"></path>
+                        <path d="M5.71401206,2.90182329 C5.71401206,4.441452 4.44526937,5.72914146 2.86638958,5.72914146 C1.28750978,5.72914146 0.0187670918,4.441452 0.0187670918,2.90182329 C0.0187670918,1.33420133 1.28750978,0.0745051096 2.86638958,0.0745051096 C4.44526937,0.0745051096 5.71401206,1.36219458 5.71401206,2.90182329 Z" id="Path"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg></a>
+    (<a href="mailto:nicholas.car@surroundaustralia.com">nicholas.car@surroundaustralia.com</a>)<br/>
+          </dd>
+          <dt>Created</dt>
+          <dd>2020-05-25</dd>
+          <dt>Modified</dt>
+          <dd>2020-05-25</dd>
+          <dt>Version IRI</dt>
+          <dd><a href="http://linked.data.gov.au/def/phs/voc/hosts/1.0">1.0</a></dd>
+          <dt>Source</dt>
+          <dd>??</dd>
+          <dt>Ontology RDF</dt>
+          <dd><a href="hosts.ttl">RDF (turtle)</a></dd>
+      </dl>
+      <h2>Description</h2>
+      <div id="description">
+          <p>Hosts of plant pests, the latter being targets of surveillance according to a given protocol</p>
+      </div>
+  </section>
+  <section id="toc">
+      <h2>Table of Contents</h2>
+      <ol>
+          <li><a href="#concepts">Concepts</a></li>
+          <li><a href="#namespaces">Namespaces</a></li>
+          <li><a href="#legend">Legend</a></li>
+      </ol>
+  </section>
+  <section id="overview">
+      <h2>Overview</h2>
+      <div class="figure">
+          <div style="width:500px; height:500px; background-color: black;">&nbsp;</div>
+          <div class="caption"><strong>Figure 1:</strong> Taxonomy overview</div>
+      </div>
+  </section>
+  <section id="concepts">
+    <h2>Concepts <span style="float:right; font-size:smaller;"><a href="">&uparrow;</a></span></h2>
+    <ul class="hierarchy">
+<li><a href="#Apocynaceae">Apocynaceae</a></li><li><a href="#Betulaceae">Betulaceae</a></li><li><a href="#Citrus">Citrus</a></li><li><a href="#Convolvulaceae">Convolvulaceae</a></li><li><a href="#Fortunella">Fortunella</a></li><li><a href="#Monochamus">Monochamus</a></li><li><a href="#Pinaceae">Pinaceae</a></li><li><a href="#Plantae">Plantae</a></li><li><a href="#Rosaceae">Rosaceae</a></li><li><a href="#Rutaceae">Rutaceae</a></li><li><a href="#Solanaceae">Solanaceae</a></li>
+</ul>
+    <div class="entity concept" id="Apocynaceae">
+        <h3>Apocynaceae<sup title="Concept" class="sup-cp">cp</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>http://linked.data.gov.au/def/phs/voc/hosts/apocynaceae</code></td>
+            </tr>
+            <tr>
+                <th>Definition</th>
+                <td>
+                    Apocynaceae is a family of flowering plants that includes trees, shrubs, herbs, stem succulents, and vines, commonly called the dogbane family, after the American plant known as dogbane, Apocynum cannabinum. Members of the family are native to European, Asian, African, Australian, and American tropics or subtropics, with some temperate members. The family Asclepiadaceae (now known as Asclepiadoideae) is considered a subfamily of Apocynaceae and contains 348 genera.<br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity concept" id="Betulaceae">
+        <h3>Betulaceae<sup title="Concept" class="sup-cp">cp</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>http://linked.data.gov.au/def/phs/voc/hosts/betulaceae</code></td>
+            </tr>
+            <tr>
+                <th>Definition</th>
+                <td>
+                    The birch family, the Betulaceae, includes six genera of deciduous nut-bearing trees and shrubs, including the birches, alders, hazels, hornbeams, hazel-hornbeam, and hop-hornbeams numbering a total of 167 species. They are mostly natives of the temperate Northern Hemisphere, with a few species reaching the Southern Hemisphere in the Andes in South America. Their typical flowers are catkins and often appear before leaves.<br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity concept" id="Citrus">
+        <h3>Citrus<sup title="Concept" class="sup-cp">cp</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>http://linked.data.gov.au/def/phs/voc/hosts/citrus</code></td>
+            </tr>
+            <tr>
+                <th>Definition</th>
+                <td>
+                    Citrus is a genus of flowering trees and shrubs in the rue family, Rutaceae. Plants in the genus produce citrus fruits, including important crops like oranges, lemons, grapefruit, and limes. The most recent research indicates an origin in Australia, New Caledonia and New Guinea. Some researchers believe that the origin is in the part of Southeast Asia bordered by Northeast India, Burma (Myanmar) and the Yunnan province of China, and it is in this region that some commercial species such as oranges, mandarins, and lemons originated. Citrus fruit has been cultivated in an ever-widening area since ancient times.<br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity concept" id="Convolvulaceae">
+        <h3>Convolvulaceae<sup title="Concept" class="sup-cp">cp</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>http://linked.data.gov.au/def/phs/voc/hosts/convolvulaceae</code></td>
+            </tr>
+            <tr>
+                <th>Definition</th>
+                <td>
+                    Convolvulaceae, known commonly as the bindweed or morning glory family, is a family of about 60 genera and more than 1,650 species of mostly herbaceous vines, but also trees, shrubs and herbs.<br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity concept" id="Fortunella">
+        <h3>Fortunella<sup title="Concept" class="sup-cp">cp</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>http://linked.data.gov.au/def/phs/voc/hosts/fortunella</code></td>
+            </tr>
+            <tr>
+                <th>Definition</th>
+                <td>
+                    <br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity concept" id="Monochamus">
+        <h3>Monochamus<sup title="Concept" class="sup-cp">cp</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>http://linked.data.gov.au/def/phs/voc/hosts/monochamus</code></td>
+            </tr>
+            <tr>
+                <th>Definition</th>
+                <td>
+                    Monochamus is a genus of longhorn beetles found throughout the world. They are commonly known as sawyer beetles or sawyers, as their larvae bore into dead or dying trees, especially conifers such as pines. They are the type genus of the Monochamini, a tribe in the huge long-horned beetle subfamily Lamiinae, but typically included in the Lamiini today.<br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity concept" id="Pinaceae">
+        <h3>Pinaceae<sup title="Concept" class="sup-cp">cp</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>http://linked.data.gov.au/def/phs/voc/hosts/pinaceae</code></td>
+            </tr>
+            <tr>
+                <th>Definition</th>
+                <td>
+                    The Pinaceae (pine family) are trees or shrubs, including many of the well-known conifers of commercial importance such as cedars, firs, hemlocks, larches, pines and spruces. The family is included in the order Pinales, formerly known as Coniferales. Pinaceae are supported as monophyletic by their protein-type sieve cell plastids, pattern of proembryogeny, and lack of bioflavonoids. They are the largest extant conifer family in species diversity, with between 220 and 250 species (depending on taxonomic opinion) in 11 genera, and the second-largest (after Cupressaceae) in geographical range, found in most of the Northern Hemisphere, with the majority of the species in temperate climates, but ranging from subarctic to tropical. The family often forms the dominant component of boreal, coastal, and montane forests. One species, Pinus merkusii, grows just south of the equator in Southeast Asia. Major centres of diversity are found in the mountains of southwest China, Mexico, central Japan, and California. <br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity concept" id="Plantae">
+        <h3>Plantae<sup title="Concept" class="sup-cp">cp</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>http://linked.data.gov.au/def/phs/voc/hosts/plantae</code></td>
+            </tr>
+            <tr>
+                <th>Definition</th>
+                <td>
+                    Any member of the Plant Kingdom<br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity concept" id="Rosaceae">
+        <h3>Rosaceae<sup title="Concept" class="sup-cp">cp</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>http://linked.data.gov.au/def/phs/voc/hosts/rosaceae</code></td>
+            </tr>
+            <tr>
+                <th>Definition</th>
+                <td>
+                    The Rosaceae (rose) family is a medium-sized family of flowering plants, including about 2,950 known species in 91 genera. The name is derived from the type genus Rosa. Among the most species-rich genera are Alchemilla (270), Sorbus (260), Crataegus (260), Cotoneaster (260), Rubus (250), and Prunus (plums, cherries, peaches, apricots, and almonds) with about 200 species. However, all of these numbers should be seen as estimates – much taxonomic work remains.<br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity concept" id="Rutaceae">
+        <h3>Rutaceae<sup title="Concept" class="sup-cp">cp</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>http://linked.data.gov.au/def/phs/voc/hosts/rutaceae</code></td>
+            </tr>
+            <tr>
+                <th>Definition</th>
+                <td>
+                    <br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity concept" id="Solanaceae">
+        <h3>Solanaceae<sup title="Concept" class="sup-cp">cp</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>http://linked.data.gov.au/def/phs/voc/hosts/solanaceae</code></td>
+            </tr>
+            <tr>
+                <th>Definition</th>
+                <td>
+                    The Solanaceae, or nightshades, are an economically important family of flowering plants. The family ranges from annual and perennial herbs to vines, lianas, epiphytes, shrubs, and trees, and includes a number of important agricultural crops, medicinal plants, spices, weeds, and ornamentals. Many members of the family contain potent alkaloids, and some are highly toxic, but many cultures eat nightshades, in some cases as staple foods. The family belongs to the order Solanales, in the asterid group dicotyledons (Magnoliopsida). The Solanaceae consists of about 98 genera and some 2,700 species, with a great diversity of habitats, morphology and ecology.<br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+</section>
+
+  <section id="namespaces">
+    <h2>Namespaces <span style="float:right; font-size:smaller;"><a href="">&uparrow;</a></span></h2>
+    <dl>
+        <dt><em>default (:)</em></dt>
+        <dd><code>http://linked.data.gov.au/def/phs/voc/hosts/</code></dd>
+        <dt>:</dt>
+        <dd><code>http://linked.data.gov.au/def/phs/voc/hosts/</code></dd>
+        <dt>dcterms</dt>
+        <dd><code>http://purl.org/dc/terms/</code></dd>
+        <dt>dwc</dt>
+        <dd><code>http://rs.tdwg.org/dwc/terms/</code></dd>
+        <dt>hosts</dt>
+        <dd><code>http://linked.data.gov.au/def/phs/voc/hosts</code></dd>
+        <dt>owl</dt>
+        <dd><code>http://www.w3.org/2002/07/owl#</code></dd>
+        <dt>phs</dt>
+        <dd><code>http://linked.data.gov.au/def/phs#</code></dd>
+        <dt>rdf</dt>
+        <dd><code>http://www.w3.org/1999/02/22-rdf-syntax-ns#</code></dd>
+        <dt>rdfs</dt>
+        <dd><code>http://www.w3.org/2000/01/rdf-schema#</code></dd>
+        <dt>sdo</dt>
+        <dd><code>https://schema.org/</code></dd>
+        <dt>skos</dt>
+        <dd><code>http://www.w3.org/2004/02/skos/core#</code></dd>
+        <dt>taxaas</dt>
+        <dd><code>https://uat-ag-bie.oztaxa.com/ws/taxon/</code></dd>
+        <dt>tpg</dt>
+        <dd><code>http://linked.data.gov.au/def/phs/voc/tpg/</code></dd>
+        <dt>xml</dt>
+        <dd><code>http://www.w3.org/XML/1998/namespace</code></dd>
+        <dt>xsd</dt>
+        <dd><code>http://www.w3.org/2001/XMLSchema#</code></dd>
+    </dl>
+</section>
+
+  <section id="legend">
+    <h2>Legend</h2>
+    <table class="entity">
+      <tr><td><sup class="sup-cl" title="Collections">cl</sup></td><td>Collections</td></tr>
+      <tr><td><sup class="sup-cp" title="Concepts">cp</sup></td><td>Concepts</td></tr>
+    </table>
+  </section>
+</body>
+</html>
