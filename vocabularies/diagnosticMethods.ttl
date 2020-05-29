@@ -1,4 +1,5 @@
 @prefix : <http://linked.data.gov.au/def/phs/voc/diagMethods/> .
+@prefix diags: <http://linked.data.gov.au/def/phs/voc/diagMethods> .
 @prefix phs: <http://linked.data.gov.au/def/phs#> .
 @prefix tpg: <http://linked.data.gov.au/def/phs/voc/tpg/> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
@@ -21,7 +22,6 @@
                     ] ;
     dcterms:modified "2020-05-27"^^xsd:date ;
     dcterms:publisher <http://linked.data.gov.au/org/dawe> ;
-    dcterms:source "??" ;
     skos:definition "Methods used to determine the taxonomic identity of a plant pest"@en ;
     skos:prefLabel "Diagnostic methods"@en ;
     owl:versionIRI <http://linked.data.gov.au/def/phs/voc/diagMethods/1.0> ;
@@ -31,20 +31,17 @@
     a skos:Concept , phs:DiagnosticMethod ;
     skos:prefLabel "Bacterial isolation"@en ;    
     skos:definition "Laboratory procedure for extracting bacteria from a sample and growing them into pure colonies for identification or for further testing."@en ;
-    skos:notation "" ;
-    skos:inScheme :diagMethods ;
-    skos:topConceptOf :diagMethods ;
-    phs:identifiesPest tpg:citrus-canker ;
-    phs:identifiesPest tpg:xylella ;
+    skos:inScheme diags: ;
+    skos:topConceptOf diags: ;
+    phs:identifiesPest tpg:citrus-canker , tpg:xylella ;
 .
 
 :catalase-test
     a skos:Concept , phs:DiagnosticMethod ;
     skos:prefLabel "Catalase test"@en ;    
     skos:definition "Enzyme assay"@en ;
-    skos:notation "" ;
-    skos:inScheme :diagMethods ;
-    skos:topConceptOf :diagMethods ;
+    skos:inScheme diags: ;
+    skos:topConceptOf diags: ;
     phs:identifiesPest tpg:xylella ;
 .
 
@@ -52,12 +49,9 @@
     a skos:Concept , phs:DiagnosticMethod ;
     skos:prefLabel "DNA barcode"@en ;    
     skos:definition "DNA sequencing procedure that focusses on cytochrome-c"@en ;
-    skos:notation "" ;
-    skos:inScheme :diagMethods ;
-    skos:topConceptOf :diagMethods ;
-    phs:identifiesPest tpg:fall-southern-armyworm ;
-    phs:identifiesPest tpg:sawyer-beetle ;
-    phs:identifiesPest tpg:ants ;
+    skos:inScheme diags: ;
+    skos:topConceptOf diags: ;
+    phs:identifiesPest tpg:fall-southern-armyworm , tpg:sawyer-beetle , tpg:ants ;
 .
 
 :pcr
@@ -65,16 +59,9 @@
     skos:prefLabel "PCR"@en ;   
     skoas:label "Polymerase Chain Reaction" ; 
     skos:definition "DNA sequencing procedure that focusses on cytochrome-c"@en ;
-    skos:notation "" ;
-    skos:inScheme :diagMethods ;
-    skos:topConceptOf :diagMethods ;
-    phs:identifiesPest tpg:anoplophora ;
-    phs:identifiesPest tpg:citrus-canker ;
-    phs:identifiesPest tpg:fire-blight ;
-    phs:identifiesPest tpg:hlb ;
-    phs:identifiesPest tpg:pine-wilt-nematode ;
-    phs:identifiesPest tpg:xylella ;
-    phs:identifiesPest tpg:ants ;
+    skos:inScheme diags: ;
+    skos:topConceptOf diags: ;
+    phs:identifiesPest tpg:anoplophora , tpg:citrus-canker , tpg:fire-blight , tpg:hlb , tpg:pine-wilt-nematode , tpg:xylella , tpg:ants ;
 .
 
 :real-time-pcr
@@ -82,41 +69,26 @@
     skos:prefLabel "PCR"@en ;   
     skoas:label "Polymerase Chain Reaction" ; 
     skos:definition "DNA sequencing procedure that focusses on cytochrome-c"@en ;
-    skos:notation "" ;
-    skos:inScheme :diagMethods ;
-    skos:topConceptOf :diagMethods ;
-    phs:identifiesPest tpg:citrus-canker ;
-    phs:identifiesPest tpg:fire-blight ;
-    phs:identifiesPest tpg:hlb ;
+    skos:inScheme diags: ;
+    skos:topConceptOf diags: ;
+    phs:identifiesPest tpg:citrus-canker , tpg:fire-blight , tpg:hlb ;
 .
 
 :morphology
     a skos:Concept , phs:DiagnosticMethod ;
     skos:prefLabel "Morphology"@en ;   
     skos:definition "Identification by observing distinctive bodily characteristics or structures"@en ;
-    skos:notation "" ;
-    skos:inScheme :diagMethods ;
-    skos:topConceptOf :diagMethods ;
-    phs:identifiesPest tpg:anoplophora ;
-    phs:identifiesPest tpg:fall-southern-armyworm ;
-    phs:identifiesPest tpg:bmsb ;
-    phs:identifiesPest tpg:gypsy-moth ;
-    phs:identifiesPest tpg:fruit-fly ;
-    phs:identifiesPest tpg:hlb-vectors ;
-    phs:identifiesPest tpg:khapra-beetle ;
-    phs:identifiesPest tpg:sawyer-beetle ;
-    phs:identifiesPest tpg:xylella-vectors ;
-    phs:identifiesPest tpg:snails ;
-    phs:identifiesPest tpg:ants ;
+    skos:inScheme diags: ;
+    skos:topConceptOf diags: ;
+    phs:identifiesPest tpg:anoplophora , tpg:fall-southern-armyworm , tpg:bmsb , tpg:gypsy-moth , tpg:fruit-fly , tpg:hlb-vectors , tpg:khapra-beetle , tpg:sawyer-beetle , tpg:xylella-vectors , tpg:snails , tpg:ants ;
 .
 
 :morphology-larval
     a skos:Concept , phs:DiagnosticMethod ;
     skos:prefLabel "Larval morphology"@en ;   
     skos:definition "Identification by observing distinctive bodily characteristics or structures of the larval lifestage"@en ;
-    skos:notation "" ;
-    skos:inScheme :diagMethods ;
-    skos:topConceptOf :diagMethods ;
+    skos:inScheme diags: ;
+    skos:topConceptOf diags: ;
     phs:identifiesPest tpg:anoplophora ;
 .
 
@@ -127,9 +99,8 @@ Iodine starch test 	tpg-8
     a skos:Concept , phs:DiagnosticMethod ;
     skos:prefLabel "Iodine starch test"@en ;    
     skos:definition ""@en ;
-    skos:notation "" ;
-    skos:inScheme :diagMethods ;
-    skos:topConceptOf :diagMethods ;
+    skos:inScheme diags: ;
+    skos:topConceptOf diags: ;
     phs:identifiesPest tpg:hlb ;
 .
 
@@ -137,9 +108,8 @@ Iodine starch test 	tpg-8
     a skos:Concept , phs:DiagnosticMethod ;
     skos:prefLabel "Bacterial isolation"@en ;    
     skos:definition "Laboratory procedure for extracting bacteria from a sample and growing them into pure colonies for identification or for further testing."@en ;
-    skos:notation "" ;
-    skos:inScheme :diagMethods ;
-    skos:topConceptOf :diagMethods ;
+    skos:inScheme diags: ;
+    skos:topConceptOf diags: ;
     phs:identifiesPest tpg:citrus-canker ;
 .
 
@@ -147,9 +117,8 @@ Iodine starch test 	tpg-8
     a skos:Concept , phs:DiagnosticMethod ;
     skos:prefLabel "Detached leaf assay"@en ;    
     skos:definition "look at a leaf?"@en ;
-    skos:notation "" ;
-    skos:inScheme :diagMethods ;
-    skos:topConceptOf :diagMethods ;
+    skos:inScheme diags: ;
+    skos:topConceptOf diags: ;
     phs:identifiesPest tpg:citrus-canker ;
 .
 
@@ -157,9 +126,8 @@ Iodine starch test 	tpg-8
     a skos:Concept , phs:DiagnosticMethod ;
     skos:prefLabel "DNA fingerprinting"@en ;    
     skos:definition ""@en ;
-    skos:notation "" ;
-    skos:inScheme :diagMethods ;
-    skos:topConceptOf :diagMethods ;
+    skos:inScheme diags: ;
+    skos:topConceptOf diags: ;
     phs:identifiesPest tpg:citrus-canker ;
 .
 
@@ -167,20 +135,17 @@ Iodine starch test 	tpg-8
     a skos:Concept , phs:DiagnosticMethod ;
     skos:prefLabel "ELISA"@en ;    
     skos:definition "Enzyme-linked Immunosorbent assay"@en ;
-    skos:notation "" ;
-    skos:inScheme :diagMethods ;
-    skos:topConceptOf :diagMethods ;
-    phs:identifiesPest tpg:citrus-canker ;
-    phs:identifiesPest tpg:fire-blight ;
+    skos:inScheme diags: ;
+    skos:topConceptOf diags: ;
+    phs:identifiesPest tpg:citrus-canker , tpg:fire-blight ;
 .
 
 :immunofluorescence
     a skos:Concept , phs:DiagnosticMethod ;
     skos:prefLabel "Immunofluorescence"@en ;    
     skos:definition ""@en ;
-    skos:notation "" ;
-    skos:inScheme :diagMethods ;
-    skos:topConceptOf :diagMethods ;
+    skos:inScheme diags: ;
+    skos:topConceptOf diags: ;
     phs:identifiesPest tpg:fire-blight ;
 .
 
@@ -188,9 +153,8 @@ Iodine starch test 	tpg-8
     a skos:Concept , phs:DiagnosticMethod ;
     skos:prefLabel "LAMP"@en ;    
     skos:definition "Loop-mediated isothermal amplification"@en ;
-    skos:notation "" ;
-    skos:inScheme :diagMethods ;
-    skos:topConceptOf :diagMethods ;
+    skos:inScheme diags: ;
+    skos:topConceptOf diags: ;
     phs:identifiesPest tpg:fire-blight ;
 .
 
@@ -198,9 +162,8 @@ Iodine starch test 	tpg-8
     a skos:Concept , phs:DiagnosticMethod ;
     skos:prefLabel "FAME"@en ;    
     skos:definition "Fatty acid methyl ester Assay"@en ;
-    skos:notation "" ;
-    skos:inScheme :diagMethods ;
-    skos:topConceptOf :diagMethods ;
+    skos:inScheme diags: ;
+    skos:topConceptOf diags: ;
     phs:identifiesPest tpg:citrus-canker ;
 .
 
@@ -208,9 +171,8 @@ Iodine starch test 	tpg-8
     a skos:Concept , phs:DiagnosticMethod ;
     skos:prefLabel "Oxidase test"@en ;    
     skos:definition "Enzyme assay"@en ;
-    skos:notation "" ;
-    skos:inScheme :diagMethods ;
-    skos:topConceptOf :diagMethods ;
+    skos:inScheme diags: ;
+    skos:topConceptOf diags: ;
     phs:identifiesPest tpg:xylella ;
 .
 
@@ -218,9 +180,8 @@ Iodine starch test 	tpg-8
     a skos:Concept , phs:DiagnosticMethod ;
     skos:prefLabel "PCR on bacterial colonies"@en ;    
     skos:definition "Molecular test"@en ;
-    skos:notation "" ;
-    skos:inScheme :diagMethods ;
-    skos:topConceptOf :diagMethods ;
+    skos:inScheme diags: ;
+    skos:topConceptOf diags: ;
     phs:identifiesPest tpg:xylella ;
 .
 
@@ -228,9 +189,8 @@ Iodine starch test 	tpg-8
     a skos:Concept , phs:DiagnosticMethod ;
     skos:prefLabel "rDNA sequencing"@en ;    
     skos:definition "Molecular test"@en ;
-    skos:notation "" ;
-    skos:inScheme :diagMethods ;
-    skos:topConceptOf :diagMethods ;
+    skos:inScheme diags: ;
+    skos:topConceptOf diags: ;
     phs:identifiesPest tpg:xylella ;
 .
 
@@ -238,8 +198,19 @@ Iodine starch test 	tpg-8
     a skos:Concept , phs:DiagnosticMethod ;
     skos:prefLabel "Gram stain on bacterial colony"@en ;    
     skos:definition "Microbiological test"@en ;
-    skos:notation "" ;
-    skos:inScheme :diagMethods ;
-    skos:topConceptOf :diagMethods ;
+    skos:inScheme diags: ;
+    skos:topConceptOf diags: ;
     phs:identifiesPest tpg:xylella ;
 .
+
+<http://linked.data.gov.au/org/dawe> 
+    a owl:NamedIndividual , sdo:Organization ;
+    sdo:name "Department of Agriculture, Water and the Environment" ;
+    sdo:url <https://www.awe.gov.au/> .
+
+<http://orcid.org/0000-0002-8742-7730> 
+    a owl:NamedIndividual , sdo:Person ;
+    sdo:affiliation <https://surroundaustralia.com> ;
+    sdo:email <mailto:nicholas.car@surroundaustralia.com> ;
+    sdo:jobTitle "Data Systems Architect" ;
+    sdo:name "Nicholas J. Car" .
