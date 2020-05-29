@@ -1,5 +1,6 @@
 @prefix : <http://linked.data.gov.au/def/phs/voc/hosts/> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix sdo: <https://schema.org/> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
@@ -168,3 +169,8 @@ hosts:
     phs:hostsPest tpg:hlb ;  
     rdfs:seeAlso <http://dbpedia.org/resource/Solanaceae> ;
 .
+
+<http://linked.data.gov.au/org/dawe> 
+    a owl:NamedIndividual , sdo:Organization ;
+    sdo:name "Department of Agriculture, Water and the Environment" ;
+    sdo:url <https://www.awe.gov.au/> .
