@@ -290,8 +290,8 @@ sdo:Person rdf:type owl:Class .
 ###  https://orcid.org/0000-0002-3884-3420
 <https://orcid.org/0000-0002-3884-3420> rdf:type owl:NamedIndividual ,
                                                  sdo:Person ;
-                                        sdo:affiliation <https://www.csiro.au.com> ;
-                                        sdo:email <mailto:simon.cox@surroundaustralia.com> ;
+                                        sdo:affiliation <https://www.csiro.au> ;
+                                        sdo:email <mailto:simon.cox@csiro.au> ;
                                         sdo:jobTitle "Research Scientist" ;
                                         sdo:name "Simon J.D. Cox" .
 

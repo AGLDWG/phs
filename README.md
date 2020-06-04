@@ -1,5 +1,6 @@
 # Plant Health Surveillance Ontology
 RDF documentation of the **Pest Record Specification** (PRS) for *Plant Health Surveillance*.
+* During developmemt, view the [latest rendering of the phs ontology](https://raw.githack.com/AGLDWG/phs-ont/master/phs.html) here.
 
 ## Background
 This work is being carried out by the Australian Government Department of Agriculture and Water Resources in collaboration with Biosecurity Agencies of Austlaina states and territories. 
