@@ -1,0 +1,257 @@
+@prefix : <http://linked.data.gov.au/def/phs/voc/lures/> .
+@prefix lures: <http://linked.data.gov.au/def/phs/voc/lures> .
+@prefix phs: <http://linked.data.gov.au/def/phs#> .
+@prefix tpg: <http://linked.data.gov.au/def/phs/voc/tpg/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sdo: <https://schema.org/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix taxaas: <https://uat-ag-bie.oztaxa.com/ws/taxon/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+lures:
+    a owl:Ontology , skos:ConceptScheme ;
+    dcterms:contributor <http://orcid.org/0000-0002-8742-7730> ;
+    dcterms:created "2020-05-27"^^xsd:date ;
+    dcterms:creator [ a sdo:Person ;
+                    sdo:affiliation <http://linked.data.gov.au/org/dawe> ;
+                    sdo:email <mailto:stephen.pratt@awe.gov.au> ;
+                    sdo:jobTitle "Project Manager: Implementation of Plant Health Surveillance Data Store" ;
+                    sdo:name "Stephen J. Pratt"
+                    ] ;
+    dcterms:modified "2020-05-27"^^xsd:date ;
+    dcterms:publisher <http://linked.data.gov.au/org/dawe> ;
+    skos:definition "Substances that attracts target pests."@en ;
+    skos:prefLabel "Lures"@en ;
+    owl:versionIRI <http://linked.data.gov.au/def/phs/voc/lures/1.0> ;
+    skos:hasTopconcept :lure , :attractant , :mixture ;
+.
+
+:lure
+    a skos:Concept , phs:Lure ;
+    skos:prefLabel "Lure"@en ;    
+    skos:definition "A volatile pure substance that elicits a behavioural response (attraction) specifically by the the target pest"@en ;
+    skos:inScheme lures: ;
+    skos:topConceptOf lures: ;
+.
+
+:alpha-ionol
+    a skos:Concept , phs:Lure ;
+    skos:prefLabel "Alpha ionol"@en ;    
+    skos:definition "A lure for fruit flies"@en ;
+    skos:inScheme lures: ;
+    skos:broader :lure ;
+    phs:luresPest tpg:fruit-fly ;  
+.
+
+:alpha-pinene-ethanol
+    a skos:Concept , phs:Lure ;
+    skos:prefLabel "Alpha pinene and ethanol"@en ;    
+    skos:definition "An attractant mixture for pests of pine trees"@en ;
+    skos:inScheme lures: ;
+    skos:broader :mixture ;
+    phs:luresPest tpg:sawyer-beetle ;  
+.
+
+:alpha-pinene-ipsenol-butenol
+    a skos:Concept , phs:Lure ;
+    skos:prefLabel "Alpha pinene, ipsenol and butenol"@en ;    
+    skos:definition "An attractant mixture for pests of pine trees"@en ;
+    skos:inScheme lures: ;
+    skos:broader :mixture ;
+    phs:luresPest tpg:sawyer-beetle ;  
+.
+
+:attractant
+    a skos:Concept , phs:Lure ;
+    skos:prefLabel "Attractant"@en ;    
+    skos:definition "Material that releases volatile compound/s that indicate a food source to the target pest; food itself for the target pest"@en ;
+    skos:inScheme lures: ;
+    skos:topConceptOf lures: ;
+.
+
+:bmsb
+    a skos:Concept , phs:Lure ;
+    skos:prefLabel "BMSB lure"@en ;    
+    skos:definition "A lure for brown marmorated stink bug"@en ;
+    skos:inScheme lures: ;
+    skos:broader :lure ;
+    phs:luresPest tpg:bmsb ;  
+.
+
+:cade-oil
+    a skos:Concept , phs:Lure ;
+    skos:prefLabel "Cade oil"@en ;    
+    skos:definition "A lure for fruit flies"@en ;
+    skos:inScheme lures: ;
+    skos:broader :lure ;
+    phs:luresPest tpg:fruit-fly ;  
+.
+
+:capilure-terpinyl-acetate
+    a skos:Concept , phs:Lure ;
+    skos:prefLabel "Capilure and terpinyl acetate"@en ;    
+    skos:definition "An attractant mixture for fruit fly"@en ;
+    skos:inScheme lures: ;
+    skos:broader :mixture ;
+    phs:luresPest tpg:fruit-fly ;  
+.
+
+:carbohydrate
+    a skos:Concept , phs:Lure ;
+    skos:prefLabel "Carbohydrate"@en ;    
+    skos:definition "An attractant for pests"@en ;
+    skos:inScheme lures: ;
+    skos:broader :attractant ;
+    phs:luresPest tpg:ants ;  
+.
+
+:cue
+    a skos:Concept , phs:Lure ;
+    skos:prefLabel "Cue lure"@en ;    
+    skos:definition "A lure for fruit flies"@en ;
+    skos:inScheme lures: ;
+    skos:broader :lure ;
+    phs:luresPest tpg:fruit-fly ;  
+.
+
+:cue-lure
+    a skos:Concept , phs:Lure ;
+    skos:prefLabel "Cue lure"@en ;    
+    skos:definition "A lure for fruit flies"@en ;
+    skos:inScheme lures: ;
+    skos:broader :lure ;
+    phs:luresPest tpg:fruit-fly ;  
+.
+
+:disparlure
+    a skos:Concept , phs:Lure ;
+    skos:prefLabel "Disparlure"@en ;    
+    skos:definition "A lure for Asian gypsy moth"@en ;
+    skos:inScheme lures: ;
+    skos:broader :lure ;
+    phs:luresPest tpg:gypsy-moth ;  
+.
+
+:faw
+    a skos:Concept , phs:Lure ;
+    skos:prefLabel "Fall armyworm lure"@en ;    
+    skos:definition "A lure for fall armyworm"@en ;
+    skos:inScheme lures: ;
+    skos:broader :lure ;
+    phs:luresPest tpg:fall-armyworm ;  
+    phs:luresPest tpg:fall-and-southern-armyworm ;  
+.
+
+:fruit
+    a skos:Concept , phs:Lure ;
+    skos:prefLabel "Fruit"@en ;    
+    skos:definition "An attractant for snails"@en ;
+    skos:inScheme lures: ;
+    skos:broader :attractant ;
+    phs:luresPest tpg:snails ;  
+.
+
+:khapra
+    a skos:Concept , phs:Lure ;
+    skos:prefLabel "Khapra lure"@en ;    
+    skos:definition "A lure for Khapra beetle"@en ;
+    skos:inScheme lures: ;
+    skos:broader :lure ;
+    phs:luresPest tpg:khapra-beetle ;  
+.
+
+:khapra-lure-kairomone
+    a skos:Concept , phs:Lure ;
+    skos:prefLabel "Khapra lure and kairomone"@en ;    
+    skos:definition "An attractant mixture for Khapra beetle"@en ;
+    skos:inScheme lures: ;
+    skos:broader :mixture ;
+    phs:luresPest tpg:khapra-beetle ;  
+.
+
+:khapra-lure-kairomone-wheatgerm
+    a skos:Concept , phs:Lure ;
+    skos:prefLabel "Khapra lure, kairomone and wheatgerm"@en ;    
+    skos:definition "An attractant mixture for Khapra beetle"@en ;
+    skos:inScheme lures: ;
+    skos:broader :mixture ;
+    phs:luresPest tpg:khapra-beetle ;  
+.
+
+:khapra-lure-wheatgerm
+    a skos:Concept , phs:Lure ;
+    skos:prefLabel "Khapra lure and wheatgerm"@en ;    
+    skos:definition "An attractant mixture for Khapra beetle"@en ;
+    skos:inScheme lures: ;
+    skos:broader :mixture ;
+    phs:luresPest tpg:khapra-beetle ;  
+.
+
+:methyl-eugenol
+    a skos:Concept , phs:Lure ;
+    skos:prefLabel "Methyl eugenol"@en ;   
+    skos:label "ME" ;
+    skos:definition "A lure for fruit flies"@en ;
+    skos:inScheme lures: ;
+    skos:broader :lure ;
+    phs:luresPest tpg:fruit-fly ;  
+.
+
+:mixture
+    a skos:Concept , phs:Lure ;
+    skos:prefLabel "Mixture"@en ;    
+    skos:definition "A mixture of lures and/or attractants for plant pests"@en ;
+    skos:inScheme lures: ;
+    skos:topConceptOf lures: ;
+.
+
+:protein
+    a skos:Concept , phs:Lure ;
+    skos:prefLabel "Protein"@en ;    
+    skos:definition "An attractant for pests"@en ;
+    skos:inScheme lures: ;
+    skos:broader :attractant ;
+    phs:luresPest tpg:snails ;  
+.
+
+:sawyer-beetle-pheromone-kairomone
+    a skos:Concept , phs:Lure ;
+    skos:prefLabel "Saywer beetle pheromone and kairomone"@en ;    
+    skos:definition "An attractant mixture for Sawyer beetle"@en ;
+    skos:inScheme lures: ;
+    skos:broader :mixture ;
+    phs:luresPest tpg:sawyer-beetle ;  
+.
+
+:trimedlure-terpinyl-acetate
+    a skos:Concept , phs:Lure ;
+    skos:prefLabel "Trimedlure and terpinyl acetate"@en ;    
+    skos:definition "An attractant mixture for fruit fly"@en ;
+    skos:inScheme lures: ;
+    skos:broader :mixture ;
+    phs:luresPest tpg:fruit-fly ;  
+.
+
+:yeast-extract
+    a skos:Concept , phs:Lure ;
+    skos:prefLabel "Yeast extract"@en ;    
+    skos:definition "An attractant for snails"@en ;
+    skos:inScheme lures: ;
+    skos:broader :attractant ;
+    skos:related :protein ;
+    phs:luresPest tpg:snails ;  
+.
+
+<http://linked.data.gov.au/org/dawe> 
+    a owl:NamedIndividual , sdo:Organization ;
+    sdo:name "Department of Agriculture, Water and the Environment" ;
+    sdo:url <https://www.awe.gov.au/> .
+
+<http://orcid.org/0000-0002-8742-7730> 
+    a owl:NamedIndividual , sdo:Person ;
+    sdo:affiliation <https://surroundaustralia.com> ;
+    sdo:email <mailto:nicholas.car@surroundaustralia.com> ;
+    sdo:jobTitle "Data Systems Architect" ;
+    sdo:name "Nicholas J. Car" .

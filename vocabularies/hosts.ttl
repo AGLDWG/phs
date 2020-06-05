@@ -1,0 +1,183 @@
+@prefix : <http://linked.data.gov.au/def/phs/voc/hosts/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sdo: <https://schema.org/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix taxaas: <https://uat-ag-bie.oztaxa.com/ws/taxon/> .
+@prefix phs: <http://linked.data.gov.au/def/phs#> .
+@prefix tpg: <http://linked.data.gov.au/def/phs/voc/tpg/> .
+@prefix hosts: <http://linked.data.gov.au/def/phs/voc/hosts> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+hosts:
+    a owl:Ontology , skos:ConceptScheme ;
+    dcterms:contributor <http://orcid.org/0000-0002-8742-7730> ;
+    dcterms:created "2020-05-25"^^xsd:date ;
+    dcterms:creator [ a sdo:Person ;
+                    sdo:affiliation <http://linked.data.gov.au/org/dawe> ;
+                    sdo:email <mailto:stephen.pratt@awe.gov.au> ;
+                    sdo:jobTitle "Project Manager: Implementation of Plant Health Surveillance Data Store" ;
+                    sdo:name "Stephen J. Pratt"
+                    ] ;
+    dcterms:modified "2020-05-25"^^xsd:date ;
+    dcterms:publisher <http://linked.data.gov.au/org/dawe> ;
+    dcterms:source "??" ;
+    skos:definition "Hosts of plant pests, the latter being targets of surveillance according to a given protocol"@en ;
+    skos:prefLabel "Hosts"@en ;
+    owl:versionIRI <http://linked.data.gov.au/def/phs/voc/hosts/1.0> ;
+    skos:hasTopConcept 
+        :apocynaceae ,
+        :betulaceae ,
+        :citrus ,
+        :convolvulaceae ,
+        :fortunella ,        
+        :monochamus ,
+        :plantae , 
+        :pinaceae ,
+        :rosaceae ,
+        :rutaceae ,
+        :solanaceae ;
+.
+
+:apocynaceae
+    a skos:Concept , phs:Host ;
+    skos:prefLabel "Apocynaceae"@en ;    
+    skos:definition "Apocynaceae is a family of flowering plants that includes trees, shrubs, herbs, stem succulents, and vines, commonly called the dogbane family, after the American plant known as dogbane, Apocynum cannabinum. Members of the family are native to European, Asian, African, Australian, and American tropics or subtropics, with some temperate members. The family Asclepiadaceae (now known as Asclepiadoideae) is considered a subfamily of Apocynaceae and contains 348 genera."@en ;
+    skos:inScheme hosts: ;
+    skos:topConceptOf hosts:;
+    dwc:taxonid taxaas:70619;
+    phs:hostsPest tpg:hlb ;  
+    rdfs:seeAlso <http://dbpedia.org/resource/Apocynaceae> ;
+.
+
+:betulaceae
+    a skos:Concept , phs:Host ;
+    skos:prefLabel "Betulaceae"@en ;    
+    skos:definition "The birch family, the Betulaceae, includes six genera of deciduous nut-bearing trees and shrubs, including the birches, alders, hazels, hornbeams, hazel-hornbeam, and hop-hornbeams numbering a total of 167 species. They are mostly natives of the temperate Northern Hemisphere, with a few species reaching the Southern Hemisphere in the Andes in South America. Their typical flowers are catkins and often appear before leaves."@en ;
+    skos:inScheme hosts: ;
+    skos:topConceptOf hosts:;
+    dwc:taxonid taxaas:82476;
+    phs:hostsPest tpg:sawyer-beetle ;  
+    rdfs:seeAlso <http://dbpedia.org/resource/Betulaceae> ;
+.
+
+:citrus
+    a skos:Concept , phs:Host ;
+    skos:prefLabel "Citrus"@en ;    
+    skos:definition "Citrus is a genus of flowering trees and shrubs in the rue family, Rutaceae. Plants in the genus produce citrus fruits, including important crops like oranges, lemons, grapefruit, and limes. The most recent research indicates an origin in Australia, New Caledonia and New Guinea. Some researchers believe that the origin is in the part of Southeast Asia bordered by Northeast India, Burma (Myanmar) and the Yunnan province of China, and it is in this region that some commercial species such as oranges, mandarins, and lemons originated. Citrus fruit has been cultivated in an ever-widening area since ancient times."@en ;
+    skos:inScheme hosts: ;
+    skos:topConceptOf hosts:;
+    dwc:taxonid taxaas:82423;
+    phs:hostsPest tpg:citrus-canker ;  
+    rdfs:seeAlso <http://dbpedia.org/resource/Citrus> ;
+.
+
+:convolvulaceae
+    a skos:Concept , phs:Host ;
+    skos:prefLabel "Convolvulaceae"@en ;    
+    skos:definition "Convolvulaceae, known commonly as the bindweed or morning glory family, is a family of about 60 genera and more than 1,650 species of mostly herbaceous vines, but also trees, shrubs and herbs."@en ;
+    skos:inScheme hosts: ;
+    skos:topConceptOf hosts:;
+    dwc:taxonid taxaas:65223;
+    phs:hostsPest tpg:hlb ;  
+    rdfs:seeAlso <http://dbpedia.org/resource/Convolvulaceae> ;
+.
+
+:fortunella
+    a skos:Concept , phs:Host ;
+    skos:prefLabel "Fortunella"@en ;    
+    skos:definition ""@en ;
+    skos:inScheme hosts: ;
+    skos:topConceptOf hosts:;
+    dwc:taxonid taxaas:82593;
+    phs:hostsPest tpg:citrus-canker ;  
+    rdfs:seeAlso <http://dbpedia.org/resource/Fortunella> ;
+.
+
+:monochamus
+    a skos:Concept , phs:Host ;
+    skos:prefLabel "Monochamus"@en ;    
+    skos:definition "Monochamus is a genus of longhorn beetles found throughout the world. They are commonly known as sawyer beetles or sawyers, as their larvae bore into dead or dying trees, especially conifers such as pines. They are the type genus of the Monochamini, a tribe in the huge long-horned beetle subfamily Lamiinae, but typically included in the Lamiini today."@en ;
+    skos:notation "We may create a concept 'Vector' to distinguish insect 'hosts' from plant hosts" ;
+    skos:inScheme hosts: ;
+    skos:topConceptOf hosts:;
+    dwc:taxonid taxaas:69671;
+    phs:hostsPest tpg:pine-wilt-nematode ;  
+    rdfs:seeAlso <http://dbpedia.org/resource/Monochamus> ;
+.
+
+:plantae
+    a skos:Concept , phs:Host ;
+    skos:prefLabel "Plantae"@en ;    
+    skos:definition "Any member of the Plant Kingdom"@en ;
+    skos:inScheme hosts: ;
+    skos:topConceptOf hosts:;
+    phs:hostsPest 
+        tpg:anoplophora , 
+        tpg:fall-and-southern-armyworm , 
+        tpg:bmsb , 
+        tpg:fire-blight , 
+        tpg:gypsy-moth , 
+        tpg:xylella-fastidiosa , 
+        tpg:xylella-vectors , 
+        tpg:ants , 
+        tpg:snails ;  
+.
+
+:pinaceae
+    a skos:Concept , phs:Host ;
+    skos:prefLabel "Pinaceae"@en ;    
+    skos:definition "The Pinaceae (pine family) are trees or shrubs, including many of the well-known conifers of commercial importance such as cedars, firs, hemlocks, larches, pines and spruces. The family is included in the order Pinales, formerly known as Coniferales. Pinaceae are supported as monophyletic by their protein-type sieve cell plastids, pattern of proembryogeny, and lack of bioflavonoids. They are the largest extant conifer family in species diversity, with between 220 and 250 species (depending on taxonomic opinion) in 11 genera, and the second-largest (after Cupressaceae) in geographical range, found in most of the Northern Hemisphere, with the majority of the species in temperate climates, but ranging from subarctic to tropical. The family often forms the dominant component of boreal, coastal, and montane forests. One species, Pinus merkusii, grows just south of the equator in Southeast Asia. Major centres of diversity are found in the mountains of southwest China, Mexico, central Japan, and California. "@en ;
+    skos:inScheme hosts: ;
+    skos:topConceptOf hosts:;
+    dwc:taxonid taxaas:82854;
+    phs:hostsPest tpg:sawyer-beetle , tpg:pine-wilt-nematode ;  
+    rdfs:seeAlso <http://dbpedia.org/resource/Pinaceae> ;
+.
+
+:rosaceae
+    a skos:Concept , phs:Host ;
+    skos:prefLabel "Rosaceae"@en ;    
+    skos:definition "The Rosaceae (rose) family is a medium-sized family of flowering plants, including about 2,950 known species in 91 genera. The name is derived from the type genus Rosa. Among the most species-rich genera are Alchemilla (270), Sorbus (260), Crataegus (260), Cotoneaster (260), Rubus (250), and Prunus (plums, cherries, peaches, apricots, and almonds) with about 200 species. However, all of these numbers should be seen as estimates – much taxonomic work remains."@en ;
+    skos:inScheme hosts: ;
+    skos:topConceptOf hosts:;
+    dwc:taxonid taxaas:82145;
+    phs:hostsPest tpg:fire-blight ;  
+    rdfs:seeAlso <http://dbpedia.org/resource/Rosaceae> ;
+.
+
+:rutaceae
+    a skos:Concept , phs:Host ;
+    skos:prefLabel "Rutaceae"@en ;    
+    skos:definition ""@en ;
+    skos:inScheme hosts: ;
+    skos:topConceptOf hosts:;
+    dwc:taxonid taxaas:68687;
+    phs:hostsPest tpg:citrus-canker , tpg:hlb ;  
+    rdfs:seeAlso <http://dbpedia.org/resource/Rutaceae> ;
+.
+
+:solanaceae
+    a skos:Concept , phs:Host ;
+    skos:prefLabel "Solanaceae"@en ;    
+    skos:definition "The Solanaceae, or nightshades, are an economically important family of flowering plants. The family ranges from annual and perennial herbs to vines, lianas, epiphytes, shrubs, and trees, and includes a number of important agricultural crops, medicinal plants, spices, weeds, and ornamentals. Many members of the family contain potent alkaloids, and some are highly toxic, but many cultures eat nightshades, in some cases as staple foods. The family belongs to the order Solanales, in the asterid group dicotyledons (Magnoliopsida). The Solanaceae consists of about 98 genera and some 2,700 species, with a great diversity of habitats, morphology and ecology."@en ;
+    skos:inScheme hosts: ;
+    skos:topConceptOf hosts:;
+    dwc:taxonid taxaas:67176;
+    phs:hostsPest tpg:hlb ;  
+    rdfs:seeAlso <http://dbpedia.org/resource/Solanaceae> ;
+.
+
+<http://linked.data.gov.au/org/dawe> 
+    a owl:NamedIndividual , sdo:Organization ;
+    sdo:name "Department of Agriculture, Water and the Environment" ;
+    sdo:url <https://www.awe.gov.au/> .
+
+<http://orcid.org/0000-0002-8742-7730> 
+    a owl:NamedIndividual , sdo:Person ;
+    sdo:affiliation <https://surroundaustralia.com> ;
+    sdo:email <mailto:nicholas.car@surroundaustralia.com> ;
+    sdo:jobTitle "Data Systems Architect" ;
+    sdo:name "Nicholas J. Car" .

@@ -1,21 +1,14 @@
 @prefix : <http://linked.data.gov.au/def/phs#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
-@prefix phs: <https://example.org/PlantHealthSurveillanceOntology#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix sdo: <https://schema.org/> .
-@prefix ssn: <http://www.w3.org/ns/ssn/> .
-@prefix tgn: <http://vocab.getty.edu/tgn/> .
-@prefix xml: <http://www.w3.org/XML/1998/namespace> .
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-@prefix ffly: <https://example.org/def/fruitfly> .
-@prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sdo: <https://schema.org/> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix sosa: <http://www.w3.org/ns/sosa/> .
 @prefix vann: <http://purl.org/vocab/vann/> .
-@prefix dcterms: <http://purl.org/dc/terms/> .
-@base <http://linked.data.gov.au/def/phs> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 <http://linked.data.gov.au/def/phs> rdf:type owl:Ontology ;
                                      owl:versionIRI <http://linked.data.gov.au/def/phs/0.1> ;
@@ -23,12 +16,13 @@
                                                          <https://orcid.org/0000-0002-3884-3420> ;
                                      dcterms:created "2020-02-11"^^xsd:date ;
                                      dcterms:creator [ rdf:type sdo:Person ;
-                                                       sdo:affiliation <http://linked.data.gov.au/org/awe> ;
+                                                       sdo:affiliation <http://linked.data.gov.au/org/dawe> ;
                                                        sdo:email <mailto:stephen.pratt@awe.gov.au> ;
                                                        sdo:jobTitle "Project Manager: Implementation of Plant Health Surveillance Data Store" ;
                                                        sdo:name "Stephen J. Pratt"
                                                      ] ;
                                      dcterms:modified "2020-06-05"^^xsd:date ;
+                                     dcterms:publisher <https://linked.data.gov.au/org/dawe> ;
                                      vann:preferredNamespacePrefix "phs" ;
                                      rdfs:comment "An ontology about surveillance for plant pests, to determine plant health."@en ;
                                      rdfs:label "Plant Health Surveillance Ontology"@en ;
@@ -99,7 +93,7 @@ sdo:url rdf:type owl:AnnotationProperty .
 
 ###  http://linked.data.gov.au/def/phs#trapType
 :trapType rdf:type owl:ObjectProperty ;
-          rdfs:domain :InsectTrap ;
+          rdfs:domain :Trap ;
           rdfs:range :TrapType ;
           rdfs:comment "The make or model of a trap" ;
           rdfs:label "trap type" .
@@ -168,8 +162,8 @@ sdo:url rdf:type owl:AnnotationProperty .
 
 ###  http://linked.data.gov.au/def/phs#Lure
 :Lure rdf:type owl:Class ;
-      rdfs:comment "An attractant that may be placed in an InsectTrap" ,
-                   """We may wish to split this concept into true lures, which are volatile pure substances that elecit responses in only certain species, and attractants, which release volatile substances that attract many species, such as by mimicing food sources.
+      rdfs:comment "A substances that attracts target pests." ;
+      skos:editoralNote """We may wish to split this concept into true lures, which are volatile pure substances that elecit responses in only certain species, and attractants, which release volatile substances that attract many species, such as by mimicing food sources.
 In this case, a superclass of e.g. 'bait' could be created.""" ;
       rdfs:label "Lure" .
 
@@ -211,6 +205,16 @@ In this case, a superclass of e.g. 'bait' could be created.""" ;
           rdfs:subClassOf skos:Concept ;
           rdfs:label "Trap Type" .
 
+:ObservationMethod a owl:Class ;
+      rdfs:label "Observation method" ;
+      rdfs:comment "A technique used to carry out an act of surveillance. Observation methods are chosen according to the target pest and/or host|substrate. The sensitivity of an observation may depend on the method that was used." ;
+.
+
+:DiagnosticMethod a owl:Class ;
+      rdfs:label "Diagnostic method" ;
+      rdfs:comment "A procedure or method used to determine the taxonomic identity of a plant pest. May be carried out in the field, or more usually, in a laboratory." ;
+.
+
 
 ###  http://purl.org/dc/terms/Dataset
 dcterms:Dataset rdf:type owl:Class .
@@ -248,8 +252,8 @@ sdo:Person rdf:type owl:Class .
 #    Individuals
 #################################################################
 
-###  http://linked.data.gov.au/org/awe
-<http://linked.data.gov.au/org/awe> rdf:type owl:NamedIndividual ,
+###  http://linked.data.gov.au/org/dawe
+<http://linked.data.gov.au/org/dawe> rdf:type owl:NamedIndividual ,
                                              sdo:Organization ;
                                     sdo:name "Department of Agriculture, Water and the Environment" ;
                                     sdo:url <https://www.awe.gov.au> .
@@ -270,6 +274,11 @@ sdo:Person rdf:type owl:Class .
                                 sdo:name "SURROUND Australia Pty Ltd" ;
                                 sdo:url <https://surroundaustralia.com> .
 
+###  http://linked.data.gov.au/org/dawe
+<http://linked.data.gov.au/org/dawe> rdf:type owl:NamedIndividual ,
+                                         sdo:Organization ;
+                                sdo:name "Department of Agriculture, Water and the Environment" ;
+                                sdo:url <https://www.awe.gov.au/> .
 
 ###  https://www.csiro.au.com
 <https://www.csiro.au.com> rdf:type owl:NamedIndividual ,
@@ -281,10 +290,59 @@ sdo:Person rdf:type owl:Class .
 ###  https://orcid.org/0000-0002-3884-3420
 <https://orcid.org/0000-0002-3884-3420> rdf:type owl:NamedIndividual ,
                                                  sdo:Person ;
-                                        sdo:affiliation <https://www.csiro.au.com> ;
-                                        sdo:email <mailto:simon.cox@surroundaustralia.com> ;
+                                        sdo:affiliation <https://www.csiro.au> ;
+                                        sdo:email <mailto:simon.cox@csiro.au> ;
                                         sdo:jobTitle "Research Scientist" ;
                                         sdo:name "Simon J.D. Cox" .
 
 
 ###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
+
+:catchesPest 
+  a owl:ObjectProperty ;
+  rdfs:label "catches pest"@en ;
+  rdfs:comment "A device that is designed to catch the target pest"@en ;
+  rdfs:comment "An object which provides refuge to the target pest, and can thus be used as a trap"@en ;
+  rdfs:domain :Trap ;
+  rdfs:range :TargetPest ;
+.
+
+:hostsPest 
+  a owl:ObjectProperty ;
+  rdfs:label "hosts pest"@en ;
+  rdfs:comment "A living thing (usually a plant) on which the target pest may be found"@en ; 
+  rdfs:domain :Host ;
+  rdfs:range :TargetPest ;
+.
+
+:supportsPest 
+  a owl:ObjectProperty ;
+  rdfs:label "supports pest"@en ;
+  rdfs:comment "A substrate on which the target pest is likely be found, if it were present"@en ; 
+  rdfs:domain :Substrate ;
+  rdfs:range :TargetPest ;
+.
+
+:detectsPest 
+  a owl:ObjectProperty ;
+  rdfs:label "detects pest"@en ;
+  rdfs:comment "The pest for which the observation method is useful"@en ; 
+  rdfs:domain :ObservationMethod ;
+  rdfs:range :TargetPest ;
+.
+
+:luresPest 
+  a owl:ObjectProperty ;
+  rdfs:label "lures pest"@en ;
+  rdfs:comment "The target pest which is attracted by this lure"@en ; 
+  rdfs:domain :Lure ;
+  rdfs:range :TargetPest ;
+.
+
+:identifiesPest 
+  a owl:ObjectProperty ;
+  rdfs:label "Identifies pest"@en ;
+  rdfs:comment "This diagnostic method is appropriate for the target pest"@en ; 
+  rdfs:domain :DiagnosticMethod ;
+  rdfs:range :TargetPest ;
+.

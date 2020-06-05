@@ -1,0 +1,16 @@
+@prefix phs: <http://linked.data.gov.au/def/phs#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix traps: <http://linked.data.gov.au/def/phs/voc/traps/> .
+
+
+<DavesTrap> a phs:Trap ;
+    rdfs:label "Dave's Trap" ;
+    rdfs:comment "Teh trap at Dave's paddock" ;
+    dcterms:type traps:ant-refuge ;  # transitivly - phs:catchesPest tpg:ants ;
+
+    # Bate
+    
+    geo:hasGeometry [
+        geo:asWKT "POINT (xxxx yyy)"^^geo:wktLiteral ;
+    ] ;
+

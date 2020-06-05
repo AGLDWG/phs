@@ -1,0 +1,218 @@
+@prefix : <http://linked.data.gov.au/def/phs/voc/traps/> .
+@prefix traps: <http://linked.data.gov.au/def/phs/voc/traps> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sdo: <https://schema.org/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix taxaas: <https://uat-ag-bie.oztaxa.com/ws/taxon/> .
+@prefix phs: <http://linked.data.gov.au/def/phs#> .
+@prefix tpg: <http://linked.data.gov.au/def/phs/voc/tpg/> .
+@prefix traps: <http://linked.data.gov.au/def/phs/voc/traps/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+traps:
+    a owl:Ontology , skos:ConceptScheme ;
+    dcterms:contributor <http://orcid.org/0000-0002-8742-7730> ;
+    dcterms:created "2020-05-22"^^xsd:date ;
+    dcterms:creator [ a sdo:Person ;
+                    sdo:affiliation <http://linked.data.gov.au/org/dawe> ;
+                    sdo:email <mailto:stephen.pratt@awe.gov.au> ;
+                    sdo:jobTitle "Project Manager: Implementation of Plant Health Surveillance Data Store" ;
+                    sdo:name "Stephen J. Pratt"
+                    ] ;
+    dcterms:modified "2020-05-22"^^xsd:date ;
+    dcterms:publisher <http://linked.data.gov.au/org/dawe> ;
+    skos:definition "Types of Trap used to catch plant health pests"@en ;
+    skos:prefLabel "Traps Types"@en ;
+    owl:versionIRI <http://linked.data.gov.au/def/phs/voc/traps/1.0> ;
+.
+
+:ant-refuge
+    a skos:Concept , phs:TrapType ;
+    skos:prefLabel "Ant refuge"@en ;    
+    skos:definition ""@en ;
+    skos:inScheme traps: ;
+    skos:topConceptOf traps:;
+    phs:catchesPest tpg:ants ;  # crosslink!!!!
+.
+:vial
+    a skos:Concept , phs:Trap ;
+    skos:prefLabel "Ant refuge - vial"@en ;    
+    skos:definition ""@en ;
+    skos:inScheme traps: ;
+    phs:catchesPest tpg:ants ;
+    skos:broader :ant-refuge
+.
+
+# broad terms with a narrower term
+:snail-refuge
+    a skos:Concept , phs:Trap ;
+    skos:prefLabel "Snail refuge"@en ;    
+    skos:definition "Objects that can be used to trap snails"@en ;
+    skos:inScheme traps: ;
+    skos:topConceptOf traps:;
+.
+
+:besser-block
+    a skos:Concept , phs:Trap ;
+    skos:prefLabel "Besser block"@en ;    
+    skos:definition "A concrete block that is cheap and common, within which snails may lodge"@en ;
+    skos:inScheme traps: ;
+    skos:broader :snail-refuge ;  # inverse of above term's narrower
+    phs:catchesPest tpg:snails
+.
+
+:polystyrene
+    a skos:Concept , phs:Trap ;
+    skos:prefLabel "polystyrene"@en ;    
+    skos:definition "Expanded polystyrene items of arbitrary dimensions"@en ;
+    skos:inScheme traps: ;
+    skos:broader :snail-refuge ;  # inverse of above term's narrower
+    phs:catchesPest tpg:snails
+.
+
+:tile
+    a skos:Concept , phs:Trap ;
+    skos:prefLabel "tile"@en ;    
+    skos:definition "Ceramic or concrete tiles"@en ;
+    skos:inScheme traps: ;
+    skos:broader :snail-refuge ; 
+    phs:catchesPest tpg:snails
+.
+
+:sticky
+    a skos:Concept , phs:Trap ;
+    skos:prefLabel "Sticky trap"@en ;    
+    skos:definition ""@en ;
+    skos:inScheme traps: ;
+    skos:topConceptOf traps:;
+.
+
+:clear
+    a skos:Concept , phs:Trap ;
+    skos:prefLabel "Clear sticky trap"@en ;    
+    skos:definition ""@en ;
+    skos:inScheme traps: ;
+    skos:broader :sticky ; 
+    phs:catchesPest tpg:bmsb , tpg:agm ;
+.
+
+:yellow
+    a skos:Concept , phs:Trap ;
+    skos:prefLabel "Yellow sticky trap"@en ;    
+    skos:definition ""@en ;
+    skos:inScheme traps: ;
+    skos:broader :sticky ; 
+    phs:catchesPest tpg:bmsb , tpg:agm , tpg:hlb-vectors , tpg:xylella-vectors ;
+.
+
+:bucket
+    a skos:Concept , phs:Trap ;
+    skos:prefLabel "Bucket trap"@en ;    
+    skos:definition ""@en ;
+    skos:topConceptOf traps:;
+    phs:catchesPest tpg:fall-and-southern-armyworm ;
+.
+
+:delta
+    a skos:Concept , phs:Trap ;
+    skos:prefLabel "Delta trap"@en ;    
+    skos:definition ""@en ;
+    skos:topConceptOf traps:;
+    phs:catchesPest tpg:fall-and-southern-armyworm ;
+.
+
+:heliothis
+    a skos:Concept , phs:Trap ;
+    skos:prefLabel "Heliothis mesh net trap"@en ;    
+    skos:definition ""@en ;
+    skos:topConceptOf traps:;
+    phs:catchesPest tpg:fall-and-southern-armyworm ;
+.
+
+:homemade
+    a skos:Concept , phs:Trap ;
+    skos:prefLabel "Homemade trap"@en ;    
+    skos:definition ""@en ;
+    skos:topConceptOf traps:;
+    phs:catchesPest tpg:fall-and-southern-armyworm ;
+.
+
+
+:dome
+    a skos:Concept , phs:Trap ;
+    skos:prefLabel "Dome trap"@en ;    
+    skos:definition ""@en ;
+    skos:topConceptOf traps:;
+    phs:catchesPest tpg:khapra ;
+.
+:wall
+    a skos:Concept , phs:Trap ;
+    skos:prefLabel "Wall trap"@en ;    
+    skos:definition ""@en ;
+    skos:topConceptOf traps:;
+    phs:catchesPest tpg:khapra ;
+.
+
+:lynfield
+    a skos:Concept , phs:Trap ;
+    skos:prefLabel "Lynfield trap"@en ;    
+    skos:definition ""@en ;
+    skos:topConceptOf traps:;
+    phs:catchesPest tpg:fruit-fly ;
+.
+
+:patton
+    a skos:Concept , phs:Trap ;
+    skos:prefLabel "Patton trap"@en ;    
+    skos:definition ""@en ;
+    skos:topConceptOf traps:;
+    phs:catchesPest tpg:fruit-fly ;
+.
+
+:steiner
+    a skos:Concept , phs:Trap ;
+    skos:prefLabel "steiner trap"@en ;    
+    skos:definition ""@en ;
+    skos:topConceptOf traps:;
+    phs:catchesPest tpg:fruit-fly ;
+.
+
+:panel
+    a skos:Concept , phs:Trap ;
+    skos:prefLabel "Panel trap"@en ;    
+    skos:definition ""@en ;
+    skos:inScheme traps: ;
+    skos:topConceptOf traps:;
+.
+
+:cross-vane
+    a skos:Concept , phs:Trap ;
+    skos:prefLabel "Cross vane trap"@en ;    
+    skos:definition ""@en ;
+    skos:inScheme traps: ;
+    skos:broader :panel ; 
+    phs:catchesPest tpg:sawyer-beetle ;
+.
+
+:tall-black-pyramid
+    a skos:Concept , phs:Trap ;
+    skos:prefLabel "Tall black pyramid trap"@en ;    
+    skos:definition ""@en ;
+    skos:inScheme traps: ;
+    skos:broader :panel ; 
+    phs:catchesPest tpg:bmsb , tpg:agm ;
+.
+
+<http://linked.data.gov.au/org/dawe> 
+    a owl:NamedIndividual , sdo:Organization ;
+    sdo:name "Department of Agriculture, Water and the Environment" ;
+    sdo:url <https://www.awe.gov.au/> .
+
+<http://orcid.org/0000-0002-8742-7730> 
+    a owl:NamedIndividual , sdo:Person ;
+    sdo:affiliation <https://surroundaustralia.com> ;
+    sdo:email <mailto:nicholas.car@surroundaustralia.com> ;
+    sdo:jobTitle "Data Systems Architect" ;
+    sdo:name "Nicholas J. Car" .

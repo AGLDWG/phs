@@ -1,0 +1,216 @@
+@prefix : <http://linked.data.gov.au/def/phs/voc/diagMethods/> .
+@prefix diags: <http://linked.data.gov.au/def/phs/voc/diagMethods> .
+@prefix phs: <http://linked.data.gov.au/def/phs#> .
+@prefix tpg: <http://linked.data.gov.au/def/phs/voc/tpg/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sdo: <https://schema.org/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix taxaas: <https://uat-ag-bie.oztaxa.com/ws/taxon/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://linked.data.gov.au/def/phs/voc/diagMethods>
+    a owl:Ontology , skos:ConceptScheme ;
+    dcterms:contributor <http://orcid.org/0000-0002-8742-7730> ;
+    dcterms:created "2020-05-27"^^xsd:date ;
+    dcterms:creator [ a sdo:Person ;
+                    sdo:affiliation <http://linked.data.gov.au/org/dawe> ;
+                    sdo:email <mailto:stephen.pratt@awe.gov.au> ;
+                    sdo:jobTitle "Project Manager: Implementation of Plant Health Surveillance Data Store" ;
+                    sdo:name "Stephen J. Pratt"
+                    ] ;
+    dcterms:modified "2020-05-27"^^xsd:date ;
+    dcterms:publisher <http://linked.data.gov.au/org/dawe> ;
+    skos:definition "Methods used to determine the taxonomic identity of a plant pest"@en ;
+    skos:prefLabel "Diagnostic methods"@en ;
+    owl:versionIRI <http://linked.data.gov.au/def/phs/voc/diagMethods/1.0> ;
+.
+
+:bacterial-isolation
+    a skos:Concept , phs:DiagnosticMethod ;
+    skos:prefLabel "Bacterial isolation"@en ;    
+    skos:definition "Laboratory procedure for extracting bacteria from a sample and growing them into pure colonies for identification or for further testing."@en ;
+    skos:inScheme diags: ;
+    skos:topConceptOf diags: ;
+    phs:identifiesPest tpg:citrus-canker , tpg:xylella ;
+.
+
+:catalase-test
+    a skos:Concept , phs:DiagnosticMethod ;
+    skos:prefLabel "Catalase test"@en ;    
+    skos:definition "Enzyme assay"@en ;
+    skos:inScheme diags: ;
+    skos:topConceptOf diags: ;
+    phs:identifiesPest tpg:xylella ;
+.
+
+:dna-barcode
+    a skos:Concept , phs:DiagnosticMethod ;
+    skos:prefLabel "DNA barcode"@en ;    
+    skos:definition "DNA sequencing procedure that focusses on cytochrome-c"@en ;
+    skos:inScheme diags: ;
+    skos:topConceptOf diags: ;
+    phs:identifiesPest tpg:fall-southern-armyworm , tpg:sawyer-beetle , tpg:ants ;
+.
+
+:pcr
+    a skos:Concept , phs:DiagnosticMethod ;
+    skos:prefLabel "PCR"@en ;   
+    skoas:label "Polymerase Chain Reaction" ; 
+    skos:definition "DNA sequencing procedure that focusses on cytochrome-c"@en ;
+    skos:inScheme diags: ;
+    skos:topConceptOf diags: ;
+    phs:identifiesPest tpg:anoplophora , tpg:citrus-canker , tpg:fire-blight , tpg:hlb , tpg:pine-wilt-nematode , tpg:xylella , tpg:ants ;
+.
+
+:real-time-pcr
+    a skos:Concept , phs:DiagnosticMethod ;
+    skos:prefLabel "PCR"@en ;   
+    skoas:label "Polymerase Chain Reaction" ; 
+    skos:definition "DNA sequencing procedure that focusses on cytochrome-c"@en ;
+    skos:inScheme diags: ;
+    skos:topConceptOf diags: ;
+    phs:identifiesPest tpg:citrus-canker , tpg:fire-blight , tpg:hlb ;
+.
+
+:morphology
+    a skos:Concept , phs:DiagnosticMethod ;
+    skos:prefLabel "Morphology"@en ;   
+    skos:definition "Identification by observing distinctive bodily characteristics or structures"@en ;
+    skos:inScheme diags: ;
+    skos:topConceptOf diags: ;
+    phs:identifiesPest tpg:anoplophora , tpg:fall-southern-armyworm , tpg:bmsb , tpg:gypsy-moth , tpg:fruit-fly , tpg:hlb-vectors , tpg:khapra-beetle , tpg:sawyer-beetle , tpg:xylella-vectors , tpg:snails , tpg:ants ;
+.
+
+:morphology-larval
+    a skos:Concept , phs:DiagnosticMethod ;
+    skos:prefLabel "Larval morphology"@en ;   
+    skos:definition "Identification by observing distinctive bodily characteristics or structures of the larval lifestage"@en ;
+    skos:inScheme diags: ;
+    skos:topConceptOf diags: ;
+    phs:identifiesPest tpg:anoplophora ;
+.
+
+
+Iodine starch test 	tpg-8
+
+:iodine-starch
+    a skos:Concept , phs:DiagnosticMethod ;
+    skos:prefLabel "Iodine starch test"@en ;    
+    skos:definition ""@en ;
+    skos:inScheme diags: ;
+    skos:topConceptOf diags: ;
+    phs:identifiesPest tpg:hlb ;
+.
+
+:bacterial-isolation
+    a skos:Concept , phs:DiagnosticMethod ;
+    skos:prefLabel "Bacterial isolation"@en ;    
+    skos:definition "Laboratory procedure for extracting bacteria from a sample and growing them into pure colonies for identification or for further testing."@en ;
+    skos:inScheme diags: ;
+    skos:topConceptOf diags: ;
+    phs:identifiesPest tpg:citrus-canker ;
+.
+
+:leaf
+    a skos:Concept , phs:DiagnosticMethod ;
+    skos:prefLabel "Detached leaf assay"@en ;    
+    skos:definition "look at a leaf?"@en ;
+    skos:inScheme diags: ;
+    skos:topConceptOf diags: ;
+    phs:identifiesPest tpg:citrus-canker ;
+.
+
+:dna-fingerprint
+    a skos:Concept , phs:DiagnosticMethod ;
+    skos:prefLabel "DNA fingerprinting"@en ;    
+    skos:definition ""@en ;
+    skos:inScheme diags: ;
+    skos:topConceptOf diags: ;
+    phs:identifiesPest tpg:citrus-canker ;
+.
+
+:elisa
+    a skos:Concept , phs:DiagnosticMethod ;
+    skos:prefLabel "ELISA"@en ;    
+    skos:definition "Enzyme-linked Immunosorbent assay"@en ;
+    skos:inScheme diags: ;
+    skos:topConceptOf diags: ;
+    phs:identifiesPest tpg:citrus-canker , tpg:fire-blight ;
+.
+
+:immunofluorescence
+    a skos:Concept , phs:DiagnosticMethod ;
+    skos:prefLabel "Immunofluorescence"@en ;    
+    skos:definition ""@en ;
+    skos:inScheme diags: ;
+    skos:topConceptOf diags: ;
+    phs:identifiesPest tpg:fire-blight ;
+.
+
+:lamp
+    a skos:Concept , phs:DiagnosticMethod ;
+    skos:prefLabel "LAMP"@en ;    
+    skos:definition "Loop-mediated isothermal amplification"@en ;
+    skos:inScheme diags: ;
+    skos:topConceptOf diags: ;
+    phs:identifiesPest tpg:fire-blight ;
+.
+
+:fame
+    a skos:Concept , phs:DiagnosticMethod ;
+    skos:prefLabel "FAME"@en ;    
+    skos:definition "Fatty acid methyl ester Assay"@en ;
+    skos:inScheme diags: ;
+    skos:topConceptOf diags: ;
+    phs:identifiesPest tpg:citrus-canker ;
+.
+
+:oxidase-test
+    a skos:Concept , phs:DiagnosticMethod ;
+    skos:prefLabel "Oxidase test"@en ;    
+    skos:definition "Enzyme assay"@en ;
+    skos:inScheme diags: ;
+    skos:topConceptOf diags: ;
+    phs:identifiesPest tpg:xylella ;
+.
+
+:pcr-bacterial
+    a skos:Concept , phs:DiagnosticMethod ;
+    skos:prefLabel "PCR on bacterial colonies"@en ;    
+    skos:definition "Molecular test"@en ;
+    skos:inScheme diags: ;
+    skos:topConceptOf diags: ;
+    phs:identifiesPest tpg:xylella ;
+.
+
+:rdna-sequencing
+    a skos:Concept , phs:DiagnosticMethod ;
+    skos:prefLabel "rDNA sequencing"@en ;    
+    skos:definition "Molecular test"@en ;
+    skos:inScheme diags: ;
+    skos:topConceptOf diags: ;
+    phs:identifiesPest tpg:xylella ;
+.
+
+:gram-stain
+    a skos:Concept , phs:DiagnosticMethod ;
+    skos:prefLabel "Gram stain on bacterial colony"@en ;    
+    skos:definition "Microbiological test"@en ;
+    skos:inScheme diags: ;
+    skos:topConceptOf diags: ;
+    phs:identifiesPest tpg:xylella ;
+.
+
+<http://linked.data.gov.au/org/dawe> 
+    a owl:NamedIndividual , sdo:Organization ;
+    sdo:name "Department of Agriculture, Water and the Environment" ;
+    sdo:url <https://www.awe.gov.au/> .
+
+<http://orcid.org/0000-0002-8742-7730> 
+    a owl:NamedIndividual , sdo:Person ;
+    sdo:affiliation <https://surroundaustralia.com> ;
+    sdo:email <mailto:nicholas.car@surroundaustralia.com> ;
+    sdo:jobTitle "Data Systems Architect" ;
+    sdo:name "Nicholas J. Car" .
