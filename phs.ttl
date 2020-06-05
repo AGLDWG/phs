@@ -28,9 +28,9 @@
                                                        sdo:jobTitle "Project Manager: Implementation of Plant Health Surveillance Data Store" ;
                                                        sdo:name "Stephen J. Pratt"
                                                      ] ;
-                                     dcterms:modified "2020-05-15"^^xsd:date ;
+                                     dcterms:modified "2020-06-05"^^xsd:date ;
                                      vann:preferredNamespacePrefix "phs" ;
-                                     rdfs:comment "An ontology about surveillance to determine plant health."@en ;
+                                     rdfs:comment "An ontology about surveillance for plant pests, to determine plant health."@en ;
                                      rdfs:label "Plant Health Surveillance Ontology"@en ;
                                      owl:versionInfo "Developmental version, not final until reviewed." ;
                                      sdo:codeRepository <https://github.com/AGLDWG/phs-ont> .
