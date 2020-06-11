@@ -1,33 +1,29 @@
 @prefix : <http://linked.data.gov.au/def/phs#> .
-@prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix sdo: <https://schema.org/> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix sosa: <http://www.w3.org/ns/sosa/> .
 @prefix vann: <http://purl.org/vocab/vann/> .
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@base <http://linked.data.gov.au/def/phs> .
 
 <http://linked.data.gov.au/def/phs> rdf:type owl:Ontology ;
                                      owl:versionIRI <http://linked.data.gov.au/def/phs/0.1> ;
-                                     dcterms:contributor <http://orcid.org/0000-0002-8742-7730> ,
+                                     owl:imports sosa: ;
+                                     dcterms:contributor 
                                                          <https://orcid.org/0000-0002-3884-3420> ;
                                      dcterms:created "2020-02-11"^^xsd:date ;
-                                     dcterms:creator [ rdf:type sdo:Person ;
-                                                       sdo:affiliation <http://linked.data.gov.au/org/dawe> ;
-                                                       sdo:email <mailto:stephen.pratt@awe.gov.au> ;
-                                                       sdo:jobTitle "Project Manager: Implementation of Plant Health Surveillance Data Store" ;
-                                                       sdo:name "Stephen J. Pratt"
-                                                     ] ;
-                                     dcterms:modified "2020-06-05"^^xsd:date ;
+                                     dcterms:creator :stephen , <http://orcid.org/0000-0002-8742-7730>  ;
+                                     dcterms:modified "2020-06-11"^^xsd:date ;
                                      dcterms:publisher <https://linked.data.gov.au/org/dawe> ;
-                                     vann:preferredNamespacePrefix "phs" ;
-                                     rdfs:comment "An ontology about surveillance for plant pests, to determine plant health."@en ;
-                                     rdfs:label "Plant Health Surveillance Ontology"@en ;
-                                     owl:versionInfo "Developmental version, not final until reviewed." ;
-                                     sdo:codeRepository <https://github.com/AGLDWG/phs-ont> .
+                                     sdo:codeRepository <https://github.com/AGLDWG/phs-ont> ;
+                                     skos:prefLabel "Plant Health Surveillance Ontology"@en ;
+                                     skos:definition "An ontology about surveillance to determine plant health, such as fruit fly trapping"@en .
 
 #################################################################
 #    Annotation properties
@@ -49,12 +45,32 @@ dcterms:creator rdf:type owl:AnnotationProperty .
 dcterms:modified rdf:type owl:AnnotationProperty .
 
 
+###  http://purl.org/dc/terms/publisher
+dcterms:publisher rdf:type owl:AnnotationProperty .
+
+
 ###  http://purl.org/vocab/vann/preferredNamespacePrefix
 vann:preferredNamespacePrefix rdf:type owl:AnnotationProperty .
 
 
+###  http://www.w3.org/2002/07/owl#cardinality
+owl:cardinality rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2002/07/owl#minCardinality
+owl:minCardinality rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2004/02/skos/core#definition
+skos:definition rdf:type owl:AnnotationProperty .
+
+
 ###  http://www.w3.org/2004/02/skos/core#member
 skos:member rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2004/02/skos/core#prefLabel
+skos:prefLabel rdf:type owl:AnnotationProperty .
 
 
 ###  https://schema.org/affiliation
@@ -85,10 +101,77 @@ sdo:url rdf:type owl:AnnotationProperty .
 #    Object Properties
 #################################################################
 
+###  http://linked.data.gov.au/def/phs#catchesPest
+:catchesPest rdf:type owl:ObjectProperty ;
+             rdfs:domain :Trap ;
+             rdfs:range :Pest ;
+             rdfs:comment "A device that is designed to catch the target pest"@en ,
+                          "An object which provides refuge to the target pest, and can thus be used as a trap"@en ;
+             skos:prefLabel "catches pest"@en .
+
+
+###  http://linked.data.gov.au/def/phs#detectsPest
+:detectsPest rdf:type owl:ObjectProperty ;
+             rdfs:domain :ObservationMethod ;
+             rdfs:range :Pest ;
+             rdfs:comment "The pest for which the observation method is useful"@en ;
+             skos:prefLabel "detects pest"@en .
+
+
+###  http://linked.data.gov.au/def/phs#hasBait
+:hasBait rdf:type owl:ObjectProperty ;
+         rdfs:subPropertyOf dcterms:hasPart ;
+         rdfs:domain :CaptureSystem ;
+         rdfs:range :Bait ;
+         skos:definition "A Capture System may have a Bait as one of its parts"@en ;
+         skos:prefLabel "has bait"@en .
+
+
+###  http://linked.data.gov.au/def/phs#hasTrap
+:hasTrap rdf:type owl:ObjectProperty ;
+         rdfs:subPropertyOf dcterms:hasPart ;
+         rdfs:domain :CaptureSystem ;
+         rdfs:range :Trap ;
+         skos:definition "A Capture System must have a Trap as one of its parts"@en ;
+         skos:prefLabel "has trap"@en .
+
+
+###  http://linked.data.gov.au/def/phs#hostsPest
+:hostsPest rdf:type owl:ObjectProperty ;
+           rdfs:domain :Host ;
+           rdfs:range :Pest ;
+           rdfs:comment "A living thing (usually a plant) on which the target pest may be found"@en ;
+           skos:prefLabel "hosts pest"@en .
+
+
+###  http://linked.data.gov.au/def/phs#identifiesPest
+:identifiesPest rdf:type owl:ObjectProperty ;
+                rdfs:domain :DiagnosticMethod ;
+                rdfs:range :Pest ;
+                rdfs:comment "This diagnostic method is appropriate for the target pest"@en ;
+                skos:prefLabel "Identifies pest"@en .
+
+
 ###  http://linked.data.gov.au/def/phs#lureType
 :lureType rdf:type owl:ObjectProperty ;
           rdfs:domain :Lure ;
           rdfs:range skos:Concept .
+
+
+###  http://linked.data.gov.au/def/phs#luresPest
+:luresPest rdf:type owl:ObjectProperty ;
+           rdfs:domain :Lure ;
+           rdfs:range :Pest ;
+           rdfs:comment "The target pest which is attracted by this lure"@en ;
+           skos:prefLabel "lures pest"@en .
+
+
+###  http://linked.data.gov.au/def/phs#supportsPest
+:supportsPest rdf:type owl:ObjectProperty ;
+              rdfs:domain :Substrate ;
+              rdfs:range :Pest ;
+              rdfs:comment "A substrate on which the target pest is likely be found, if it were present"@en ;
+              skos:prefLabel "supports pest"@en .
 
 
 ###  http://linked.data.gov.au/def/phs#trapType
@@ -96,76 +179,175 @@ sdo:url rdf:type owl:AnnotationProperty .
           rdfs:domain :Trap ;
           rdfs:range :TrapType ;
           rdfs:comment "The make or model of a trap" ;
-          rdfs:label "trap type" .
+          skos:prefLabel "trap type" .
+
+
+###  http://purl.org/dc/terms/hasPart
+dcterms:hasPart rdf:type owl:ObjectProperty .
+
+
+###  http://purl.org/dc/terms/type
+dcterms:type rdf:type owl:ObjectProperty ;
+             skos:prefLabel "type"@en .
+
+
+###  http://www.opengis.net/ont/geosparql#hasGeometry
+<http://www.opengis.net/ont/geosparql#hasGeometry> rdf:type owl:ObjectProperty .
+
+
+###  http://www.w3.org/2006/time#hasTime
+<http://www.w3.org/2006/time#hasTime> rdf:type owl:ObjectProperty .
 
 
 #################################################################
 #    Data properties
 #################################################################
 
-
-
 ###  http://linked.data.gov.au/def/phs#taxonomicReferenceSource
 :taxonomicReferenceSource rdf:type owl:DatatypeProperty ;
-                              rdfs:domain [
-                                    rdf:type owl:Class ;
-                                    owl:unionOf (
-                                    :Host
-                                    :TargetPest
-                                    ) ;
-                              ] ;
+                          rdfs:domain [ rdf:type owl:Class ;
+                                        owl:unionOf ( :Host
+                                                      :Pest
+                                                    )
+                                      ] ;
                           rdfs:comment "" ;
-                          rdfs:label "taxonomic reference source" .
+                          skos:prefLabel "taxonomic reference source" .
 
 
 ###  http://linked.data.gov.au/def/phs#vernacularName
 :vernacularName rdf:type owl:DatatypeProperty ;
-                  rdfs:domain [
-                        rdf:type owl:Class ;
-                        owl:unionOf (
-                        :Host
-                        :TargetPest
-                        ) ;
-                  ] ;
+                rdfs:domain [ rdf:type owl:Class ;
+                              owl:unionOf ( :Host
+                                            :Pest
+                                          )
+                            ] ;
                 rdfs:comment "The vernacular (common) name for the host or pest" ;
-                rdfs:label "vernacular name" .
+                skos:prefLabel "vernacular name" .
 
 
 #################################################################
 #    Classes
 #################################################################
 
-###  http://linked.data.gov.au/def/phs#FruitFlyTrap
-:FruitFlyTrap rdf:type owl:Class ;
-              rdfs:subClassOf :InsectTrap ;
-              rdfs:comment "An Insect Trap that catches fruit flies." ;
-              rdfs:label "Fruit Fly Trap" .
+###  http://linked.data.gov.au/def/phs#Attractant
+:Attractant rdf:type owl:Class ;
+            rdfs:subClassOf :Bait ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty dcterms:type ;
+                              owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                              owl:onClass :AttractantType
+                            ] ;
+            skos:definition "A substances that attractses Animals"@en ;
+            skos:prefLabel "Attractant"@en .
+
+
+###  http://linked.data.gov.au/def/phs#AttractantType
+:AttractantType rdf:type owl:Class ;
+                rdfs:subClassOf skos:Concept ;
+                skos:definition "The subtype of a Attractant"@en ;
+                skos:prefLabel "Attractant Type"@en .
+
+
+###  http://linked.data.gov.au/def/phs#Bait
+:Bait rdf:type owl:Class ;
+      rdfs:subClassOf sosa:Actuator ,
+                      sosa:Sampler .
+
+
+###  http://linked.data.gov.au/def/phs#CaptureSystem
+:CaptureSystem rdf:type owl:Class ;
+               rdfs:subClassOf sosa:Sampler ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty :hasBait ;
+                                 owl:allValuesFrom :Bait
+                               ] ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty :hasTrap ;
+                                 owl:allValuesFrom :Trap
+                               ] ;
+               rdfs:comment "A collection of things used to capture an Animal"@en ;
+               skos:prefLabel "Capture System"@en .
+
+
+###  http://linked.data.gov.au/def/phs#DiagnosticMethod
+:DiagnosticMethod rdf:type owl:Class ;
+                  rdfs:comment "A procedure or method used to determine the taxonomic identity of a plant pest. May be carried out in the field, or more usually, in a laboratory." ;
+                  skos:prefLabel "Diagnostic method" .
+
+
+###  http://linked.data.gov.au/def/phs#DiagnosticMethodType
+:DiagnosticMethodType rdf:type owl:Class ;
+                      rdfs:subClassOf skos:Concept ;
+                      skos:definition "The subtype of a Diagnostic Method"@en ;
+                      skos:prefLabel "Diagnostic Method Type"@en .
 
 
 ###  http://linked.data.gov.au/def/phs#Host
 :Host rdf:type owl:Class ;
-      rdfs:subClassOf dwc:Taxon ,
-                      :Stratum ;
-      rdfs:comment "A Plant or Animal (a Taxon) that is also a Stratum." ;
+      rdfs:subClassOf :Stratum ,
+                      dwc:Taxon ;
       owl:disjointWith :Substrate ;
-      rdfs:label "Host" ;
-      skos:example "Bee; a Varroa Mite may be found in a bee's trachea" .
+      rdfs:comment "A Plant or Animal (a Taxon) that is also a Stratum." ;
+      skos:example "Bee; a Varroa Mite may be found in a bee's trachea" ;
+      skos:prefLabel "Host" .
 
 
-###  http://linked.data.gov.au/def/phs#InsectTrap
-:InsectTrap rdf:type owl:Class ;
-            rdfs:subClassOf :Trap ;
-            rdfs:comment "A Trap that catches insects" ;
-            rdfs:label "Insect Trap" ;
-            rdfs:seeAlso <http://dbpedia.org/resource/Insect_trap> .
+###  http://linked.data.gov.au/def/phs#HostType
+:HostType rdf:type owl:Class ;
+          rdfs:subClassOf skos:Concept ;
+          skos:definition "The subtype of a Host"@en ;
+          skos:prefLabel "Host Type"@en .
 
 
 ###  http://linked.data.gov.au/def/phs#Lure
 :Lure rdf:type owl:Class ;
-      rdfs:comment "A substances that attracts target pests." ;
-      skos:editoralNote """We may wish to split this concept into true lures, which are volatile pure substances that elecit responses in only certain species, and attractants, which release volatile substances that attract many species, such as by mimicing food sources.
-In this case, a superclass of e.g. 'bait' could be created.""" ;
-      rdfs:label "Lure" .
+      rdfs:subClassOf :Bait ,
+                      [ rdf:type owl:Restriction ;
+                        owl:onProperty dcterms:type ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                        owl:onClass :LureType
+                      ] ;
+      rdfs:comment "A substances that lures Animals"@en ;
+      skos:prefLabel "Lure"@en .
+
+
+###  http://linked.data.gov.au/def/phs#LureType
+:LureType rdf:type owl:Class ;
+          rdfs:subClassOf skos:Concept ;
+          skos:definition "The subtype of a Lure"@en ;
+          skos:prefLabel "Lure Type"@en .
+
+
+###  http://linked.data.gov.au/def/phs#ObservationMethod
+:ObservationMethod rdf:type owl:Class ;
+                   rdfs:comment "A technique used to carry out an act of surveillance. Observation methods are chosen according to the target pest and/or host|substrate. The sensitivity of an observation may depend on the method that was used." ;
+                   skos:prefLabel "Observation method" .
+
+
+###  http://linked.data.gov.au/def/phs#ObservationMethodType
+:ObservationMethodType rdf:type owl:Class ;
+                       rdfs:subClassOf skos:Concept ;
+                       skos:definition "The subtype of an Observation Method"@en ;
+                       skos:prefLabel "Observation Method Type"@en .
+
+
+###  http://linked.data.gov.au/def/phs#Pest
+:Pest rdf:type owl:Class ;
+      rdfs:subClassOf sosa:Sample ,
+                      [ rdf:type owl:Restriction ;
+                        owl:onProperty dcterms:type ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                        owl:onClass :PestType
+                      ] ;
+      rdfs:comment "A Taxon that is the subject of surveillance"@en ;
+      skos:prefLabel "Pest"@en .
+
+
+###  http://linked.data.gov.au/def/phs#PestType
+:PestType rdf:type owl:Class ;
+          rdfs:subClassOf skos:Concept ;
+          skos:definition "The subtype of a Pest. Perhaps a single Taxon or perhaps a Group"@en ;
+          skos:prefLabel "Pest Type"@en .
 
 
 ###  http://linked.data.gov.au/def/phs#Plant
@@ -173,47 +355,108 @@ In this case, a superclass of e.g. 'bait' could be created.""" ;
        rdfs:subClassOf dwc:Taxon .
 
 
+###  http://linked.data.gov.au/def/phs#SpatioTemporalGeometry
+:SpatioTemporalGeometry rdf:type owl:Class ;
+                        rdfs:subClassOf <http://www.opengis.net/ont/geosparql#Geometry> ,
+                                        [ rdf:type owl:Restriction ;
+                                          owl:onProperty <http://www.w3.org/2006/time#hasTime> ;
+                                          owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                          owl:onClass <http://www.w3.org/2006/time#TemporalEntity>
+                                        ] ;
+                        skos:definition "A Gemetry with one or more temporal extents"@en ;
+                        skos:prefLabel "Spatio-Temporal Geometry"@en .
+
+
 ###  http://linked.data.gov.au/def/phs#Stratum
 :Stratum rdf:type owl:Class ;
          rdfs:comment "Thing or material on which a pest is searched for or found. Stratum is abstract: instances should use either 'Host' or 'Substrate'." ;
-         rdfs:label "Stratum" .
+         skos:prefLabel "Stratum" .
 
 
 ###  http://linked.data.gov.au/def/phs#Substrate
 :Substrate rdf:type owl:Class ;
            rdfs:subClassOf :Stratum ;
            rdfs:comment "A Stratum that is not a Plant." ;
-           rdfs:label "Substrate" .
+           skos:prefLabel "Substrate" .
 
 
-###  http://linked.data.gov.au/def/phs#TargetPest
-:TargetPest rdf:type owl:Class ;
-            rdfs:subClassOf dwc:Taxon ;
-            rdfs:comment "A Taxon of pest that is the subject of surveillance. An observation can have more than one target." ;
-            rdfs:label "Target Pest" .
+###  http://linked.data.gov.au/def/phs#SubstrateType
+:SubstrateType rdf:type owl:Class ;
+               rdfs:subClassOf skos:Concept ;
+               skos:definition "The subtype of a Substrate"@en ;
+               skos:prefLabel "Substrate Type"@en .
+
+
+###  http://linked.data.gov.au/def/phs#TaxonDistribution
+:TaxonDistribution rdf:type owl:Class ;
+                   rdfs:subClassOf <http://www.opengis.net/ont/geosparql#Feature> ,
+                                   sosa:FeatureOfInterest ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty <http://www.opengis.net/ont/geosparql#hasGeometry> ;
+                                     owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                     owl:onClass :SpatioTemporalGeometry
+                                   ] ;
+                   skos:definition "The spatial and temporal distribution of a Taxon"@en ;
+                   skos:prefLabel "Taxon Distribution"@en .
+
+
+###  http://linked.data.gov.au/def/phs#TaxonIdentification
+:TaxonIdentification rdf:type owl:Class ;
+                     rdfs:subClassOf sosa:Observation ;
+                     skos:definition "The identification of the Taxon of an Animal"@en ;
+                     skos:prefLabel "Taxon Identification"@en .
 
 
 ###  http://linked.data.gov.au/def/phs#Trap
 :Trap rdf:type owl:Class ;
-      rdfs:subClassOf sosa:Sampler ;
+      rdfs:subClassOf sosa:Sampler ,
+                      [ rdf:type owl:Restriction ;
+                        owl:onProperty dcterms:type ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                        owl:onClass :TrapType
+                      ] ;
       rdfs:comment "A device that catches or collects organisms or evidence of them." ;
-      rdfs:label "Trap" .
+      skos:prefLabel "Trap" .
 
 
 ###  http://linked.data.gov.au/def/phs#TrapType
 :TrapType rdf:type owl:Class ;
           rdfs:subClassOf skos:Concept ;
-          rdfs:label "Trap Type" .
+          skos:definition "The subtype of a Trap"@en ;
+          skos:prefLabel "Trap Type" .
 
-:ObservationMethod a owl:Class ;
-      rdfs:label "Observation method" ;
-      rdfs:comment "A technique used to carry out an act of surveillance. Observation methods are chosen according to the target pest and/or host|substrate. The sensitivity of an observation may depend on the method that was used." ;
-.
 
-:DiagnosticMethod a owl:Class ;
-      rdfs:label "Diagnostic method" ;
-      rdfs:comment "A procedure or method used to determine the taxonomic identity of a plant pest. May be carried out in the field, or more usually, in a laboratory." ;
-.
+###  http://linked.data.gov.au/def/phs#Trapping
+:Trapping rdf:type owl:Class ;
+          rdfs:subClassOf sosa:Observation ,
+                          sosa:Sampling ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty sosa:hasResult ;
+                            owl:minQualifiedCardinality "0"^^xsd:nonNegativeInteger ;
+                            owl:onClass sosa:Sample
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty sosa:madeBySampler ;
+                            owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                            owl:onClass :CaptureSystem
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty sosa:usedProcedure ;
+                            owl:minQualifiedCardinality "0"^^xsd:nonNegativeInteger ;
+                            owl:onClass sosa:Procedure
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty <http://www.w3.org/2006/time#hasTime> ;
+                            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                            owl:onClass <http://www.w3.org/2006/time#TemporalEntity>
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty sosa:hasFeatureOfInterest ;
+                            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                            owl:onClass :TaxonDistribution
+                          ] ;
+          skos:definition "The capturing of an Animal"@en ;
+          skos:prefLabel "Trapping"@en .
 
 
 ###  http://purl.org/dc/terms/Dataset
@@ -222,6 +465,14 @@ dcterms:Dataset rdf:type owl:Class .
 
 ###  http://rs.tdwg.org/dwc/terms/Taxon
 dwc:Taxon rdf:type owl:Class .
+
+
+###  http://www.opengis.net/ont/geosparql#Feature
+<http://www.opengis.net/ont/geosparql#Feature> rdf:type owl:Class .
+
+
+###  http://www.opengis.net/ont/geosparql#Geometry
+<http://www.opengis.net/ont/geosparql#Geometry> rdf:type owl:Class .
 
 
 ###  http://www.w3.org/1999/02/22-rdf-syntax-ns#dataProperty
@@ -252,11 +503,21 @@ sdo:Person rdf:type owl:Class .
 #    Individuals
 #################################################################
 
+###  http://linked.data.gov.au/def/phs#stephen
+:stephen rdf:type owl:NamedIndividual ,
+                  sdo:Person ;
+         sdo:affiliation <http://linked.data.gov.au/org/dawe> ;
+         sdo:email <mailto:stephen.pratt@awe.gov.au> ;
+         sdo:jobTitle "Project Manager: Implementation of Plant Health Surveillance Data Store" ;
+         sdo:name "Stephen J. Pratt" .
+
+
 ###  http://linked.data.gov.au/org/dawe
 <http://linked.data.gov.au/org/dawe> rdf:type owl:NamedIndividual ,
-                                             sdo:Organization ;
-                                    sdo:name "Department of Agriculture, Water and the Environment" ;
-                                    sdo:url <https://www.awe.gov.au> .
+                                              sdo:Organization ;
+                                     sdo:name "Department of Agriculture, Water and the Environment" ;
+                                     sdo:url <https://www.awe.gov.au> ,
+                                             <https://www.awe.gov.au/> .
 
 
 ###  http://orcid.org/0000-0002-8742-7730
@@ -274,11 +535,6 @@ sdo:Person rdf:type owl:Class .
                                 sdo:name "SURROUND Australia Pty Ltd" ;
                                 sdo:url <https://surroundaustralia.com> .
 
-###  http://linked.data.gov.au/org/dawe
-<http://linked.data.gov.au/org/dawe> rdf:type owl:NamedIndividual ,
-                                         sdo:Organization ;
-                                sdo:name "Department of Agriculture, Water and the Environment" ;
-                                sdo:url <https://www.awe.gov.au/> .
 
 ###  https://www.csiro.au.com
 <https://www.csiro.au.com> rdf:type owl:NamedIndividual ,
@@ -297,52 +553,3 @@ sdo:Person rdf:type owl:Class .
 
 
 ###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
-
-:catchesPest 
-  a owl:ObjectProperty ;
-  rdfs:label "catches pest"@en ;
-  rdfs:comment "A device that is designed to catch the target pest"@en ;
-  rdfs:comment "An object which provides refuge to the target pest, and can thus be used as a trap"@en ;
-  rdfs:domain :Trap ;
-  rdfs:range :TargetPest ;
-.
-
-:hostsPest 
-  a owl:ObjectProperty ;
-  rdfs:label "hosts pest"@en ;
-  rdfs:comment "A living thing (usually a plant) on which the target pest may be found"@en ; 
-  rdfs:domain :Host ;
-  rdfs:range :TargetPest ;
-.
-
-:supportsPest 
-  a owl:ObjectProperty ;
-  rdfs:label "supports pest"@en ;
-  rdfs:comment "A substrate on which the target pest is likely be found, if it were present"@en ; 
-  rdfs:domain :Substrate ;
-  rdfs:range :TargetPest ;
-.
-
-:detectsPest 
-  a owl:ObjectProperty ;
-  rdfs:label "detects pest"@en ;
-  rdfs:comment "The pest for which the observation method is useful"@en ; 
-  rdfs:domain :ObservationMethod ;
-  rdfs:range :TargetPest ;
-.
-
-:luresPest 
-  a owl:ObjectProperty ;
-  rdfs:label "lures pest"@en ;
-  rdfs:comment "The target pest which is attracted by this lure"@en ; 
-  rdfs:domain :Lure ;
-  rdfs:range :TargetPest ;
-.
-
-:identifiesPest 
-  a owl:ObjectProperty ;
-  rdfs:label "Identifies pest"@en ;
-  rdfs:comment "This diagnostic method is appropriate for the target pest"@en ; 
-  rdfs:domain :DiagnosticMethod ;
-  rdfs:range :TargetPest ;
-.

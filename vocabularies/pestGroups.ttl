@@ -24,12 +24,12 @@ tpgs:
     dcterms:modified "2020-05-22"^^xsd:date ;
     dcterms:publisher <http://linked.data.gov.au/org/dawe> ;
     skos:definition "Taxa and groupings of taxa which are pests and therefore targets for surveillance"@en ;
-    skos:prefLabel "Target Pest Groups"@en ;
+    skos:prefLabel "Pest Groups"@en ;
     owl:versionIRI <http://linked.data.gov.au/def/phs/voc/tpg/1.0> ;
 .
 
 :anoplophora
-    a skos:Concept , phs:TargetPest ;
+    a skos:Concept , phs:Pest ;
     skos:prefLabel "Anoplophora"@en ;    
     skos:altLabel "Anoplophora"@la ;
     skos:definition "Anoplophora is a genus of beetles in the longhorn beetle family. They are native to Asia. Most are large and colorful and thus are depicted in artwork and sought after by beetle collectors. The genus also includes several notorious pest insects."@en ;
@@ -46,7 +46,7 @@ tpgs:
 #  dcterms:replaces :53362
 
 :fall-armyworm
-     a skos:Concept , phs:TargetPest ;
+     a skos:Concept , phs:Pest ;
      skos:prefLabel "Fall armyworm"@en ;
      skos:altLabel "Spodoptera frugiperda"@la , "Fall armyworm"@en ; 
      skos:definition "The fall armyworm is a species in the order Lepidoptera and is the larval life stage of a fall armyworm moth. The term 'armyworm' can refer to several species, often describing the large-scale invasive behavior of the species' larval stage."@en ;
@@ -57,7 +57,7 @@ tpgs:
  .
  
  :fall-and-southern-armyworm
-     a skos:Concept , phs:TargetPest ;
+     a skos:Concept , phs:Pest ;
      skos:prefLabel "Fall and Southern armyworm"@en ;
      skos:altLabel "Southern Armyworm"@en , "Semi-Tropical Armyworm"@en , "Spodoptera eridania"@la ;
      skos:definition "Spodoptera eridania is a moth, the worms of which are known to be a cropping pest. They are one of the most important defoliators in the tropical and subtropical regions of the western hemisphere that feed heavily on plants while they are young, often     resulting in skeleton leaves on their food plants."@en ;
@@ -68,7 +68,7 @@ tpgs:
  .
  
  :bmsb
-     a skos:Concept , phs:TargetPest ;
+     a skos:Concept , phs:Pest ;
      skos:prefLabel "Brown marmorated stink bug"@en ;
      skos:altLabel "Halyomorpha halys"@la  ;
      skos:definition "An insect in the family Pentatomidae that is native to China, Japan and Taiwan. It was accidentally introduced into the United States, with the first specimen being collected in September 1998. The brown marmorated stink bug is considered to be an agr    icultural pest, and by 2010–11 had become a season-long pest in U.S. orchards"@en ;
@@ -79,7 +79,7 @@ tpgs:
  .   
  
  :citrus-canker
-     a skos:Concept , phs:TargetPest ;
+     a skos:Concept , phs:Pest ;
      skos:prefLabel "Citrus canker"@en ;
      skos:altLabel "Xanthomonas citri pv. citri"@la  ;
      skos:definition "Citrus canker is a disease affecting Citrus species caused by the bacterium Xanthomonas axonopodis. Infection causes lesions on the leaves, stems, and fruit of citrus trees, including lime, oranges, and grapefruit. While not harmful to humans, canker     significantly affects the vitality of citrus trees, causing leaves and fruit to drop prematurely; a fruit infected with canker is safe t    o eat, but too unsightly to be sold. The disease, which is believed to have originated in Southeast Asia, is extremely persistent when i    t becomes established in an area. Citrus groves have been destroyed in attempts to eradicate the disease. Brazil and the United States a    re currently suffering from canker outbreaks."@en ;
@@ -90,7 +90,7 @@ tpgs:
  .   
  
  :fire-blight
-     a skos:Concept , phs:TargetPest ;
+     a skos:Concept , phs:Pest ;
      skos:prefLabel "Fire blight"@en ;
      skos:altLabel "Erwinia amylovora"@la  ;
      skos:definition "Fire blight, also written fireblight, is a contagious disease affecting apples, pears, and some other members of the family Rosaceae. It is a serious concern to apple and pear producers. Under optimal conditions, it can destroy an entire orchard in a     single growing season. The causal pathogen is Erwinia amylovora, a Gram-negative bacterium in the family Enterobacteriaceae. Pears are t    he most susceptible, but apples, loquat, crabapples, quinces, hawthorn, cotoneaster, pyracantha, raspberry and some other rosaceous plan    ts are also vulnerable. The disease is believed to be indigenous to North America, from where it spread to most of the rest of the world    ."@en ;
@@ -101,7 +101,7 @@ tpgs:
  .
  
  :gypsy-moth
-     a skos:Concept , phs:TargetPest ;
+     a skos:Concept , phs:Pest ;
      skos:prefLabel "Gypsy moth"@en ;
      skos:altLabel "Lymantria"@la  ;
      skos:definition "The Asian gypsy moth, Lymantria dispar asiatica, is a moth in the family Erebidae of Eurasian origin. It is similar to Lymantria dispar dispar in appearance, but adult females are flight-capable. It is classified as a pest and is host to over 500 species of trees, shrubs and plants."@en ;
@@ -112,7 +112,7 @@ tpgs:
  .
 
  :fruit-fly
-     a skos:Concept , phs:TargetPest ;
+     a skos:Concept , phs:Pest ;
      skos:prefLabel "Fruit fly"@en ;
      skos:altLabel "Exotic, economic fruit fly"@en  ;
      skos:definition "The Tephritidae are one of two fly families referred to as fruit flies, the other family being the Drosophilidae."@en ;
@@ -123,7 +123,7 @@ tpgs:
  .
 
  :hlb
-     a skos:Concept , phs:TargetPest ;
+     a skos:Concept , phs:Pest ;
      skos:prefLabel "Huanglongbing"@en ;
      skos:altLabel "Candidatus Liberibacter"@la , "Causal agent of Huanglongbing disease of citrus/citrus greening"@en  ;
      skos:definition "Citrus greening disease (pinyin: huánglóngbìng; literally: \"Yellow Dragon Disease\"; or HLB), is a disease of citrus caused by a vector-transmitted pathogen. The causative agents are motile bacteria, Candidatus liberibacter spp. The disease is vectored and transmitted by the Asian citrus psyllid, Diaphorina citri Kuwayama, and the African citrus psyllid, Trioza erytreae Del Guercio, also known as the two-spotted citrus psyllid. It has also been shown to be graft-transmissible. Three different types of HLB are currently known: The heat-tolerant Asian form, and the heat-sensitive African and American forms. The disease was first described in 1929 and first reported in China in 1943. The African variation was first reported in 1947 in South Africa, where it is still widespread."@en ;
@@ -134,7 +134,7 @@ tpgs:
  .
 
  :khapra-beetle
-     a skos:Concept , phs:TargetPest ;
+     a skos:Concept , phs:Pest ;
      skos:prefLabel "Khapra beetle"@en ;
      skos:altLabel "Trogoderma granarium"@la  ;
      skos:definition "Khapra beetle (Trogoderma granarium), also called cabinet beetle, which originated in South Asia, is one of the world’s most destructive pests of grain products and seeds. It is considered one of the 100 worst invasive species in the world. Infestations are difficult to control because of the insect's ability to survive without food for long periods, its preference for dry conditions and low-moisture food, and its resistance to many insecticides."@en ;
@@ -145,7 +145,7 @@ tpgs:
  .
 
  :sawyer-beetle
-     a skos:Concept , phs:TargetPest ;
+     a skos:Concept , phs:Pest ;
      skos:prefLabel "Sawyer beetle"@en ;
      skos:altLabel "Monochamus"@la  ;
      skos:definition ""@en ;
@@ -156,7 +156,7 @@ tpgs:
  .
 
  :Pine-wilt-nematode
-     a skos:Concept , phs:TargetPest ;
+     a skos:Concept , phs:Pest ;
      skos:prefLabel "Pine wilt nematode"@en ;
      skos:altLabel "Bursaphelenchus"@la  ;
      skos:definition "Bursaphelenchus is a genus of nematodes (roundworms) in the order Aphelenchida. Most are obligate mycophages, but some feed on wood, with two species, the red ring nematode (B. cocophilus) and the pine wood nematode (B. xylophilus), economically significant as pests of coconut palms and of pine trees, respectively. Given that Bursaphelenchus species are usually hard to distinguish from one another except by trained helminthologists with access to microscopes or DNA sequence analysis, the entire genus is put under quarantine in some countries."@en ;
@@ -167,7 +167,7 @@ tpgs:
  .
  
  :xylella-fastidiosa
-     a skos:Concept , phs:TargetPest ;
+     a skos:Concept , phs:Pest ;
      skos:prefLabel "Xylella fastidiosa"@en ;
      skos:altLabel "Bursaphelenchus"@la  ;
      skos:definition "Xylella fastidiosa, a bacterium in the class Gammaproteobacteria, is an important plant pathogen that causes phoney peach disease in the southern United States, bacterial leaf scorch, oleander leaf scorch, and Pierce's disease (in grapevines), and citrus variegated chlorosis disease (CVC) in Brazil. In Europe it has attacked olive trees in the Salento area of Southern Italy causing the Olive Quick Decline Syndrome (OQDS)."@en ;
@@ -178,7 +178,7 @@ tpgs:
  .
  
  :xylella-vectors
-     a skos:Concept , phs:TargetPest ;
+     a skos:Concept , phs:Pest ;
      skos:prefLabel "Xylella vectors"@en ;
      skos:altLabel ""@la  ;
      skos:definition ""@en ;
@@ -188,7 +188,7 @@ tpgs:
  .
  
  :ants
-     a skos:Concept , phs:TargetPest ;
+     a skos:Concept , phs:Pest ;
      skos:prefLabel "Exotic invasive ants"@en ;
      skos:altLabel ""@la  ;
      skos:definition ""@en ;
@@ -197,7 +197,7 @@ tpgs:
  .
  
  :snails
-     a skos:Concept , phs:TargetPest ;
+     a skos:Concept , phs:Pest ;
      skos:prefLabel "Exotic invasive snails"@en ;
      skos:altLabel ""@la  ;
      skos:definition ""@en ;

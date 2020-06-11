@@ -1,13 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <img src="images/dawe.png" alt="DAWE logo" />
     <title>Plant Health Surveillance Ontology</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     
     <style>
         #pylode {
             position: fixed;
-            top: 80px;
+            top: 130px;
             left: -60px;
             font-size: small;
             transform: rotate(-90deg);
@@ -195,7 +196,7 @@
     ],
     "https://schema.org/description": [
       {
-        "@value": "<p>An ontology about surveillance to determine plant health, such as fruit fly trapping.</p>"
+        "@value": "<p>An ontology about surveillance to determine plant health, such as fruit fly trapping</p>"
       }
     ],
     "https://schema.org/name": [
@@ -208,23 +209,27 @@
     </script>
 </head>
 <body>
-<div id="pylode">made by <a href="http://github.com/rdflib/pyLODE"><span style="color:#329545;">p</span><span style="color:#f9cb33;">y</span>LODE</a></div>
-<h1>Plant Health Surveillance Ontology</h1>
-<img src="images/dawe.png" alt="DAWE logo" />
+  <div id="pylode">made by <a href="http://github.com/rdflib/pyLODE">
+    <span style="color:#329545;">p</span><span style="color:#f9cb33;">y</span>LODE</a>
+    <span style="font-size:smaller;">2.5</span>
+  </div>
+  <h1>Plant Health Surveillance Ontology</h1>
 <section id="metadata">
     <h2 style="display:none;">Metadata</h2>
     <dl>
         <dt>IRI</dt>
         <dd><code>http://linked.data.gov.au/def/phs</code></dd>
+        <dt>Publisher(s)</dt>
+        <dd>
+            
+    None<br/>
+        </dd>
         <dt>Creator(s)</dt>
         <dd>
             
-    Stephen J. Pratt
+    <a href="http://linked.data.gov.au/def/phs#stephen">Stephen J. Pratt</a>
     (<a href="mailto:stephen.pratt@awe.gov.au">stephen.pratt@awe.gov.au</a>) of 
-    <a href="https://www.awe.gov.au">Department of Agriculture, Water and the Environment</a><br/>
-        </dd>
-        <dt>Contributors(s)</dt>
-        <dd>
+    <a href="https://www.awe.gov.au/">Department of Agriculture, Water and the Environment</a><br/>
             
     <a href="http://orcid.org/0000-0002-8742-7730">Nicholas J. Car</a>
     <a href="http://orcid.org/0000-0002-8742-7730"><svg width="15px" height="15px" viewBox="0 0 72 72" version="1.1"
@@ -248,6 +253,9 @@
 </svg></a>
     (<a href="mailto:nicholas.car@surroundaustralia.com">nicholas.car@surroundaustralia.com</a>) of 
     <a href="https://surroundaustralia.com">SURROUND Australia Pty Ltd</a><br/>
+        </dd>
+        <dt>Contributors(s)</dt>
+        <dd>
             
     <a href="https://orcid.org/0000-0002-3884-3420">Simon J.D. Cox</a>
     <a href="https://orcid.org/0000-0002-3884-3420"><svg width="15px" height="15px" viewBox="0 0 72 72" version="1.1"
@@ -269,15 +277,18 @@
         </g>
     </g>
 </svg></a>
-    (<a href="mailto:simon.cox@surroundaustralia.com">simon.cox@surroundaustralia.com</a>) of 
-    <a href="https://www.csiro.au.com">CSIRO</a><br/>
+    (<a href="mailto:simon.cox@csiro.au">simon.cox@csiro.au</a>)<br/>
         </dd>
         <dt>Created</dt>
         <dd>2020-02-11</dd>
         <dt>Modified</dt>
-        <dd>2020-05-11</dd>
-        <dt>Version Information</dt>
-        <dd>Initial version</dd>
+        <dd>2020-06-11</dd>
+        <dt>Version IRI</dt>
+        <dd><a href="http://linked.data.gov.au/def/phs/0.1">http://linked.data.gov.au/def/phs/0.1</a></dd>
+        <dt>Imports</dt>
+        <dd>
+            <a href="http://www.w3.org/ns/sosa/">sosa:</a><br/>
+        </dd>
         <dt>Ontology RDF</dt>
         <dd><a href="phs.ttl">RDF (turtle)</a></dd>
         <dt>Code Repository</dt>
@@ -285,7 +296,7 @@
     </dl>
     <h2>Description</h2>
     <div id="description">
-        <p>An ontology about surveillance to determine plant health, such as fruit fly trapping.</p>
+        <p>An ontology about surveillance to determine plant health, such as fruit fly trapping</p>
     </div>
 </section>
 <section id="toc">
@@ -293,6 +304,7 @@
     <ol>
         <li><a href="#classes">Classes</a></li>
         <li><a href="#objectproperties">Object Properties</a></li>
+        <li><a href="#datatypeproperties">Datatype Properties</a></li>
         <li><a href="#annotationproperties">Annotation Properties</a></li>
         <li><a href="#namedindividuals">Named Individuals</a></li>
         <li><a href="#namespaces">Namespaces</a></li>
@@ -302,29 +314,202 @@
 <section id="overview">
     <h2>Overview</h2>
     <div class="figure">
-        <div style="width:500px; height:50px; background-color: black;">&nbsp;</div>
+        <div style="width:500px; height:50px; background-color: lightgrey; border:solid 2px grey; padding:10px;margin-bottom:5px; text-align:center;">Pictures say 1,000 words</div>
         <div class="caption"><strong>Figure 1:</strong> Ontology overview</div>
     </div>
 </section>
-<section id="classes">
+  <section id="classes">
     <h2>Classes <span style="float:right; font-size:smaller;"><a href="">&uparrow;</a></span></h2>
     <ul class="hlist">
-        <li><a href="#Adevicethatcatchesorcollectsinsects">A device that catches or collects insects</a></li>
+        <li><a href="#Attractant">Attractant</a></li>
+        <li><a href="#AttractantType">Attractant Type</a></li>
+        <li><a href="#Bait">Bait</a></li>
+        <li><a href="#CaptureSystem">Capture System</a></li>
         <li><a href="#Collection">Collection</a></li>
         <li><a href="#Concept">Concept</a></li>
         <li><a href="#Dataset">Dataset</a></li>
+        <li><a href="#DiagnosticMethodType">Diagnostic Method Type</a></li>
+        <li><a href="#Diagnosticmethod">Diagnostic method</a></li>
+        <li><a href="#Feature">Feature</a></li>
+        <li><a href="#Geometry">Geometry</a></li>
         <li><a href="#Host">Host</a></li>
+        <li><a href="#HostType">Host Type</a></li>
         <li><a href="#Lure">Lure</a></li>
+        <li><a href="#LureType">Lure Type</a></li>
+        <li><a href="#ObservationMethodType">Observation Method Type</a></li>
+        <li><a href="#Observationmethod">Observation method</a></li>
         <li><a href="#Organization">Organization</a></li>
         <li><a href="#Person">Person</a></li>
+        <li><a href="#Pest">Pest</a></li>
+        <li><a href="#PestType">Pest Type</a></li>
+        <li><a href="#Plant">Plant</a></li>
         <li><a href="#Sampler">Sampler</a></li>
+        <li><a href="#Spatio-TemporalGeometry">Spatio-Temporal Geometry</a></li>
         <li><a href="#Stratum">Stratum</a></li>
         <li><a href="#Substrate">Substrate</a></li>
-        <li><a href="#TargetPest">Target Pest</a></li>
+        <li><a href="#SubstrateType">Substrate Type</a></li>
         <li><a href="#Taxon">Taxon</a></li>
+        <li><a href="#TaxonDistribution">Taxon Distribution</a></li>
+        <li><a href="#TaxonIdentification">Taxon Identification</a></li>
         <li><a href="#Trap">Trap</a></li>
-        <li><a href="#TrapType1">Trap Type</a></li>
+        <li><a href="#TrapType">Trap Type</a></li>
+        <li><a href="#Trapping">Trapping</a></li>
+        <li><a href="#dataProperty">dataProperty</a></li>
     </ul>
+    <div class="entity class" id="Attractant">
+        <h3>Attractant<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>http://linked.data.gov.au/def/phs#Attractant</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>A substances that attractses Animals</p>
+                </td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="#Bait">Bait</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>Restrictions</th>
+                <td>
+                    <a href="http://purl.org/dc/terms/type">dcterms:type</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">exactly</span> 1 <a href="#AttractantType">AttractantType</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="AttractantType">
+        <h3>Attractant Type<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>http://linked.data.gov.au/def/phs#AttractantType</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>The subtype of a Attractant</p>
+                </td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="Bait">
+        <h3>Bait<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>http://linked.data.gov.au/def/phs#Bait</code></td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="http://www.w3.org/ns/sosa/Sampler">sosa:Sampler</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.w3.org/ns/sosa/Actuator">sosa:Actuator</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>Sub-classes</th>
+                <td>
+                    <a href="#Lure">Lure</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="#Attractant">Attractant</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>In range of</th>
+                <td>
+                    <a href="#hasBait">hasBait</a><sup class="sup-op" title="object property">op</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="CaptureSystem">
+        <h3>Capture System<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>http://linked.data.gov.au/def/phs#CaptureSystem</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>A collection of things used to capture an Animal</p>
+                </td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="http://www.w3.org/ns/sosa/Sampler">sosa:Sampler</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>Restrictions</th>
+                <td>
+                    <a href="#hasBait">hasBait</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">only</span> <a href="#Bait">Bait</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="#hasTrap">hasTrap</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">only</span> <a href="#Trap">Trap</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>In domain of</th>
+                <td>
+                    <a href="#hasBait">hasBait</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="#hasTrap">hasTrap</a><sup class="sup-op" title="object property">op</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="Diagnosticmethod">
+        <h3>Diagnostic method<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>http://linked.data.gov.au/def/phs#DiagnosticMethod</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>A procedure or method used to determine the taxonomic identity of a plant pest. May be carried out in the field, or more usually, in a laboratory.</p>
+                </td>
+            </tr>
+            <tr>
+                <th>In domain of</th>
+                <td>
+                    <a href="#identifiesPest">identifiesPest</a><sup class="sup-op" title="object property">op</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="DiagnosticMethodType">
+        <h3>Diagnostic Method Type<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>http://linked.data.gov.au/def/phs#DiagnosticMethodType</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>The subtype of a Diagnostic Method</p>
+                </td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
     <div class="entity class" id="Host">
         <h3>Host<sup title="class" class="sup-c">c</sup></h3>
         <table>
@@ -335,41 +520,49 @@
             <tr>
                 <th>Description</th>
                 <td>
-                    <p>A plant on (or in) which a pest may be found. </p>
+                    <p>A Plant or Animal (a Taxon) that is also a Stratum.</p>
+                </td>
+            </tr>
+            <tr>
+                <th>Example</th>
+                <td>
+                    <pre>
+                      Bee; a Varroa Mite may be found in a bee's trachea
+                    </pre>
                 </td>
             </tr>
             <tr>
                 <th>Super-classes</th>
                 <td>
-                    <a href="http://rs.tdwg.org/dwc/terms/Taxon">dwc:Taxon</a><sup class="sup-c" title="class">c</sup><br/>
                     <a href="#Stratum">Stratum</a><sup class="sup-c" title="class">c</sup><br/>
-                </td>
-            </tr>
-        </table>
-    </div>
-    <div class="entity class" id="Adevicethatcatchesorcollectsinsects">
-        <h3>A device that catches or collects insects<sup title="class" class="sup-c">c</sup></h3>
-        <table>
-            <tr>
-                <th>IRI</th>
-                <td><code>http://linked.data.gov.au/def/phs#InsectTrap</code></td>
-            </tr>
-            <tr>
-                <th>Description</th>
-                <td>
-                    <p>A device that catches or collects insects</p>
-                </td>
-            </tr>
-            <tr>
-                <th>Super-classes</th>
-                <td>
-                    <a href="#Trap">Trap</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://rs.tdwg.org/dwc/terms/Taxon">dwc:Taxon</a><sup class="sup-c" title="class">c</sup><br/>
                 </td>
             </tr>
             <tr>
                 <th>In domain of</th>
                 <td>
-                    <a href="#TrapType">trapType</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="#hostsPest">hostsPest</a><sup class="sup-op" title="object property">op</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="HostType">
+        <h3>Host Type<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>http://linked.data.gov.au/def/phs#HostType</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>The subtype of a Host</p>
+                </td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a><sup class="sup-c" title="class">c</sup><br/>
                 </td>
             </tr>
         </table>
@@ -384,13 +577,190 @@
             <tr>
                 <th>Description</th>
                 <td>
-                    <p>An attractant that may be placed in an InsectTrap</p>
+                    <p>A substances that lures Animals</p>
+                </td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="#Bait">Bait</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>Restrictions</th>
+                <td>
+                    <a href="http://purl.org/dc/terms/type">dcterms:type</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">exactly</span> 1 <a href="#LureType">LureType</a><sup class="sup-c" title="class">c</sup><br/>
                 </td>
             </tr>
             <tr>
                 <th>In domain of</th>
                 <td>
+                    <a href="#luresPest">luresPest</a><sup class="sup-op" title="object property">op</sup><br/>
                     <a href="#lureType">lureType</a><sup class="sup-op" title="object property">op</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="LureType">
+        <h3>Lure Type<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>http://linked.data.gov.au/def/phs#LureType</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>The subtype of a Lure</p>
+                </td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="Observationmethod">
+        <h3>Observation method<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>http://linked.data.gov.au/def/phs#ObservationMethod</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>A technique used to carry out an act of surveillance. Observation methods are chosen according to the target pest and/or host|substrate. The sensitivity of an observation may depend on the method that was used.</p>
+                </td>
+            </tr>
+            <tr>
+                <th>In domain of</th>
+                <td>
+                    <a href="#detectsPest">detectsPest</a><sup class="sup-op" title="object property">op</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="ObservationMethodType">
+        <h3>Observation Method Type<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>http://linked.data.gov.au/def/phs#ObservationMethodType</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>The subtype of an Observation Method</p>
+                </td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="Pest">
+        <h3>Pest<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>http://linked.data.gov.au/def/phs#Pest</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>A Taxon that is the subject of surveillance</p>
+                </td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="http://www.w3.org/ns/sosa/Sample">sosa:Sample</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>Restrictions</th>
+                <td>
+                    <a href="http://purl.org/dc/terms/type">dcterms:type</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">exactly</span> 1 <a href="#PestType">PestType</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>In range of</th>
+                <td>
+                    <a href="#identifiesPest">identifiesPest</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="#hostsPest">hostsPest</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="#supportsPest">supportsPest</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="#catchesPest">catchesPest</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="#luresPest">luresPest</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="#detectsPest">detectsPest</a><sup class="sup-op" title="object property">op</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="PestType">
+        <h3>Pest Type<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>http://linked.data.gov.au/def/phs#PestType</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>The subtype of a Pest. Perhaps a single Taxon or perhaps a Group</p>
+                </td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="Plant">
+        <h3>Plant<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>http://linked.data.gov.au/def/phs#Plant</code></td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="http://rs.tdwg.org/dwc/terms/Taxon">dwc:Taxon</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="Spatio-TemporalGeometry">
+        <h3>Spatio-Temporal Geometry<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>http://linked.data.gov.au/def/phs#SpatioTemporalGeometry</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>A Gemetry with one or more temporal extents</p>
+                </td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/geosparql#Geometry">http://www.opengis.net/ont/geosparql#Geometry</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>Restrictions</th>
+                <td>
+                    <a href="http://www.w3.org/2006/time#hasTime">http://www.w3.org/2006/time#hasTime</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">min</span> 1 <a href="http://www.w3.org/2006/time#TemporalEntity">http://www.w3.org/2006/time#TemporalEntity</a><sup class="sup-c" title="class">c</sup><br/>
                 </td>
             </tr>
         </table>
@@ -405,7 +775,7 @@
             <tr>
                 <th>Description</th>
                 <td>
-                    <p>Thing or material on which a pest is searched for or found. A superclass for host or substrate. Stratum is a 'terminological', not an 'instance' class; observation records ('instances') should use either 'Host' or 'Substrate'.</p>
+                    <p>Thing or material on which a pest is searched for or found. Stratum is abstract: instances should use either 'Host' or 'Substrate'.</p>
                 </td>
             </tr>
             <tr>
@@ -427,7 +797,7 @@
             <tr>
                 <th>Description</th>
                 <td>
-                    <p>A non-living thing on which a pest may be found.</p>
+                    <p>A Stratum that is not a Plant.</p>
                 </td>
             </tr>
             <tr>
@@ -436,19 +806,80 @@
                     <a href="#Stratum">Stratum</a><sup class="sup-c" title="class">c</sup><br/>
                 </td>
             </tr>
+            <tr>
+                <th>In domain of</th>
+                <td>
+                    <a href="#supportsPest">supportsPest</a><sup class="sup-op" title="object property">op</sup><br/>
+                </td>
+            </tr>
         </table>
     </div>
-    <div class="entity class" id="TargetPest">
-        <h3>Target Pest<sup title="class" class="sup-c">c</sup></h3>
+    <div class="entity class" id="SubstrateType">
+        <h3>Substrate Type<sup title="class" class="sup-c">c</sup></h3>
         <table>
             <tr>
                 <th>IRI</th>
-                <td><code>http://linked.data.gov.au/def/phs#TargetPest</code></td>
+                <td><code>http://linked.data.gov.au/def/phs#SubstrateType</code></td>
             </tr>
             <tr>
                 <th>Description</th>
                 <td>
-                    <p>The pest taxon that is is the subject of surveillance. Can have more than one target.</p>
+                    <p>The subtype of a Substrate</p>
+                </td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="TaxonDistribution">
+        <h3>Taxon Distribution<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>http://linked.data.gov.au/def/phs#TaxonDistribution</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>The spatial and temporal distribution of a Taxon</p>
+                </td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/geosparql#Feature">http://www.opengis.net/ont/geosparql#Feature</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.w3.org/ns/sosa/FeatureOfInterest">sosa:FeatureOfInterest</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>Restrictions</th>
+                <td>
+                    <a href="http://www.opengis.net/ont/geosparql#hasGeometry">http://www.opengis.net/ont/geosparql#hasGeometry</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">min</span> 1 <a href="#Spatio-TemporalGeometry">SpatioTemporalGeometry</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="TaxonIdentification">
+        <h3>Taxon Identification<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>http://linked.data.gov.au/def/phs#TaxonIdentification</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>The identification of the Taxon of an Animal</p>
+                </td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="http://www.w3.org/ns/sosa/Observation">sosa:Observation</a><sup class="sup-c" title="class">c</sup><br/>
                 </td>
             </tr>
         </table>
@@ -463,7 +894,7 @@
             <tr>
                 <th>Description</th>
                 <td>
-                    <p>A device that catches or collects organisms or evidence of them</p>
+                    <p>A device that catches or collects organisms or evidence of them.</p>
                 </td>
             </tr>
             <tr>
@@ -473,19 +904,38 @@
                 </td>
             </tr>
             <tr>
-                <th>Sub-classes</th>
+                <th>Restrictions</th>
                 <td>
-                    <a href="#Adevicethatcatchesorcollectsinsects">InsectTrap</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://purl.org/dc/terms/type">dcterms:type</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">exactly</span> 1 <a href="#TrapType">TrapType</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>In domain of</th>
+                <td>
+                    <a href="#catchesPest">catchesPest</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="#trapType">trapType</a><sup class="sup-op" title="object property">op</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>In range of</th>
+                <td>
+                    <a href="#hasTrap">hasTrap</a><sup class="sup-op" title="object property">op</sup><br/>
                 </td>
             </tr>
         </table>
     </div>
-    <div class="entity class" id="TrapType1">
+    <div class="entity class" id="TrapType">
         <h3>Trap Type<sup title="class" class="sup-c">c</sup></h3>
         <table>
             <tr>
                 <th>IRI</th>
                 <td><code>http://linked.data.gov.au/def/phs#TrapType</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>The subtype of a Trap</p>
+                </td>
             </tr>
             <tr>
                 <th>Super-classes</th>
@@ -496,7 +946,39 @@
             <tr>
                 <th>In range of</th>
                 <td>
-                    <a href="#TrapType">trapType</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="#trapType">trapType</a><sup class="sup-op" title="object property">op</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="Trapping">
+        <h3>Trapping<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>http://linked.data.gov.au/def/phs#Trapping</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>The capturing of an Animal</p>
+                </td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="http://www.w3.org/ns/sosa/Observation">sosa:Observation</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.w3.org/ns/sosa/Sampling">sosa:Sampling</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>Restrictions</th>
+                <td>
+                    <a href="http://www.w3.org/ns/sosa/usedProcedure">sosa:usedProcedure</a> <span class="cardinality">min</span> 0 <a href="http://www.w3.org/ns/sosa/Procedure">sosa:Procedure</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.w3.org/ns/sosa/hasResult">sosa:hasResult</a> <span class="cardinality">min</span> 0 <a href="http://www.w3.org/ns/sosa/Sample">sosa:Sample</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.w3.org/2006/time#hasTime">http://www.w3.org/2006/time#hasTime</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">exactly</span> 1 <a href="http://www.w3.org/2006/time#TemporalEntity">http://www.w3.org/2006/time#TemporalEntity</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.w3.org/ns/sosa/hasFeatureOfInterest">sosa:hasFeatureOfInterest</a> <span class="cardinality">exactly</span> 1 <a href="#TaxonDistribution">TaxonDistribution</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.w3.org/ns/sosa/madeBySampler">sosa:madeBySampler</a> <span class="cardinality">min</span> 1 <a href="#CaptureSystem">CaptureSystem</a><sup class="sup-c" title="class">c</sup><br/>
                 </td>
             </tr>
         </table>
@@ -520,8 +1002,48 @@
             <tr>
                 <th>Sub-classes</th>
                 <td>
+                    <a href="#Plant">Plant</a><sup class="sup-c" title="class">c</sup><br/>
                     <a href="#Host">Host</a><sup class="sup-c" title="class">c</sup><br/>
                 </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="Feature">
+        <h3>Feature<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>http://www.opengis.net/ont/geosparql#Feature</code></td>
+            </tr>
+            <tr>
+                <th>Sub-classes</th>
+                <td>
+                    <a href="#TaxonDistribution">TaxonDistribution</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="Geometry">
+        <h3>Geometry<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>http://www.opengis.net/ont/geosparql#Geometry</code></td>
+            </tr>
+            <tr>
+                <th>Sub-classes</th>
+                <td>
+                    <a href="#Spatio-TemporalGeometry">SpatioTemporalGeometry</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="dataProperty">
+        <h3>dataProperty<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>http://www.w3.org/1999/02/22-rdf-syntax-ns#dataProperty</code></td>
             </tr>
         </table>
     </div>
@@ -544,7 +1066,14 @@
             <tr>
                 <th>Sub-classes</th>
                 <td>
-                    <a href="#TrapType1">TrapType</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="#TrapType">TrapType</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="#HostType">HostType</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="#LureType">LureType</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="#PestType">PestType</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="#ObservationMethodType">ObservationMethodType</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="#DiagnosticMethodType">DiagnosticMethodType</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="#SubstrateType">SubstrateType</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="#AttractantType">AttractantType</a><sup class="sup-c" title="class">c</sup><br/>
                 </td>
             </tr>
             <tr>
@@ -565,6 +1094,8 @@
             <tr>
                 <th>Sub-classes</th>
                 <td>
+                    <a href="#Bait">Bait</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="#CaptureSystem">CaptureSystem</a><sup class="sup-c" title="class">c</sup><br/>
                     <a href="#Trap">Trap</a><sup class="sup-c" title="class">c</sup><br/>
                 </td>
             </tr>
@@ -592,9 +1123,183 @@
 <section id="objectproperties">
     <h2>Object Properties <span style="float:right; font-size:smaller;"><a href="">&uparrow;</a></span></h2>
     <ul class="hlist">
+        <li><a href="#catchesPest">catchesPest</a></li>
+        <li><a href="#detectsPest">detectsPest</a></li>
+        <li><a href="#hasBait">hasBait</a></li>
+        <li><a href="#hasTrap">hasTrap</a></li>
+        <li><a href="#hostsPest">hostsPest</a></li>
+        <li><a href="#identifiesPest">identifiesPest</a></li>
         <li><a href="#lureType">lureType</a></li>
-        <li><a href="#TrapType">Trap Type</a></li>
+        <li><a href="#luresPest">luresPest</a></li>
+        <li><a href="#supportsPest">supportsPest</a></li>
+        <li><a href="#trapType">trapType</a></li>
+        <li><a href="#hasPart">hasPart</a></li>
+        <li><a href="#type">type</a></li>
+        <li><a href="#hasGeometry">hasGeometry</a></li>
+        <li><a href="#hasTime">hasTime</a></li>
     </ul>
+    <div class="entity property" id="catchesPest">
+        <h3>catchesPest<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>http://linked.data.gov.au/def/phs#catchesPest</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    A device that is designed to catch the target pest
+                </td>
+            </tr>
+            <tr>
+                <th>Domain(s)</th>
+                <td>
+                    <a href="#Trap">Trap</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="#Pest">Pest</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="detectsPest">
+        <h3>detectsPest<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>http://linked.data.gov.au/def/phs#detectsPest</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    The pest for which the observation method is useful
+                </td>
+            </tr>
+            <tr>
+                <th>Domain(s)</th>
+                <td>
+                    <a href="#Observationmethod">ObservationMethod</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="#Pest">Pest</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="hasBait">
+        <h3>hasBait<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>http://linked.data.gov.au/def/phs#hasBait</code></td>
+            </tr>
+            <tr>
+                <th>Super-properties</th>
+                <td>
+                    <a href="http://purl.org/dc/terms/hasPart">dcterms:hasPart</a><sup class="sup-op" title="object property">op</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Domain(s)</th>
+                <td>
+                    <a href="#CaptureSystem">CaptureSystem</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="#Bait">Bait</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="hasTrap">
+        <h3>hasTrap<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>http://linked.data.gov.au/def/phs#hasTrap</code></td>
+            </tr>
+            <tr>
+                <th>Super-properties</th>
+                <td>
+                    <a href="http://purl.org/dc/terms/hasPart">dcterms:hasPart</a><sup class="sup-op" title="object property">op</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Domain(s)</th>
+                <td>
+                    <a href="#CaptureSystem">CaptureSystem</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="#Trap">Trap</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="hostsPest">
+        <h3>hostsPest<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>http://linked.data.gov.au/def/phs#hostsPest</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    A living thing (usually a plant) on which the target pest may be found
+                </td>
+            </tr>
+            <tr>
+                <th>Domain(s)</th>
+                <td>
+                    <a href="#Host">Host</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="#Pest">Pest</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="identifiesPest">
+        <h3>identifiesPest<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>http://linked.data.gov.au/def/phs#identifiesPest</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    This diagnostic method is appropriate for the target pest
+                </td>
+            </tr>
+            <tr>
+                <th>Domain(s)</th>
+                <td>
+                    <a href="#Diagnosticmethod">DiagnosticMethod</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="#Pest">Pest</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
     <div class="entity property" id="lureType">
         <h3>lureType<sup title="object property" class="sup-op">op</sup></h3>
         <table>
@@ -616,8 +1321,62 @@
             </tr>
         </table>
     </div>
-    <div class="entity property" id="TrapType">
-        <h3>Trap Type<sup title="object property" class="sup-op">op</sup></h3>
+    <div class="entity property" id="luresPest">
+        <h3>luresPest<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>http://linked.data.gov.au/def/phs#luresPest</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    The target pest which is attracted by this lure
+                </td>
+            </tr>
+            <tr>
+                <th>Domain(s)</th>
+                <td>
+                    <a href="#Lure">Lure</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="#Pest">Pest</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="supportsPest">
+        <h3>supportsPest<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>http://linked.data.gov.au/def/phs#supportsPest</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    A substrate on which the target pest is likely be found, if it were present
+                </td>
+            </tr>
+            <tr>
+                <th>Domain(s)</th>
+                <td>
+                    <a href="#Substrate">Substrate</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="#Pest">Pest</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="trapType">
+        <h3>trapType<sup title="object property" class="sup-op">op</sup></h3>
         <table>
             <tr>
                 <th>IRI</th>
@@ -632,13 +1391,99 @@
             <tr>
                 <th>Domain(s)</th>
                 <td>
-                    <a href="#Adevicethatcatchesorcollectsinsects">InsectTrap</a><sup class="sup-c" title="class">c</sup>
+                    <a href="#Trap">Trap</a><sup class="sup-c" title="class">c</sup>
                 </td>
             </tr>
             <tr>
                 <th>Range(s)</th>
                 <td>
-                    <a href="#TrapType1">TrapType</a><sup class="sup-c" title="class">c</sup>
+                    <a href="#TrapType">TrapType</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="hasPart">
+        <h3>hasPart<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>http://purl.org/dc/terms/hasPart</code></td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="type">
+        <h3>type<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>http://purl.org/dc/terms/type</code></td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="hasGeometry">
+        <h3>hasGeometry<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>http://www.opengis.net/ont/geosparql#hasGeometry</code></td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="hasTime">
+        <h3>hasTime<sup title="object property" class="sup-op">op</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>http://www.w3.org/2006/time#hasTime</code></td>
+            </tr>
+        </table>
+    </div>
+</section>
+
+<section id="datatypeproperties">
+    <h2>Datatype Properties <span style="float:right; font-size:smaller;"><a href="">&uparrow;</a></span></h2>
+    <ul class="hlist">
+        <li><a href="#taxonomicReferenceSource">taxonomicReferenceSource</a></li>
+        <li><a href="#vernacularName">vernacularName</a></li>
+    </ul>
+    <div class="entity property" id="taxonomicReferenceSource">
+        <h3>taxonomicReferenceSource<sup title="datatype property" class="sup-dp">dp</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>http://linked.data.gov.au/def/phs#taxonomicReferenceSource</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    
+                </td>
+            </tr>
+            <tr>
+                <th>Domain(s)</th>
+                <td>
+                    (<a href="#Host">Host</a><sup class="sup-c" title="class">c</sup> or <a href="#Pest">Pest</a><sup class="sup-c" title="class">c</sup>)
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="vernacularName">
+        <h3>vernacularName<sup title="datatype property" class="sup-dp">dp</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>http://linked.data.gov.au/def/phs#vernacularName</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    The vernacular (common) name for the host or pest
+                </td>
+            </tr>
+            <tr>
+                <th>Domain(s)</th>
+                <td>
+                    (<a href="#Host">Host</a><sup class="sup-c" title="class">c</sup> or <a href="#Pest">Pest</a><sup class="sup-c" title="class">c</sup>)
                 </td>
             </tr>
         </table>
@@ -652,8 +1497,13 @@
         <li><a href="#created">created</a></li>
         <li><a href="#creator">creator</a></li>
         <li><a href="#modified">modified</a></li>
+        <li><a href="#publisher">publisher</a></li>
         <li><a href="#preferredNamespacePrefix">preferredNamespacePrefix</a></li>
+        <li><a href="#cardinality">cardinality</a></li>
+        <li><a href="#minCardinality">minCardinality</a></li>
+        <li><a href="#definition">definition</a></li>
         <li><a href="#member">member</a></li>
+        <li><a href="#prefLabel">prefLabel</a></li>
         <li><a href="#affiliation">affiliation</a></li>
         <li><a href="#codeRepository">codeRepository</a></li>
         <li><a href="#email">email</a></li>
@@ -697,6 +1547,15 @@
             </tr>
         </table>
     </div>
+    <div class="entity property" id="publisher">
+        <h3>publisher<sup title="annotation property" class="sup-ap">ap</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>http://purl.org/dc/terms/publisher</code></td>
+            </tr>
+        </table>
+    </div>
     <div class="entity property" id="preferredNamespacePrefix">
         <h3>preferredNamespacePrefix<sup title="annotation property" class="sup-ap">ap</sup></h3>
         <table>
@@ -706,12 +1565,48 @@
             </tr>
         </table>
     </div>
+    <div class="entity property" id="cardinality">
+        <h3>cardinality<sup title="annotation property" class="sup-ap">ap</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>http://www.w3.org/2002/07/owl#cardinality</code></td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="minCardinality">
+        <h3>minCardinality<sup title="annotation property" class="sup-ap">ap</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>http://www.w3.org/2002/07/owl#minCardinality</code></td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="definition">
+        <h3>definition<sup title="annotation property" class="sup-ap">ap</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>http://www.w3.org/2004/02/skos/core#definition</code></td>
+            </tr>
+        </table>
+    </div>
     <div class="entity property" id="member">
         <h3>member<sup title="annotation property" class="sup-ap">ap</sup></h3>
         <table>
             <tr>
                 <th>IRI</th>
                 <td><code>http://www.w3.org/2004/02/skos/core#member</code></td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity property" id="prefLabel">
+        <h3>prefLabel<sup title="annotation property" class="sup-ap">ap</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>http://www.w3.org/2004/02/skos/core#prefLabel</code></td>
             </tr>
         </table>
     </div>
@@ -771,330 +1666,41 @@
     </div>
 </section>
 
-
-<section id="namedindividuals">
+  
+  <section id="namedindividuals">
     <h2>Named Individuals <span style="float:right; font-size:smaller;"><a href="">&uparrow;</a></span></h2>
     <ul class="hlist">
         <li><a href="#0000-0002-3884-3420">0000-0002-3884-3420</a></li>
         <li><a href="#0000-0002-8742-7730">0000-0002-8742-7730</a></li>
-        <li><a href="#Collectionofallowednamesfortraptypes">Collection of allowed names for trap types</a></li>
-        <li><a href="#Host">Host</a></li>
-        <li><a href="#HostCommonName">Host Common Name</a></li>
-        <li><a href="#HostScientificName">Host Scientific Name</a></li>
-        <li><a href="#HostTaxonConceptID">Host Taxon Concept ID</a></li>
-        <li><a href="#HostTaxonID">Host Taxon ID</a></li>
-        <li><a href="#HostTaxonomicReferenceSource">Host Taxonomic Reference Source</a></li>
-        <li><a href="#TargetCommonName">Target Common Name</a></li>
-        <li><a href="#TargetPest">Target Pest</a></li>
-        <li><a href="#TargetScientificName">Target Scientific Name</a></li>
-        <li><a href="#TargetTaxonConceptID">Target Taxon Concept ID</a></li>
-        <li><a href="#TargetTaxonID">Target Taxon ID</a></li>
-        <li><a href="#TargetTaxonomicReferenceSource">Target Taxonomic Reference Source</a></li>
-        <li><a href="#awe">awe</a></li>
-        <li><a href="#fruitflyAnotherOne">fruitflyAnotherOne</a></li>
-        <li><a href="#fruitflyLyndfield">fruitflyLyndfield</a></li>
-        <li><a href="#fruitflyPeyton">fruitflyPeyton</a></li>
+        <li><a href="#dawe">dawe</a></li>
+        <li><a href="#stephen">stephen</a></li>
     </ul>
-    <div class="entity named_individual" id="Host">
-        <h3>Host<sup title="named individual" class="sup-ni">ni</sup></h3>
+    <div class="entity named_individual" id="stephen">
+        <h3>stephen<sup title="named individual" class="sup-ni">ni</sup></h3>
         <table>
             <tr>
                 <th>IRI</th>
                 <td>
                   <code>
-                      http://linked.data.gov.au/def/phs#Host
+                      http://linked.data.gov.au/def/phs#stephen
                   
                   </code>
                 </td>
             </tr>
             <dt>Classes(s)</dt>
             <dd>
-                <a href="http://www.w3.org/2002/07/owl#Class">owl:Class</a><br/>
-                <a href="http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a><br/>
-                <a href="http://rs.tdwg.org/dwc/terms/Taxon">dwc:Taxon</a><br/>
+                <a href="https://schema.org/Person">sdo:Person</a><br/>
             </dd>
-            <tr>
-                <th>Description</th>
-                <td>
-                    The host taxon that is is the subject of surveillance. Can have more than one host.
-                </td>
-            </tr>
         </table>
     </div>
-    <div class="entity named_individual" id="TargetPest">
-        <h3>Target Pest<sup title="named individual" class="sup-ni">ni</sup></h3>
+    <div class="entity named_individual" id="dawe">
+        <h3>dawe<sup title="named individual" class="sup-ni">ni</sup></h3>
         <table>
             <tr>
                 <th>IRI</th>
                 <td>
                   <code>
-                      http://linked.data.gov.au/def/phs#TargetPest
-                  
-                  </code>
-                </td>
-            </tr>
-            <dt>Classes(s)</dt>
-            <dd>
-                <a href="http://www.w3.org/2002/07/owl#Class">owl:Class</a><br/>
-                <a href="http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a><br/>
-                <a href="http://rs.tdwg.org/dwc/terms/Taxon">dwc:Taxon</a><br/>
-            </dd>
-            <tr>
-                <th>Description</th>
-                <td>
-                    The pest taxon that is is the subject of surveillance. Can have more than one target.
-                </td>
-            </tr>
-        </table>
-    </div>
-    <div class="entity named_individual" id="HostCommonName">
-        <h3>Host Common Name<sup title="named individual" class="sup-ni">ni</sup></h3>
-        <table>
-            <tr>
-                <th>IRI</th>
-                <td>
-                  <code>
-                      http://linked.data.gov.au/def/phs#hostCommonName
-                  
-                  </code>
-                </td>
-            </tr>
-            <dt>Classes(s)</dt>
-            <dd>
-                <a href="http://linked.data.gov.au/def/phs#Host">Host</a><br/>
-            </dd>
-            <tr>
-                <th>Description</th>
-                <td>
-                    The vernacular (common) name for the host
-                </td>
-            </tr>
-        </table>
-    </div>
-    <div class="entity named_individual" id="HostScientificName">
-        <h3>Host Scientific Name<sup title="named individual" class="sup-ni">ni</sup></h3>
-        <table>
-            <tr>
-                <th>IRI</th>
-                <td>
-                  <code>
-                      http://linked.data.gov.au/def/phs#hostScientificName
-                  
-                  </code>
-                </td>
-            </tr>
-            <dt>Classes(s)</dt>
-            <dd>
-                <a href="http://linked.data.gov.au/def/phs#Host">Host</a><br/>
-            </dd>
-            <tr>
-                <th>Description</th>
-                <td>
-                    I changed this from taxonName to align with DwC'
-                </td>
-            </tr>
-        </table>
-    </div>
-    <div class="entity named_individual" id="HostTaxonConceptID">
-        <h3>Host Taxon Concept ID<sup title="named individual" class="sup-ni">ni</sup></h3>
-        <table>
-            <tr>
-                <th>IRI</th>
-                <td>
-                  <code>
-                      http://linked.data.gov.au/def/phs#hostTaxonConceptID
-                  
-                  </code>
-                </td>
-            </tr>
-            <dt>Classes(s)</dt>
-            <dd>
-                <a href="http://linked.data.gov.au/def/phs#Host">Host</a><br/>
-            </dd>
-            <tr>
-                <th>Description</th>
-                <td>
-                    Identifier for taxonomic CONCEPT (not nomenclature) of the host
-                </td>
-            </tr>
-        </table>
-    </div>
-    <div class="entity named_individual" id="HostTaxonID">
-        <h3>Host Taxon ID<sup title="named individual" class="sup-ni">ni</sup></h3>
-        <table>
-            <tr>
-                <th>IRI</th>
-                <td>
-                  <code>
-                      http://linked.data.gov.au/def/phs#hostTaxonID
-                  
-                  </code>
-                </td>
-            </tr>
-            <dt>Classes(s)</dt>
-            <dd>
-                <a href="http://linked.data.gov.au/def/phs#Host">Host</a><br/>
-            </dd>
-            <tr>
-                <th>Description</th>
-                <td>
-                    Automatically populated by TaxaaS. Unsure whether we need taxonID AND taxonConceptID
-                </td>
-            </tr>
-        </table>
-    </div>
-    <div class="entity named_individual" id="HostTaxonomicReferenceSource">
-        <h3>Host Taxonomic Reference Source<sup title="named individual" class="sup-ni">ni</sup></h3>
-        <table>
-            <tr>
-                <th>IRI</th>
-                <td>
-                  <code>
-                      http://linked.data.gov.au/def/phs#hostTaxonomicReferenceSource
-                  
-                  </code>
-                </td>
-            </tr>
-            <dt>Classes(s)</dt>
-            <dd>
-                <a href="http://purl.org/dc/terms/Dataset">dcterms:Dataset</a><br/>
-            </dd>
-            <tr>
-                <th>Description</th>
-                <td>
-                    Placeholder Class relationship
-                </td>
-            </tr>
-        </table>
-    </div>
-    <div class="entity named_individual" id="TargetCommonName">
-        <h3>Target Common Name<sup title="named individual" class="sup-ni">ni</sup></h3>
-        <table>
-            <tr>
-                <th>IRI</th>
-                <td>
-                  <code>
-                      http://linked.data.gov.au/def/phs#targetCommonName
-                  
-                  </code>
-                </td>
-            </tr>
-            <dt>Classes(s)</dt>
-            <dd>
-                <a href="http://linked.data.gov.au/def/phs#TargetPest">TargetPest</a><br/>
-            </dd>
-            <tr>
-                <th>Description</th>
-                <td>
-                    The vernacular (common) name for the Target Pest
-                </td>
-            </tr>
-        </table>
-    </div>
-    <div class="entity named_individual" id="TargetScientificName">
-        <h3>Target Scientific Name<sup title="named individual" class="sup-ni">ni</sup></h3>
-        <table>
-            <tr>
-                <th>IRI</th>
-                <td>
-                  <code>
-                      http://linked.data.gov.au/def/phs#targetScientificName
-                  
-                  </code>
-                </td>
-            </tr>
-            <dt>Classes(s)</dt>
-            <dd>
-                <a href="http://linked.data.gov.au/def/phs#TargetPest">TargetPest</a><br/>
-            </dd>
-            <tr>
-                <th>Description</th>
-                <td>
-                    I changed this from taxonName to align with DwC'
-                </td>
-            </tr>
-        </table>
-    </div>
-    <div class="entity named_individual" id="TargetTaxonConceptID">
-        <h3>Target Taxon Concept ID<sup title="named individual" class="sup-ni">ni</sup></h3>
-        <table>
-            <tr>
-                <th>IRI</th>
-                <td>
-                  <code>
-                      http://linked.data.gov.au/def/phs#targetTaxonConceptID
-                  
-                  </code>
-                </td>
-            </tr>
-            <dt>Classes(s)</dt>
-            <dd>
-                <a href="http://linked.data.gov.au/def/phs#TargetPest">TargetPest</a><br/>
-            </dd>
-            <tr>
-                <th>Description</th>
-                <td>
-                    Automatically populated by TaxaaS. Unsure whether we need taxonID AND taxonConceptID
-                </td>
-            </tr>
-        </table>
-    </div>
-    <div class="entity named_individual" id="TargetTaxonID">
-        <h3>Target Taxon ID<sup title="named individual" class="sup-ni">ni</sup></h3>
-        <table>
-            <tr>
-                <th>IRI</th>
-                <td>
-                  <code>
-                      http://linked.data.gov.au/def/phs#targetTaxonID
-                  
-                  </code>
-                </td>
-            </tr>
-            <dt>Classes(s)</dt>
-            <dd>
-                <a href="http://linked.data.gov.au/def/phs#TargetPest">TargetPest</a><br/>
-            </dd>
-            <tr>
-                <th>Description</th>
-                <td>
-                    Automatically populated by TaxaaS. Unsure whether we need taxonID AND taxonConceptID
-                </td>
-            </tr>
-        </table>
-    </div>
-    <div class="entity named_individual" id="TargetTaxonomicReferenceSource">
-        <h3>Target Taxonomic Reference Source<sup title="named individual" class="sup-ni">ni</sup></h3>
-        <table>
-            <tr>
-                <th>IRI</th>
-                <td>
-                  <code>
-                      http://linked.data.gov.au/def/phs#targetTaxonomicReferenceSource
-                  
-                  </code>
-                </td>
-            </tr>
-            <dt>Classes(s)</dt>
-            <dd>
-                <a href="http://purl.org/dc/terms/Dataset">dcterms:Dataset</a><br/>
-            </dd>
-            <tr>
-                <th>Description</th>
-                <td>
-                    The name of the taxonomic reference system used for this target
-                </td>
-            </tr>
-        </table>
-    </div>
-    <div class="entity named_individual" id="awe">
-        <h3>awe<sup title="named individual" class="sup-ni">ni</sup></h3>
-        <table>
-            <tr>
-                <th>IRI</th>
-                <td>
-                  <code>
-                      http://linked.data.gov.au/org/awe
+                      http://linked.data.gov.au/org/dawe
                   
                   </code>
                 </td>
@@ -1120,78 +1726,6 @@
             <dt>Classes(s)</dt>
             <dd>
                 <a href="https://schema.org/Person">sdo:Person</a><br/>
-            </dd>
-        </table>
-    </div>
-    <div class="entity named_individual" id="fruitflyAnotherOne">
-        <h3>fruitflyAnotherOne<sup title="named individual" class="sup-ni">ni</sup></h3>
-        <table>
-            <tr>
-                <th>IRI</th>
-                <td>
-                  <code>
-                      https://example.org/def/fruitflyAnotherOne
-                  
-                  </code>
-                </td>
-            </tr>
-            <dt>Classes(s)</dt>
-            <dd>
-                <a href="http://linked.data.gov.au/def/phs#TrapType">TrapType</a><br/>
-            </dd>
-        </table>
-    </div>
-    <div class="entity named_individual" id="fruitflyLyndfield">
-        <h3>fruitflyLyndfield<sup title="named individual" class="sup-ni">ni</sup></h3>
-        <table>
-            <tr>
-                <th>IRI</th>
-                <td>
-                  <code>
-                      https://example.org/def/fruitflyLyndfield
-                  
-                  </code>
-                </td>
-            </tr>
-            <dt>Classes(s)</dt>
-            <dd>
-                <a href="http://linked.data.gov.au/def/phs#TrapType">TrapType</a><br/>
-            </dd>
-        </table>
-    </div>
-    <div class="entity named_individual" id="fruitflyPeyton">
-        <h3>fruitflyPeyton<sup title="named individual" class="sup-ni">ni</sup></h3>
-        <table>
-            <tr>
-                <th>IRI</th>
-                <td>
-                  <code>
-                      https://example.org/def/fruitflyPeyton
-                  
-                  </code>
-                </td>
-            </tr>
-            <dt>Classes(s)</dt>
-            <dd>
-                <a href="http://linked.data.gov.au/def/phs#TrapType">TrapType</a><br/>
-            </dd>
-        </table>
-    </div>
-    <div class="entity named_individual" id="Collectionofallowednamesfortraptypes">
-        <h3>Collection of allowed names for trap types<sup title="named individual" class="sup-ni">ni</sup></h3>
-        <table>
-            <tr>
-                <th>IRI</th>
-                <td>
-                  <code>
-                      https://example.org/def/fruitflyTrapTypes
-                  
-                  </code>
-                </td>
-            </tr>
-            <dt>Classes(s)</dt>
-            <dd>
-                <a href="http://www.w3.org/2004/02/skos/core#Collection">skos:Collection</a><br/>
             </dd>
         </table>
     </div>
@@ -1250,8 +1784,8 @@
         </table>
     </div>
 </section>
-
-<section id="namespaces">
+  
+  <section id="namespaces">
     <h2>Namespaces <span style="float:right; font-size:smaller;"><a href="">&uparrow;</a></span></h2>
     <dl>
         <dt><em>default (:)</em></dt>
@@ -1262,14 +1796,8 @@
         <dd><code>http://purl.org/dc/terms/</code></dd>
         <dt>dwc</dt>
         <dd><code>http://rs.tdwg.org/dwc/terms/</code></dd>
-        <dt>ffly</dt>
-        <dd><code>https://example.org/def/fruitfly</code></dd>
-        <dt>foaf</dt>
-        <dd><code>http://xmlns.com/foaf/0.1/</code></dd>
         <dt>owl</dt>
         <dd><code>http://www.w3.org/2002/07/owl#</code></dd>
-        <dt>phs</dt>
-        <dd><code>https://example.org/PlantHealthSurveillanceOntology#</code></dd>
         <dt>prov</dt>
         <dd><code>http://www.w3.org/ns/prov#</code></dd>
         <dt>rdf</dt>
@@ -1282,10 +1810,6 @@
         <dd><code>http://www.w3.org/2004/02/skos/core#</code></dd>
         <dt>sosa</dt>
         <dd><code>http://www.w3.org/ns/sosa/</code></dd>
-        <dt>ssn</dt>
-        <dd><code>http://www.w3.org/ns/ssn/</code></dd>
-        <dt>tgn</dt>
-        <dd><code>http://vocab.getty.edu/tgn/</code></dd>
         <dt>vann</dt>
         <dd><code>http://purl.org/vocab/vann/</code></dd>
         <dt>xml</dt>
@@ -1294,17 +1818,17 @@
         <dd><code>http://www.w3.org/2001/XMLSchema#</code></dd>
     </dl>
 </section>
-<section id="legend">
-    <h2>Legend</h2>
-    <table class="entity">
-        <tr><td><sup class="sup-c" title="Classes">c</sup></td><td>Classes</td></tr>
-        <tr><td><sup class="sup-op" title="Object Properties">op</sup></td><td>Object Properties</td></tr>
-        <tr><td><sup class="sup-fp" title="Functional Properties">fp</sup></td><td>Functional Properties</td></tr>
-        <tr><td><sup class="sup-dp" title="Data Properties">dp</sup></td><td>Data Properties</td></tr>
-        <tr><td><sup class="sup-ap" title="Annotation Properties">dp</sup></td><td>Annotation Properties</td></tr>
-        <tr><td><sup class="sup-p" title="Properties">p</sup></td><td>Properties</td></tr>
-        <tr><td><sup class="sup-ni" title="Named Individuals">ni</sup></td><td>Named Individuals</td></tr>
-    </table>
-</section>
+  <section id="legend">
+      <h2>Legend</h2>
+      <table class="entity">
+          <tr><td><sup class="sup-c" title="Classes">c</sup></td><td>Classes</td></tr>
+          <tr><td><sup class="sup-op" title="Object Properties">op</sup></td><td>Object Properties</td></tr>
+          <tr><td><sup class="sup-fp" title="Functional Properties">fp</sup></td><td>Functional Properties</td></tr>
+          <tr><td><sup class="sup-dp" title="Data Properties">dp</sup></td><td>Data Properties</td></tr>
+          <tr><td><sup class="sup-ap" title="Annotation Properties">dp</sup></td><td>Annotation Properties</td></tr>
+          <tr><td><sup class="sup-p" title="Properties">p</sup></td><td>Properties</td></tr>
+          <tr><td><sup class="sup-ni" title="Named Individuals">ni</sup></td><td>Named Individuals</td></tr>
+      </table>
+  </section>
 </body>
 </html>
