@@ -21,7 +21,7 @@
                                                      <http://orcid.org/0000-0002-8742-7730> ;
                                      dcterms:modified "2020-06-11"^^xsd:date ;
                                      dcterms:publisher <https://linked.data.gov.au/org/dawe> ;
-                                     skos:definition "An ontology about surveillance to determine plant health, such as fruit fly trapping"@en ;
+                                     skos:definition "An ontology about surveillance to determine plant health, such as fruit fly capturing"@en ;
                                      skos:prefLabel "Plant Health Surveillance Ontology"@en ;
                                      sdo:codeRepository <https://github.com/AGLDWG/phs-ont> .
 
@@ -355,18 +355,6 @@ dcterms:type rdf:type owl:ObjectProperty ;
               skos:prefLabel "Sample Animal"@en .
 
 
-###  http://linked.data.gov.au/def/phs#SpatioTemporalGeometry
-:SpatioTemporalGeometry rdf:type owl:Class ;
-                        rdfs:subClassOf <http://www.opengis.net/ont/geosparql#Geometry> ,
-                                        [ rdf:type owl:Restriction ;
-                                          owl:onProperty <http://www.w3.org/2006/time#hasTime> ;
-                                          owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                          owl:onClass <http://www.w3.org/2006/time#TemporalEntity>
-                                        ] ;
-                        skos:definition "A Gemetry with one or more temporal extents"@en ;
-                        skos:prefLabel "Spatio-Temporal Geometry"@en .
-
-
 ###  http://linked.data.gov.au/def/phs#Stratum
 :Stratum rdf:type owl:Class ;
          rdfs:comment "Thing or material on which a pest is searched for or found. Stratum is abstract: instances should use either 'Host' or 'Substrate'." ;
@@ -387,17 +375,12 @@ dcterms:type rdf:type owl:ObjectProperty ;
                skos:prefLabel "Substrate Type"@en .
 
 
-###  http://linked.data.gov.au/def/phs#TaxonDistribution
-:TaxonDistribution rdf:type owl:Class ;
-                   rdfs:subClassOf <http://www.opengis.net/ont/geosparql#Feature> ,
-                                   sosa:FeatureOfInterest ,
-                                   [ rdf:type owl:Restriction ;
-                                     owl:onProperty <http://www.opengis.net/ont/geosparql#hasGeometry> ;
-                                     owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                     owl:onClass :SpatioTemporalGeometry
-                                   ] ;
-                   skos:definition "The spatial and temporal distribution of a Taxon"@en ;
-                   skos:prefLabel "Taxon Distribution"@en .
+###  http://linked.data.gov.au/def/phs#TaxonOccurence
+:TaxonOccurence rdf:type owl:Class ;
+                   rdfs:subClassOf sosa:FeatureOfInterest ;
+                   skos:definition "The aggregated observations of a Taxon leading to knowledge of its distribution"@en ;
+                   skos:editorialNote "This FoI is an intermediate FoI en route to a pest distribution which will inform pest management plans. This FoI is not indicated as being a spatio-temporal thing since it may require significant enhancement and modelling using this taxon occurence information to generate a reliable spatio-temporal taxon distribution" ;
+                   skos:prefLabel "Taxon Occurence"@en .
 
 
 ###  http://linked.data.gov.au/def/phs#TaxonIdentification
@@ -426,8 +409,8 @@ dcterms:type rdf:type owl:ObjectProperty ;
           skos:prefLabel "Trap Type" .
 
 
-###  http://linked.data.gov.au/def/phs#Trapping
-:Trapping rdf:type owl:Class ;
+###  http://linked.data.gov.au/def/phs#Capturing
+:Capturing rdf:type owl:Class ;
           rdfs:subClassOf sosa:Observation ,
                           sosa:Sampling ,
                           [ rdf:type owl:Restriction ;
@@ -456,7 +439,7 @@ dcterms:type rdf:type owl:ObjectProperty ;
                             owl:onClass :TaxonDistribution
                           ] ;
           skos:definition "The capturing of an Animal"@en ;
-          skos:prefLabel "Trapping"@en .
+          skos:prefLabel "Capturing"@en .
 
 
 ###  http://purl.org/dc/terms/Dataset

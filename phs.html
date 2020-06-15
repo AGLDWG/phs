@@ -195,7 +195,7 @@
     ],
     "https://schema.org/description": [
       {
-        "@value": "<p>An ontology about surveillance to determine plant health, such as fruit fly trapping</p>"
+        "@value": "<p>An ontology about surveillance to determine plant health, such as fruit fly capturing</p>"
       }
     ],
     "https://schema.org/name": [
@@ -212,7 +212,6 @@
     <span style="color:#329545;">p</span><span style="color:#f9cb33;">y</span>LODE</a>
     <span style="font-size:smaller;">2.5</span>
   </div>
-  <img src="images/dawe.png" alt="DAWE logo" />
   <h1>Plant Health Surveillance Ontology</h1>
 <section id="metadata">
     <h2 style="display:none;">Metadata</h2>
@@ -296,7 +295,7 @@
     </dl>
     <h2>Description</h2>
     <div id="description">
-        <p>An ontology about surveillance to determine plant health, such as fruit fly trapping</p>
+        <p>An ontology about surveillance to determine plant health, such as fruit fly capturing</p>
     </div>
 </section>
 <section id="toc">
@@ -314,7 +313,7 @@
 <section id="overview">
     <h2>Overview</h2>
     <div class="figure">
-        <a href="https://raw.githack.com/AGLDWG/phs-ont/major-update/images/Overview.png"><img src="https://raw.githack.com/AGLDWG/phs-ont/major-update/images/Overview.png" alt="Overview diagram" style="width:80%"></a>
+        <div style="width:500px; height:50px; background-color: lightgrey; border:solid 2px grey; padding:10px;margin-bottom:5px; text-align:center;">Pictures say 1,000 words</div>
         <div class="caption"><strong>Figure 1:</strong> Ontology overview</div>
     </div>
 </section>
@@ -325,6 +324,7 @@
         <li><a href="#AttractantType">Attractant Type</a></li>
         <li><a href="#Bait">Bait</a></li>
         <li><a href="#CaptureSystem">Capture System</a></li>
+        <li><a href="#Capturing">Capturing</a></li>
         <li><a href="#Collection">Collection</a></li>
         <li><a href="#Concept">Concept</a></li>
         <li><a href="#Dataset">Dataset</a></li>
@@ -344,16 +344,14 @@
         <li><a href="#Plant">Plant</a></li>
         <li><a href="#SampleAnimal">Sample Animal</a></li>
         <li><a href="#Sampler">Sampler</a></li>
-        <li><a href="#Spatio-TemporalGeometry">Spatio-Temporal Geometry</a></li>
         <li><a href="#Stratum">Stratum</a></li>
         <li><a href="#Substrate">Substrate</a></li>
         <li><a href="#SubstrateType">Substrate Type</a></li>
         <li><a href="#Taxon">Taxon</a></li>
-        <li><a href="#TaxonDistribution">Taxon Distribution</a></li>
         <li><a href="#TaxonIdentification">Taxon Identification</a></li>
+        <li><a href="#TaxonOccurence">Taxon Occurence</a></li>
         <li><a href="#Trap">Trap</a></li>
         <li><a href="#TrapType">Trap Type</a></li>
-        <li><a href="#Trapping">Trapping</a></li>
         <li><a href="#dataProperty">dataProperty</a></li>
     </ul>
     <div class="entity class" id="Attractant">
@@ -462,8 +460,40 @@
             <tr>
                 <th>In domain of</th>
                 <td>
-                    <a href="#hasTrap">hasTrap</a><sup class="sup-op" title="object property">op</sup><br/>
                     <a href="#hasBait">hasBait</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="#hasTrap">hasTrap</a><sup class="sup-op" title="object property">op</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="Capturing">
+        <h3>Capturing<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>http://linked.data.gov.au/def/phs#Capturing</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>The capturing of an Animal</p>
+                </td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="http://www.w3.org/ns/sosa/Observation">sosa:Observation</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.w3.org/ns/sosa/Sampling">sosa:Sampling</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+            <tr>
+                <th>Restrictions</th>
+                <td>
+                    <a href="http://www.w3.org/ns/sosa/hasFeatureOfInterest">sosa:hasFeatureOfInterest</a> <span class="cardinality">exactly</span> 1 <a href="http://linked.data.gov.au/def/phs#TaxonDistribution">TaxonDistribution</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.w3.org/ns/sosa/madeBySampler">sosa:madeBySampler</a> <span class="cardinality">min</span> 1 <a href="#CaptureSystem">CaptureSystem</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.w3.org/ns/sosa/usedProcedure">sosa:usedProcedure</a> <span class="cardinality">min</span> 0 <a href="http://www.w3.org/ns/sosa/Procedure">sosa:Procedure</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.w3.org/ns/sosa/hasResult">sosa:hasResult</a> <span class="cardinality">min</span> 0 <a href="http://www.w3.org/ns/sosa/Sample">sosa:Sample</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.w3.org/2006/time#hasTime">http://www.w3.org/2006/time#hasTime</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">exactly</span> 1 <a href="http://www.w3.org/2006/time#TemporalEntity">http://www.w3.org/2006/time#TemporalEntity</a><sup class="sup-c" title="class">c</sup><br/>
                 </td>
             </tr>
         </table>
@@ -729,39 +759,12 @@
             <tr>
                 <th>In range of</th>
                 <td>
-                    <a href="#identifiesPest">identifiesPest</a><sup class="sup-op" title="object property">op</sup><br/>
-                    <a href="#luresPest">luresPest</a><sup class="sup-op" title="object property">op</sup><br/>
                     <a href="#catchesPest">catchesPest</a><sup class="sup-op" title="object property">op</sup><br/>
-                    <a href="#detectsPest">detectsPest</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="#identifiesPest">identifiesPest</a><sup class="sup-op" title="object property">op</sup><br/>
                     <a href="#hostsPest">hostsPest</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="#detectsPest">detectsPest</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="#luresPest">luresPest</a><sup class="sup-op" title="object property">op</sup><br/>
                     <a href="#supportsPest">supportsPest</a><sup class="sup-op" title="object property">op</sup><br/>
-                </td>
-            </tr>
-        </table>
-    </div>
-    <div class="entity class" id="Spatio-TemporalGeometry">
-        <h3>Spatio-Temporal Geometry<sup title="class" class="sup-c">c</sup></h3>
-        <table>
-            <tr>
-                <th>IRI</th>
-                <td><code>http://linked.data.gov.au/def/phs#SpatioTemporalGeometry</code></td>
-            </tr>
-            <tr>
-                <th>Description</th>
-                <td>
-                    <p>A Gemetry with one or more temporal extents</p>
-                </td>
-            </tr>
-            <tr>
-                <th>Super-classes</th>
-                <td>
-                    <a href="http://www.opengis.net/ont/geosparql#Geometry">http://www.opengis.net/ont/geosparql#Geometry</a><sup class="sup-c" title="class">c</sup><br/>
-                </td>
-            </tr>
-            <tr>
-                <th>Restrictions</th>
-                <td>
-                    <a href="http://www.w3.org/2006/time#hasTime">http://www.w3.org/2006/time#hasTime</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">min</span> 1 <a href="http://www.w3.org/2006/time#TemporalEntity">http://www.w3.org/2006/time#TemporalEntity</a><sup class="sup-c" title="class">c</sup><br/>
                 </td>
             </tr>
         </table>
@@ -782,8 +785,8 @@
             <tr>
                 <th>Sub-classes</th>
                 <td>
-                    <a href="#Host">Host</a><sup class="sup-c" title="class">c</sup><br/>
                     <a href="#Substrate">Substrate</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="#Host">Host</a><sup class="sup-c" title="class">c</sup><br/>
                 </td>
             </tr>
         </table>
@@ -836,34 +839,6 @@
             </tr>
         </table>
     </div>
-    <div class="entity class" id="TaxonDistribution">
-        <h3>Taxon Distribution<sup title="class" class="sup-c">c</sup></h3>
-        <table>
-            <tr>
-                <th>IRI</th>
-                <td><code>http://linked.data.gov.au/def/phs#TaxonDistribution</code></td>
-            </tr>
-            <tr>
-                <th>Description</th>
-                <td>
-                    <p>The spatial and temporal distribution of a Taxon</p>
-                </td>
-            </tr>
-            <tr>
-                <th>Super-classes</th>
-                <td>
-                    <a href="http://www.w3.org/ns/sosa/FeatureOfInterest">sosa:FeatureOfInterest</a><sup class="sup-c" title="class">c</sup><br/>
-                    <a href="http://www.opengis.net/ont/geosparql#Feature">http://www.opengis.net/ont/geosparql#Feature</a><sup class="sup-c" title="class">c</sup><br/>
-                </td>
-            </tr>
-            <tr>
-                <th>Restrictions</th>
-                <td>
-                    <a href="http://www.opengis.net/ont/geosparql#hasGeometry">http://www.opengis.net/ont/geosparql#hasGeometry</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">min</span> 1 <a href="#Spatio-TemporalGeometry">SpatioTemporalGeometry</a><sup class="sup-c" title="class">c</sup><br/>
-                </td>
-            </tr>
-        </table>
-    </div>
     <div class="entity class" id="TaxonIdentification">
         <h3>Taxon Identification<sup title="class" class="sup-c">c</sup></h3>
         <table>
@@ -881,6 +856,27 @@
                 <th>Super-classes</th>
                 <td>
                     <a href="http://www.w3.org/ns/sosa/Observation">sosa:Observation</a><sup class="sup-c" title="class">c</sup><br/>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="entity class" id="TaxonOccurence">
+        <h3>Taxon Occurence<sup title="class" class="sup-c">c</sup></h3>
+        <table>
+            <tr>
+                <th>IRI</th>
+                <td><code>http://linked.data.gov.au/def/phs#TaxonOccurence</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    <p>The aggregated observations of a Taxon leading to knowledge of its distribution</p>
+                </td>
+            </tr>
+            <tr>
+                <th>Super-classes</th>
+                <td>
+                    <a href="http://www.w3.org/ns/sosa/FeatureOfInterest">sosa:FeatureOfInterest</a><sup class="sup-c" title="class">c</sup><br/>
                 </td>
             </tr>
         </table>
@@ -913,8 +909,8 @@
             <tr>
                 <th>In domain of</th>
                 <td>
-                    <a href="#catchesPest">catchesPest</a><sup class="sup-op" title="object property">op</sup><br/>
                     <a href="#trapType">trapType</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="#catchesPest">catchesPest</a><sup class="sup-op" title="object property">op</sup><br/>
                 </td>
             </tr>
             <tr>
@@ -952,38 +948,6 @@
             </tr>
         </table>
     </div>
-    <div class="entity class" id="Trapping">
-        <h3>Trapping<sup title="class" class="sup-c">c</sup></h3>
-        <table>
-            <tr>
-                <th>IRI</th>
-                <td><code>http://linked.data.gov.au/def/phs#Trapping</code></td>
-            </tr>
-            <tr>
-                <th>Description</th>
-                <td>
-                    <p>The capturing of an Animal</p>
-                </td>
-            </tr>
-            <tr>
-                <th>Super-classes</th>
-                <td>
-                    <a href="http://www.w3.org/ns/sosa/Sampling">sosa:Sampling</a><sup class="sup-c" title="class">c</sup><br/>
-                    <a href="http://www.w3.org/ns/sosa/Observation">sosa:Observation</a><sup class="sup-c" title="class">c</sup><br/>
-                </td>
-            </tr>
-            <tr>
-                <th>Restrictions</th>
-                <td>
-                    <a href="http://www.w3.org/2006/time#hasTime">http://www.w3.org/2006/time#hasTime</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">exactly</span> 1 <a href="http://www.w3.org/2006/time#TemporalEntity">http://www.w3.org/2006/time#TemporalEntity</a><sup class="sup-c" title="class">c</sup><br/>
-                    <a href="http://www.w3.org/ns/sosa/usedProcedure">sosa:usedProcedure</a> <span class="cardinality">min</span> 0 <a href="http://www.w3.org/ns/sosa/Procedure">sosa:Procedure</a><sup class="sup-c" title="class">c</sup><br/>
-                    <a href="http://www.w3.org/ns/sosa/madeBySampler">sosa:madeBySampler</a> <span class="cardinality">min</span> 1 <a href="#CaptureSystem">CaptureSystem</a><sup class="sup-c" title="class">c</sup><br/>
-                    <a href="http://www.w3.org/ns/sosa/hasResult">sosa:hasResult</a> <span class="cardinality">min</span> 0 <a href="http://www.w3.org/ns/sosa/Sample">sosa:Sample</a><sup class="sup-c" title="class">c</sup><br/>
-                    <a href="http://www.w3.org/ns/sosa/hasFeatureOfInterest">sosa:hasFeatureOfInterest</a> <span class="cardinality">exactly</span> 1 <a href="#TaxonDistribution">TaxonDistribution</a><sup class="sup-c" title="class">c</sup><br/>
-                </td>
-            </tr>
-        </table>
-    </div>
     <div class="entity class" id="Dataset">
         <h3>Dataset<sup title="class" class="sup-c">c</sup></h3>
         <table>
@@ -1003,9 +967,9 @@
             <tr>
                 <th>Sub-classes</th>
                 <td>
-                    <a href="#SampleAnimal">SampleAnimal</a><sup class="sup-c" title="class">c</sup><br/>
                     <a href="#Host">Host</a><sup class="sup-c" title="class">c</sup><br/>
                     <a href="#Plant">Plant</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="#SampleAnimal">SampleAnimal</a><sup class="sup-c" title="class">c</sup><br/>
                 </td>
             </tr>
         </table>
@@ -1017,12 +981,6 @@
                 <th>IRI</th>
                 <td><code>http://www.opengis.net/ont/geosparql#Feature</code></td>
             </tr>
-            <tr>
-                <th>Sub-classes</th>
-                <td>
-                    <a href="#TaxonDistribution">TaxonDistribution</a><sup class="sup-c" title="class">c</sup><br/>
-                </td>
-            </tr>
         </table>
     </div>
     <div class="entity class" id="Geometry">
@@ -1031,12 +989,6 @@
             <tr>
                 <th>IRI</th>
                 <td><code>http://www.opengis.net/ont/geosparql#Geometry</code></td>
-            </tr>
-            <tr>
-                <th>Sub-classes</th>
-                <td>
-                    <a href="#Spatio-TemporalGeometry">SpatioTemporalGeometry</a><sup class="sup-c" title="class">c</sup><br/>
-                </td>
             </tr>
         </table>
     </div>
@@ -1068,13 +1020,13 @@
             <tr>
                 <th>Sub-classes</th>
                 <td>
-                    <a href="#TrapType">TrapType</a><sup class="sup-c" title="class">c</sup><br/>
-                    <a href="#DiagnosticMethodType">DiagnosticMethodType</a><sup class="sup-c" title="class">c</sup><br/>
                     <a href="#HostType">HostType</a><sup class="sup-c" title="class">c</sup><br/>
-                    <a href="#AttractantType">AttractantType</a><sup class="sup-c" title="class">c</sup><br/>
-                    <a href="#ObservationMethodType">ObservationMethodType</a><sup class="sup-c" title="class">c</sup><br/>
                     <a href="#SubstrateType">SubstrateType</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="#DiagnosticMethodType">DiagnosticMethodType</a><sup class="sup-c" title="class">c</sup><br/>
                     <a href="#PestType">PestType</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="#AttractantType">AttractantType</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="#TrapType">TrapType</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="#ObservationMethodType">ObservationMethodType</a><sup class="sup-c" title="class">c</sup><br/>
                     <a href="#LureType">LureType</a><sup class="sup-c" title="class">c</sup><br/>
                 </td>
             </tr>
@@ -1150,7 +1102,7 @@
             <tr>
                 <th>Description</th>
                 <td>
-                    An object which provides refuge to the target pest, and can thus be used as a trap
+                    A device that is designed to catch the target pest
                 </td>
             </tr>
             <tr>
