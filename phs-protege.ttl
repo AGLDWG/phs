@@ -19,11 +19,82 @@
                                      dcterms:created "2020-02-11"^^xsd:date ;
                                      dcterms:creator :stephen ,
                                                      <http://orcid.org/0000-0002-8742-7730> ;
-                                     dcterms:modified "2020-06-15"^^xsd:date ;
+                                     dcterms:modified "2020-06-11"^^xsd:date ;
                                      dcterms:publisher <https://linked.data.gov.au/org/dawe> ;
-                                     skos:definition "An ontology for data about animal capturing events used to inforrm target pest species distribution estimates"@en ;
+                                     skos:definition "An ontology about surveillance to determine plant health, such as fruit fly capturing"@en ;
                                      skos:prefLabel "Plant Health Surveillance Ontology"@en ;
                                      sdo:codeRepository <https://github.com/AGLDWG/phs-ont> .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://purl.org/dc/terms/contributor
+dcterms:contributor rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/created
+dcterms:created rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/creator
+dcterms:creator rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/modified
+dcterms:modified rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/publisher
+dcterms:publisher rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/vocab/vann/preferredNamespacePrefix
+vann:preferredNamespacePrefix rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2002/07/owl#cardinality
+owl:cardinality rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2002/07/owl#minCardinality
+owl:minCardinality rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2004/02/skos/core#definition
+skos:definition rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2004/02/skos/core#member
+skos:member rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2004/02/skos/core#prefLabel
+skos:prefLabel rdf:type owl:AnnotationProperty .
+
+
+###  https://schema.org/affiliation
+sdo:affiliation rdf:type owl:AnnotationProperty .
+
+
+###  https://schema.org/codeRepository
+sdo:codeRepository rdf:type owl:AnnotationProperty .
+
+
+###  https://schema.org/email
+sdo:email rdf:type owl:AnnotationProperty .
+
+
+###  https://schema.org/jobTitle
+sdo:jobTitle rdf:type owl:AnnotationProperty .
+
+
+###  https://schema.org/name
+sdo:name rdf:type owl:AnnotationProperty .
+
+
+###  https://schema.org/url
+sdo:url rdf:type owl:AnnotationProperty .
 
 
 #################################################################
@@ -109,6 +180,23 @@
           rdfs:range :TrapType ;
           rdfs:comment "The make or model of a trap" ;
           skos:prefLabel "trap type" .
+
+
+###  http://purl.org/dc/terms/hasPart
+dcterms:hasPart rdf:type owl:ObjectProperty .
+
+
+###  http://purl.org/dc/terms/type
+dcterms:type rdf:type owl:ObjectProperty ;
+             skos:prefLabel "type"@en .
+
+
+###  http://www.opengis.net/ont/geosparql#hasGeometry
+<http://www.opengis.net/ont/geosparql#hasGeometry> rdf:type owl:ObjectProperty .
+
+
+###  http://www.w3.org/2006/time#hasTime
+<http://www.w3.org/2006/time#hasTime> rdf:type owl:ObjectProperty .
 
 
 #################################################################
@@ -352,6 +440,47 @@
                           ] ;
           skos:definition "The capturing of an Animal"@en ;
           skos:prefLabel "Capturing"@en .
+
+
+###  http://purl.org/dc/terms/Dataset
+dcterms:Dataset rdf:type owl:Class .
+
+
+###  http://rs.tdwg.org/dwc/terms/Taxon
+dwc:Taxon rdf:type owl:Class .
+
+
+###  http://www.opengis.net/ont/geosparql#Feature
+<http://www.opengis.net/ont/geosparql#Feature> rdf:type owl:Class .
+
+
+###  http://www.opengis.net/ont/geosparql#Geometry
+<http://www.opengis.net/ont/geosparql#Geometry> rdf:type owl:Class .
+
+
+###  http://www.w3.org/1999/02/22-rdf-syntax-ns#dataProperty
+rdf:dataProperty rdf:type owl:Class .
+
+
+###  http://www.w3.org/2004/02/skos/core#Collection
+skos:Collection rdf:type owl:Class .
+
+
+###  http://www.w3.org/2004/02/skos/core#Concept
+skos:Concept rdf:type owl:Class .
+
+
+###  http://www.w3.org/ns/sosa/Sampler
+sosa:Sampler rdf:type owl:Class .
+
+
+###  https://schema.org/Organization
+sdo:Organization rdf:type owl:Class .
+
+
+###  https://schema.org/Person
+sdo:Person rdf:type owl:Class .
+
 
 #################################################################
 #    Individuals
