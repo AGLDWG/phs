@@ -195,7 +195,7 @@
     ],
     "https://schema.org/description": [
       {
-        "@value": "<p>An ontology about surveillance to determine plant health, such as fruit fly capturing</p>"
+        "@value": "<p>An ontology for data about animal capturing events used to inforrm target pest species distribution estimates</p>"
       }
     ],
     "https://schema.org/name": [
@@ -212,6 +212,7 @@
     <span style="color:#329545;">p</span><span style="color:#f9cb33;">y</span>LODE</a>
     <span style="font-size:smaller;">2.5</span>
   </div>
+  <img src="images/dawe.png" alt="DAWE logo" />
   <h1>Plant Health Surveillance Ontology</h1>
 <section id="metadata">
     <h2 style="display:none;">Metadata</h2>
@@ -228,7 +229,7 @@
             
     <a href="http://linked.data.gov.au/def/phs#stephen">Stephen J. Pratt</a>
     (<a href="mailto:stephen.pratt@awe.gov.au">stephen.pratt@awe.gov.au</a>) of 
-    <a href="https://www.awe.gov.au">Department of Agriculture, Water and the Environment</a><br/>
+    <a href="https://www.awe.gov.au/">Department of Agriculture, Water and the Environment</a><br/>
             
     <a href="http://orcid.org/0000-0002-8742-7730">Nicholas J. Car</a>
     <a href="http://orcid.org/0000-0002-8742-7730"><svg width="15px" height="15px" viewBox="0 0 72 72" version="1.1"
@@ -281,7 +282,7 @@
         <dt>Created</dt>
         <dd>2020-02-11</dd>
         <dt>Modified</dt>
-        <dd>2020-06-11</dd>
+        <dd>2020-06-15</dd>
         <dt>Version IRI</dt>
         <dd><a href="http://linked.data.gov.au/def/phs/0.1">http://linked.data.gov.au/def/phs/0.1</a></dd>
         <dt>Imports</dt>
@@ -295,7 +296,7 @@
     </dl>
     <h2>Description</h2>
     <div id="description">
-        <p>An ontology about surveillance to determine plant health, such as fruit fly capturing</p>
+        <p>An ontology for data about animal capturing events used to inforrm target pest species distribution estimates</p>
     </div>
 </section>
 <section id="toc">
@@ -304,7 +305,6 @@
         <li><a href="#classes">Classes</a></li>
         <li><a href="#objectproperties">Object Properties</a></li>
         <li><a href="#datatypeproperties">Datatype Properties</a></li>
-        <li><a href="#annotationproperties">Annotation Properties</a></li>
         <li><a href="#namedindividuals">Named Individuals</a></li>
         <li><a href="#namespaces">Namespaces</a></li>
         <li><a href="#legend">Legend</a></li>
@@ -313,7 +313,9 @@
 <section id="overview">
     <h2>Overview</h2>
     <div class="figure">
-        <div style="width:500px; height:50px; background-color: lightgrey; border:solid 2px grey; padding:10px;margin-bottom:5px; text-align:center;">Pictures say 1,000 words</div>
+        <a href="images/Overview.png">
+            <img src="images/Overview.png" style="width: 80%;" alt="Overview Diagram" />
+        </a>
         <div class="caption"><strong>Figure 1:</strong> Ontology overview</div>
     </div>
 </section>
@@ -325,34 +327,24 @@
         <li><a href="#Bait">Bait</a></li>
         <li><a href="#CaptureSystem">Capture System</a></li>
         <li><a href="#Capturing">Capturing</a></li>
-        <li><a href="#Collection">Collection</a></li>
-        <li><a href="#Concept">Concept</a></li>
-        <li><a href="#Dataset">Dataset</a></li>
         <li><a href="#DiagnosticMethodType">Diagnostic Method Type</a></li>
         <li><a href="#Diagnosticmethod">Diagnostic method</a></li>
-        <li><a href="#Feature">Feature</a></li>
-        <li><a href="#Geometry">Geometry</a></li>
         <li><a href="#Host">Host</a></li>
         <li><a href="#HostType">Host Type</a></li>
         <li><a href="#Lure">Lure</a></li>
         <li><a href="#LureType">Lure Type</a></li>
         <li><a href="#ObservationMethodType">Observation Method Type</a></li>
         <li><a href="#Observationmethod">Observation method</a></li>
-        <li><a href="#Organization">Organization</a></li>
-        <li><a href="#Person">Person</a></li>
         <li><a href="#PestType">Pest Type</a></li>
         <li><a href="#Plant">Plant</a></li>
         <li><a href="#SampleAnimal">Sample Animal</a></li>
-        <li><a href="#Sampler">Sampler</a></li>
         <li><a href="#Stratum">Stratum</a></li>
         <li><a href="#Substrate">Substrate</a></li>
         <li><a href="#SubstrateType">Substrate Type</a></li>
-        <li><a href="#Taxon">Taxon</a></li>
         <li><a href="#TaxonIdentification">Taxon Identification</a></li>
         <li><a href="#TaxonOccurence">Taxon Occurence</a></li>
         <li><a href="#Trap">Trap</a></li>
         <li><a href="#TrapType">Trap Type</a></li>
-        <li><a href="#dataProperty">dataProperty</a></li>
     </ul>
     <div class="entity class" id="Attractant">
         <h3>Attractant<sup title="class" class="sup-c">c</sup></h3>
@@ -376,7 +368,7 @@
             <tr>
                 <th>Restrictions</th>
                 <td>
-                    <a href="http://purl.org/dc/terms/type">dcterms:type</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">exactly</span> 1 <a href="#AttractantType">AttractantType</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://purl.org/dc/terms/type">dcterms:type</a> <span class="cardinality">exactly</span> 1 <a href="#AttractantType">AttractantType</a><sup class="sup-c" title="class">c</sup><br/>
                 </td>
             </tr>
         </table>
@@ -433,6 +425,12 @@
     </div>
     <div class="entity class" id="CaptureSystem">
         <h3>Capture System<sup title="class" class="sup-c">c</sup></h3>
+        <div class="figure">
+            <a href="images/CaptureSystem.png">
+                <img src="images/CaptureSystem.png" style="width:50%;" alt="Capture System Diagram" />
+            </a>
+            <div class="caption"><strong>Figure 2:</strong> Capture System</div>
+        </div>
         <table>
             <tr>
                 <th>IRI</th>
@@ -460,14 +458,26 @@
             <tr>
                 <th>In domain of</th>
                 <td>
-                    <a href="#hasBait">hasBait</a><sup class="sup-op" title="object property">op</sup><br/>
                     <a href="#hasTrap">hasTrap</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="#hasBait">hasBait</a><sup class="sup-op" title="object property">op</sup><br/>
                 </td>
             </tr>
         </table>
     </div>
     <div class="entity class" id="Capturing">
         <h3>Capturing<sup title="class" class="sup-c">c</sup></h3>
+        <div class="figure">
+            <a href="images/Sampling.png">
+                <img src="images/Sampling.png" style="width:50%;" alt="Sampling Diagram" />
+            </a>
+            <div class="caption"><strong>Figure 5:</strong> SOSA's Sampling</div>
+        </div>
+        <div class="figure">
+            <a href="images/Capturing.png">
+                <img src="images/Capturing.png" style="width:50%;" alt="Capturing Diagram" />
+            </a>
+            <div class="caption"><strong>Figure 3:</strong> Capturing</div>
+        </div>
         <table>
             <tr>
                 <th>IRI</th>
@@ -482,8 +492,8 @@
             <tr>
                 <th>Super-classes</th>
                 <td>
-                    <a href="http://www.w3.org/ns/sosa/Observation">sosa:Observation</a><sup class="sup-c" title="class">c</sup><br/>
                     <a href="http://www.w3.org/ns/sosa/Sampling">sosa:Sampling</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.w3.org/ns/sosa/Observation">sosa:Observation</a><sup class="sup-c" title="class">c</sup><br/>
                 </td>
             </tr>
             <tr>
@@ -491,9 +501,9 @@
                 <td>
                     <a href="http://www.w3.org/ns/sosa/hasFeatureOfInterest">sosa:hasFeatureOfInterest</a> <span class="cardinality">exactly</span> 1 <a href="http://linked.data.gov.au/def/phs#TaxonDistribution">TaxonDistribution</a><sup class="sup-c" title="class">c</sup><br/>
                     <a href="http://www.w3.org/ns/sosa/madeBySampler">sosa:madeBySampler</a> <span class="cardinality">min</span> 1 <a href="#CaptureSystem">CaptureSystem</a><sup class="sup-c" title="class">c</sup><br/>
-                    <a href="http://www.w3.org/ns/sosa/usedProcedure">sosa:usedProcedure</a> <span class="cardinality">min</span> 0 <a href="http://www.w3.org/ns/sosa/Procedure">sosa:Procedure</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.w3.org/2006/time#hasTime">http://www.w3.org/2006/time#hasTime</a> <span class="cardinality">exactly</span> 1 <a href="http://www.w3.org/2006/time#TemporalEntity">http://www.w3.org/2006/time#TemporalEntity</a><sup class="sup-c" title="class">c</sup><br/>
                     <a href="http://www.w3.org/ns/sosa/hasResult">sosa:hasResult</a> <span class="cardinality">min</span> 0 <a href="http://www.w3.org/ns/sosa/Sample">sosa:Sample</a><sup class="sup-c" title="class">c</sup><br/>
-                    <a href="http://www.w3.org/2006/time#hasTime">http://www.w3.org/2006/time#hasTime</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">exactly</span> 1 <a href="http://www.w3.org/2006/time#TemporalEntity">http://www.w3.org/2006/time#TemporalEntity</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.w3.org/ns/sosa/usedProcedure">sosa:usedProcedure</a> <span class="cardinality">min</span> 0 <a href="http://www.w3.org/ns/sosa/Procedure">sosa:Procedure</a><sup class="sup-c" title="class">c</sup><br/>
                 </td>
             </tr>
         </table>
@@ -619,14 +629,14 @@
             <tr>
                 <th>Restrictions</th>
                 <td>
-                    <a href="http://purl.org/dc/terms/type">dcterms:type</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">exactly</span> 1 <a href="#LureType">LureType</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://purl.org/dc/terms/type">dcterms:type</a> <span class="cardinality">exactly</span> 1 <a href="#LureType">LureType</a><sup class="sup-c" title="class">c</sup><br/>
                 </td>
             </tr>
             <tr>
                 <th>In domain of</th>
                 <td>
-                    <a href="#lureType">lureType</a><sup class="sup-op" title="object property">op</sup><br/>
                     <a href="#luresPest">luresPest</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="#lureType">lureType</a><sup class="sup-op" title="object property">op</sup><br/>
                 </td>
             </tr>
         </table>
@@ -753,24 +763,30 @@
             <tr>
                 <th>Restrictions</th>
                 <td>
-                    <a href="http://purl.org/dc/terms/type">dcterms:type</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">some</span> <a href="#PestType">PestType</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://purl.org/dc/terms/type">dcterms:type</a> <span class="cardinality">some</span> <a href="#PestType">PestType</a><sup class="sup-c" title="class">c</sup><br/>
                 </td>
             </tr>
             <tr>
                 <th>In range of</th>
                 <td>
-                    <a href="#catchesPest">catchesPest</a><sup class="sup-op" title="object property">op</sup><br/>
-                    <a href="#identifiesPest">identifiesPest</a><sup class="sup-op" title="object property">op</sup><br/>
-                    <a href="#hostsPest">hostsPest</a><sup class="sup-op" title="object property">op</sup><br/>
-                    <a href="#detectsPest">detectsPest</a><sup class="sup-op" title="object property">op</sup><br/>
                     <a href="#luresPest">luresPest</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="#catchesPest">catchesPest</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="#detectsPest">detectsPest</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="#identifiesPest">identifiesPest</a><sup class="sup-op" title="object property">op</sup><br/>
                     <a href="#supportsPest">supportsPest</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="#hostsPest">hostsPest</a><sup class="sup-op" title="object property">op</sup><br/>
                 </td>
             </tr>
         </table>
     </div>
     <div class="entity class" id="Stratum">
         <h3>Stratum<sup title="class" class="sup-c">c</sup></h3>
+        <div class="figure">
+            <a href="images/Stratum.png">
+                <img src="images/Stratum.png" style="width:50%;" alt="Stratum Diagram" />
+            </a>
+            <div class="caption"><strong>Figure 6:</strong> Stratum and its subclasses</div>
+        </div>
         <table>
             <tr>
                 <th>IRI</th>
@@ -841,6 +857,12 @@
     </div>
     <div class="entity class" id="TaxonIdentification">
         <h3>Taxon Identification<sup title="class" class="sup-c">c</sup></h3>
+        <div class="figure">
+            <a href="images/IdentificationProvenance.png">
+                <img src="images/IdentificationProvenance.png" style="width:50%;" alt="Identification Provenance Diagram" />
+            </a>
+            <div class="caption"><strong>Figure 4:</strong> Identification Provenance</div>
+        </div>
         <table>
             <tr>
                 <th>IRI</th>
@@ -903,7 +925,7 @@
             <tr>
                 <th>Restrictions</th>
                 <td>
-                    <a href="http://purl.org/dc/terms/type">dcterms:type</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">exactly</span> 1 <a href="#TrapType">TrapType</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://purl.org/dc/terms/type">dcterms:type</a> <span class="cardinality">exactly</span> 1 <a href="#TrapType">TrapType</a><sup class="sup-c" title="class">c</sup><br/>
                 </td>
             </tr>
             <tr>
@@ -948,131 +970,6 @@
             </tr>
         </table>
     </div>
-    <div class="entity class" id="Dataset">
-        <h3>Dataset<sup title="class" class="sup-c">c</sup></h3>
-        <table>
-            <tr>
-                <th>IRI</th>
-                <td><code>http://purl.org/dc/terms/Dataset</code></td>
-            </tr>
-        </table>
-    </div>
-    <div class="entity class" id="Taxon">
-        <h3>Taxon<sup title="class" class="sup-c">c</sup></h3>
-        <table>
-            <tr>
-                <th>IRI</th>
-                <td><code>http://rs.tdwg.org/dwc/terms/Taxon</code></td>
-            </tr>
-            <tr>
-                <th>Sub-classes</th>
-                <td>
-                    <a href="#Host">Host</a><sup class="sup-c" title="class">c</sup><br/>
-                    <a href="#Plant">Plant</a><sup class="sup-c" title="class">c</sup><br/>
-                    <a href="#SampleAnimal">SampleAnimal</a><sup class="sup-c" title="class">c</sup><br/>
-                </td>
-            </tr>
-        </table>
-    </div>
-    <div class="entity class" id="Feature">
-        <h3>Feature<sup title="class" class="sup-c">c</sup></h3>
-        <table>
-            <tr>
-                <th>IRI</th>
-                <td><code>http://www.opengis.net/ont/geosparql#Feature</code></td>
-            </tr>
-        </table>
-    </div>
-    <div class="entity class" id="Geometry">
-        <h3>Geometry<sup title="class" class="sup-c">c</sup></h3>
-        <table>
-            <tr>
-                <th>IRI</th>
-                <td><code>http://www.opengis.net/ont/geosparql#Geometry</code></td>
-            </tr>
-        </table>
-    </div>
-    <div class="entity class" id="dataProperty">
-        <h3>dataProperty<sup title="class" class="sup-c">c</sup></h3>
-        <table>
-            <tr>
-                <th>IRI</th>
-                <td><code>http://www.w3.org/1999/02/22-rdf-syntax-ns#dataProperty</code></td>
-            </tr>
-        </table>
-    </div>
-    <div class="entity class" id="Collection">
-        <h3>Collection<sup title="class" class="sup-c">c</sup></h3>
-        <table>
-            <tr>
-                <th>IRI</th>
-                <td><code>http://www.w3.org/2004/02/skos/core#Collection</code></td>
-            </tr>
-        </table>
-    </div>
-    <div class="entity class" id="Concept">
-        <h3>Concept<sup title="class" class="sup-c">c</sup></h3>
-        <table>
-            <tr>
-                <th>IRI</th>
-                <td><code>http://www.w3.org/2004/02/skos/core#Concept</code></td>
-            </tr>
-            <tr>
-                <th>Sub-classes</th>
-                <td>
-                    <a href="#HostType">HostType</a><sup class="sup-c" title="class">c</sup><br/>
-                    <a href="#SubstrateType">SubstrateType</a><sup class="sup-c" title="class">c</sup><br/>
-                    <a href="#DiagnosticMethodType">DiagnosticMethodType</a><sup class="sup-c" title="class">c</sup><br/>
-                    <a href="#PestType">PestType</a><sup class="sup-c" title="class">c</sup><br/>
-                    <a href="#AttractantType">AttractantType</a><sup class="sup-c" title="class">c</sup><br/>
-                    <a href="#TrapType">TrapType</a><sup class="sup-c" title="class">c</sup><br/>
-                    <a href="#ObservationMethodType">ObservationMethodType</a><sup class="sup-c" title="class">c</sup><br/>
-                    <a href="#LureType">LureType</a><sup class="sup-c" title="class">c</sup><br/>
-                </td>
-            </tr>
-            <tr>
-                <th>In range of</th>
-                <td>
-                    <a href="#lureType">lureType</a><sup class="sup-op" title="object property">op</sup><br/>
-                </td>
-            </tr>
-        </table>
-    </div>
-    <div class="entity class" id="Sampler">
-        <h3>Sampler<sup title="class" class="sup-c">c</sup></h3>
-        <table>
-            <tr>
-                <th>IRI</th>
-                <td><code>http://www.w3.org/ns/sosa/Sampler</code></td>
-            </tr>
-            <tr>
-                <th>Sub-classes</th>
-                <td>
-                    <a href="#Bait">Bait</a><sup class="sup-c" title="class">c</sup><br/>
-                    <a href="#Trap">Trap</a><sup class="sup-c" title="class">c</sup><br/>
-                    <a href="#CaptureSystem">CaptureSystem</a><sup class="sup-c" title="class">c</sup><br/>
-                </td>
-            </tr>
-        </table>
-    </div>
-    <div class="entity class" id="Organization">
-        <h3>Organization<sup title="class" class="sup-c">c</sup></h3>
-        <table>
-            <tr>
-                <th>IRI</th>
-                <td><code>https://schema.org/Organization</code></td>
-            </tr>
-        </table>
-    </div>
-    <div class="entity class" id="Person">
-        <h3>Person<sup title="class" class="sup-c">c</sup></h3>
-        <table>
-            <tr>
-                <th>IRI</th>
-                <td><code>https://schema.org/Person</code></td>
-            </tr>
-        </table>
-    </div>
 </section>
 <section id="objectproperties">
     <h2>Object Properties <span style="float:right; font-size:smaller;"><a href="">&uparrow;</a></span></h2>
@@ -1087,10 +984,6 @@
         <li><a href="#luresPest">luresPest</a></li>
         <li><a href="#supportsPest">supportsPest</a></li>
         <li><a href="#trapType">trapType</a></li>
-        <li><a href="#hasPart">hasPart</a></li>
-        <li><a href="#type">type</a></li>
-        <li><a href="#hasGeometry">hasGeometry</a></li>
-        <li><a href="#hasTime">hasTime</a></li>
     </ul>
     <div class="entity property" id="catchesPest">
         <h3>catchesPest<sup title="object property" class="sup-op">op</sup></h3>
@@ -1156,7 +1049,7 @@
             <tr>
                 <th>Super-properties</th>
                 <td>
-                    <a href="http://purl.org/dc/terms/hasPart">dcterms:hasPart</a><sup class="sup-op" title="object property">op</sup>
+                    <a href="http://purl.org/dc/terms/hasPart">dcterms:hasPart</a>
                 </td>
             </tr>
             <tr>
@@ -1183,7 +1076,7 @@
             <tr>
                 <th>Super-properties</th>
                 <td>
-                    <a href="http://purl.org/dc/terms/hasPart">dcterms:hasPart</a><sup class="sup-op" title="object property">op</sup>
+                    <a href="http://purl.org/dc/terms/hasPart">dcterms:hasPart</a>
                 </td>
             </tr>
             <tr>
@@ -1356,42 +1249,6 @@
             </tr>
         </table>
     </div>
-    <div class="entity property" id="hasPart">
-        <h3>hasPart<sup title="object property" class="sup-op">op</sup></h3>
-        <table>
-            <tr>
-                <th>IRI</th>
-                <td><code>http://purl.org/dc/terms/hasPart</code></td>
-            </tr>
-        </table>
-    </div>
-    <div class="entity property" id="type">
-        <h3>type<sup title="object property" class="sup-op">op</sup></h3>
-        <table>
-            <tr>
-                <th>IRI</th>
-                <td><code>http://purl.org/dc/terms/type</code></td>
-            </tr>
-        </table>
-    </div>
-    <div class="entity property" id="hasGeometry">
-        <h3>hasGeometry<sup title="object property" class="sup-op">op</sup></h3>
-        <table>
-            <tr>
-                <th>IRI</th>
-                <td><code>http://www.opengis.net/ont/geosparql#hasGeometry</code></td>
-            </tr>
-        </table>
-    </div>
-    <div class="entity property" id="hasTime">
-        <h3>hasTime<sup title="object property" class="sup-op">op</sup></h3>
-        <table>
-            <tr>
-                <th>IRI</th>
-                <td><code>http://www.w3.org/2006/time#hasTime</code></td>
-            </tr>
-        </table>
-    </div>
 </section>
 
 <section id="datatypeproperties">
@@ -1439,182 +1296,6 @@
                 <td>
                     (<a href="#Host">Host</a><sup class="sup-c" title="class">c</sup> or <a href="#SampleAnimal">SampleAnimal</a><sup class="sup-c" title="class">c</sup>)
                 </td>
-            </tr>
-        </table>
-    </div>
-</section>
-
-<section id="annotationproperties">
-    <h2>Annotation Properties <span style="float:right; font-size:smaller;"><a href="">&uparrow;</a></span></h2>
-    <ul class="hlist">
-        <li><a href="#contributor">contributor</a></li>
-        <li><a href="#created">created</a></li>
-        <li><a href="#creator">creator</a></li>
-        <li><a href="#modified">modified</a></li>
-        <li><a href="#publisher">publisher</a></li>
-        <li><a href="#preferredNamespacePrefix">preferredNamespacePrefix</a></li>
-        <li><a href="#cardinality">cardinality</a></li>
-        <li><a href="#minCardinality">minCardinality</a></li>
-        <li><a href="#definition">definition</a></li>
-        <li><a href="#member">member</a></li>
-        <li><a href="#prefLabel">prefLabel</a></li>
-        <li><a href="#affiliation">affiliation</a></li>
-        <li><a href="#codeRepository">codeRepository</a></li>
-        <li><a href="#email">email</a></li>
-        <li><a href="#jobTitle">jobTitle</a></li>
-        <li><a href="#name">name</a></li>
-        <li><a href="#url">url</a></li>
-    </ul>
-    <div class="entity property" id="contributor">
-        <h3>contributor<sup title="annotation property" class="sup-ap">ap</sup></h3>
-        <table>
-            <tr>
-                <th>IRI</th>
-                <td><code>http://purl.org/dc/terms/contributor</code></td>
-            </tr>
-        </table>
-    </div>
-    <div class="entity property" id="created">
-        <h3>created<sup title="annotation property" class="sup-ap">ap</sup></h3>
-        <table>
-            <tr>
-                <th>IRI</th>
-                <td><code>http://purl.org/dc/terms/created</code></td>
-            </tr>
-        </table>
-    </div>
-    <div class="entity property" id="creator">
-        <h3>creator<sup title="annotation property" class="sup-ap">ap</sup></h3>
-        <table>
-            <tr>
-                <th>IRI</th>
-                <td><code>http://purl.org/dc/terms/creator</code></td>
-            </tr>
-        </table>
-    </div>
-    <div class="entity property" id="modified">
-        <h3>modified<sup title="annotation property" class="sup-ap">ap</sup></h3>
-        <table>
-            <tr>
-                <th>IRI</th>
-                <td><code>http://purl.org/dc/terms/modified</code></td>
-            </tr>
-        </table>
-    </div>
-    <div class="entity property" id="publisher">
-        <h3>publisher<sup title="annotation property" class="sup-ap">ap</sup></h3>
-        <table>
-            <tr>
-                <th>IRI</th>
-                <td><code>http://purl.org/dc/terms/publisher</code></td>
-            </tr>
-        </table>
-    </div>
-    <div class="entity property" id="preferredNamespacePrefix">
-        <h3>preferredNamespacePrefix<sup title="annotation property" class="sup-ap">ap</sup></h3>
-        <table>
-            <tr>
-                <th>IRI</th>
-                <td><code>http://purl.org/vocab/vann/preferredNamespacePrefix</code></td>
-            </tr>
-        </table>
-    </div>
-    <div class="entity property" id="cardinality">
-        <h3>cardinality<sup title="annotation property" class="sup-ap">ap</sup></h3>
-        <table>
-            <tr>
-                <th>IRI</th>
-                <td><code>http://www.w3.org/2002/07/owl#cardinality</code></td>
-            </tr>
-        </table>
-    </div>
-    <div class="entity property" id="minCardinality">
-        <h3>minCardinality<sup title="annotation property" class="sup-ap">ap</sup></h3>
-        <table>
-            <tr>
-                <th>IRI</th>
-                <td><code>http://www.w3.org/2002/07/owl#minCardinality</code></td>
-            </tr>
-        </table>
-    </div>
-    <div class="entity property" id="definition">
-        <h3>definition<sup title="annotation property" class="sup-ap">ap</sup></h3>
-        <table>
-            <tr>
-                <th>IRI</th>
-                <td><code>http://www.w3.org/2004/02/skos/core#definition</code></td>
-            </tr>
-        </table>
-    </div>
-    <div class="entity property" id="member">
-        <h3>member<sup title="annotation property" class="sup-ap">ap</sup></h3>
-        <table>
-            <tr>
-                <th>IRI</th>
-                <td><code>http://www.w3.org/2004/02/skos/core#member</code></td>
-            </tr>
-        </table>
-    </div>
-    <div class="entity property" id="prefLabel">
-        <h3>prefLabel<sup title="annotation property" class="sup-ap">ap</sup></h3>
-        <table>
-            <tr>
-                <th>IRI</th>
-                <td><code>http://www.w3.org/2004/02/skos/core#prefLabel</code></td>
-            </tr>
-        </table>
-    </div>
-    <div class="entity property" id="affiliation">
-        <h3>affiliation<sup title="annotation property" class="sup-ap">ap</sup></h3>
-        <table>
-            <tr>
-                <th>IRI</th>
-                <td><code>https://schema.org/affiliation</code></td>
-            </tr>
-        </table>
-    </div>
-    <div class="entity property" id="codeRepository">
-        <h3>codeRepository<sup title="annotation property" class="sup-ap">ap</sup></h3>
-        <table>
-            <tr>
-                <th>IRI</th>
-                <td><code>https://schema.org/codeRepository</code></td>
-            </tr>
-        </table>
-    </div>
-    <div class="entity property" id="email">
-        <h3>email<sup title="annotation property" class="sup-ap">ap</sup></h3>
-        <table>
-            <tr>
-                <th>IRI</th>
-                <td><code>https://schema.org/email</code></td>
-            </tr>
-        </table>
-    </div>
-    <div class="entity property" id="jobTitle">
-        <h3>jobTitle<sup title="annotation property" class="sup-ap">ap</sup></h3>
-        <table>
-            <tr>
-                <th>IRI</th>
-                <td><code>https://schema.org/jobTitle</code></td>
-            </tr>
-        </table>
-    </div>
-    <div class="entity property" id="name">
-        <h3>name<sup title="annotation property" class="sup-ap">ap</sup></h3>
-        <table>
-            <tr>
-                <th>IRI</th>
-                <td><code>https://schema.org/name</code></td>
-            </tr>
-        </table>
-    </div>
-    <div class="entity property" id="url">
-        <h3>url<sup title="annotation property" class="sup-ap">ap</sup></h3>
-        <table>
-            <tr>
-                <th>IRI</th>
-                <td><code>https://schema.org/url</code></td>
             </tr>
         </table>
     </div>
