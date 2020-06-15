@@ -15,16 +15,11 @@ tpgs:
     a owl:Ontology , skos:ConceptScheme ;
     dcterms:contributor <http://orcid.org/0000-0002-8742-7730> ;
     dcterms:created "2020-05-22"^^xsd:date ;
-    dcterms:creator [ a sdo:Person ;
-                    sdo:affiliation <http://linked.data.gov.au/org/dawe> ;
-                    sdo:email <mailto:stephen.pratt@awe.gov.au> ;
-                    sdo:jobTitle "Project Manager: Implementation of Plant Health Surveillance Data Store" ;
-                    sdo:name "Stephen J. Pratt"
-                    ] ;
+    dcterms:creator phs:stephen ;
     dcterms:modified "2020-05-22"^^xsd:date ;
     dcterms:publisher <http://linked.data.gov.au/org/dawe> ;
-    skos:definition "Taxa and groupings of taxa which are pests and therefore targets for surveillance"@en ;
-    skos:prefLabel "Pest Groups"@en ;
+    skos:definition "Types of taxa or groups of taxa which are considered pests in Australian agriculture"@en ;
+    skos:prefLabel "Pest Types"@en ;
     owl:versionIRI <http://linked.data.gov.au/def/phs/voc/tpg/1.0> ;
 .
 
@@ -216,3 +211,9 @@ tpgs:
     sdo:email <mailto:nicholas.car@surroundaustralia.com> ;
     sdo:jobTitle "Data Systems Architect" ;
     sdo:name "Nicholas J. Car" .                                
+
+phs:stephen a owl:NamedIndividual , sdo:Person ;
+         sdo:affiliation <http://linked.data.gov.au/org/dawe> ;
+         sdo:email <mailto:stephen.pratt@awe.gov.au> ;
+         sdo:jobTitle "Project Manager: Implementation of Plant Health Surveillance Data Store" ;
+         sdo:name "Stephen J. Pratt" .

@@ -15,16 +15,11 @@ subs:
     a owl:Ontology , skos:ConceptScheme ;
     dcterms:contributor <http://orcid.org/0000-0002-8742-7730> ;
     dcterms:created "2020-05-25"^^xsd:date ;
-    dcterms:creator [ a sdo:Person ;
-                    sdo:affiliation <http://linked.data.gov.au/org/dawe> ;
-                    sdo:email <mailto:stephen.pratt@awe.gov.au> ;
-                    sdo:jobTitle "Project Manager: Implementation of Plant Health Surveillance Data Store" ;
-                    sdo:name "Stephen J. Pratt"
-                    ] ;
+    dcterms:creator phs:stephen ;
     dcterms:modified "2020-05-25"^^xsd:date ;
     dcterms:publisher <http://linked.data.gov.au/org/dawe> ;
-    skos:definition "Traps used to catch plant health pests"@en ;
-    skos:prefLabel "Traps"@en ;
+    skos:definition "Types of substrates on which potential pest animals can be found"@en ;
+    skos:prefLabel "Substrate Types"@en ;
     owl:versionIRI <http://linked.data.gov.au/def//phs/voc/substrates/1.0> ;
 .
 
@@ -206,7 +201,7 @@ subs:
     phs:supportsPest tpg:pine-wilt-nematode ;
 .
 
-trunk-core
+:trunk-core
     a skos:Concept , phs:Trap ;
     skos:prefLabel "Trunk core"@en ;    
     skos:definition ""@en ;
@@ -227,3 +222,8 @@ trunk-core
     sdo:jobTitle "Data Systems Architect" ;
     sdo:name "Nicholas J. Car" .
 
+phs:stephen a owl:NamedIndividual , sdo:Person ;
+         sdo:affiliation <http://linked.data.gov.au/org/dawe> ;
+         sdo:email <mailto:stephen.pratt@awe.gov.au> ;
+         sdo:jobTitle "Project Manager: Implementation of Plant Health Surveillance Data Store" ;
+         sdo:name "Stephen J. Pratt" .

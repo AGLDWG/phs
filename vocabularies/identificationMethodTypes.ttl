@@ -1,5 +1,5 @@
-@prefix : <http://linked.data.gov.au/def/phs/voc/diagMethods/> .
-@prefix diags: <http://linked.data.gov.au/def/phs/voc/diagMethods> .
+@prefix : <http://linked.data.gov.au/def/phs/voc/idMethods/> .
+@prefix diags: <http://linked.data.gov.au/def/phs/voc/idMethods> .
 @prefix phs: <http://linked.data.gov.au/def/phs#> .
 @prefix tpg: <http://linked.data.gov.au/def/phs/voc/tpg/> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
@@ -10,25 +10,20 @@
 @prefix taxaas: <https://uat-ag-bie.oztaxa.com/ws/taxon/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<http://linked.data.gov.au/def/phs/voc/diagMethods>
+<http://linked.data.gov.au/def/phs/voc/idMethods>
     a owl:Ontology , skos:ConceptScheme ;
     dcterms:contributor <http://orcid.org/0000-0002-8742-7730> ;
     dcterms:created "2020-05-27"^^xsd:date ;
-    dcterms:creator [ a sdo:Person ;
-                    sdo:affiliation <http://linked.data.gov.au/org/dawe> ;
-                    sdo:email <mailto:stephen.pratt@awe.gov.au> ;
-                    sdo:jobTitle "Project Manager: Implementation of Plant Health Surveillance Data Store" ;
-                    sdo:name "Stephen J. Pratt"
-                    ] ;
+    dcterms:creator phs:stephen ;
     dcterms:modified "2020-05-27"^^xsd:date ;
     dcterms:publisher <http://linked.data.gov.au/org/dawe> ;
-    skos:definition "Methods used to determine the taxonomic identity of a plant pest"@en ;
-    skos:prefLabel "Diagnostic methods"@en ;
-    owl:versionIRI <http://linked.data.gov.au/def/phs/voc/diagMethods/1.0> ;
+    skos:definition "Types of method used to determine the taxonomic identity of an animal"@en ;
+    skos:prefLabel "Identification Method Types"@en ;
+    owl:versionIRI <http://linked.data.gov.au/def/phs/voc/idMethods/1.0> ;
 .
 
 :bacterial-isolation
-    a skos:Concept , phs:DiagnosticMethod ;
+    a skos:Concept , phs:IdentificationMethodType ; ;
     skos:prefLabel "Bacterial isolation"@en ;    
     skos:definition "Laboratory procedure for extracting bacteria from a sample and growing them into pure colonies for identification or for further testing."@en ;
     skos:inScheme diags: ;
@@ -37,7 +32,7 @@
 .
 
 :catalase-test
-    a skos:Concept , phs:DiagnosticMethod ;
+    a skos:Concept , phs:IdentificationMethodType ; ;
     skos:prefLabel "Catalase test"@en ;    
     skos:definition "Enzyme assay"@en ;
     skos:inScheme diags: ;
@@ -46,7 +41,7 @@
 .
 
 :dna-barcode
-    a skos:Concept , phs:DiagnosticMethod ;
+    a skos:Concept , phs:IdentificationMethodType ; ;
     skos:prefLabel "DNA barcode"@en ;    
     skos:definition "DNA sequencing procedure that focusses on cytochrome-c"@en ;
     skos:inScheme diags: ;
@@ -55,9 +50,9 @@
 .
 
 :pcr
-    a skos:Concept , phs:DiagnosticMethod ;
+    a skos:Concept , phs:IdentificationMethodType ; ;
     skos:prefLabel "PCR"@en ;   
-    skoas:label "Polymerase Chain Reaction" ; 
+    skos:label "Polymerase Chain Reaction" ; 
     skos:definition "DNA sequencing procedure that focusses on cytochrome-c"@en ;
     skos:inScheme diags: ;
     skos:topConceptOf diags: ;
@@ -65,9 +60,9 @@
 .
 
 :real-time-pcr
-    a skos:Concept , phs:DiagnosticMethod ;
+    a skos:Concept , phs:IdentificationMethodType ; ;
     skos:prefLabel "PCR"@en ;   
-    skoas:label "Polymerase Chain Reaction" ; 
+    skos:label "Polymerase Chain Reaction" ; 
     skos:definition "DNA sequencing procedure that focusses on cytochrome-c"@en ;
     skos:inScheme diags: ;
     skos:topConceptOf diags: ;
@@ -75,7 +70,7 @@
 .
 
 :morphology
-    a skos:Concept , phs:DiagnosticMethod ;
+    a skos:Concept , phs:IdentificationMethodType ; ;
     skos:prefLabel "Morphology"@en ;   
     skos:definition "Identification by observing distinctive bodily characteristics or structures"@en ;
     skos:inScheme diags: ;
@@ -84,7 +79,7 @@
 .
 
 :morphology-larval
-    a skos:Concept , phs:DiagnosticMethod ;
+    a skos:Concept , phs:IdentificationMethodType ; ;
     skos:prefLabel "Larval morphology"@en ;   
     skos:definition "Identification by observing distinctive bodily characteristics or structures of the larval lifestage"@en ;
     skos:inScheme diags: ;
@@ -92,11 +87,8 @@
     phs:identifiesPest tpg:anoplophora ;
 .
 
-
-Iodine starch test 	tpg-8
-
 :iodine-starch
-    a skos:Concept , phs:DiagnosticMethod ;
+    a skos:Concept , phs:IdentificationMethodType ; ;
     skos:prefLabel "Iodine starch test"@en ;    
     skos:definition ""@en ;
     skos:inScheme diags: ;
@@ -105,7 +97,7 @@ Iodine starch test 	tpg-8
 .
 
 :bacterial-isolation
-    a skos:Concept , phs:DiagnosticMethod ;
+    a skos:Concept , phs:IdentificationMethodType ; ;
     skos:prefLabel "Bacterial isolation"@en ;    
     skos:definition "Laboratory procedure for extracting bacteria from a sample and growing them into pure colonies for identification or for further testing."@en ;
     skos:inScheme diags: ;
@@ -114,7 +106,7 @@ Iodine starch test 	tpg-8
 .
 
 :leaf
-    a skos:Concept , phs:DiagnosticMethod ;
+    a skos:Concept , phs:IdentificationMethodType ; ;
     skos:prefLabel "Detached leaf assay"@en ;    
     skos:definition "look at a leaf?"@en ;
     skos:inScheme diags: ;
@@ -123,7 +115,7 @@ Iodine starch test 	tpg-8
 .
 
 :dna-fingerprint
-    a skos:Concept , phs:DiagnosticMethod ;
+    a skos:Concept , phs:IdentificationMethodType ; ;
     skos:prefLabel "DNA fingerprinting"@en ;    
     skos:definition ""@en ;
     skos:inScheme diags: ;
@@ -132,7 +124,7 @@ Iodine starch test 	tpg-8
 .
 
 :elisa
-    a skos:Concept , phs:DiagnosticMethod ;
+    a skos:Concept , phs:IdentificationMethodType ; ;
     skos:prefLabel "ELISA"@en ;    
     skos:definition "Enzyme-linked Immunosorbent assay"@en ;
     skos:inScheme diags: ;
@@ -141,7 +133,7 @@ Iodine starch test 	tpg-8
 .
 
 :immunofluorescence
-    a skos:Concept , phs:DiagnosticMethod ;
+    a skos:Concept , phs:IdentificationMethodType ; ;
     skos:prefLabel "Immunofluorescence"@en ;    
     skos:definition ""@en ;
     skos:inScheme diags: ;
@@ -150,7 +142,7 @@ Iodine starch test 	tpg-8
 .
 
 :lamp
-    a skos:Concept , phs:DiagnosticMethod ;
+    a skos:Concept , phs:IdentificationMethodType ; ;
     skos:prefLabel "LAMP"@en ;    
     skos:definition "Loop-mediated isothermal amplification"@en ;
     skos:inScheme diags: ;
@@ -159,7 +151,7 @@ Iodine starch test 	tpg-8
 .
 
 :fame
-    a skos:Concept , phs:DiagnosticMethod ;
+    a skos:Concept , phs:IdentificationMethodType ; ;
     skos:prefLabel "FAME"@en ;    
     skos:definition "Fatty acid methyl ester Assay"@en ;
     skos:inScheme diags: ;
@@ -168,7 +160,7 @@ Iodine starch test 	tpg-8
 .
 
 :oxidase-test
-    a skos:Concept , phs:DiagnosticMethod ;
+    a skos:Concept , phs:IdentificationMethodType ; ;
     skos:prefLabel "Oxidase test"@en ;    
     skos:definition "Enzyme assay"@en ;
     skos:inScheme diags: ;
@@ -177,7 +169,7 @@ Iodine starch test 	tpg-8
 .
 
 :pcr-bacterial
-    a skos:Concept , phs:DiagnosticMethod ;
+    a skos:Concept , phs:IdentificationMethodType ; ;
     skos:prefLabel "PCR on bacterial colonies"@en ;    
     skos:definition "Molecular test"@en ;
     skos:inScheme diags: ;
@@ -186,7 +178,7 @@ Iodine starch test 	tpg-8
 .
 
 :rdna-sequencing
-    a skos:Concept , phs:DiagnosticMethod ;
+    a skos:Concept , phs:IdentificationMethodType ; ;
     skos:prefLabel "rDNA sequencing"@en ;    
     skos:definition "Molecular test"@en ;
     skos:inScheme diags: ;
@@ -195,7 +187,7 @@ Iodine starch test 	tpg-8
 .
 
 :gram-stain
-    a skos:Concept , phs:DiagnosticMethod ;
+    a skos:Concept , phs:IdentificationMethodType ; ;
     skos:prefLabel "Gram stain on bacterial colony"@en ;    
     skos:definition "Microbiological test"@en ;
     skos:inScheme diags: ;
@@ -214,3 +206,9 @@ Iodine starch test 	tpg-8
     sdo:email <mailto:nicholas.car@surroundaustralia.com> ;
     sdo:jobTitle "Data Systems Architect" ;
     sdo:name "Nicholas J. Car" .
+
+phs:stephen a owl:NamedIndividual , sdo:Person ;
+         sdo:affiliation <http://linked.data.gov.au/org/dawe> ;
+         sdo:email <mailto:stephen.pratt@awe.gov.au> ;
+         sdo:jobTitle "Project Manager: Implementation of Plant Health Surveillance Data Store" ;
+         sdo:name "Stephen J. Pratt" .
