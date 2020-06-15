@@ -15,16 +15,11 @@ traps:
     a owl:Ontology , skos:ConceptScheme ;
     dcterms:contributor <http://orcid.org/0000-0002-8742-7730> ;
     dcterms:created "2020-05-22"^^xsd:date ;
-    dcterms:creator [ a sdo:Person ;
-                    sdo:affiliation <http://linked.data.gov.au/org/dawe> ;
-                    sdo:email <mailto:stephen.pratt@awe.gov.au> ;
-                    sdo:jobTitle "Project Manager: Implementation of Plant Health Surveillance Data Store" ;
-                    sdo:name "Stephen J. Pratt"
-                    ] ;
+    dcterms:creator phs:stephen ;
     dcterms:modified "2020-05-22"^^xsd:date ;
     dcterms:publisher <http://linked.data.gov.au/org/dawe> ;
     skos:definition "Types of Trap used to catch plant health pests"@en ;
-    skos:prefLabel "Traps Types"@en ;
+    skos:prefLabel "Trap Types"@en ;
     owl:versionIRI <http://linked.data.gov.au/def/phs/voc/traps/1.0> ;
 .
 
@@ -37,7 +32,7 @@ traps:
     phs:catchesPest tpg:ants ;  # crosslink!!!!
 .
 :vial
-    a skos:Concept , phs:Trap ;
+    a skos:Concept , phs:TrapType ;
     skos:prefLabel "Ant refuge - vial"@en ;    
     skos:definition ""@en ;
     skos:inScheme traps: ;
@@ -47,7 +42,7 @@ traps:
 
 # broad terms with a narrower term
 :snail-refuge
-    a skos:Concept , phs:Trap ;
+    a skos:Concept , phs:TrapType ;
     skos:prefLabel "Snail refuge"@en ;    
     skos:definition "Objects that can be used to trap snails"@en ;
     skos:inScheme traps: ;
@@ -55,7 +50,7 @@ traps:
 .
 
 :besser-block
-    a skos:Concept , phs:Trap ;
+    a skos:Concept , phs:TrapType ;
     skos:prefLabel "Besser block"@en ;    
     skos:definition "A concrete block that is cheap and common, within which snails may lodge"@en ;
     skos:inScheme traps: ;
@@ -64,7 +59,7 @@ traps:
 .
 
 :polystyrene
-    a skos:Concept , phs:Trap ;
+    a skos:Concept , phs:TrapType ;
     skos:prefLabel "polystyrene"@en ;    
     skos:definition "Expanded polystyrene items of arbitrary dimensions"@en ;
     skos:inScheme traps: ;
@@ -73,7 +68,7 @@ traps:
 .
 
 :tile
-    a skos:Concept , phs:Trap ;
+    a skos:Concept , phs:TrapType ;
     skos:prefLabel "tile"@en ;    
     skos:definition "Ceramic or concrete tiles"@en ;
     skos:inScheme traps: ;
@@ -82,7 +77,7 @@ traps:
 .
 
 :sticky
-    a skos:Concept , phs:Trap ;
+    a skos:Concept , phs:TrapType ;
     skos:prefLabel "Sticky trap"@en ;    
     skos:definition ""@en ;
     skos:inScheme traps: ;
@@ -90,7 +85,7 @@ traps:
 .
 
 :clear
-    a skos:Concept , phs:Trap ;
+    a skos:Concept , phs:TrapType ;
     skos:prefLabel "Clear sticky trap"@en ;    
     skos:definition ""@en ;
     skos:inScheme traps: ;
@@ -99,7 +94,7 @@ traps:
 .
 
 :yellow
-    a skos:Concept , phs:Trap ;
+    a skos:Concept , phs:TrapType ;
     skos:prefLabel "Yellow sticky trap"@en ;    
     skos:definition ""@en ;
     skos:inScheme traps: ;
@@ -108,7 +103,7 @@ traps:
 .
 
 :bucket
-    a skos:Concept , phs:Trap ;
+    a skos:Concept , phs:TrapType ;
     skos:prefLabel "Bucket trap"@en ;    
     skos:definition ""@en ;
     skos:topConceptOf traps:;
@@ -116,7 +111,7 @@ traps:
 .
 
 :delta
-    a skos:Concept , phs:Trap ;
+    a skos:Concept , phs:TrapType ;
     skos:prefLabel "Delta trap"@en ;    
     skos:definition ""@en ;
     skos:topConceptOf traps:;
@@ -124,7 +119,7 @@ traps:
 .
 
 :heliothis
-    a skos:Concept , phs:Trap ;
+    a skos:Concept , phs:TrapType ;
     skos:prefLabel "Heliothis mesh net trap"@en ;    
     skos:definition ""@en ;
     skos:topConceptOf traps:;
@@ -132,7 +127,7 @@ traps:
 .
 
 :homemade
-    a skos:Concept , phs:Trap ;
+    a skos:Concept , phs:TrapType ;
     skos:prefLabel "Homemade trap"@en ;    
     skos:definition ""@en ;
     skos:topConceptOf traps:;
@@ -141,14 +136,14 @@ traps:
 
 
 :dome
-    a skos:Concept , phs:Trap ;
+    a skos:Concept , phs:TrapType ;
     skos:prefLabel "Dome trap"@en ;    
     skos:definition ""@en ;
     skos:topConceptOf traps:;
     phs:catchesPest tpg:khapra ;
 .
 :wall
-    a skos:Concept , phs:Trap ;
+    a skos:Concept , phs:TrapType ;
     skos:prefLabel "Wall trap"@en ;    
     skos:definition ""@en ;
     skos:topConceptOf traps:;
@@ -156,7 +151,7 @@ traps:
 .
 
 :lynfield
-    a skos:Concept , phs:Trap ;
+    a skos:Concept , phs:TrapType ;
     skos:prefLabel "Lynfield trap"@en ;    
     skos:definition ""@en ;
     skos:topConceptOf traps:;
@@ -164,7 +159,7 @@ traps:
 .
 
 :patton
-    a skos:Concept , phs:Trap ;
+    a skos:Concept , phs:TrapType ;
     skos:prefLabel "Patton trap"@en ;    
     skos:definition ""@en ;
     skos:topConceptOf traps:;
@@ -172,7 +167,7 @@ traps:
 .
 
 :steiner
-    a skos:Concept , phs:Trap ;
+    a skos:Concept , phs:TrapType ;
     skos:prefLabel "steiner trap"@en ;    
     skos:definition ""@en ;
     skos:topConceptOf traps:;
@@ -180,7 +175,7 @@ traps:
 .
 
 :panel
-    a skos:Concept , phs:Trap ;
+    a skos:Concept , phs:TrapType ;
     skos:prefLabel "Panel trap"@en ;    
     skos:definition ""@en ;
     skos:inScheme traps: ;
@@ -188,7 +183,7 @@ traps:
 .
 
 :cross-vane
-    a skos:Concept , phs:Trap ;
+    a skos:Concept , phs:TrapType ;
     skos:prefLabel "Cross vane trap"@en ;    
     skos:definition ""@en ;
     skos:inScheme traps: ;
@@ -197,7 +192,7 @@ traps:
 .
 
 :tall-black-pyramid
-    a skos:Concept , phs:Trap ;
+    a skos:Concept , phs:TrapType ;
     skos:prefLabel "Tall black pyramid trap"@en ;    
     skos:definition ""@en ;
     skos:inScheme traps: ;
@@ -216,3 +211,9 @@ traps:
     sdo:email <mailto:nicholas.car@surroundaustralia.com> ;
     sdo:jobTitle "Data Systems Architect" ;
     sdo:name "Nicholas J. Car" .
+
+phs:stephen a owl:NamedIndividual , sdo:Person ;
+         sdo:affiliation <http://linked.data.gov.au/org/dawe> ;
+         sdo:email <mailto:stephen.pratt@awe.gov.au> ;
+         sdo:jobTitle "Project Manager: Implementation of Plant Health Surveillance Data Store" ;
+         sdo:name "Stephen J. Pratt" .
