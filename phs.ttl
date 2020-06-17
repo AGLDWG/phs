@@ -17,11 +17,11 @@
                                      owl:imports sosa: ;
                                      dcterms:contributor <https://orcid.org/0000-0002-3884-3420> ;
                                      dcterms:created "2020-02-11"^^xsd:date ;
-                                     dcterms:creator :stephen ,
-                                                     <http://orcid.org/0000-0002-8742-7730> ;
-                                     dcterms:modified "2020-06-15"^^xsd:date ;
+                                     dcterms:creator <https://orcid.org/0000-0003-3357-2307> ,
+                                                     <https://orcid.org/0000-0002-8742-7730> ;
+                                     dcterms:modified "2020-06-17"^^xsd:date ;
                                      dcterms:publisher <https://linked.data.gov.au/org/dawe> ;
-                                     skos:definition "An ontology for data about animal capturing events used to inforrm target pest species distribution estimates"@en ;
+                                     skos:definition "An ontology for surveillance events relating to plant pests. These events comprise field observations and associated diagnostic work (i.e. taxonomic identification) of samples taken as part of the observation. Surveillance is one of the core activities of national plant protection organizations (NPPOs). It provides NPPOs with a technical basis for many phytosanitary measures; including phytosanitary import requirements, pest free areas, pest reporting and eradication, and pest status in an area. All terms are defined by ISPM 5."@en ;
                                      skos:prefLabel "Plant Health Surveillance Ontology"@en ;
                                      sdo:codeRepository <https://github.com/AGLDWG/phs-ont> .
 
@@ -77,7 +77,7 @@
 :identifiesPest rdf:type owl:ObjectProperty ;
                 rdfs:domain :DiagnosticMethod ;
                 rdfs:range :SampleAnimal ;
-                rdfs:comment "This diagnostic method is appropriate for the target pest"@en ;
+                rdfs:comment "A diagnostic method that is appropriate for the target pest"@en ;
                 skos:prefLabel "Identifies pest"@en .
 
 
@@ -86,22 +86,19 @@
           rdfs:domain :Lure ;
           rdfs:range skos:Concept .
 
-
 ###  http://linked.data.gov.au/def/phs#luresPest
 :luresPest rdf:type owl:ObjectProperty ;
            rdfs:domain :Lure ;
            rdfs:range :SampleAnimal ;
-           rdfs:comment "The target pest which is attracted by this lure"@en ;
+           rdfs:comment "A target pest that is attracted by this lure"@en ;
            skos:prefLabel "lures pest"@en .
-
 
 ###  http://linked.data.gov.au/def/phs#supportsPest
 :supportsPest rdf:type owl:ObjectProperty ;
               rdfs:domain :Substrate ;
               rdfs:range :SampleAnimal ;
-              rdfs:comment "A substrate on which the target pest is likely be found, if it were present"@en ;
+              rdfs:comment "A substrate on which the target pest is likely be found, if it were present in the area"@en ;
               skos:prefLabel "supports pest"@en .
-
 
 ###  http://linked.data.gov.au/def/phs#trapType
 :trapType rdf:type owl:ObjectProperty ;
@@ -124,7 +121,6 @@
                                       ] ;
                           rdfs:comment "" ;
                           skos:prefLabel "taxonomic reference source" .
-
 
 ###  http://linked.data.gov.au/def/phs#vernacularName
 :vernacularName rdf:type owl:DatatypeProperty ;
@@ -149,7 +145,7 @@
                               owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                               owl:onClass :AttractantType
                             ] ;
-            skos:definition "A substances that attractses Animals"@en ;
+            skos:definition "A substance that attracts Pests"@en ;
             skos:prefLabel "Attractant"@en .
 
 
@@ -177,7 +173,7 @@
                                  owl:onProperty :hasTrap ;
                                  owl:allValuesFrom :Trap
                                ] ;
-               rdfs:comment "A collection of things used to capture an Animal"@en ;
+               rdfs:comment "A collection of things used to capture or collect a Pest"@en ;
                skos:prefLabel "Capture System"@en .
 
 
@@ -219,7 +215,8 @@
                         owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                         owl:onClass :LureType
                       ] ;
-      rdfs:comment "A substances that lures Animals"@en ;
+      rdfs:comment "A substance that lures Pests"@en ;
+      rdfs:comment "Lures are distinguished from Attractants in that Lures elicit behavioural responses in target organisms with high specificity. Pheremones and kairomones are examples of Lures. Foodstuffs or food mimics (such as protein or carbohydrate derivatives) produce responses in a wider range of organisms, and are thus classified as Attractants."@en ;
       skos:prefLabel "Lure"@en .
 
 
@@ -276,7 +273,7 @@
 ###  http://linked.data.gov.au/def/phs#Substrate
 :Substrate rdf:type owl:Class ;
            rdfs:subClassOf :Stratum ;
-           rdfs:comment "A Stratum that is not a Plant." ;
+           rdfs:comment "A Stratum that is not a Host. Usually non-living, such as a rock." ;
            skos:prefLabel "Substrate" .
 
 
@@ -298,7 +295,7 @@
 ###  http://linked.data.gov.au/def/phs#TaxonIdentification
 :TaxonIdentification rdf:type owl:Class ;
                      rdfs:subClassOf sosa:Observation ;
-                     skos:definition "The identification of the Taxon of an Animal"@en ;
+                     skos:definition "The identification of the Taxon of an organism"@en ;
                      skos:prefLabel "Taxon Identification"@en .
 
 
@@ -358,7 +355,7 @@
 #################################################################
 
 ###  http://linked.data.gov.au/def/phs#stephen
-:stephen rdf:type owl:NamedIndividual ,
+<https://orcid.org/0000-0003-3357-2307> rdf:type owl:NamedIndividual ,
                   sdo:Person ;
          sdo:affiliation <http://linked.data.gov.au/org/dawe> ;
          sdo:email <mailto:stephen.pratt@awe.gov.au> ;
