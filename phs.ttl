@@ -223,7 +223,6 @@
 :Bycatch rdf:type owl:Class ;
       rdfs:subClassOf :Stratum ,
                       dwc:Taxon ;
-      owl:disjointWith :Substrate ;
       rdfs:comment "An organism that was included in a sample, but was not the target of the surveillance activity. A 'bycatch' specimen may also be a Pest, targeted by other surveillance activities." ;
       skos:example "A beetle that was found in a fruit fly trap." ;
       skos:prefLabel "Bycatch" .
