@@ -1,7 +1,7 @@
-@prefix : <http://linked.data.gov.au/def/phs/voc/idMethods/> .
-@prefix diags: <http://linked.data.gov.au/def/phs/voc/idMethods> .
-@prefix phs: <http://linked.data.gov.au/def/phs#> .
-@prefix tpg: <http://linked.data.gov.au/def/phs/voc/tpg/> .
+@prefix : <https://linked.data.gov.au/def/phs/voc/id-methods/> .
+@prefix diags: <https://linked.data.gov.au/def/phs/voc/id-methods> .
+@prefix phs: <https://linked.data.gov.au/def/phs#> .
+@prefix tpg: <https://linked.data.gov.au/def/phs/voc/tpg/> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix sdo: <https://schema.org/> .
@@ -10,20 +10,37 @@
 @prefix taxaas: <https://uat-ag-bie.oztaxa.com/ws/taxon/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<http://linked.data.gov.au/def/phs/voc/idMethods>
+<https://linked.data.gov.au/def/phs/voc/idMethods>
     a owl:Ontology , skos:ConceptScheme ;
     dcterms:contributor <http://orcid.org/0000-0002-8742-7730> ;
     dcterms:created "2020-05-27"^^xsd:date ;
     dcterms:creator phs:stephen ;
     dcterms:modified "2020-05-27"^^xsd:date ;
-    dcterms:publisher <http://linked.data.gov.au/org/dawe> ;
+    dcterms:publisher <https://linked.data.gov.au/org/dawe> ;
     skos:definition "Types of method used to determine the taxonomic identity of an animal"@en ;
     skos:prefLabel "Identification Method Types"@en ;
-    owl:versionIRI <http://linked.data.gov.au/def/phs/voc/idMethods/1.0> ;
+    owl:versionIRI <https://linked.data.gov.au/def/phs/voc/idMethods/1.0> ;
+    skos:hasTopConcept
+        :bacterial-isolation ,
+        :catalase-test ,
+        :dna-barcode ,
+        :pcr ,
+        :morphology ,
+        :iodine-starch ,
+        :bacterial-isolation ,
+        :leaf ,
+        :dna-fingerprint ,
+        :elisa ,
+        :immunofluorescence ,
+        :lamp ,
+        :fame ,
+        :oxidase-test ,
+        :rdna-sequencing ,
+        :gram-stain ;    
 .
 
 :bacterial-isolation
-    a skos:Concept , phs:IdentificationMethodType ; ;
+    a skos:Concept , phs:IdentificationMethodType ;
     skos:prefLabel "Bacterial isolation"@en ;    
     skos:definition "Laboratory procedure for extracting bacteria from a sample and growing them into pure colonies for identification or for further testing."@en ;
     skos:inScheme diags: ;
@@ -32,7 +49,7 @@
 .
 
 :catalase-test
-    a skos:Concept , phs:IdentificationMethodType ; ;
+    a skos:Concept , phs:IdentificationMethodType ;
     skos:prefLabel "Catalase test"@en ;    
     skos:definition "Enzyme assay"@en ;
     skos:inScheme diags: ;
@@ -41,7 +58,7 @@
 .
 
 :dna-barcode
-    a skos:Concept , phs:IdentificationMethodType ; ;
+    a skos:Concept , phs:IdentificationMethodType ;
     skos:prefLabel "DNA barcode"@en ;    
     skos:definition "DNA sequencing procedure that focusses on cytochrome-c"@en ;
     skos:inScheme diags: ;
@@ -50,7 +67,7 @@
 .
 
 :pcr
-    a skos:Concept , phs:IdentificationMethodType ; ;
+    a skos:Concept , phs:IdentificationMethodType ;
     skos:prefLabel "PCR"@en ;   
     skos:label "Polymerase Chain Reaction" ; 
     skos:definition "DNA sequencing procedure that focusses on cytochrome-c"@en ;
@@ -60,17 +77,17 @@
 .
 
 :real-time-pcr
-    a skos:Concept , phs:IdentificationMethodType ; ;
+    a skos:Concept , phs:IdentificationMethodType ;
     skos:prefLabel "PCR"@en ;   
-    skos:label "Polymerase Chain Reaction" ; 
+    skos:label "Real-Time Polymerase Chain Reaction" ; 
     skos:definition "DNA sequencing procedure that focusses on cytochrome-c"@en ;
     skos:inScheme diags: ;
-    skos:topConceptOf diags: ;
+    skos:broader :pcr ;
     phs:identifiesPest tpg:citrus-canker , tpg:fire-blight , tpg:hlb ;
 .
 
 :morphology
-    a skos:Concept , phs:IdentificationMethodType ; ;
+    a skos:Concept , phs:IdentificationMethodType ;
     skos:prefLabel "Morphology"@en ;   
     skos:definition "Identification by observing distinctive bodily characteristics or structures"@en ;
     skos:inScheme diags: ;
@@ -79,7 +96,7 @@
 .
 
 :morphology-larval
-    a skos:Concept , phs:IdentificationMethodType ; ;
+    a skos:Concept , phs:IdentificationMethodType ;
     skos:prefLabel "Larval morphology"@en ;   
     skos:definition "Identification by observing distinctive bodily characteristics or structures of the larval lifestage"@en ;
     skos:inScheme diags: ;
@@ -88,7 +105,7 @@
 .
 
 :iodine-starch
-    a skos:Concept , phs:IdentificationMethodType ; ;
+    a skos:Concept , phs:IdentificationMethodType ;
     skos:prefLabel "Iodine starch test"@en ;    
     skos:definition ""@en ;
     skos:inScheme diags: ;
@@ -97,7 +114,7 @@
 .
 
 :bacterial-isolation
-    a skos:Concept , phs:IdentificationMethodType ; ;
+    a skos:Concept , phs:IdentificationMethodType ;
     skos:prefLabel "Bacterial isolation"@en ;    
     skos:definition "Laboratory procedure for extracting bacteria from a sample and growing them into pure colonies for identification or for further testing."@en ;
     skos:inScheme diags: ;
@@ -106,7 +123,7 @@
 .
 
 :leaf
-    a skos:Concept , phs:IdentificationMethodType ; ;
+    a skos:Concept , phs:IdentificationMethodType ;
     skos:prefLabel "Detached leaf assay"@en ;    
     skos:definition "look at a leaf?"@en ;
     skos:inScheme diags: ;
@@ -115,7 +132,7 @@
 .
 
 :dna-fingerprint
-    a skos:Concept , phs:IdentificationMethodType ; ;
+    a skos:Concept , phs:IdentificationMethodType ;
     skos:prefLabel "DNA fingerprinting"@en ;    
     skos:definition ""@en ;
     skos:inScheme diags: ;
@@ -124,7 +141,7 @@
 .
 
 :elisa
-    a skos:Concept , phs:IdentificationMethodType ; ;
+    a skos:Concept , phs:IdentificationMethodType ;
     skos:prefLabel "ELISA"@en ;    
     skos:definition "Enzyme-linked Immunosorbent assay"@en ;
     skos:inScheme diags: ;
@@ -133,7 +150,7 @@
 .
 
 :immunofluorescence
-    a skos:Concept , phs:IdentificationMethodType ; ;
+    a skos:Concept , phs:IdentificationMethodType ;
     skos:prefLabel "Immunofluorescence"@en ;    
     skos:definition ""@en ;
     skos:inScheme diags: ;
@@ -142,7 +159,7 @@
 .
 
 :lamp
-    a skos:Concept , phs:IdentificationMethodType ; ;
+    a skos:Concept , phs:IdentificationMethodType ;
     skos:prefLabel "LAMP"@en ;    
     skos:definition "Loop-mediated isothermal amplification"@en ;
     skos:inScheme diags: ;
@@ -151,7 +168,7 @@
 .
 
 :fame
-    a skos:Concept , phs:IdentificationMethodType ; ;
+    a skos:Concept , phs:IdentificationMethodType ;
     skos:prefLabel "FAME"@en ;    
     skos:definition "Fatty acid methyl ester Assay"@en ;
     skos:inScheme diags: ;
@@ -160,7 +177,7 @@
 .
 
 :oxidase-test
-    a skos:Concept , phs:IdentificationMethodType ; ;
+    a skos:Concept , phs:IdentificationMethodType ;
     skos:prefLabel "Oxidase test"@en ;    
     skos:definition "Enzyme assay"@en ;
     skos:inScheme diags: ;
@@ -169,16 +186,16 @@
 .
 
 :pcr-bacterial
-    a skos:Concept , phs:IdentificationMethodType ; ;
+    a skos:Concept , phs:IdentificationMethodType ;
     skos:prefLabel "PCR on bacterial colonies"@en ;    
     skos:definition "Molecular test"@en ;
     skos:inScheme diags: ;
-    skos:topConceptOf diags: ;
+    skos:broader :pcr ;
     phs:identifiesPest tpg:xylella ;
 .
 
 :rdna-sequencing
-    a skos:Concept , phs:IdentificationMethodType ; ;
+    a skos:Concept , phs:IdentificationMethodType ;
     skos:prefLabel "rDNA sequencing"@en ;    
     skos:definition "Molecular test"@en ;
     skos:inScheme diags: ;
@@ -187,7 +204,7 @@
 .
 
 :gram-stain
-    a skos:Concept , phs:IdentificationMethodType ; ;
+    a skos:Concept , phs:IdentificationMethodType ;
     skos:prefLabel "Gram stain on bacterial colony"@en ;    
     skos:definition "Microbiological test"@en ;
     skos:inScheme diags: ;
@@ -195,7 +212,7 @@
     phs:identifiesPest tpg:xylella ;
 .
 
-<http://linked.data.gov.au/org/dawe> 
+<https://linked.data.gov.au/org/dawe> 
     a owl:NamedIndividual , sdo:Organization ;
     sdo:name "Department of Agriculture, Water and the Environment" ;
     sdo:url <https://www.awe.gov.au/> .
@@ -208,7 +225,7 @@
     sdo:name "Nicholas J. Car" .
 
 phs:stephen a owl:NamedIndividual , sdo:Person ;
-         sdo:affiliation <http://linked.data.gov.au/org/dawe> ;
+         sdo:affiliation <https://linked.data.gov.au/org/dawe> ;
          sdo:email <mailto:stephen.pratt@awe.gov.au> ;
          sdo:jobTitle "Project Manager: Implementation of Plant Health Surveillance Data Store" ;
          sdo:name "Stephen J. Pratt" .

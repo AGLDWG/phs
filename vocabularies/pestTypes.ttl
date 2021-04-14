@@ -1,11 +1,11 @@
-@prefix : <http://linked.data.gov.au/def/phs/voc/tpg/> .
-@prefix tpgs: <http://linked.data.gov.au/def/phs/voc/tpg> .
+@prefix : <https://linked.data.gov.au/def/phs/voc/pests/> .
+@prefix tpgs: <https://linked.data.gov.au/def/phs/voc/pests> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix taxaas: <https://uat-ag-bie.oztaxa.com/ws/taxon/> .
 @prefix gbif: <https://api.gbif.org/v1/species/> .
-@prefix phs: <http://linked.data.gov.au/def/phs#> .
+@prefix phs: <https://linked.data.gov.au/def/phs#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix sdo: <https://schema.org/> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
@@ -17,10 +17,10 @@ tpgs:
     dcterms:created "2020-05-22"^^xsd:date ;
     dcterms:creator phs:stephen ;
     dcterms:modified "2020-05-22"^^xsd:date ;
-    dcterms:publisher <http://linked.data.gov.au/org/dawe> ;
+    dcterms:publisher <https://linked.data.gov.au/org/dawe> ;
     skos:definition "Types of taxa or groups of taxa which are considered pests in Australian agriculture"@en ;
     skos:prefLabel "Pest Types"@en ;
-    owl:versionIRI <http://linked.data.gov.au/def/phs/voc/tpg/1.0> ;
+    owl:versionIRI <https://linked.data.gov.au/def/phs/voc/tpg/1.0> ;
 .
 
 :anoplophora
@@ -200,7 +200,7 @@ tpgs:
      skos:topConceptOf tpgs: ;
  .
 
-<http://linked.data.gov.au/org/dawe> 
+<https://linked.data.gov.au/org/dawe> 
     a owl:NamedIndividual , sdo:Organization ;
     sdo:name "Department of Agriculture, Water and the Environment" ;
     sdo:url <https://www.awe.gov.au/> .
@@ -213,7 +213,7 @@ tpgs:
     sdo:name "Nicholas J. Car" .                                
 
 phs:stephen a owl:NamedIndividual , sdo:Person ;
-         sdo:affiliation <http://linked.data.gov.au/org/dawe> ;
+         sdo:affiliation <https://linked.data.gov.au/org/dawe> ;
          sdo:email <mailto:stephen.pratt@awe.gov.au> ;
          sdo:jobTitle "Project Manager: Implementation of Plant Health Surveillance Data Store" ;
          sdo:name "Stephen J. Pratt" .

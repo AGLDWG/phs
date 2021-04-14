@@ -5,11 +5,11 @@ Markdown documentation created by [pyLODE](http://github.com/rdflib/pyLODE)
 
 ## Metadata
 * **IRI**
-  * `http://linked.data.gov.au/def/phs/voc/traps/`
+  * `https://linked.data.gov.au/def/phs/voc/traps/`
 * **Publisher(s)**
-  * [Department of Agriculture, Water and the Environment](http://linked.data.gov.au/org/dawe)
+  * [Department of Agriculture, Water and the Environment](https://linked.data.gov.au/org/dawe)
 * **Creators(s)**
-  * [Stephen J. Pratt](http://linked.data.gov.au/def/phs#stephen)
+  * [Stephen J. Pratt](https://linked.data.gov.au/def/phs#stephen)
     (<stephen.pratt@awe.gov.au></a>) of [Department of Agriculture, Water and the Environment](https://www.awe.gov.au/)
 * **Contributor(s)**
   * [Nicholas J. Car](http://orcid.org/0000-0002-8742-7730)
@@ -35,145 +35,145 @@ Markdown documentation created by [pyLODE](http://github.com/rdflib/pyLODE)
 
 **Figure 1:** Ontology overview
 ## Classes
-* [Ant refuge](http://linked.data.gov.au/def/phs/voc/traps/ant-refuge)
-	* [Ant refuge - vial](http://linked.data.gov.au/def/phs/voc/traps/vial)
-* [Bucket trap](http://linked.data.gov.au/def/phs/voc/traps/bucket)
-* [Delta trap](http://linked.data.gov.au/def/phs/voc/traps/delta)
-* [Dome trap](http://linked.data.gov.au/def/phs/voc/traps/dome)
-* [Heliothis mesh net trap](http://linked.data.gov.au/def/phs/voc/traps/heliothis)
-* [Homemade trap](http://linked.data.gov.au/def/phs/voc/traps/homemade)
-* [Lynfield trap](http://linked.data.gov.au/def/phs/voc/traps/lynfield)
-* [Panel trap](http://linked.data.gov.au/def/phs/voc/traps/panel)
-	* [Cross vane trap](http://linked.data.gov.au/def/phs/voc/traps/cross-vane)
-	* [Tall black pyramid trap](http://linked.data.gov.au/def/phs/voc/traps/tall-black-pyramid)
-* [Patton trap](http://linked.data.gov.au/def/phs/voc/traps/patton)
-* [Snail refuge](http://linked.data.gov.au/def/phs/voc/traps/snail-refuge)
-	* [Besser block](http://linked.data.gov.au/def/phs/voc/traps/besser-block)
-	* [polystyrene](http://linked.data.gov.au/def/phs/voc/traps/polystyrene)
-	* [tile](http://linked.data.gov.au/def/phs/voc/traps/tile)
-* [steiner trap](http://linked.data.gov.au/def/phs/voc/traps/steiner)
-* [Sticky trap](http://linked.data.gov.au/def/phs/voc/traps/sticky)
-	* [Clear sticky trap](http://linked.data.gov.au/def/phs/voc/traps/clear)
-	* [Yellow sticky trap](http://linked.data.gov.au/def/phs/voc/traps/yellow)
-* [Wall trap](http://linked.data.gov.au/def/phs/voc/traps/wall)
+* [Ant refuge](https://linked.data.gov.au/def/phs/voc/traps/ant-refuge)
+	* [Ant refuge - vial](https://linked.data.gov.au/def/phs/voc/traps/vial)
+* [Bucket trap](https://linked.data.gov.au/def/phs/voc/traps/bucket)
+* [Delta trap](https://linked.data.gov.au/def/phs/voc/traps/delta)
+* [Dome trap](https://linked.data.gov.au/def/phs/voc/traps/dome)
+* [Heliothis mesh net trap](https://linked.data.gov.au/def/phs/voc/traps/heliothis)
+* [Homemade trap](https://linked.data.gov.au/def/phs/voc/traps/homemade)
+* [Lynfield trap](https://linked.data.gov.au/def/phs/voc/traps/lynfield)
+* [Panel trap](https://linked.data.gov.au/def/phs/voc/traps/panel)
+	* [Cross vane trap](https://linked.data.gov.au/def/phs/voc/traps/cross-vane)
+	* [Tall black pyramid trap](https://linked.data.gov.au/def/phs/voc/traps/tall-black-pyramid)
+* [Patton trap](https://linked.data.gov.au/def/phs/voc/traps/patton)
+* [Snail refuge](https://linked.data.gov.au/def/phs/voc/traps/snail-refuge)
+	* [Besser block](https://linked.data.gov.au/def/phs/voc/traps/besser-block)
+	* [polystyrene](https://linked.data.gov.au/def/phs/voc/traps/polystyrene)
+	* [tile](https://linked.data.gov.au/def/phs/voc/traps/tile)
+* [steiner trap](https://linked.data.gov.au/def/phs/voc/traps/steiner)
+* [Sticky trap](https://linked.data.gov.au/def/phs/voc/traps/sticky)
+	* [Clear sticky trap](https://linked.data.gov.au/def/phs/voc/traps/clear)
+	* [Yellow sticky trap](https://linked.data.gov.au/def/phs/voc/traps/yellow)
+* [Wall trap](https://linked.data.gov.au/def/phs/voc/traps/wall)
 
 ### Ant refuge
 Property | Value
 --- | ---
-IRI | `http://linked.data.gov.au/def/phs/voc/traps/ant-refuge`
+IRI | `https://linked.data.gov.au/def/phs/voc/traps/ant-refuge`
 Preferred Labels |Ant refuge (en)<br />
-Narrower Concepts |[traps:vial](http://linked.data.gov.au/def/phs/voc/traps/vial) (cp)<br />
+Narrower Concepts |[traps:vial](https://linked.data.gov.au/def/phs/voc/traps/vial) (cp)<br />
 ### Besser block
 Property | Value
 --- | ---
-IRI | `http://linked.data.gov.au/def/phs/voc/traps/besser-block`
+IRI | `https://linked.data.gov.au/def/phs/voc/traps/besser-block`
 Preferred Labels |Besser block (en)<br />
-Broader Concepts |[traps:snail-refuge](http://linked.data.gov.au/def/phs/voc/traps/snail-refuge) (cp)<br />
+Broader Concepts |[traps:snail-refuge](https://linked.data.gov.au/def/phs/voc/traps/snail-refuge) (cp)<br />
 ### Bucket trap
 Property | Value
 --- | ---
-IRI | `http://linked.data.gov.au/def/phs/voc/traps/bucket`
+IRI | `https://linked.data.gov.au/def/phs/voc/traps/bucket`
 Preferred Labels |Bucket trap (en)<br />
 ### Clear sticky trap
 Property | Value
 --- | ---
-IRI | `http://linked.data.gov.au/def/phs/voc/traps/clear`
+IRI | `https://linked.data.gov.au/def/phs/voc/traps/clear`
 Preferred Labels |Clear sticky trap (en)<br />
-Broader Concepts |[traps:sticky](http://linked.data.gov.au/def/phs/voc/traps/sticky) (cp)<br />
+Broader Concepts |[traps:sticky](https://linked.data.gov.au/def/phs/voc/traps/sticky) (cp)<br />
 ### Cross vane trap
 Property | Value
 --- | ---
-IRI | `http://linked.data.gov.au/def/phs/voc/traps/cross-vane`
+IRI | `https://linked.data.gov.au/def/phs/voc/traps/cross-vane`
 Preferred Labels |Cross vane trap (en)<br />
-Broader Concepts |[traps:panel](http://linked.data.gov.au/def/phs/voc/traps/panel) (cp)<br />
+Broader Concepts |[traps:panel](https://linked.data.gov.au/def/phs/voc/traps/panel) (cp)<br />
 ### Delta trap
 Property | Value
 --- | ---
-IRI | `http://linked.data.gov.au/def/phs/voc/traps/delta`
+IRI | `https://linked.data.gov.au/def/phs/voc/traps/delta`
 Preferred Labels |Delta trap (en)<br />
 ### Dome trap
 Property | Value
 --- | ---
-IRI | `http://linked.data.gov.au/def/phs/voc/traps/dome`
+IRI | `https://linked.data.gov.au/def/phs/voc/traps/dome`
 Preferred Labels |Dome trap (en)<br />
 ### Heliothis mesh net trap
 Property | Value
 --- | ---
-IRI | `http://linked.data.gov.au/def/phs/voc/traps/heliothis`
+IRI | `https://linked.data.gov.au/def/phs/voc/traps/heliothis`
 Preferred Labels |Heliothis mesh net trap (en)<br />
 ### Homemade trap
 Property | Value
 --- | ---
-IRI | `http://linked.data.gov.au/def/phs/voc/traps/homemade`
+IRI | `https://linked.data.gov.au/def/phs/voc/traps/homemade`
 Preferred Labels |Homemade trap (en)<br />
 ### Lynfield trap
 Property | Value
 --- | ---
-IRI | `http://linked.data.gov.au/def/phs/voc/traps/lynfield`
+IRI | `https://linked.data.gov.au/def/phs/voc/traps/lynfield`
 Preferred Labels |Lynfield trap (en)<br />
 ### Panel trap
 Property | Value
 --- | ---
-IRI | `http://linked.data.gov.au/def/phs/voc/traps/panel`
+IRI | `https://linked.data.gov.au/def/phs/voc/traps/panel`
 Preferred Labels |Panel trap (en)<br />
-Narrower Concepts |[traps:tall-black-pyramid](http://linked.data.gov.au/def/phs/voc/traps/tall-black-pyramid) (cp)<br />[traps:cross-vane](http://linked.data.gov.au/def/phs/voc/traps/cross-vane) (cp)<br />
+Narrower Concepts |[traps:tall-black-pyramid](https://linked.data.gov.au/def/phs/voc/traps/tall-black-pyramid) (cp)<br />[traps:cross-vane](https://linked.data.gov.au/def/phs/voc/traps/cross-vane) (cp)<br />
 ### Patton trap
 Property | Value
 --- | ---
-IRI | `http://linked.data.gov.au/def/phs/voc/traps/patton`
+IRI | `https://linked.data.gov.au/def/phs/voc/traps/patton`
 Preferred Labels |Patton trap (en)<br />
 ### polystyrene
 Property | Value
 --- | ---
-IRI | `http://linked.data.gov.au/def/phs/voc/traps/polystyrene`
+IRI | `https://linked.data.gov.au/def/phs/voc/traps/polystyrene`
 Preferred Labels |polystyrene (en)<br />
-Broader Concepts |[traps:snail-refuge](http://linked.data.gov.au/def/phs/voc/traps/snail-refuge) (cp)<br />
+Broader Concepts |[traps:snail-refuge](https://linked.data.gov.au/def/phs/voc/traps/snail-refuge) (cp)<br />
 ### Snail refuge
 Property | Value
 --- | ---
-IRI | `http://linked.data.gov.au/def/phs/voc/traps/snail-refuge`
+IRI | `https://linked.data.gov.au/def/phs/voc/traps/snail-refuge`
 Preferred Labels |Snail refuge (en)<br />
-Narrower Concepts |[traps:polystyrene](http://linked.data.gov.au/def/phs/voc/traps/polystyrene) (cp)<br />[traps:besser-block](http://linked.data.gov.au/def/phs/voc/traps/besser-block) (cp)<br />[traps:tile](http://linked.data.gov.au/def/phs/voc/traps/tile) (cp)<br />
+Narrower Concepts |[traps:polystyrene](https://linked.data.gov.au/def/phs/voc/traps/polystyrene) (cp)<br />[traps:besser-block](https://linked.data.gov.au/def/phs/voc/traps/besser-block) (cp)<br />[traps:tile](https://linked.data.gov.au/def/phs/voc/traps/tile) (cp)<br />
 ### steiner trap
 Property | Value
 --- | ---
-IRI | `http://linked.data.gov.au/def/phs/voc/traps/steiner`
+IRI | `https://linked.data.gov.au/def/phs/voc/traps/steiner`
 Preferred Labels |steiner trap (en)<br />
 ### Sticky trap
 Property | Value
 --- | ---
-IRI | `http://linked.data.gov.au/def/phs/voc/traps/sticky`
+IRI | `https://linked.data.gov.au/def/phs/voc/traps/sticky`
 Preferred Labels |Sticky trap (en)<br />
-Narrower Concepts |[traps:clear](http://linked.data.gov.au/def/phs/voc/traps/clear) (cp)<br />[traps:yellow](http://linked.data.gov.au/def/phs/voc/traps/yellow) (cp)<br />
+Narrower Concepts |[traps:clear](https://linked.data.gov.au/def/phs/voc/traps/clear) (cp)<br />[traps:yellow](https://linked.data.gov.au/def/phs/voc/traps/yellow) (cp)<br />
 ### Tall black pyramid trap
 Property | Value
 --- | ---
-IRI | `http://linked.data.gov.au/def/phs/voc/traps/tall-black-pyramid`
+IRI | `https://linked.data.gov.au/def/phs/voc/traps/tall-black-pyramid`
 Preferred Labels |Tall black pyramid trap (en)<br />
-Broader Concepts |[traps:panel](http://linked.data.gov.au/def/phs/voc/traps/panel) (cp)<br />
+Broader Concepts |[traps:panel](https://linked.data.gov.au/def/phs/voc/traps/panel) (cp)<br />
 ### tile
 Property | Value
 --- | ---
-IRI | `http://linked.data.gov.au/def/phs/voc/traps/tile`
+IRI | `https://linked.data.gov.au/def/phs/voc/traps/tile`
 Preferred Labels |tile (en)<br />
-Broader Concepts |[traps:snail-refuge](http://linked.data.gov.au/def/phs/voc/traps/snail-refuge) (cp)<br />
+Broader Concepts |[traps:snail-refuge](https://linked.data.gov.au/def/phs/voc/traps/snail-refuge) (cp)<br />
 ### Ant refuge - vial
 Property | Value
 --- | ---
-IRI | `http://linked.data.gov.au/def/phs/voc/traps/vial`
+IRI | `https://linked.data.gov.au/def/phs/voc/traps/vial`
 Preferred Labels |Ant refuge - vial (en)<br />
-Broader Concepts |[traps:ant-refuge](http://linked.data.gov.au/def/phs/voc/traps/ant-refuge) (cp)<br />
+Broader Concepts |[traps:ant-refuge](https://linked.data.gov.au/def/phs/voc/traps/ant-refuge) (cp)<br />
 ### Wall trap
 Property | Value
 --- | ---
-IRI | `http://linked.data.gov.au/def/phs/voc/traps/wall`
+IRI | `https://linked.data.gov.au/def/phs/voc/traps/wall`
 Preferred Labels |Wall trap (en)<br />
 ### Yellow sticky trap
 Property | Value
 --- | ---
-IRI | `http://linked.data.gov.au/def/phs/voc/traps/yellow`
+IRI | `https://linked.data.gov.au/def/phs/voc/traps/yellow`
 Preferred Labels |Yellow sticky trap (en)<br />
-Broader Concepts |[traps:sticky](http://linked.data.gov.au/def/phs/voc/traps/sticky) (cp)<br />
+Broader Concepts |[traps:sticky](https://linked.data.gov.au/def/phs/voc/traps/sticky) (cp)<br />
 
 ## Namespaces
 * **dcterms**
@@ -181,7 +181,7 @@ Broader Concepts |[traps:sticky](http://linked.data.gov.au/def/phs/voc/traps/sti
 * **owl**
   * `http://www.w3.org/2002/07/owl#`
 * **phs**
-  * `http://linked.data.gov.au/def/phs#`
+  * `https://linked.data.gov.au/def/phs#`
 * **rdf**
   * `http://www.w3.org/1999/02/22-rdf-syntax-ns#`
 * **rdfs**
@@ -193,9 +193,9 @@ Broader Concepts |[traps:sticky](http://linked.data.gov.au/def/phs/voc/traps/sti
 * **taxaas**
   * `https://uat-ag-bie.oztaxa.com/ws/taxon/`
 * **tpg**
-  * `http://linked.data.gov.au/def/phs/voc/tpg/`
+  * `https://linked.data.gov.au/def/phs/voc/tpg/`
 * **traps**
-  * `http://linked.data.gov.au/def/phs/voc/traps/`
+  * `https://linked.data.gov.au/def/phs/voc/traps/`
 * **xml**
   * `http://www.w3.org/XML/1998/namespace`
 * **xsd**

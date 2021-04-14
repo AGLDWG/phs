@@ -1,4 +1,5 @@
-@prefix : <http://linked.data.gov.au/def/phs/voc/hosts/> .
+@prefix : <https://linked.data.gov.au/def/phs/voc/hosts/> .
+@prefix hosts: <https://linked.data.gov.au/def/phs/voc/hosts> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
@@ -6,9 +7,8 @@
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix taxaas: <https://uat-ag-bie.oztaxa.com/ws/taxon/> .
-@prefix phs: <http://linked.data.gov.au/def/phs#> .
-@prefix tpg: <http://linked.data.gov.au/def/phs/voc/tpg/> .
-@prefix hosts: <http://linked.data.gov.au/def/phs/voc/hosts> .
+@prefix phs: <https://linked.data.gov.au/def/phs#> .
+@prefix tpg: <https://linked.data.gov.au/def/phs/voc/tpg/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 hosts:
@@ -17,10 +17,10 @@ hosts:
     dcterms:created "2020-05-25"^^xsd:date ;
     dcterms:creator phs:stephen ;
     dcterms:modified "2020-05-25"^^xsd:date ;
-    dcterms:publisher <http://linked.data.gov.au/org/dawe> ;
+    dcterms:publisher <https://linked.data.gov.au/org/dawe> ;
     skos:definition "Types of hosts of plant pests"@en ;
     skos:prefLabel "Host Types"@en ;
-    owl:versionIRI <http://linked.data.gov.au/def/phs/voc/hosts/1.0> ;
+    owl:versionIRI <https://linked.data.gov.au/def/phs/voc/hosts/1.0> ;
     skos:hasTopConcept 
         :apocynaceae ,
         :betulaceae ,
@@ -164,7 +164,7 @@ hosts:
     rdfs:seeAlso <http://dbpedia.org/resource/Solanaceae> ;
 .
 
-<http://linked.data.gov.au/org/dawe> 
+<https://linked.data.gov.au/org/dawe> 
     a owl:NamedIndividual , sdo:Organization ;
     sdo:name "Department of Agriculture, Water and the Environment" ;
     sdo:url <https://www.awe.gov.au/> .
@@ -177,7 +177,7 @@ hosts:
     sdo:name "Nicholas J. Car" .
 
 phs:stephen a owl:NamedIndividual , sdo:Person ;
-         sdo:affiliation <http://linked.data.gov.au/org/dawe> ;
+         sdo:affiliation <https://linked.data.gov.au/org/dawe> ;
          sdo:email <mailto:stephen.pratt@awe.gov.au> ;
          sdo:jobTitle "Project Manager: Implementation of Plant Health Surveillance Data Store" ;
          sdo:name "Stephen J. Pratt" .

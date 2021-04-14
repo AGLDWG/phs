@@ -5,11 +5,11 @@ Markdown documentation created by [pyLODE](http://github.com/rdflib/pyLODE)
 
 ## Metadata
 * **IRI**
-  * `http://linked.data.gov.au/def/phs/voc/hosts`
+  * `https://linked.data.gov.au/def/phs/voc/hosts`
 * **Publisher(s)**
-  * [Department of Agriculture, Water and the Environment](http://linked.data.gov.au/org/dawe)
+  * [Department of Agriculture, Water and the Environment](https://linked.data.gov.au/org/dawe)
 * **Creators(s)**
-  * [Stephen J. Pratt](http://linked.data.gov.au/def/phs#stephen)
+  * [Stephen J. Pratt](https://linked.data.gov.au/def/phs#stephen)
     (<stephen.pratt@awe.gov.au></a>) of [Department of Agriculture, Water and the Environment](https://www.awe.gov.au/)
 * **Contributor(s)**
   * [Nicholas J. Car](http://orcid.org/0000-0002-8742-7730)
@@ -35,89 +35,89 @@ Markdown documentation created by [pyLODE](http://github.com/rdflib/pyLODE)
 
 **Figure 1:** Ontology overview
 ## Classes
-* [Apocynaceae](http://linked.data.gov.au/def/phs/voc/hosts/apocynaceae)
-* [Betulaceae](http://linked.data.gov.au/def/phs/voc/hosts/betulaceae)
-* [Citrus](http://linked.data.gov.au/def/phs/voc/hosts/citrus)
-* [Convolvulaceae](http://linked.data.gov.au/def/phs/voc/hosts/convolvulaceae)
-* [Fortunella](http://linked.data.gov.au/def/phs/voc/hosts/fortunella)
-* [Monochamus](http://linked.data.gov.au/def/phs/voc/hosts/monochamus)
-* [Pinaceae](http://linked.data.gov.au/def/phs/voc/hosts/pinaceae)
-* [Plantae](http://linked.data.gov.au/def/phs/voc/hosts/plantae)
-* [Rosaceae](http://linked.data.gov.au/def/phs/voc/hosts/rosaceae)
-* [Rutaceae](http://linked.data.gov.au/def/phs/voc/hosts/rutaceae)
-* [Solanaceae](http://linked.data.gov.au/def/phs/voc/hosts/solanaceae)
+* [Apocynaceae](https://linked.data.gov.au/def/phs/voc/hosts/apocynaceae)
+* [Betulaceae](https://linked.data.gov.au/def/phs/voc/hosts/betulaceae)
+* [Citrus](https://linked.data.gov.au/def/phs/voc/hosts/citrus)
+* [Convolvulaceae](https://linked.data.gov.au/def/phs/voc/hosts/convolvulaceae)
+* [Fortunella](https://linked.data.gov.au/def/phs/voc/hosts/fortunella)
+* [Monochamus](https://linked.data.gov.au/def/phs/voc/hosts/monochamus)
+* [Pinaceae](https://linked.data.gov.au/def/phs/voc/hosts/pinaceae)
+* [Plantae](https://linked.data.gov.au/def/phs/voc/hosts/plantae)
+* [Rosaceae](https://linked.data.gov.au/def/phs/voc/hosts/rosaceae)
+* [Rutaceae](https://linked.data.gov.au/def/phs/voc/hosts/rutaceae)
+* [Solanaceae](https://linked.data.gov.au/def/phs/voc/hosts/solanaceae)
 
 ### Apocynaceae
 Property | Value
 --- | ---
-IRI | `http://linked.data.gov.au/def/phs/voc/hosts/apocynaceae`
+IRI | `https://linked.data.gov.au/def/phs/voc/hosts/apocynaceae`
 Preferred Labels |Apocynaceae (en)<br />
 ### Betulaceae
 Property | Value
 --- | ---
-IRI | `http://linked.data.gov.au/def/phs/voc/hosts/betulaceae`
+IRI | `https://linked.data.gov.au/def/phs/voc/hosts/betulaceae`
 Preferred Labels |Betulaceae (en)<br />
 ### Citrus
 Property | Value
 --- | ---
-IRI | `http://linked.data.gov.au/def/phs/voc/hosts/citrus`
+IRI | `https://linked.data.gov.au/def/phs/voc/hosts/citrus`
 Preferred Labels |Citrus (en)<br />
 ### Convolvulaceae
 Property | Value
 --- | ---
-IRI | `http://linked.data.gov.au/def/phs/voc/hosts/convolvulaceae`
+IRI | `https://linked.data.gov.au/def/phs/voc/hosts/convolvulaceae`
 Preferred Labels |Convolvulaceae (en)<br />
 ### Fortunella
 Property | Value
 --- | ---
-IRI | `http://linked.data.gov.au/def/phs/voc/hosts/fortunella`
+IRI | `https://linked.data.gov.au/def/phs/voc/hosts/fortunella`
 Preferred Labels |Fortunella (en)<br />
 ### Monochamus
 Property | Value
 --- | ---
-IRI | `http://linked.data.gov.au/def/phs/voc/hosts/monochamus`
+IRI | `https://linked.data.gov.au/def/phs/voc/hosts/monochamus`
 Preferred Labels |Monochamus (en)<br />
 ### Pinaceae
 Property | Value
 --- | ---
-IRI | `http://linked.data.gov.au/def/phs/voc/hosts/pinaceae`
+IRI | `https://linked.data.gov.au/def/phs/voc/hosts/pinaceae`
 Preferred Labels |Pinaceae (en)<br />
 ### Plantae
 Property | Value
 --- | ---
-IRI | `http://linked.data.gov.au/def/phs/voc/hosts/plantae`
+IRI | `https://linked.data.gov.au/def/phs/voc/hosts/plantae`
 Preferred Labels |Plantae (en)<br />
 ### Rosaceae
 Property | Value
 --- | ---
-IRI | `http://linked.data.gov.au/def/phs/voc/hosts/rosaceae`
+IRI | `https://linked.data.gov.au/def/phs/voc/hosts/rosaceae`
 Preferred Labels |Rosaceae (en)<br />
 ### Rutaceae
 Property | Value
 --- | ---
-IRI | `http://linked.data.gov.au/def/phs/voc/hosts/rutaceae`
+IRI | `https://linked.data.gov.au/def/phs/voc/hosts/rutaceae`
 Preferred Labels |Rutaceae (en)<br />
 ### Solanaceae
 Property | Value
 --- | ---
-IRI | `http://linked.data.gov.au/def/phs/voc/hosts/solanaceae`
+IRI | `https://linked.data.gov.au/def/phs/voc/hosts/solanaceae`
 Preferred Labels |Solanaceae (en)<br />
 
 ## Namespaces
 * **default (:)**
-  * `http://linked.data.gov.au/def/phs/voc/hosts/`
+  * `https://linked.data.gov.au/def/phs/voc/hosts/`
 * **:**
-  * `http://linked.data.gov.au/def/phs/voc/hosts/`
+  * `https://linked.data.gov.au/def/phs/voc/hosts/`
 * **dcterms**
   * `http://purl.org/dc/terms/`
 * **dwc**
   * `http://rs.tdwg.org/dwc/terms/`
 * **hosts**
-  * `http://linked.data.gov.au/def/phs/voc/hosts`
+  * `https://linked.data.gov.au/def/phs/voc/hosts`
 * **owl**
   * `http://www.w3.org/2002/07/owl#`
 * **phs**
-  * `http://linked.data.gov.au/def/phs#`
+  * `https://linked.data.gov.au/def/phs#`
 * **rdf**
   * `http://www.w3.org/1999/02/22-rdf-syntax-ns#`
 * **rdfs**
@@ -129,7 +129,7 @@ Preferred Labels |Solanaceae (en)<br />
 * **taxaas**
   * `https://uat-ag-bie.oztaxa.com/ws/taxon/`
 * **tpg**
-  * `http://linked.data.gov.au/def/phs/voc/tpg/`
+  * `https://linked.data.gov.au/def/phs/voc/tpg/`
 * **xml**
   * `http://www.w3.org/XML/1998/namespace`
 * **xsd**

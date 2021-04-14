@@ -5,7 +5,7 @@ PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 PREFIX role: <http://www.w3.org/ns/prov#>
 
 
-<http://linked.data.gov.au/def/phs>
+<https://linked.data.gov.au/def/phs>
     a prof:Profile ;
     prof:isProfileOf 
         <http://www.opengis.net/doc/IS/geosparql/1.0> , # GeoSPARQL
@@ -13,24 +13,24 @@ PREFIX role: <http://www.w3.org/ns/prov#>
         <https://www.w3.org/TR/prov-o/> ,               # PROV-O
         <http://dx.doi.org/10.5281/zenodo.46972> ;      # Darwin Semantic Web (https://github.com/darwin-sw/dsw/)
     prof:isTransitifeProfileOf <https://www.w3.org/TR/owl2-syntax/> ; OWL2
-    dcterms:conformsTo <http://linked.data.gov.au/def/agop> ; # this ontology conforms to Aust Gov Ontology Profile (AGOP)
+    dcterms:conformsTo <https://linked.data.gov.au/def/agop> ; # this ontology conforms to Aust Gov Ontology Profile (AGOP)
     dcterms:title "Plant Health Surveillance Ontology"@en ;
     dcterms:description """This ontology is a data model for plant health surveillance conducted by Australian biosecurity agencies and industry to maintain food quality, prevent the spread of pests and facilitate trade in foodstuffs."""@en ;
     prof:hasResource [
         prof:hasRole role:guidance ;
         dcterms:format "text/html" ;
-        prof:hasArtifact <http://linked.data.gov.au/def/phs> ;
+        prof:hasArtifact <https://linked.data.gov.au/def/phs> ;
     ] ,
     [
         prof:hasRole role:schema ;
         dcterms:format "text/turtle" ;
-        prof:hasArtifact <http://linked.data.gov.au/def/phs.ttl> ;
+        prof:hasArtifact <https://linked.data.gov.au/def/phs.ttl> ;
     ] ,
     [
         prof:hasRole role:validation ;
         dcterms:format "text/turtle" ;
         dcterms:conformsTo <https://www.w3.org/TR/shacl/> ;
-        prof:hasArtifact <http://linked.data.gov.au/def/validator.shape.ttl> ;
+        prof:hasArtifact <https://linked.data.gov.au/def/validator.shape.ttl> ;
     ] ;
 .
 
