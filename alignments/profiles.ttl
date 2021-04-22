@@ -12,7 +12,7 @@ PREFIX role: <http://www.w3.org/ns/prov#>
         <https://www.w3.org/TR/vocab-ssn/> ,            # SOSA (within SSN)
         <https://www.w3.org/TR/prov-o/> ,               # PROV-O
         <http://dx.doi.org/10.5281/zenodo.46972> ;      # Darwin Semantic Web (https://github.com/darwin-sw/dsw/)
-    prof:isTransitiveProfileOf <https://www.w3.org/TR/owl2-syntax/> ; OWL2
+    prof:isTransitiveProfileOf <https://www.w3.org/TR/owl2-syntax/> ; # OWL2
     dcterms:conformsTo <https://linked.data.gov.au/def/agop> ; # this ontology conforms to Aust Gov Ontology Profile (AGOP)
     dcterms:title "Plant Health Surveillance Ontology"@en ;
     dcterms:description """This ontology is a data model for plant health surveillance conducted by Australian biosecurity agencies and industry to maintain food quality, prevent the spread of pests and facilitate trade in foodstuffs."""@en ;
