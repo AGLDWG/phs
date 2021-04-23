@@ -328,12 +328,12 @@
                skos:prefLabel "Substrate Type"@en .
 
 
-###  http://linked.data.gov.au/def/phs#TaxonOccurence
-:TaxonOccurence rdf:type owl:Class ;
+###  http://linked.data.gov.au/def/phs#TaxonOccurrence
+:TaxonOccurrence rdf:type owl:Class ;
                    rdfs:subClassOf sosa:FeatureOfInterest ;
                    skos:definition "The aggregated observations of a Taxon leading to knowledge of its distribution"@en ;
                    skos:editorialNote "This FoI is an intermediate FoI en route to a pest distribution which will inform pest management plans. This FoI is not indicated as being a spatio-temporal thing since it may require significant enhancement and modelling using this taxon occurence information to generate a reliable spatio-temporal taxon distribution" ;
-                   skos:prefLabel "Taxon Occurence"@en .
+                   skos:prefLabel "Taxon Occurrence"@en .
 
 
 ###  http://linked.data.gov.au/def/phs#TaxonIdentification
