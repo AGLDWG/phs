@@ -33,7 +33,7 @@
 ###  https://linked.data.gov.au/def/phs#catchesPest
 :catchesPest rdf:type owl:ObjectProperty ;
              rdfs:domain :Trap ;
-             rdfs:range :SampleAnimal ;
+             rdfs:range :Pest ;
              rdfs:comment "A device that is designed to catch the target pest"@en ,
                           "An object which provides refuge to the target pest, and can thus be used as a trap"@en ;
              skos:prefLabel "catches pest"@en .
@@ -42,7 +42,7 @@
 ###  https://linked.data.gov.au/def/phs#detectsPest
 :detectsPest rdf:type owl:ObjectProperty ;
              rdfs:domain :ObservationMethod ;
-             rdfs:range :SampleAnimal ;
+             rdfs:range :Pest ;
              rdfs:comment "The pest for which the observation method is useful"@en ;
              skos:prefLabel "detects pest"@en .
 
@@ -68,7 +68,7 @@
 ###  https://linked.data.gov.au/def/phs#hostsPest
 :hostsPest rdf:type owl:ObjectProperty ;
            rdfs:domain :Host ;
-           rdfs:range :SampleAnimal ;
+           rdfs:range :Pest ;
            rdfs:comment "A living thing (usually a plant) on which the target pest may be found"@en ;
            skos:prefLabel "hosts pest"@en .
 
@@ -76,7 +76,7 @@
 ###  https://linked.data.gov.au/def/phs#identifiesPest
 :identifiesPest rdf:type owl:ObjectProperty ;
                 rdfs:domain :DiagnosticMethod ;
-                rdfs:range :SampleAnimal ;
+                rdfs:range :Pest ;
                 rdfs:comment "A diagnostic method that is appropriate for the target pest"@en ;
                 skos:prefLabel "Identifies pest"@en .
 
@@ -89,14 +89,14 @@
 ###  https://linked.data.gov.au/def/phs#luresPest
 :luresPest rdf:type owl:ObjectProperty ;
            rdfs:domain :Lure ;
-           rdfs:range :SampleAnimal ;
+           rdfs:range :Pest ;
            rdfs:comment "A target pest that is attracted by this lure"@en ;
            skos:prefLabel "lures pest"@en .
 
 ###  https://linked.data.gov.au/def/phs#supportsPest
 :supportsPest rdf:type owl:ObjectProperty ;
               rdfs:domain :Substrate ;
-              rdfs:range :SampleAnimal ;
+              rdfs:range :Pest ;
               rdfs:comment "A substrate on which the target pest is likely be found, if it were present in the area"@en ;
               skos:prefLabel "supports pest"@en .
 
@@ -112,25 +112,54 @@
 #    Data properties
 #################################################################
 
-###  https://linked.data.gov.au/def/phs#taxonomicReferenceSource
-:taxonomicReferenceSource rdf:type owl:DatatypeProperty ;
-                          rdfs:domain [ rdf:type owl:Class ;
-                                        owl:unionOf ( :Host
-                                                      :SampleAnimal
-                                                    )
-                                      ] ;
-                          rdfs:comment "" ;
-                          skos:prefLabel "taxonomic reference source" .
+###  http://linked.data.gov.au/def/phs#taxonomicReferenceSource
+:taxonomicRefSource rdf:type owl:DatatypeProperty ;
+        rdfs:domain [ rdf:type owl:Class ;
+                    owl:unionOf ( :Host
+                                  :Pest
+                                  :Bycatch
+                                )
+                  ] ;
+        rdfs:comment "Name of the taxonomic reference system that is the source of the taxonID" ;
+        rdfs:comment "Examples are 'GBIF', 'TaxaaS'." ;
+        rdfs:comment "This could be replaced or augmented with 'taxonomicRefSourceIRI'" ;
+        skos:prefLabel "Taxonomic reference source" .
 
-###  https://linked.data.gov.au/def/phs#vernacularName
-:vernacularName rdf:type owl:DatatypeProperty ;
-                rdfs:domain [ rdf:type owl:Class ;
-                              owl:unionOf ( :Host
-                                            :SampleAnimal
-                                          )
-                            ] ;
-                rdfs:comment "The vernacular (common) name for the host or pest" ;
-                skos:prefLabel "vernacular name" .
+###  http://linked.data.gov.au/def/phs#taxonID
+:taxonID rdf:type owl:DatatypeProperty ;
+        rdfs:domain [ rdf:type owl:Class ;
+                      owl:unionOf ( :Host
+                                    :Pest
+                                    :Bycatch
+                                  )
+                    ] ;
+        owl:equivalentProperty dwc:taxonID ;
+        rdfs:comment "" ;
+        skos:prefLabel "Common name" .
+
+###  http://linked.data.gov.au/def/phs#scientificName
+:scientificName rdf:type owl:DatatypeProperty ;
+        rdfs:domain [ rdf:type owl:Class ;
+                      owl:unionOf ( :Host
+                                    :Pest
+                                    :Bycatch
+                                  )
+                    ] ;
+        owl:equivalentProperty dwc:scientificName ;
+        rdfs:comment "The scientific name of the taxon. Within the phs ontology, it is assumed that taxa are named using a taxonomic reference system. This means that if additional information about the authorship, current usage or status of the name is required, it can be obtained from the reference system. Therefore, there is no need to include 'Authority' information within scientificName." ;
+        skos:prefLabel "Scientific name" .
+
+###  http://linked.data.gov.au/def/phs#commonName
+:commonName rdf:type owl:DatatypeProperty ;
+        rdfs:domain [ rdf:type owl:Class ;
+                      owl:unionOf ( :Host
+                                    :Pest
+                                    :Bycatch
+                                  )
+                    ] ;
+        owl:equivalentProperty dwc:vernacularName ;
+        rdfs:comment "A vernacular (non-scientific) name for a taxon" ;
+        skos:prefLabel "Common name" .
 
 
 #################################################################
@@ -190,7 +219,23 @@
                       skos:prefLabel "Diagnostic Method Type"@en .
 
 
-###  https://linked.data.gov.au/def/phs#Host
+###  http://linked.data.gov.au/def/phs#Bycatch
+:Bycatch rdf:type owl:Class ;
+      rdfs:subClassOf :Stratum ,
+                      dwc:Taxon ;
+      rdfs:comment "An organism that was included in a sample, but was not the target of the surveillance activity. A 'bycatch' specimen may also be a Pest, targeted by other surveillance activities." ;
+      skos:example "A beetle that was found in a fruit fly trap." ;
+      skos:prefLabel "Bycatch" .
+
+
+###  http://linked.data.gov.au/def/phs#BycatchType
+:BycatchType rdf:type owl:Class ;
+          rdfs:subClassOf skos:Concept ;
+          skos:definition "The subtype of a Bycatch specimen"@en ;
+          skos:prefLabel "Bycatch Type"@en .
+
+
+###  http://linked.data.gov.au/def/phs#Host
 :Host rdf:type owl:Class ;
       rdfs:subClassOf :Stratum ,
                       dwc:Taxon ;
@@ -252,17 +297,16 @@
        rdfs:subClassOf dwc:Taxon .
 
 
-###  https://linked.data.gov.au/def/phs#SampleAnimal
-:SampleAnimal rdf:type owl:Class ;
+###  http://linked.data.gov.au/def/phs#Pest
+:Pest rdf:type owl:Class ;
               rdfs:subClassOf dwc:Taxon ,
                               sosa:Sample ,
                               [ rdf:type owl:Restriction ;
                                 owl:onProperty dcterms:type ;
                                 owl:someValuesFrom :PestType
                               ] ;
-              rdfs:comment "A Sample that is a Taxon and which may have a type that is a Pest Type"@en ;
-              skos:prefLabel "Sample Animal"@en .
-
+              rdfs:comment "Any species, strain or biotype of plant, animal or pathogenic agent injurious to plants or plant products."@en ;
+              skos:prefLabel "Pest"@en .
 
 ###  https://linked.data.gov.au/def/phs#Stratum
 :Stratum rdf:type owl:Class ;
@@ -284,12 +328,12 @@
                skos:prefLabel "Substrate Type"@en .
 
 
-###  https://linked.data.gov.au/def/phs#TaxonOccurence
-:TaxonOccurence rdf:type owl:Class ;
+###  http://linked.data.gov.au/def/phs#TaxonOccurrence
+:TaxonOccurrence rdf:type owl:Class ;
                    rdfs:subClassOf sosa:FeatureOfInterest ;
                    skos:definition "The aggregated observations of a Taxon leading to knowledge of its distribution"@en ;
                    skos:editorialNote "This FoI is an intermediate FoI en route to a pest distribution which will inform pest management plans. This FoI is not indicated as being a spatio-temporal thing since it may require significant enhancement and modelling using this taxon occurence information to generate a reliable spatio-temporal taxon distribution" ;
-                   skos:prefLabel "Taxon Occurence"@en .
+                   skos:prefLabel "Taxon Occurrence"@en .
 
 
 ###  https://linked.data.gov.au/def/phs#TaxonIdentification
