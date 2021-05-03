@@ -1,3 +1,5 @@
+# Provoke syntax colouring by vim / syntastic plugin by starting the file with a comment 
+
 @prefix : <https://linked.data.gov.au/def/phs#> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
@@ -309,7 +311,7 @@ dcterms:type rdf:type owl:ObjectProperty ;
                         owl:onClass :LureType
                       ] ;
       rdfs:comment "Lures are distinguished from Attractants in that Lures elicit behavioural responses in target organisms with high specificity. Pheremones and kairomones are examples of Lures. Foodstuffs or food mimics (such as protein or carbohydrate derivatives) produce responses in a wider range of organisms, and are thus classified as Attractants."@en ;
-      rdfs:comment "A substances that lures Pests"@en ;
+      rdfs:comment "A substance that lures Pests"@en ;
       skos:prefLabel "Lure"@en .
 
 
