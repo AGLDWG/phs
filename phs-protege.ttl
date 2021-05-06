@@ -1,5 +1,4 @@
-# Provoke syntax colouring by vim / syntastic plugin by starting the file with a comment 
-
+#
 @prefix : <https://linked.data.gov.au/def/phs#> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
@@ -15,18 +14,17 @@
 @base <https://linked.data.gov.au/def/phs> .
 
 <https://linked.data.gov.au/def/phs> rdf:type owl:Ontology ;
-                                     owl:versionIRI <https://linked.data.gov.au/def/phs/0.1> ;
-                                     owl:imports sosa: ;
-                                     dcterms:contributor <https://orcid.org/0000-0002-3884-3420> ;
-                                     dcterms:created "2020-02-11"^^xsd:date ;
-                                     dcterms:creator <https://orcid.org/0000-0003-3357-2307>,
-                                                     <https://orcid.org/0000-0002-8742-7730> ;
-                                     dcterms:modified "2021-04-30"^^xsd:date ;
-                                     dcterms:publisher <https://linked.data.gov.au/org/dawe> ;
-                                     skos:definition "An ontology for surveillance events relating to plant pests. These events comprise field observations and associated diagnostic work (i.e. taxonomic identification) of samples taken as part of the observation. Surveillance is one of the core activities of national plant protection organizations (NPPOs). It provides NPPOs with a technical basis for many phytosanitary measures; including phytosanitary import requirements, pest free areas, pest reporting and eradication, and pest status in an area. All terms are defined by ISPM 5."@en ;
-
-                                     skos:prefLabel "Plant Health Surveillance Ontology"@en ;
-                                     sdo:codeRepository "<https://github.com/AGLDWG/phs-ont>"^^xsd:anyURI .
+                                      owl:versionIRI <https://linked.data.gov.au/def/phs/0.1> ;
+                                      owl:imports sosa: ;
+                                      dcterms:contributor <https://orcid.org/0000-0002-3884-3420> ;
+                                      dcterms:created "2020-02-11"^^xsd:date ;
+                                      dcterms:creator <https://orcid.org/0000-0002-8742-7730> ,
+                                                      <https://orcid.org/0000-0003-3357-2307> ;
+                                      dcterms:modified "2021-04-30"^^xsd:date ;
+                                      dcterms:publisher <https://linked.data.gov.au/org/dawe> ;
+                                      skos:definition "An ontology for surveillance events relating to plant pests. These events comprise field observations and associated diagnostic work (i.e. taxonomic identification) of samples taken as part of the observation. Surveillance is one of the core activities of national plant protection organizations (NPPOs). It provides NPPOs with a technical basis for many phytosanitary measures; including phytosanitary import requirements, pest free areas, pest reporting and eradication, and pest status in an area. All terms are defined by ISPM 5."@en ;
+                                      skos:prefLabel "Plant Health Surveillance Ontology"@en ;
+                                      sdo:codeRepository "<https://github.com/AGLDWG/phs-ont>"^^xsd:anyURI .
 
 #################################################################
 #    Annotation properties
@@ -68,6 +66,10 @@ owl:minCardinality rdf:type owl:AnnotationProperty .
 skos:definition rdf:type owl:AnnotationProperty .
 
 
+###  http://www.w3.org/2004/02/skos/core#editorialNote
+skos:editorialNote rdf:type owl:AnnotationProperty .
+
+
 ###  http://www.w3.org/2004/02/skos/core#member
 skos:member rdf:type owl:AnnotationProperty .
 
@@ -103,6 +105,19 @@ sdo:url rdf:type owl:AnnotationProperty .
 #################################################################
 #    Object Properties
 #################################################################
+
+###  http://purl.org/dc/terms/hasPart
+dcterms:hasPart rdf:type owl:ObjectProperty .
+
+
+###  http://purl.org/dc/terms/type
+dcterms:type rdf:type owl:ObjectProperty ;
+             skos:prefLabel "type"@en .
+
+
+###  http://www.opengis.net/ont/geosparql#hasGeometry
+<http://www.opengis.net/ont/geosparql#hasGeometry> rdf:type owl:ObjectProperty .
+
 
 ###  https://linked.data.gov.au/def/phs#catchesPest
 :catchesPest rdf:type owl:ObjectProperty ;
@@ -185,23 +200,10 @@ sdo:url rdf:type owl:AnnotationProperty .
           skos:prefLabel "trap type" .
 
 
-###  http://purl.org/dc/terms/hasPart
-dcterms:hasPart rdf:type owl:ObjectProperty .
-
-
-###  http://purl.org/dc/terms/type
-dcterms:type rdf:type owl:ObjectProperty ;
-             skos:prefLabel "type"@en .
-
-
-###  http://www.opengis.net/ont/geosparql#hasGeometry
-<http://www.opengis.net/ont/geosparql#hasGeometry> rdf:type owl:ObjectProperty .
-
-
 ###  sosa:resultTime/sosa:phenomenonTime
 <sosa:resultTime/sosa:phenomenonTime> rdf:type owl:ObjectProperty ;
-    rdfs:comment "https://zhiduozhang.github.io/sdw/ssn/#phenomenonTime" ;
-    skos:definition "The time that the Result of an Observation/Actuation applies to the FeatureOfInterest. Not necessarily the same as the result-time. May be an interval or an instant, or some other compound temporal entity." .
+                                      rdfs:comment "https://zhiduozhang.github.io/sdw/ssn/#phenomenonTime" ;
+                                      skos:definition "The time that the Result of an Observation/Actuation applies to the FeatureOfInterest. Not necessarily the same as the result-time. May be an interval or an instant, or some other compound temporal entity." .
 
 
 #################################################################
@@ -233,6 +235,38 @@ dcterms:type rdf:type owl:ObjectProperty ;
 #################################################################
 #    Classes
 #################################################################
+
+###  http://purl.org/dc/terms/Dataset
+dcterms:Dataset rdf:type owl:Class .
+
+
+###  http://rs.tdwg.org/dwc/terms/Taxon
+dwc:Taxon rdf:type owl:Class .
+
+
+###  http://www.opengis.net/ont/geosparql#Feature
+<http://www.opengis.net/ont/geosparql#Feature> rdf:type owl:Class .
+
+
+###  http://www.opengis.net/ont/geosparql#Geometry
+<http://www.opengis.net/ont/geosparql#Geometry> rdf:type owl:Class .
+
+
+###  http://www.w3.org/1999/02/22-rdf-syntax-ns#dataProperty
+rdf:dataProperty rdf:type owl:Class .
+
+
+###  http://www.w3.org/2004/02/skos/core#Collection
+skos:Collection rdf:type owl:Class .
+
+
+###  http://www.w3.org/2004/02/skos/core#Concept
+skos:Concept rdf:type owl:Class .
+
+
+###  http://www.w3.org/ns/sosa/Sampler
+sosa:Sampler rdf:type owl:Class .
+
 
 ###  https://linked.data.gov.au/def/phs#Attractant
 :Attractant rdf:type owl:Class ;
@@ -274,8 +308,42 @@ dcterms:type rdf:type owl:ObjectProperty ;
                skos:prefLabel "Capture System"@en .
 
 
+###  https://linked.data.gov.au/def/phs#Capturing
+:Capturing rdf:type owl:Class ;
+           rdfs:subClassOf sosa:Observation ,
+                           sosa:Sampling ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty sosa:hasResult ;
+                             owl:minQualifiedCardinality "0"^^xsd:nonNegativeInteger ;
+                             owl:onClass sosa:Sample
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty sosa:madeBySampler ;
+                             owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                             owl:onClass :CaptureSystem
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty sosa:usedProcedure ;
+                             owl:minQualifiedCardinality "0"^^xsd:nonNegativeInteger ;
+                             owl:onClass sosa:Procedure
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty sosa:hasFeatureOfInterest ;
+                             owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                             owl:onClass :TaxonDistribution
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty <sosa:resultTime/sosa:phenomenonTime> ;
+                             owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                             owl:onClass <http://www.w3.org/2006/time#TemporalEntity>
+                           ] ;
+           skos:definition "The capturing of an Animal"@en ;
+           skos:prefLabel "Capturing"@en .
+
+
 ###  https://linked.data.gov.au/def/phs#DiagnosticMethod
 :DiagnosticMethod rdf:type owl:Class ;
+                  rdfs:subClassOf sosa:Procedure ;
                   rdfs:comment "A procedure or method used to determine the taxonomic identity of a plant pest. May be carried out in the field, or more usually, in a laboratory." ;
                   skos:prefLabel "Diagnostic method" .
 
@@ -289,10 +357,10 @@ dcterms:type rdf:type owl:ObjectProperty ;
 
 ###  https://linked.data.gov.au/def/phs#Host
 :Host rdf:type owl:Class ;
-      rdfs:subClassOf :Stratum ,
-                      dwc:Taxon ;
+      rdfs:subClassOf dwc:Taxon ,
+                      :Stratum ;
       owl:disjointWith :Substrate ;
-           rdfs:comment "Particular pests are often associated with certain substrates or hosts. In the field, when targetting a pest, a surveyor will look for substrates or hosts that are more likely to harbour the target pest. Recording the substrateassists diagnosticians when they are identifying a specimen. It also aids analysis aimed at estimating pest prevalence based on absence records. Lastly, some protocols require the host or substrate to be recorded for each observation." ;
+      rdfs:comment "Particular pests are often associated with certain substrates or hosts. In the field, when targetting a pest, a surveyor will look for substrates or hosts that are more likely to harbour the target pest. Recording the substrateassists diagnosticians when they are identifying a specimen. It also aids analysis aimed at estimating pest prevalence based on absence records. Lastly, some protocols require the host or substrate to be recorded for each observation." ;
       skos:example "Bee; a Varroa Mite may be found in a bee's trachea" ;
       skos:prefLabel "Host" .
 
@@ -312,8 +380,8 @@ dcterms:type rdf:type owl:ObjectProperty ;
                         owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                         owl:onClass :LureType
                       ] ;
-      rdfs:comment "Lures are distinguished from Attractants in that Lures elicit behavioural responses in target organisms with high specificity. Pheremones and kairomones are examples of Lures. Foodstuffs or food mimics (such as protein or carbohydrate derivatives) produce responses in a wider range of organisms, and are thus classified as Attractants."@en ;
-      rdfs:comment "A substance that lures Pests"@en ;
+      rdfs:comment "A substance that lures Pests"@en ,
+                   "Lures are distinguished from Attractants in that Lures elicit behavioural responses in target organisms with high specificity. Pheremones and kairomones are examples of Lures. Foodstuffs or food mimics (such as protein or carbohydrate derivatives) produce responses in a wider range of organisms, and are thus classified as Attractants."@en ;
       skos:prefLabel "Lure"@en .
 
 
@@ -357,23 +425,23 @@ dcterms:type rdf:type owl:ObjectProperty ;
                                 owl:onProperty dcterms:type ;
                                 owl:someValuesFrom :PestType
                               ] ;
-              rdfs:comment "Any species, strain or biotype of plant, animal or pathogenic agent injurious to plants or plant products."@en ;
-              rdfs:comment "xxx fix this: A Sample that is a Taxon and which may have a type that is a Pest Type"@en ;
+              rdfs:comment "Any species, strain or biotype of plant, animal or pathogenic agent injurious to plants or plant products."@en ,
+                           "xxx fix this: A Sample that is a Taxon and which may have a type that is a Pest Type"@en ;
               skos:prefLabel "Sample Animal"@en .
 
 
 ###  https://linked.data.gov.au/def/phs#Stratum
 :Stratum rdf:type owl:Class ;
-         rdfs:comment "Thing, material or organism on which a pest may occur. Stratum is abstract: instances should use either 'Host' or 'Substrate'." ;
-           rdfs:comment "Particular pests are often associated with certain substrates or hosts. In the field, when targetting a pest, a surveyor will look for substrates or hosts that are more likely to harbour the target pest. Recording the substrate assists diagnosticians when they are identifying a specimen. It also aids analysis aimed at estimating pest prevalence based on absence records. Lastly, some protocols require the host or substrate to be recorded for each observation." ;
+         rdfs:comment "Particular pests are often associated with certain substrates or hosts. In the field, when targetting a pest, a surveyor will look for substrates or hosts that are more likely to harbour the target pest. Recording the substrate assists diagnosticians when they are identifying a specimen. It also aids analysis aimed at estimating pest prevalence based on absence records. Lastly, some protocols require the host or substrate to be recorded for each observation." ,
+                      "Thing, material or organism on which a pest may occur. Stratum is abstract: instances should use either 'Host' or 'Substrate'." ;
          skos:prefLabel "Stratum" .
 
 
 ###  https://linked.data.gov.au/def/phs#Substrate
 :Substrate rdf:type owl:Class ;
            rdfs:subClassOf :Stratum ;
-           rdfs:comment "Thing or material on or in which a pest may occur" ;
-           rdfs:comment "A Substrate is a Stratum that is not a Host. Usually non-living, such as a rock or leaf litter." ;
+           rdfs:comment "A Substrate is a Stratum that is not a Host. Usually non-living, such as a rock or leaf litter." ,
+                        "Thing or material on or in which a pest may occur" ;
            skos:prefLabel "Substrate" .
 
 
@@ -384,12 +452,8 @@ dcterms:type rdf:type owl:ObjectProperty ;
                skos:prefLabel "Substrate Type"@en .
 
 
-###  https://linked.data.gov.au/def/phs#TaxonOccurrence
-:TaxonOccurrence rdf:type owl:Class ;
-                   rdfs:subClassOf sosa:FeatureOfInterest ;
-                   skos:definition "The aggregated observations of a Taxon leading to knowledge of its distribution"@en ;
-                   skos:editorialNote "This FoI is an intermediate FoI en route to a pest distribution which will inform pest management plans. This FoI is not indicated as being a spatio-temporal thing since it may require significant enhancement and modelling using this taxon occurrence information to generate a reliable spatio-temporal taxon distribution" ;
-                   skos:prefLabel "Taxon occurrence"@en .
+###  https://linked.data.gov.au/def/phs#TaxonDistribution
+:TaxonDistribution rdf:type owl:Class .
 
 
 ###  https://linked.data.gov.au/def/phs#TaxonIdentification
@@ -397,6 +461,14 @@ dcterms:type rdf:type owl:ObjectProperty ;
                      rdfs:subClassOf sosa:Observation ;
                      skos:definition "The identification of the Taxon of an organism"@en ;
                      skos:prefLabel "Taxon Identification"@en .
+
+
+###  https://linked.data.gov.au/def/phs#TaxonOccurrence
+:TaxonOccurrence rdf:type owl:Class ;
+                 rdfs:subClassOf sosa:FeatureOfInterest ;
+                 skos:definition "The aggregated observations of a Taxon leading to knowledge of its distribution"@en ;
+                 skos:editorialNote "This FoI is an intermediate FoI en route to a pest distribution which will inform pest management plans. This FoI is not indicated as being a spatio-temporal thing since it may require significant enhancement and modelling using this taxon occurrence information to generate a reliable spatio-temporal taxon distribution" ;
+                 skos:prefLabel "Taxon occurrence"@en .
 
 
 ###  https://linked.data.gov.au/def/phs#Trap
@@ -418,71 +490,6 @@ dcterms:type rdf:type owl:ObjectProperty ;
           skos:prefLabel "Trap Type" .
 
 
-###  https://linked.data.gov.au/def/phs#Capturing
-:Capturing rdf:type owl:Class ;
-          rdfs:subClassOf sosa:Observation ,
-                          sosa:Sampling ,
-                          [ rdf:type owl:Restriction ;
-                            owl:onProperty sosa:hasResult ;
-                            owl:minQualifiedCardinality "0"^^xsd:nonNegativeInteger ;
-                            owl:onClass sosa:Sample
-                          ] ,
-                          [ rdf:type owl:Restriction ;
-                            owl:onProperty sosa:madeBySampler ;
-                            owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                            owl:onClass :CaptureSystem
-                          ] ,
-                          [ rdf:type owl:Restriction ;
-                            owl:onProperty sosa:usedProcedure ;
-                            owl:minQualifiedCardinality "0"^^xsd:nonNegativeInteger ;
-                            owl:onClass sosa:Procedure
-                          ] ,
-                          [ rdf:type owl:Restriction ;
-                            owl:onProperty <sosa:resultTime/sosa:phenomenonTime> ;
-                            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                            owl:onClass <http://www.w3.org/2006/time#TemporalEntity>
-                          ] ,
-                          [ rdf:type owl:Restriction ;
-                            owl:onProperty sosa:hasFeatureOfInterest ;
-                            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                            owl:onClass :TaxonDistribution
-                          ] ;
-          skos:definition "The capturing of an Animal"@en ;
-          skos:prefLabel "Capturing"@en .
-
-
-###  http://purl.org/dc/terms/Dataset
-dcterms:Dataset rdf:type owl:Class .
-
-
-###  http://rs.tdwg.org/dwc/terms/Taxon
-dwc:Taxon rdf:type owl:Class .
-
-
-###  http://www.opengis.net/ont/geosparql#Feature
-<http://www.opengis.net/ont/geosparql#Feature> rdf:type owl:Class .
-
-
-###  http://www.opengis.net/ont/geosparql#Geometry
-<http://www.opengis.net/ont/geosparql#Geometry> rdf:type owl:Class .
-
-
-###  http://www.w3.org/1999/02/22-rdf-syntax-ns#dataProperty
-rdf:dataProperty rdf:type owl:Class .
-
-
-###  http://www.w3.org/2004/02/skos/core#Collection
-skos:Collection rdf:type owl:Class .
-
-
-###  http://www.w3.org/2004/02/skos/core#Concept
-skos:Concept rdf:type owl:Class .
-
-
-###  http://www.w3.org/ns/sosa/Sampler
-sosa:Sampler rdf:type owl:Class .
-
-
 ###  https://schema.org/Organization
 sdo:Organization rdf:type owl:Class .
 
@@ -494,32 +501,6 @@ sdo:Person rdf:type owl:Class .
 #################################################################
 #    Individuals
 #################################################################
-
-###  https://linked.data.gov.au/def/phs#stephen
-<https://orcid.org/0000-0003-3357-2307> rdf:type owl:NamedIndividual ,
-                  sdo:Person ;
-         sdo:affiliation <https://linked.data.gov.au/org/dawe> ;
-         sdo:email <mailto:stephen.pratt@awe.gov.au> ;
-         sdo:jobTitle "Project Manager: Implementation of Plant Health Surveillance Data Store" ;
-         sdo:name "Stephen J. Pratt" .
-
-
-###  https://linked.data.gov.au/org/dawe
-<https://linked.data.gov.au/org/dawe> rdf:type owl:NamedIndividual ,
-                                              sdo:Organization ;
-                                     sdo:name "Department of Agriculture, Water and the Environment" ;
-                                     sdo:url <https://www.awe.gov.au> ,
-                                             <https://www.awe.gov.au/> .
-
-
-###  https://orcid.org/0000-0002-8742-7730
-<https://orcid.org/0000-0002-8742-7730> rdf:type owl:NamedIndividual ,
-                                                sdo:Person ;
-                                       sdo:affiliation <https://surroundaustralia.com> ;
-                                       sdo:email <mailto:nicholas.car@surroundaustralia.com> ;
-                                       sdo:jobTitle "Data Systems Architect" ;
-                                       sdo:name "Nicholas J. Car" .
-
 
 ###  https://surroundaustralia.com
 <https://surroundaustralia.com> rdf:type owl:NamedIndividual ,
@@ -535,6 +516,13 @@ sdo:Person rdf:type owl:Class .
                            sdo:url <https://www.csiro.au> .
 
 
+###  https://linked.data.gov.au/org/dawe
+<https://linked.data.gov.au/org/dawe> rdf:type owl:NamedIndividual ,
+                                               sdo:Organization ;
+                                      sdo:name "Department of Agriculture, Water and the Environment" ;
+                                      sdo:url <https://www.awe.gov.au> .
+
+
 ###  https://orcid.org/0000-0002-3884-3420
 <https://orcid.org/0000-0002-3884-3420> rdf:type owl:NamedIndividual ,
                                                  sdo:Person ;
@@ -542,6 +530,24 @@ sdo:Person rdf:type owl:Class .
                                         sdo:email <mailto:simon.cox@csiro.au> ;
                                         sdo:jobTitle "Research Scientist" ;
                                         sdo:name "Simon J.D. Cox" .
+
+
+###  https://orcid.org/0000-0002-8742-7730
+<https://orcid.org/0000-0002-8742-7730> rdf:type owl:NamedIndividual ,
+                                                 sdo:Person ;
+                                        sdo:affiliation <https://surroundaustralia.com> ;
+                                        sdo:email <mailto:nicholas.car@surroundaustralia.com> ;
+                                        sdo:jobTitle "Data Systems Architect" ;
+                                        sdo:name "Nicholas J. Car" .
+
+
+###  https://orcid.org/0000-0003-3357-2307
+<https://orcid.org/0000-0003-3357-2307> rdf:type owl:NamedIndividual ,
+                                                 sdo:Person ;
+                                        sdo:affiliation <https://linked.data.gov.au/org/dawe> ;
+                                        sdo:email <mailto:stephen.pratt@awe.gov.au> ;
+                                        sdo:jobTitle "Project Manager: Implementation of Plant Health Surveillance Data Store" ;
+                                        sdo:name "Stephen J. Pratt" .
 
 
 ###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
