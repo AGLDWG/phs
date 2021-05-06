@@ -394,6 +394,7 @@ sosa:Sampler rdf:type owl:Class .
 
 ###  https://linked.data.gov.au/def/phs#ObservationMethod
 :ObservationMethod rdf:type owl:Class ;
+                   rdfs:subClassOf sosa:Procedure ;
                    rdfs:comment "A technique used to carry out an act of surveillance. Observation methods are chosen according to the target pest and/or host|substrate. The sensitivity of an observation may depend on the method that was used." ;
                    skos:prefLabel "Observation method" .
 
