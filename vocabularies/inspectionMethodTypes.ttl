@@ -1,5 +1,6 @@
-@prefix : <https://linked.data.gov.au/def/phs/voc/capturing-methods/> .
-@prefix obs: <https://linked.data.gov.au/def/phs/voc/capturing-methods> .
+#
+@prefix : <https://linked.data.gov.au/def/phs/voc/inspection-methods/> .
+@prefix obs: <https://linked.data.gov.au/def/phs/voc/inspection-methods> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix sdo: <https://schema.org/> .
@@ -18,8 +19,8 @@ obs:
     dcterms:creator phs:stephen ;
     dcterms:modified "2020-05-22"^^xsd:date ;
     dcterms:publisher <https://linked.data.gov.au/org/dawe> ;
-    skos:definition "Types of methods used to capture animals"@en ;
-    skos:prefLabel "Capturing Method Types"@en ;
+    skos:definition "Methods used to perform surveillance for plant pests"@en ;
+    skos:prefLabel "Inspection Method Types"@en ;
     owl:versionIRI <https://linked.data.gov.au/def/phs/voc/obsMethods/1.0> ;
     skos:hasTopConcept 
         :beating-tray , 
@@ -32,7 +33,7 @@ obs:
 .
 
 :beating-tray
-    a skos:Concept , phs:CapturingMethodType ;
+    a skos:Concept , phs:InspectionMethodType ;
     skos:prefLabel "Beating tray"@en ;    
     skos:definition "A tray is held under a branch or shrub and the plant is beaten to dislodge insects, which fall onto the tray."@en ;
     skos:inScheme obs: ;
@@ -41,7 +42,7 @@ obs:
 .
 
 :brush-and-vacuum
-    a skos:Concept , phs:CapturingMethodType ;
+    a skos:Concept , phs:InspectionMethodType ;
     skos:prefLabel "Brush and vacuum"@en ;    
     skos:definition "Areas are vacuumed and the collected debris is inspected for target pests"@en ;
     skos:inScheme obs: ;
@@ -50,7 +51,7 @@ obs:
 .
 
 :isolation-from-vector
-    a skos:Concept , phs:CapturingMethodType ;
+    a skos:Concept , phs:InspectionMethodType ;
     skos:prefLabel "Isolation from vector"@en ;    
     skos:definition "After a vector (usually an insect) is captured, it is treated in such a way as to expose the target pest. Procedures vary according to the circumstances. As an example, in 'sugar shaking', bees (the vector) are placed in a plastic bag with castor sugar and shaken. The surviving bees are released. The sugar is dissolved and filtered, leaving mites on the filter paper."@en ;
     skos:inScheme obs: ;
@@ -59,7 +60,7 @@ obs:
 .
 
 :sweep-netting
-    a skos:Concept , phs:CapturingMethodType ;
+    a skos:Concept , phs:InspectionMethodType ;
     skos:prefLabel "Sweep netting"@en ;    
     skos:definition "A light net is dragged across the tops of plants or directly aimed at flying insects. The archetypal method for collecting insects."@en ;
     skos:inScheme obs: ;
@@ -71,7 +72,7 @@ obs:
 .
 
 :tissue-sampling
-    a skos:Concept , phs:CapturingMethodType ;
+    a skos:Concept , phs:InspectionMethodType ;
     skos:prefLabel "Tissue sampling"@en ;    
     skos:definition "This might better be described as a diagnostic method."@en ;
     skos:inScheme obs: ;
@@ -80,7 +81,7 @@ obs:
 .
 
 :trapping
-    a skos:Concept , phs:CapturingMethodType ;
+    a skos:Concept , phs:InspectionMethodType ;
     skos:prefLabel "Trapping"@en ;    
     skos:definition "A trap is placed in a likely location and revisited after some period, which can vary from hours to weeks"@en ;
     skos:inScheme obs: ;
@@ -98,7 +99,7 @@ obs:
 .
 
 :visual
-    a skos:Concept , phs:CapturingMethodType ;
+    a skos:Concept , phs:InspectionMethodType ;
     skos:prefLabel "Visual"@en ;    
     skos:definition ""@en ;
     skos:inScheme obs: ;
