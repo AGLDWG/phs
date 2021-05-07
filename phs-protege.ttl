@@ -381,7 +381,7 @@ sosa:Sampler rdf:type owl:Class .
                         owl:onClass :LureType
                       ] ;
       rdfs:seeAlso <https://dbpedia.org/resources/Pheromone_trap> ;
-      rdfs:comment "A substance that lures Pests"@en ,
+      rdfs:comment "A substance that lures Pests into a Trap"@en ,
                    "Lures are distinguished from Attractants in that Lures elicit behavioural responses in target organisms with high specificity. Pheromones and kairomones are examples of Lures. Foodstuffs or food mimics (such as protein or carbohydrate derivatives) produce responses in a wider range of organisms, and are thus classified as Attractants."@en ;
       skos:prefLabel "Lure"@en .
 
