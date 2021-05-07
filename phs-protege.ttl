@@ -130,7 +130,7 @@ dcterms:type rdf:type owl:ObjectProperty ;
 
 ###  https://linked.data.gov.au/def/phs#detectsPest
 :detectsPest rdf:type owl:ObjectProperty ;
-             rdfs:domain :ObservationMethod ;
+             rdfs:domain :InspectionMethod ;
              rdfs:range :SampleAnimal ;
              rdfs:comment "The pest for which the observation method is useful"@en ;
              skos:prefLabel "detects pest"@en .
@@ -380,8 +380,9 @@ sosa:Sampler rdf:type owl:Class .
                         owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                         owl:onClass :LureType
                       ] ;
+      rdfs:seeAlso <https://dbpedia.org/resources/Pheromone_trap> ;
       rdfs:comment "A substance that lures Pests"@en ,
-                   "Lures are distinguished from Attractants in that Lures elicit behavioural responses in target organisms with high specificity. Pheremones and kairomones are examples of Lures. Foodstuffs or food mimics (such as protein or carbohydrate derivatives) produce responses in a wider range of organisms, and are thus classified as Attractants."@en ;
+                   "Lures are distinguished from Attractants in that Lures elicit behavioural responses in target organisms with high specificity. Pheromones and kairomones are examples of Lures. Foodstuffs or food mimics (such as protein or carbohydrate derivatives) produce responses in a wider range of organisms, and are thus classified as Attractants."@en ;
       skos:prefLabel "Lure"@en .
 
 
@@ -392,18 +393,18 @@ sosa:Sampler rdf:type owl:Class .
           skos:prefLabel "Lure Type"@en .
 
 
-###  https://linked.data.gov.au/def/phs#ObservationMethod
-:ObservationMethod rdf:type owl:Class ;
+###  https://linked.data.gov.au/def/phs#InspectionMethod
+:InspectionMethod rdf:type owl:Class ;
                    rdfs:subClassOf sosa:Procedure ;
-                   rdfs:comment "A technique used to carry out an act of surveillance. Observation methods are chosen according to the target pest and/or host|substrate. The sensitivity of an observation may depend on the method that was used." ;
-                   skos:prefLabel "Observation method" .
+                   rdfs:comment "A technique used to carry out an act of surveillance. Inspection Methods are chosen according to the target pest and/or host|substrate. The sensitivity of an observation may depend on the method that was used." ;
+                   skos:prefLabel "Inspection Method" .
 
 
-###  https://linked.data.gov.au/def/phs#ObservationMethodType
-:ObservationMethodType rdf:type owl:Class ;
+###  https://linked.data.gov.au/def/phs#InspectionMethodType
+:InspectionMethodType rdf:type owl:Class ;
                        rdfs:subClassOf skos:Concept ;
-                       skos:definition "The subtype of an Observation Method"@en ;
-                       skos:prefLabel "Observation Method Type"@en .
+                       skos:definition "The subtype of an Inspection Method"@en ;
+                       skos:prefLabel "Inspection Method Type"@en .
 
 
 ###  https://linked.data.gov.au/def/phs#PestType
