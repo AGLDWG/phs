@@ -1,4 +1,3 @@
-#
 @prefix : <https://linked.data.gov.au/def/phs#> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
@@ -122,7 +121,7 @@ dcterms:type rdf:type owl:ObjectProperty ;
 ###  https://linked.data.gov.au/def/phs#catchesPest
 :catchesPest rdf:type owl:ObjectProperty ;
              rdfs:domain :Trap ;
-             rdfs:range :SampleAnimal ;
+             rdfs:range :TargetPestGroup ;
              rdfs:comment "A device that is designed to catch the target pest"@en ,
                           "An object which provides refuge to the target pest, and can thus be used as a trap"@en ;
              skos:prefLabel "catches pest"@en .
@@ -131,7 +130,7 @@ dcterms:type rdf:type owl:ObjectProperty ;
 ###  https://linked.data.gov.au/def/phs#detectsPest
 :detectsPest rdf:type owl:ObjectProperty ;
              rdfs:domain :InspectionMethod ;
-             rdfs:range :SampleAnimal ;
+             rdfs:range :TargetPestGroup ;
              rdfs:comment "The pest for which the observation method is useful"@en ;
              skos:prefLabel "detects pest"@en .
 
@@ -157,7 +156,7 @@ dcterms:type rdf:type owl:ObjectProperty ;
 ###  https://linked.data.gov.au/def/phs#hostsPest
 :hostsPest rdf:type owl:ObjectProperty ;
            rdfs:domain :Host ;
-           rdfs:range :SampleAnimal ;
+           rdfs:range :TargetPestGroup ;
            rdfs:comment "A living thing (usually a plant) on which the target pest may be found"@en ;
            skos:prefLabel "hosts pest"@en .
 
@@ -165,7 +164,7 @@ dcterms:type rdf:type owl:ObjectProperty ;
 ###  https://linked.data.gov.au/def/phs#identifiesPest
 :identifiesPest rdf:type owl:ObjectProperty ;
                 rdfs:domain :DiagnosticMethod ;
-                rdfs:range :SampleAnimal ;
+                rdfs:range :TargetPestGroup ;
                 rdfs:comment "This diagnostic method is appropriate for the target pest"@en ;
                 skos:prefLabel "Identifies pest"@en .
 
@@ -179,7 +178,7 @@ dcterms:type rdf:type owl:ObjectProperty ;
 ###  https://linked.data.gov.au/def/phs#luresPest
 :luresPest rdf:type owl:ObjectProperty ;
            rdfs:domain :Lure ;
-           rdfs:range :SampleAnimal ;
+           rdfs:range :TargetPestGroup ;
            rdfs:comment "The target pest which is attracted by this lure"@en ;
            skos:prefLabel "lures pest"@en .
 
@@ -187,7 +186,7 @@ dcterms:type rdf:type owl:ObjectProperty ;
 ###  https://linked.data.gov.au/def/phs#supportsPest
 :supportsPest rdf:type owl:ObjectProperty ;
               rdfs:domain :Substrate ;
-              rdfs:range :SampleAnimal ;
+              rdfs:range :TargetPestGroup ;
               rdfs:comment "A substrate on which the target pest is likely be found, if it were present"@en ;
               skos:prefLabel "supports pest"@en .
 
@@ -407,11 +406,28 @@ sosa:Sampler rdf:type owl:Class .
                        skos:prefLabel "Inspection Method Type"@en .
 
 
-###  https://linked.data.gov.au/def/phs#PestType
-:PestType rdf:type owl:Class ;
+:OccurrenceStatus a owl:Class ;
+    rdfs:subClassOf sosa:Result ,
+                      [ rdf:type owl:Restriction ;
+                        owl:onProperty dcterms:type ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                        owl:onClass :OccurrenceStatusType
+                      ] ;
+    skos:definition ""@en ;
+    skos:prefLabel "Occurrence Status"@en
+    .
+
+:OccurrenceStatusType rdf:type owl:Class ;
           rdfs:subClassOf skos:Concept ;
-          skos:definition "The subtype of a Pest. Perhaps a single Taxon or perhaps a Group"@en ;
-          skos:prefLabel "Pest Type"@en .
+          skos:definition "The name of the Occurrence Status of a Target Pest, associated with a single Observation"@en ;
+          skos:prefLabel "Occurrence Status Type"@en .
+
+
+###  https://linked.data.gov.au/def/phs#TargetPestGroupType
+:TargetPestGroupType rdf:type owl:Class ;
+          rdfs:subClassOf skos:Concept ;
+          skos:definition "The subtype of a Target Pest Group. Perhaps a single Taxon or perhaps a Group"@en ;
+          skos:prefLabel "Target Pest Group Type"@en .
 
 
 ###  https://linked.data.gov.au/def/phs#Plant
@@ -419,13 +435,11 @@ sosa:Sampler rdf:type owl:Class .
        rdfs:subClassOf dwc:Taxon .
 
 
-###  https://linked.data.gov.au/def/phs#SampleAnimal
-:SampleAnimal rdf:type owl:Class ;
-              rdfs:subClassOf dwc:Taxon ,
-                              sosa:Sample ,
+###  https://linked.data.gov.au/def/phs#TargetPestGroup
+:TargetPestGroup rdf:type owl:Class  ,
                               [ rdf:type owl:Restriction ;
                                 owl:onProperty dcterms:type ;
-                                owl:someValuesFrom :PestType
+                                owl:someValuesFrom :TargetPestGroupType
                               ] ;
               rdfs:comment "Any species, strain or biotype of plant, animal or pathogenic agent injurious to plants or plant products."@en ,
                            "xxx fix this: A Sample that is a Taxon and which may have a type that is a Pest Type"@en ;
