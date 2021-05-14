@@ -305,7 +305,7 @@ sosa:Sampler rdf:type owl:Class .
                                  owl:onProperty :hasTrap ;
                                  owl:allValuesFrom :Trap
                                ] ;
-               rdfs:comment "A collection of things used to capture a Pest"@en ;
+               rdfs:comment "A collection of things used to capture a Pest. XXX FIX"@en ;
                skos:prefLabel "Capture System"@en .
 
 :SurveillanceEvent a owl:Class;
@@ -317,7 +317,7 @@ sosa:Sampler rdf:type owl:Class .
 
 ###  https://linked.data.gov.au/def/phs#Capturing
 :Capturing rdf:type owl:Class ;
-           rdfs:subClassOf sosa:Observation ,
+           rdfs:subClassOf 
                            sosa:Sampling ,
                            [ rdf:type owl:Restriction ;
                              owl:onProperty sosa:hasResult ;
@@ -331,8 +331,8 @@ sosa:Sampler rdf:type owl:Class .
                            ] ,
                            [ rdf:type owl:Restriction ;
                              owl:onProperty sosa:usedProcedure ;
-                             owl:minQualifiedCardinality "0"^^xsd:nonNegativeInteger ;
-                             owl:onClass sosa:Procedure
+                             owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                             owl:onClass :InspectionMethod
                            ] ,
                            [ rdf:type owl:Restriction ;
                              owl:onProperty sosa:hasFeatureOfInterest ;
@@ -344,7 +344,8 @@ sosa:Sampler rdf:type owl:Class .
                              owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                              owl:onClass <http://www.w3.org/2006/time#TemporalEntity>
                            ] ;
-           skos:definition "The capturing of an Animal"@en ;
+           sosa:hasFeatureOfInterest :TargetPestGroup ;
+           skos:definition "Rename this class. Will be a subclass of Sampling. We may split it into trap clearing and other types of sample taking.  The restictions need to be reviewed too. Best remove the :TaxonDistribution one"@en ;
            skos:prefLabel "Capturing"@en .
 
 
