@@ -511,8 +511,8 @@ sdo:Person rdf:type owl:Class .
                                 sdo:url <https://surroundaustralia.com> .
 
 
-###  https://www.csiro.au.com
-<https://www.csiro.au.com> rdf:type owl:NamedIndividual ,
+###  https://www.csiro.au
+<https://www.csiro.au> rdf:type owl:NamedIndividual ,
                                     sdo:Organization ;
                            sdo:name "CSIRO" ;
                            sdo:url <https://www.csiro.au> .
