@@ -1,3 +1,5 @@
+#
+
 @prefix : <https://linked.data.gov.au/def/phs#> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
@@ -19,7 +21,7 @@
                                       dcterms:created "2020-02-11"^^xsd:date ;
                                       dcterms:creator <https://orcid.org/0000-0002-8742-7730> ,
                                                       <https://orcid.org/0000-0003-3357-2307> ;
-                                      dcterms:modified "2021-04-30"^^xsd:date ;
+                                      dcterms:modified "2021-05-14"^^xsd:date ;
                                       dcterms:publisher <https://linked.data.gov.au/org/dawe> ;
                                       skos:definition "An ontology for surveillance events relating to plant pests. These events comprise field observations and associated diagnostic work (i.e. taxonomic identification) of samples taken as part of the observation. Surveillance is one of the core activities of national plant protection organizations (NPPOs). It provides NPPOs with a technical basis for many phytosanitary measures; including phytosanitary import requirements, pest free areas, pest reporting and eradication, and pest status in an area. All terms are defined by ISPM 5."@en ;
                                       skos:prefLabel "Plant Health Surveillance Ontology"@en ;
@@ -306,6 +308,12 @@ sosa:Sampler rdf:type owl:Class .
                rdfs:comment "A collection of things used to capture a Pest"@en ;
                skos:prefLabel "Capture System"@en .
 
+:SurveillanceEvent a owl:Class;
+    rdfs:subClassOf  sosa:Observation;
+    skos:definition ""@en ;
+    sosa:hasFeatureofInterest :TargetPestgroup ;
+    rdfs:comment "Also called 'Targetted' or 'Active' surveillance. The observation/s made during a Surveillance Event are directed towards establishing whether a Pest is present or not, insofar that the inspection method is capable of detecting the pest."@en ;
+    skos:PrefLabel "Surveillance Event"@en .
 
 ###  https://linked.data.gov.au/def/phs#Capturing
 :Capturing rdf:type owl:Class ;
@@ -441,9 +449,12 @@ sosa:Sampler rdf:type owl:Class .
                                 owl:onProperty dcterms:type ;
                                 owl:someValuesFrom :TargetPestGroupType
                               ] ;
-              rdfs:comment "Any species, strain or biotype of plant, animal or pathogenic agent injurious to plants or plant products."@en ,
-                           "xxx fix this: A Sample that is a Taxon and which may have a type that is a Pest Type"@en ;
-              skos:prefLabel "Sample Animal"@en .
+             rdfs:subClassOf  sosa:FeatureOfInterest ;
+             sosa:isFeatureOfInterestOf :SurveillanceEvent ;
+              skos:definition "Pest or Pests that are the subject of a surveillance event"@en ;
+              rdfs:comment "The IPPC definition of Pest is 'Any species, strain or biotype of plant, animal or pathogenic agent injurious to plants or plant products.'"@en ,
+                           "x"@en ;
+              skos:prefLabel "Target Pest Group"@en .
 
 
 ###  https://linked.data.gov.au/def/phs#Stratum
