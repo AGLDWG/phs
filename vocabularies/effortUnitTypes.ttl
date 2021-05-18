@@ -1,0 +1,109 @@
+#
+@prefix : <https://linked.data.gov.au/def/phs/voc/effort-units/> .
+@prefix inspect: <https://linked.data.gov.au/def/phs/voc/effort-units> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sdo: <https://schema.org/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix taxaas: <https://uat-ag-bie.oztaxa.com/ws/taxon/> .
+@prefix phs: <https://linked.data.gov.au/def/phs#> .
+@prefix tpg: <https://linked.data.gov.au/def/phs/voc/tpg/> .
+@prefix traps: <https://linked.data.gov.au/def/phs/voc/traps/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+effortUnit:
+    a owl:Ontology , skos:ConceptScheme ;
+    dcterms:contributor <http://orcid.org/0000-0002-8742-7730> ;
+    dcterms:created "2021-05-18"^^xsd:date ;
+    dcterms:creator <https://orcid.org/0000-0003-3357-2307> ;
+    dcterms:modified "2021-05-18"^^xsd:date ;
+    dcterms:publisher <https://linked.data.gov.au/org/dawe> ;
+    skos:definition "Units by which surveillance effort is measured"@en ;
+    rdfs:comment "Effort is the amount of material or area that is surveyed, or time spent in a surveillance event. The way in which effort is recorded depends on the Inspection Method. Effort is used during statistical analysis to estimate conditional probabilities, such as the probability that a target pest was present, given that it was not detected. The greater the effort, the lower the probability. Other factors are also at play, such as the inspection method, the skill or experience of the the surveyor or the sensitivity of pests to a lure." ;
+    skos:prefLabel "Effort Unit types"@en ;
+    owl:versionIRI <https://linked.data.gov.au/def/phs/voc/effortUnits/1.0> ;
+    skos:hasTopConcept 
+        :hour ,
+        :day ,
+        :week ,
+        :metre
+        :squaremetre ,
+        :tree ,
+        :hectare ;
+.
+
+:hour
+    a skos:Concept , phs:EffortUnitType ;
+    skos:prefLabel "hour"@en ;    
+    skos:definition "An hour of elapsed time, 60 minutes"@en ;
+    skos:inScheme effortUnit: ;
+    skos:topConceptOf effortUnit: ;
+    phs:hasvalue phs:EffortValue ;  
+.
+:day
+    a skos:Concept , phs:EffortUnitType ;
+    skos:prefLabel "day"@en ;    
+    skos:definition "A day of elasped time, 24 hours"@en ;
+    skos:inScheme effortUnit: ;
+    skos:topConceptOf effortUnit: ;
+    phs:hasvalue phs:EffortValue ;  
+.
+:week
+    a skos:Concept , phs:EffortUnitType ;
+    skos:prefLabel "week"@en ;    
+    skos:definition "A period of seven days"@en ;
+    skos:inScheme effortUnit: ;
+    skos:topConceptOf effortUnit: ;
+    phs:hasvalue phs:EffortValue ;  
+.
+:metre
+    a skos:Concept , phs:EffortUnitType ;
+    skos:prefLabel "metre"@en ;    
+    skos:definition "One metre, 1000mm"@en ;
+    skos:inScheme effortUnit: ;
+    skos:topConceptOf effortUnit: ;
+    phs:hasvalue phs:EffortValue ;  
+.
+:squaremetre
+    a skos:Concept , phs:EffortUnitType ;
+    skos:prefLabel "square metre"@en ;    
+    skos:definition "An area of 1m x 1m"@en ;
+    skos:inScheme effortUnit: ;
+    skos:topConceptOf effortUnit: ;
+    phs:hasvalue phs:EffortValue ;  
+.
+:tree
+    a skos:Concept , phs:EffortUnitType ;
+    skos:prefLabel "tree"@en ;    
+    skos:definition "A single tree or shrub"@en ;
+    skos:inScheme effortUnit: ;
+    skos:topConceptOf effortUnit: ;
+    phs:hasvalue phs:EffortValue ;  
+.
+:hectare
+    a skos:Concept , phs:EffortUnitType ;
+    skos:prefLabel "hectare"@en ;    
+    skos:definition "An area of 100m by 100m"@en ;
+    skos:inScheme effortUnit: ;
+    skos:topConceptOf effortUnit: ;
+    phs:hasvalue phs:EffortValue ;  
+.
+
+<https://linked.data.gov.au/org/dawe> 
+    a owl:NamedIndividual , sdo:Organization ;
+    sdo:name "Department of Agriculture, Water and the Environment" ;
+    sdo:url <https://www.awe.gov.au/> .
+
+<http://orcid.org/0000-0002-8742-7730> 
+    a owl:NamedIndividual , sdo:Person ;
+    sdo:affiliation <https://surroundaustralia.com> ;
+    sdo:email <mailto:nicholas.car@surroundaustralia.com> ;
+    sdo:jobTitle "Data Systems Architect" ;
+    sdo:name "Nicholas J. Car" .
+
+<https://orcid.org/0000-0003-3357-2307> a owl:NamedIndividual , sdo:Person ;
+         sdo:affiliation <https://linked.data.gov.au/org/dawe> ;
+         sdo:email <mailto:stephen.pratt@awe.gov.au> ;
+         sdo:jobTitle "Project Manager: Implementation of Plant Health Surveillance Data Store" ;
+         sdo:name "Stephen J. Pratt" .
