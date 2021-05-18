@@ -194,12 +194,17 @@ dcterms:type rdf:type owl:ObjectProperty ;
 
 
 ###  https://linked.data.gov.au/def/phs#trapType
-:trapType rdf:type owl:ObjectProperty ;
+:hasTrapType rdf:type owl:ObjectProperty ;
           rdfs:domain :Trap ;
           rdfs:range :TrapType ;
           rdfs:comment "The make or model of a trap" ;
-          skos:prefLabel "trap type" .
+          skos:prefLabel "has trap type" .
 
+:hasEffortUnit rdf:type owl:ObjectProperty ;
+          rdfs:domain :Effort ;
+          rdfs:range :EffortUnitType ;
+          rdfs:comment "Units of effort are selected from the EffortUnitType vocabulary" ;
+          skos:prefLabel "has effort unit" .
 
 ###  sosa:resultTime/sosa:phenomenonTime
 <sosa:resultTime/sosa:phenomenonTime> rdf:type owl:ObjectProperty ;
@@ -310,8 +315,10 @@ sosa:Sampler rdf:type owl:Class .
 
 :SurveillanceEvent a owl:Class;
     rdfs:subClassOf  sosa:Observation;
-    skos:definition ""@en ;
+    skos:definition "An act of surveillance for a target pest"@en ;
+    sosa:hasFeatureofInterest :Effort ;
     sosa:hasFeatureofInterest :TargetPestgroup ;
+    sosa:usedProcedure :InspectionMethod ;
     rdfs:comment "Also called 'Targetted' or 'Active' surveillance. The observation/s made during a Surveillance Event are directed towards establishing whether a Pest is present or not, insofar that the inspection method is capable of detecting the pest."@en ;
     skos:PrefLabel "Surveillance Event"@en .
 
@@ -451,6 +458,19 @@ sosa:Sampler rdf:type owl:Class .
                            "x"@en ;
               skos:prefLabel "Target Pest Group"@en .
 
+:Effort rdf:type owl:Class  ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty dcterms:type ;
+                                owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                owl:onClass :EffortUnitType
+                              ] ;
+             rdfs:subClassOf  sosa:FeatureOfInterest ;
+             sosa:isFeatureOfInterestOf :SurveillanceEvent ;
+              skos:definition "The amount of time, number of plants inspected, or area surveyed while acrrying out a Surveillance Event"@en ;
+              rdfs:comment "x"@en ;
+              skos:prefLabel "Surveillance Effort"@en .
+
+
 
 ###  https://linked.data.gov.au/def/phs#Substrate
 :Substrate rdf:type owl:Class ;
@@ -495,6 +515,13 @@ sosa:Sampler rdf:type owl:Class .
           rdfs:subClassOf skos:Concept ;
           skos:definition "The subtype of a Trap"@en ;
           skos:prefLabel "Trap Type" .
+
+:EffortUnitType rdf:type owl:Class ;
+        rdfs:subClassOf skos:Concept ;
+        skos:definition "The unit by which surveillance effort is measured"@en ;
+        skos:prefLabel "Effort Unit Type" .
+
+
 
 
 ###  https://schema.org/Organization
