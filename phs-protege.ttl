@@ -438,12 +438,6 @@ sosa:Sampler rdf:type owl:Class .
           skos:definition "The subtype of a Target Pest Group. Perhaps a single Taxon or perhaps a Group"@en ;
           skos:prefLabel "Target Pest Group Type"@en .
 
-
-###  https://linked.data.gov.au/def/phs#Plant
-:Plant rdf:type owl:Class ;
-       rdfs:subClassOf dwc:Taxon .
-
-
 ###  https://linked.data.gov.au/def/phs#TargetPestGroup
 :TargetPestGroup rdf:type owl:Class  ,
                               [ rdf:type owl:Restriction ;
