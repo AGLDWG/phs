@@ -1,5 +1,4 @@
 #
-
 @prefix : <https://linked.data.gov.au/def/phs#> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
@@ -21,7 +20,7 @@
                                       dcterms:created "2020-02-11"^^xsd:date ;
                                       dcterms:creator <https://orcid.org/0000-0002-8742-7730> ,
                                                       <https://orcid.org/0000-0003-3357-2307> ;
-                                      dcterms:modified "2021-05-14"^^xsd:date ;
+                                      dcterms:modified "2021-05-19"^^xsd:date ;
                                       dcterms:publisher <https://linked.data.gov.au/org/dawe> ;
                                       skos:definition "An ontology for surveillance events relating to plant pests. These events comprise field observations and associated diagnostic work (i.e. taxonomic identification) of samples taken as part of the observation. Surveillance is one of the core activities of national plant protection organizations (NPPOs). It provides NPPOs with a technical basis for many phytosanitary measures; including phytosanitary import requirements, pest free areas, pest reporting and eradication, and pest status in an area. All terms are defined by ISPM 5."@en ;
                                       skos:prefLabel "Plant Health Surveillance Ontology"@en ;
@@ -190,11 +189,24 @@ dcterms:type rdf:type owl:ObjectProperty ;
           rdfs:comment "The make or model of a trap" ;
           skos:prefLabel "has trap type" .
 
-:hasEffortUnit rdf:type owl:ObjectProperty ;
+:effortUnit rdf:type owl:ObjectProperty ;
           rdfs:domain :Effort ;
           rdfs:range :EffortUnitType ;
           rdfs:comment "Units of effort are selected from the EffortUnitType vocabulary" ;
-          skos:prefLabel "has effort unit" .
+          rdfs:comment "Always used in conjunction with effortValue" ;
+          skos:example "Visual inspection of 1 square metre of ground: effortUnit='square metre' ; effortValue='1'." ;
+          skos:prefLabel "effort unit" .
+
+:effortValue rdf:type owl:DatatypeProperty ;
+          rdfs:domain :Effort ;
+          rdfs:range [ a rdfs:Datatype ;
+          owl:onDatatype xsd:decimal ;
+          owl:withRestriction [xsd:minInclusive 0]
+          ] ;
+          rdfs:comment "Amount or quantity of 'effort' expended in the making of an observation." ;
+          rdfs:comment "Always used in conjunction with effortUnit" ;
+          skos:example "A fruitfly trap is emptied after two weeks in a lemon tree: effortUnit='week' ; effortValue='2'." ;
+          skos:prefLabel "effort value" .
 
 ###  sosa:resultTime/sosa:phenomenonTime
 sosa:phenomenonTime rdf:type owl:ObjectProperty ;
@@ -303,8 +315,9 @@ sosa:Sampler rdf:type owl:Class .
                              owl:onClass :TargetPestGroup
                            ] ,
                            [ rdf:type owl:Restriction ;
-                             owl:onProperty :ObservationLocation ;
-                             owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger 
+                             owl:onProperty sosa:hasFeatureOfInterest ;
+                             owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                             owl:onClass :ObservationLocation
                            ] ,
                            [ rdf:type owl:Restriction ;
                              owl:onProperty sosa:phenomenonTime ;
@@ -336,11 +349,6 @@ sosa:Sampler rdf:type owl:Class .
                              owl:onProperty sosa:usedProcedure ;
                              owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                              owl:onClass :InspectionMethod
-                           ] ,
-                           [ rdf:type owl:Restriction ;
-                             owl:onProperty sosa:hasFeatureOfInterest ;
-                             owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                             owl:onClass :TaxonDistribution
                            ] ,
                            [ rdf:type owl:Restriction ;
                              owl:onProperty <sosa:resultTime/sosa:phenomenonTime> ;
@@ -463,7 +471,7 @@ sosa:Sampler rdf:type owl:Class .
              rdfs:subClassOf  sosa:FeatureOfInterest ;
              sosa:isFeatureOfInterestOf :SurveillanceEvent ;
               skos:definition "The amount of time, number of plants inspected, or area surveyed while acrrying out a Surveillance Event"@en ;
-              rdfs:comment "x"@en ;
+              rdfs:comment "Effort is recorded with a value and a Unit that is an EffortUnitType"@en ;
               skos:prefLabel "Surveillance Effort"@en .
 
 
@@ -474,6 +482,21 @@ sosa:Sampler rdf:type owl:Class .
                                 owl:onProperty dcterms:type ;
                                 owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                 owl:onProperty dwc:decimalLatitude
+                              ], 
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty dcterms:type ;
+                                owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                owl:onProperty dwc:decimalLongitude
+                              ], 
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty dcterms:type ;
+                                owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                owl:onProperty dwc:geodeticDatum
+                              ], 
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty dcterms:type ;
+                                owl:qualifiedCardinality "0"^^xsd:nonNegativeInteger ;
+                                owl:onProperty dwc:coordinateUncertaintyInMeters
                               ]; 
 
              sosa:isFeatureOfInterestOf :SurveillanceEvent ;
