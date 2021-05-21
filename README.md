@@ -5,6 +5,8 @@ RDF documentation of the **Pest Record Specification** (PRS) for *Plant Health S
 ### Vocabularies
 This PHS ontology referest to a number of vocabularies which are presented in the [vocabularies/](vocabularies/README.md) folder.
 
+We are currently automating the documentation and publication of the vocabularies. Prototypes are at this [interim address](http://dawe.surroundaustralia.com/). 
+
 ## Background
 This work is being carried out by the Australian Government Department of Agriculture and Water Resources in collaboration with Biosecurity Agencies of Austlaina states and territories. 
 

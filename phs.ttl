@@ -1,3 +1,8 @@
+### Discontinued in favour of 'phs-protoge.ttl' ###
+
+### DON'T EDIT THIS FILE! ###
+
+
 @prefix : <https://linked.data.gov.au/def/phs#> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
@@ -240,7 +245,8 @@
       rdfs:subClassOf :Stratum ,
                       dwc:Taxon ;
       owl:disjointWith :Substrate ;
-      rdfs:comment "A Plant or Animal (a Taxon) that is also a Stratum." ;
+      rdfs:comment "A Plant or Animal in or on which a pest may occur." ;
+           rdfs:comment "Particular pests are often associated with certain substrates or hosts. In the field, when targetting a pest, a surveyor will look for substrates or hosts that are more likely to harbour the target pest. Recording the substrateassists diagnosticians when they are identifying a specimen. It also aids analysis aimed at estimating pest prevalence based on absence records. Lastly, some protocols require the host or substrate to be recorded for each observation." ;
       skos:example "Bee; a Varroa Mite may be found in a bee's trachea" ;
       skos:prefLabel "Host" .
 
@@ -310,14 +316,17 @@
 
 ###  https://linked.data.gov.au/def/phs#Stratum
 :Stratum rdf:type owl:Class ;
-         rdfs:comment "Thing or material on which a pest is searched for or found. Stratum is abstract: instances should use either 'Host' or 'Substrate'." ;
+         skos:definition "Plant, thing or material in or on which a Pest may occur." ; 
+         rdfs:comment "Stratum is abstract: instances should use either of the subclasses 'Host' or 'Substrate'." ;
          skos:prefLabel "Stratum" .
 
 
 ###  https://linked.data.gov.au/def/phs#Substrate
 :Substrate rdf:type owl:Class ;
            rdfs:subClassOf :Stratum ;
-           rdfs:comment "A Stratum that is not a Host. Usually non-living, such as a rock." ;
+           skos:definition "Thing or material on or in which a Pest may occur" ;
+           rdfs:comment "A Substrate is a Stratum that is not a Host. Usually non-living, such as a rock or leaf litter." ;
+           rdfs:comment "Particular pests are often associated with certain substrates or hosts. In the field, when targetting a pest, a surveyor will look for substrates or hosts that are more likely to harbour the target pest. Recording the substrateassists diagnosticians when they are identifying a specimen. It also aids analysis aimed at estimating pest prevalence based on absence records. Lastly, some protocols require the host or substrate to be recorded for each observation." ;
            skos:prefLabel "Substrate" .
 
 

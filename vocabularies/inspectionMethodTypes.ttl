@@ -1,5 +1,6 @@
-@prefix : <https://linked.data.gov.au/def/phs/voc/capturing-methods/> .
-@prefix obs: <https://linked.data.gov.au/def/phs/voc/capturing-methods> .
+#
+@prefix : <https://linked.data.gov.au/def/phs/voc/inspection-methods/> .
+@prefix inspect: <https://linked.data.gov.au/def/phs/voc/inspection-methods> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix sdo: <https://schema.org/> .
@@ -11,15 +12,16 @@
 @prefix traps: <https://linked.data.gov.au/def/phs/voc/traps/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-obs:
+inspect:
     a owl:Ontology , skos:ConceptScheme ;
     dcterms:contributor <http://orcid.org/0000-0002-8742-7730> ;
     dcterms:created "2020-05-22"^^xsd:date ;
-    dcterms:creator phs:stephen ;
+    dcterms:creator <https://orcid.org/0000-0003-3357-2307> ;
     dcterms:modified "2020-05-22"^^xsd:date ;
     dcterms:publisher <https://linked.data.gov.au/org/dawe> ;
-    skos:definition "Types of methods used to capture animals"@en ;
-    skos:prefLabel "Capturing Method Types"@en ;
+    skos:definition "Methods used to perform surveillance for plant pests"@en ;
+    rdfs:comment "Inspection methods are distinguished from identification methods or diagnostic methods by considering where the action is carried out. If it is in the field, then it is an inspection method. The other methods are performed in a laboatory setting. Sometimes there is overlap between these distinctions, such as when simple 'diagnostic' actions are carried out in the field." ;
+    skos:prefLabel "Inspection Method Types"@en ;
     owl:versionIRI <https://linked.data.gov.au/def/phs/voc/obsMethods/1.0> ;
     skos:hasTopConcept 
         :beating-tray , 
@@ -32,38 +34,38 @@ obs:
 .
 
 :beating-tray
-    a skos:Concept , phs:CapturingMethodType ;
+    a skos:Concept , phs:InspectionMethodType ;
     skos:prefLabel "Beating tray"@en ;    
     skos:definition "A tray is held under a branch or shrub and the plant is beaten to dislodge insects, which fall onto the tray."@en ;
-    skos:inScheme obs: ;
-    skos:topConceptOf obs:;
+    skos:inScheme inspect: ;
+    skos:topConceptOf inspect:;
     phs:detectsPest tpg:bmsb , tpg:xylella-vectors ;  
 .
 
 :brush-and-vacuum
-    a skos:Concept , phs:CapturingMethodType ;
+    a skos:Concept , phs:InspectionMethodType ;
     skos:prefLabel "Brush and vacuum"@en ;    
     skos:definition "Areas are vacuumed and the collected debris is inspected for target pests"@en ;
-    skos:inScheme obs: ;
-    skos:topConceptOf obs:;
+    skos:inScheme inspect: ;
+    skos:topConceptOf inspect:;
     phs:detectsPest tpg:khapra-beetle ;  
 .
 
 :isolation-from-vector
-    a skos:Concept , phs:CapturingMethodType ;
+    a skos:Concept , phs:InspectionMethodType ;
     skos:prefLabel "Isolation from vector"@en ;    
     skos:definition "After a vector (usually an insect) is captured, it is treated in such a way as to expose the target pest. Procedures vary according to the circumstances. As an example, in 'sugar shaking', bees (the vector) are placed in a plastic bag with castor sugar and shaken. The surviving bees are released. The sugar is dissolved and filtered, leaving mites on the filter paper."@en ;
-    skos:inScheme obs: ;
-    skos:topConceptOf obs:;
+    skos:inScheme inspect: ;
+    skos:topConceptOf inspect:;
     phs:detectsPest tpg:pine-wilt-nematode ;  
 .
 
 :sweep-netting
-    a skos:Concept , phs:CapturingMethodType ;
+    a skos:Concept , phs:InspectionMethodType ;
     skos:prefLabel "Sweep netting"@en ;    
     skos:definition "A light net is dragged across the tops of plants or directly aimed at flying insects. The archetypal method for collecting insects."@en ;
-    skos:inScheme obs: ;
-    skos:topConceptOf obs:;
+    skos:inScheme inspect: ;
+    skos:topConceptOf inspect:;
     phs:detectsPest 
         tpg:bmsb ,
         tpg:khapra-beetle ,
@@ -71,20 +73,20 @@ obs:
 .
 
 :tissue-sampling
-    a skos:Concept , phs:CapturingMethodType ;
+    a skos:Concept , phs:InspectionMethodType ;
     skos:prefLabel "Tissue sampling"@en ;    
     skos:definition "This might better be described as a diagnostic method."@en ;
-    skos:inScheme obs: ;
-    skos:topConceptOf obs:;
+    skos:inScheme inspect: ;
+    skos:topConceptOf inspect:;
     phs:detectsPest tpg:pine-wilt-nematode ;  
 .
 
 :trapping
-    a skos:Concept , phs:CapturingMethodType ;
+    a skos:Concept , phs:InspectionMethodType ;
     skos:prefLabel "Trapping"@en ;    
     skos:definition "A trap is placed in a likely location and revisited after some period, which can vary from hours to weeks"@en ;
-    skos:inScheme obs: ;
-    skos:topConceptOf obs: ;
+    skos:inScheme inspect: ;
+    skos:topConceptOf inspect: ;
     phs:detectsPest 
         tpg:fall-and-southern-armyworm , 
         tpg:bmsb , 
@@ -98,11 +100,11 @@ obs:
 .
 
 :visual
-    a skos:Concept , phs:CapturingMethodType ;
+    a skos:Concept , phs:InspectionMethodType ;
     skos:prefLabel "Visual"@en ;    
     skos:definition ""@en ;
-    skos:inScheme obs: ;
-    skos:topConceptOf obs: ;
+    skos:inScheme inspect: ;
+    skos:topConceptOf inspect: ;
     phs:detectsPest 
         tpg:anaplophora , 
         tpg:fall-and-southern-armyworm , 
@@ -134,7 +136,7 @@ obs:
     sdo:jobTitle "Data Systems Architect" ;
     sdo:name "Nicholas J. Car" .
 
-phs:stephen a owl:NamedIndividual , sdo:Person ;
+<https://orcid.org/0000-0003-3357-2307> a owl:NamedIndividual , sdo:Person ;
          sdo:affiliation <https://linked.data.gov.au/org/dawe> ;
          sdo:email <mailto:stephen.pratt@awe.gov.au> ;
          sdo:jobTitle "Project Manager: Implementation of Plant Health Surveillance Data Store" ;
