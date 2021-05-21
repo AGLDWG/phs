@@ -133,7 +133,7 @@ dcterms:type rdf:type owl:ObjectProperty ;
 :detectsPest rdf:type owl:ObjectProperty ;
              rdfs:domain :InspectionMethod ;
              rdfs:range :TargetPestGroup ;
-             rdfs:comment "The pest for which the observation method is useful"@en ;
+             rdfs:comment "The pest for which the inspection method is useful"@en ;
              skos:prefLabel "detects pest"@en .
 
 
