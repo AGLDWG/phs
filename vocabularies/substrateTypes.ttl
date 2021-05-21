@@ -1,4 +1,4 @@
-@prefix : <https://linked.data.gov.au/def/phs/voc/susbtrates/> .
+@prefix : <https://linked.data.gov.au/def/phs/voc/substrates/> .
 @prefix subs: <https://linked.data.gov.au/def/phs/voc/substrates> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
@@ -18,7 +18,7 @@ subs:
     dcterms:creator <https://orcid.org/0000-0003-3357-2307> ;
     dcterms:modified "2020-05-25"^^xsd:date ;
     dcterms:publisher <https://linked.data.gov.au/org/dawe> ;
-    skos:definition "Types of substrates on which potential pest animals can be found"@en ;
+    skos:definition "Types of substrates on which target pest groups may be found"@en ;
     skos:prefLabel "Substrate Types"@en ;
     owl:versionIRI <https://linked.data.gov.au/def//phs/voc/substrates/1.0> ;
 .
