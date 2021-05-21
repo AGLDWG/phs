@@ -14,7 +14,7 @@ lures:
     a owl:Ontology , skos:ConceptScheme ;
     dcterms:contributor <http://orcid.org/0000-0002-8742-7730> ;
     dcterms:created "2020-05-27"^^xsd:date ;
-    dcterms:creator phs:stephen ;
+    dcterms:creator <https://orcid.org/0000-0003-3357-2307> ;
     dcterms:modified "2020-05-27"^^xsd:date ;
     dcterms:publisher <https://linked.data.gov.au/org/dawe> ;
     skos:definition "Types of substance that attract animals"@en ;
@@ -251,7 +251,7 @@ lures:
     sdo:jobTitle "Data Systems Architect" ;
     sdo:name "Nicholas J. Car" .
 
-phs:stephen a owl:NamedIndividual , sdo:Person ;
+<https://orcid.org/0000-0003-3357-2307> a owl:NamedIndividual , sdo:Person ;
          sdo:affiliation <https://linked.data.gov.au/org/dawe> ;
          sdo:email <mailto:stephen.pratt@awe.gov.au> ;
          sdo:jobTitle "Project Manager: Implementation of Plant Health Surveillance Data Store" ;
