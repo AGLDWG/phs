@@ -214,8 +214,24 @@ sosa:phenomenonTime rdf:type owl:ObjectProperty ;
                                       rdfs:comment "https://zhiduozhang.github.io/sdw/ssn/#phenomenonTime" ;
                                       skos:definition "The time that the Result of an Observation/Actuation applies to the FeatureOfInterest. Not necessarily the same as the result-time. May be an interval or an instant, or some other compound temporal entity." .
 
-dwc:decimalLatitude rdf:type owl:objectProperty ;
-    rdfs:domain dwc:Location .
+dwc:decimalLatitude rdf:type owl:DatatypeProperty ;
+    rdfs:domain :ObservationLocation .
+
+dwc:decimalLongitude rdf:type owl:DatatypeProperty ;
+    rdfs:domain :ObservationLocation .
+
+dwc:geodeticDatum rdf:type owl:DatatypeProperty ;
+    rdfs:domain :ObservationLocation .
+
+dwc:coordinateUncertaintyInMeters rdf:type owl:DatatypeProperty ;
+    rdfs:domain :ObservationLocation .
+
+dwc:eventID a owl:DatatypeProperty ;
+    rdfs:domain :SurveillanceEvent .
+
+dwc:recordedBy a owl:DatatypeProperty ;
+    rdfs:domain :SurveillanceEvent .
+
 
 
 #################################################################
@@ -224,24 +240,38 @@ dwc:decimalLatitude rdf:type owl:objectProperty ;
 
 ###  https://linked.data.gov.au/def/phs#taxonomicReferenceSource
 :taxonomicReferenceSource rdf:type owl:DatatypeProperty ;
-                          rdfs:domain [ rdf:type owl:Class ;
-                                        owl:unionOf ( :Host
-                                                      :SampleAnimal
-                                                    )
-                                      ] ;
-                          rdfs:comment "" ;
+                          rdfs:domain :TaxonOccurrence ;
+                          rdfs:comment "The online taxonomic reference source" ;
+                          skos:example "https://www.gbif.org/species" ;
                           skos:prefLabel "taxonomic reference source" .
 
 
 ###  https://linked.data.gov.au/def/phs#vernacularName
-:vernacularName rdf:type owl:DatatypeProperty ;
-                rdfs:domain [ rdf:type owl:Class ;
-                              owl:unionOf ( :Host
-                                            :SampleAnimal
-                                          )
-                            ] ;
+dwc:vernacularName rdf:type owl:DatatypeProperty ;
+                rdfs:domain :TaxonOccurrence ;
                 rdfs:comment "The vernacular (common) name for the host or pest" ;
+                skos:example "Fire Blight" ;
                 skos:prefLabel "vernacular name" .
+
+dwc:taxonRank rdf:type owl:DatatypeProperty ;
+                rdfs:domain :TaxonOccurrence ;
+                rdfs:comment "The ystematic name for an organism found by a Surveillance Event" ;
+                skos:example "Erwinia amylovora" ;
+                skos:prefLabel "scientific name" .
+
+dwc:scientificName rdf:type owl:DatatypeProperty ;
+                rdfs:domain :TaxonOccurrence ;
+                rdfs:comment "The ystematic name for an organism found by a Surveillance Event" ;
+                skos:example "Erwinia amylovora" ;
+                skos:prefLabel "scientific name" .
+
+
+dwc:taxonConceptID rdf:type owl:DatatypeProperty ;
+                rdfs:domain :TaxonOccurrence ;
+                rdfs:comment "The unique identifier for a taxon, referenced by `taxonomicReferenceSource`" ;
+                skos:example "`3222012`, which when paired with `https://www.gbif.org/species`, prvides a link to Erwinia amylovora, Fire Blight." ;
+                skos:prefLabel "taxon concept ID" .
+
 
 
 #################################################################
@@ -357,7 +387,7 @@ sosa:Sampler rdf:type owl:Class .
                              owl:onClass <http://www.w3.org/2006/time#TemporalEntity>
                            ] ;
            sosa:hasFeatureOfInterest :TargetPestGroup ;
-           skos:definition "Rename this class. Will be a subclass of Sampling. We may split it into trap clearing and other types of sample taking.  The restictions need to be reviewed too. Best remove the :TaxonDistribution one"@en ;
+           skos:definition "Rename this class. Will be a subclass of Sampling. We may split it into trap clearing and other types of sample taking.  The restictions need to be reviewed too. "@en ;
            skos:prefLabel "Capturing"@en .
 
 
@@ -480,28 +510,7 @@ sosa:Sampler rdf:type owl:Class .
 
 :ObservationLocation rdf:type owl:Class  ;
              rdfs:subClassOf  sosa:FeatureOfInterest ;
-             rdfs:subClassOf dwc:Location,
-                              [ rdf:type owl:Restriction ;
-                                owl:onProperty dcterms:type ;
-                                owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                owl:onProperty dwc:decimalLatitude
-                              ], 
-                              [ rdf:type owl:Restriction ;
-                                owl:onProperty dcterms:type ;
-                                owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                owl:onProperty dwc:decimalLongitude
-                              ], 
-                              [ rdf:type owl:Restriction ;
-                                owl:onProperty dcterms:type ;
-                                owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                owl:onProperty dwc:geodeticDatum
-                              ], 
-                              [ rdf:type owl:Restriction ;
-                                owl:onProperty dcterms:type ;
-                                owl:qualifiedCardinality "0"^^xsd:nonNegativeInteger ;
-                                owl:onProperty dwc:coordinateUncertaintyInMeters
-                              ]; 
-
+             rdfs:subClassOf dwc:Location ;
              sosa:isFeatureOfInterestOf :SurveillanceEvent ;
               skos:definition "The point location at which a surveillance event occured."@en ;
               rdfs:comment "x"@en ;
@@ -522,11 +531,6 @@ sosa:Sampler rdf:type owl:Class .
                rdfs:subClassOf skos:Concept ;
                skos:definition "The subtype of a Substrate"@en ;
                skos:prefLabel "Substrate Type"@en .
-
-
-###  https://linked.data.gov.au/def/phs#TaxonDistribution
-:TaxonDistribution rdf:type owl:Class .
-
 
 ###  https://linked.data.gov.au/def/phs#TaxonIdentification
 :TaxonOccurrence rdf:type owl:Class, dwc:Occurrence ;
