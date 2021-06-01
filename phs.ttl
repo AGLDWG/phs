@@ -190,13 +190,13 @@ dcterms:type rdf:type owl:ObjectProperty ;
           rdfs:comment "The make or model of a trap" ;
           skos:prefLabel "has trap type" .
 
-:effortUnit rdf:type owl:ObjectProperty ;
+:hasEffortUnit rdf:type owl:ObjectProperty ;
           rdfs:domain :Effort ;
           rdfs:range :EffortUnitType ;
           rdfs:comment "Units of effort are selected from the EffortUnitType vocabulary" ;
           rdfs:comment "Always used in conjunction with effortValue" ;
           skos:example "Visual inspection of 1 square metre of ground: effortUnit='square metre' ; effortValue='1'." ;
-          skos:prefLabel "effort unit" .
+          skos:prefLabel "has effort unit" .
 
 :effortValue rdf:type owl:DatatypeProperty ;
           rdfs:domain :Effort ;
@@ -427,15 +427,17 @@ sosa:Sampler rdf:type owl:Class .
                        skos:prefLabel "Inspection Method Type"@en .
 
 
-:OccurrenceStatus a owl:Class ;
+:PestOccurrenceStatus a owl:Class ;
     rdfs:subClassOf sosa:Result ,
                       [ rdf:type owl:Restriction ;
                         owl:onProperty dcterms:type ;
                         owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                         owl:onClass :OccurrenceStatusType
                       ] ;
-    skos:definition ""@en ;
-    skos:prefLabel "Occurrence Status"@en
+    skos:definition "A statement of whether a pest, which was the target of a surveillance event, was detected or not by a specified Inspection Method."@en ;
+    sosa:isResultOf :SurveillanceEvent ;
+    skos:comment "If an organism that is a pest, but not the target of the specified Inspection Method, were detected, a new record would have to be created to register the 'bycatch' pest's status." ;
+    skos:prefLabel "Pest Occurrence Status"@en
     .
 
 :OccurrenceStatusType rdf:type owl:Class ;
@@ -527,10 +529,12 @@ sosa:Sampler rdf:type owl:Class .
 
 
 ###  https://linked.data.gov.au/def/phs#TaxonIdentification
-:TaxonIdentification rdf:type owl:Class ;
-                     rdfs:subClassOf sosa:Observation ;
-                     skos:definition "The identification of the Taxon of an organism"@en ;
-                     skos:prefLabel "Taxon Identification"@en .
+:TaxonOccurrence rdf:type owl:Class, dwc:Occurrence ;
+                     rdfs:subClassOf sosa:FeatureOfInterest ;
+                     sosa:isResultOf :SurveillanceEvent ;
+                     skos:comment "A record of the identity of a taxon that was observed or taken as a sample by a Surveillance Event" ;
+                     skos:definition "The identity of an organism whose occurrence was detected during a surveillance event."@en ;
+                     skos:prefLabel "Taxon Identity"@en .
 
 
 ###  https://linked.data.gov.au/def/phs#Trap
