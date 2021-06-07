@@ -1,4 +1,5 @@
-#
+# baseURI: https://linked.data.gov.au/def/phs/voc/occStatuses
+
 @prefix : <https://linked.data.gov.au/def/phs/voc/occstatuses/> .
 @prefix occstatuses: <https://linked.data.gov.au/def/phs/voc/occstatuses> .
 @prefix phs: <https://linked.data.gov.au/def/phs#> .
@@ -11,7 +12,7 @@
 @prefix taxaas: <https://uat-ag-bie.oztaxa.com/ws/taxon/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-occstatuses:
+:occstatuses
     a owl:Ontology , skos:ConceptScheme ;
     dcterms:contributor <http://orcid.org/0000-0002-8742-7730> ;
     dcterms:created "2021-05-14"^^xsd:date ;
@@ -22,40 +23,36 @@ occstatuses:
     skos:prefLabel "Occurrence Statuses of target pests"@en ;
     rdfs:comment "These occurrence statuses apply only to the observation within which they were applied. They do not relate to distribituions or prevalences of target pests. e.g. A pest may indeed by present even though it was not detected by a given observation." ;
     owl:versionIRI <https://linked.data.gov.au/def/phs/voc/occstatuses/1.0> ;
-    skos:hasTopConcept
-        :present ;
-        :absent ;
-        :pending ;
-        :inconclusive ;
+    skos:hasTopConcept         :present ,         :absent ,        :pending  ,        :inconclusive ;
 .
 
 :present
-    a skos:Concept , phs:OccurrenceStatus
+    a skos:Concept , phs:OccurrenceStatus ;
     skos:prefLabel "Present"@en ;
     skos:definition "The target pest group was detected by the observation"@en ;
-    skos:inScheme occstatuses ;
-    skos:topConceptOf occstatuses ;
-
+    skos:inScheme occstatuses: ;
+    skos:topConceptOf occstatuses: ;
+.
 :absent
-    a skos:Concept , phs:OccurrenceStatus
+    a skos:Concept , phs:OccurrenceStatus ;
     skos:prefLabel "Absent"@en ;
     skos:definition "The target pest group was detected by the observation"@en ;
-    skos:inScheme occstatuses ;
-    skos:topConceptOf occstatuses ;
-
+    skos:inScheme occstatuses: ;
+    skos:topConceptOf occstatuses: ;
+.
 :pending
-    a skos:Concept , phs:OccurrenceStatus
+    a skos:Concept , phs:OccurrenceStatus ;
     skos:prefLabel "Pending"@en ;
     skos:definition "Diagnostic procedures are not complete"@en ;
-    skos:inScheme occstatuses ;
-    skos:topConceptOf occstatuses ;
-
+    skos:inScheme occstatuses: ;
+    skos:topConceptOf occstatuses: ;
+.
 :inconclusive
-    a skos:Concept , phs:OccurrenceStatus
+    a skos:Concept , phs:OccurrenceStatus ;
     skos:prefLabel "Inconclusive"@en ;
     skos:definition "The identity of specimens was not able to be determined"@en ;
-    skos:inScheme occstatuses ;
-    skos:topConceptOf occstatuses ;
+    skos:inScheme occstatuses: ;
+    skos:topConceptOf occstatuses: ;
 .
 
 
