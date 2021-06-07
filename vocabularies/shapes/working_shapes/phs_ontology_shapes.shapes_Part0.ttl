@@ -1,4 +1,4 @@
-# baseURI: https://linked.data.gov.au/def/phs_shapes
+# baseURI: https://linked.data.gov.au/def/phs_shapes_part0
 # imports: http://datashapes.org/dash
 # imports: http://datashapes.org/graphql
 # imports: https://linked.data.gov.au/def/phs
@@ -881,10 +881,6 @@ phs:Attractant-hasAttractantType
   sh:path phs:hasAttractantType ;
   sh:class phs:AttractantType ;
 .
-phs:Attractant-type
-  a sh:PropertyShape ;
-  sh:path dct:type ;
-.
 phs:AttractantType
   a sh:NodeShape ;
   rdfs:subClassOf owl:Thing ;
@@ -903,11 +899,6 @@ phs:CaptureSystem
 phs:Capturing
   a sh:NodeShape ;
   rdfs:subClassOf owl:Thing ;
-  sh:property phs:Capturing-hasFeatureOfInterest ;
-  sh:property phs:Capturing-hasResult ;
-  sh:property phs:Capturing-madeBySampler ;
-  sh:property phs:Capturing-phenomenonTime ;
-  sh:property phs:Capturing-usedProcedure ;
 .
 phs:Capturing-hasFeatureOfInterest
   a sh:PropertyShape ;
@@ -1231,7 +1222,7 @@ phs:observedAtLocation
   rdfs:label "observed at location" ;
   skos:prefLabel "observed at location" ;
 .
-<https://linked.data.gov.au/def/phs_shapes>
+<https://linked.data.gov.au/def/phs_shapes_part0>
   a owl:Ontology ;
   rdfs:label "phs_ontology_shapes" ;
   owl:imports <http://datashapes.org/dash> ;
