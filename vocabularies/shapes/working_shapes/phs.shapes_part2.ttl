@@ -101,17 +101,6 @@ sosa:Sampler
 .
 <https://linked.data.gov.au/def/phs#Effort>
   a sh:NodeShape ;
-  sh:property <https://linked.data.gov.au/def/phs#Effort-effortValue> ;
-  sh:property <https://linked.data.gov.au/def/phs#Effort-hasEffortUnit> ;
-.
-<https://linked.data.gov.au/def/phs#Effort-effortValue>
-  a sh:PropertyShape ;
-  sh:path <https://linked.data.gov.au/def/phs#effortValue> ;
-.
-<https://linked.data.gov.au/def/phs#Effort-hasEffortUnit>
-  a sh:PropertyShape ;
-  sh:path <https://linked.data.gov.au/def/phs#hasEffortUnit> ;
-  sh:class <https://linked.data.gov.au/def/phs#EffortUnitType> ;
 .
 <https://linked.data.gov.au/def/phs#EffortUnitType>
   a sh:NodeShape ;
