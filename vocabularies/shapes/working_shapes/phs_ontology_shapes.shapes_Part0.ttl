@@ -935,11 +935,6 @@ phs:Capturing-usedProcedure
 phs:DiagnosticMethod
   a sh:NodeShape ;
   rdfs:subClassOf owl:Thing ;
-  sh:property [
-      a sh:PropertyShape ;
-      sh:path phs:identifiesPest ;
-      sh:class phs:TargetPestGroup ;
-    ] ;
 .
 phs:DiagnosticMethodType
   a sh:NodeShape ;
@@ -948,11 +943,6 @@ phs:DiagnosticMethodType
 phs:Effort
   a sh:NodeShape ;
   rdfs:subClassOf owl:Thing ;
-  sh:property [
-      a sh:PropertyShape ;
-      sh:path phs:hasEffortUnit ;
-      sh:class phs:EffortUnitType ;
-    ] ;
 .
 phs:EffortUnitType
   a sh:NodeShape ;

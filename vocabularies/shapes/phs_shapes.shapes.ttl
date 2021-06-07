@@ -23,6 +23,11 @@
   sh:path <https://linked.data.gov.au/def/phs#hasAttractantType> ;
   sh:class <https://linked.data.gov.au/def/phs#AttractantType> ;
 .
+<https://linked.data.gov.au/def/phs#DiagnosticMethod-identifiesPest>
+  a sh:PropertyShape ;
+  sh:path <https://linked.data.gov.au/def/phs#identifiesPest> ;
+  sh:class <https://linked.data.gov.au/def/phs#TargetPestGroup> ;
+.
 <https://linked.data.gov.au/def/phs#Lure-dcterms_type>
   a sh:PropertyShape ;
   sh:path <http://purl.org/dc/terms/type> ;
