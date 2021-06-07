@@ -95,12 +95,6 @@ sosa:Sampler
 .
 <https://linked.data.gov.au/def/phs#DiagnosticMethod>
   a sh:NodeShape ;
-  sh:property <https://linked.data.gov.au/def/phs#DiagnosticMethod-identifiesPest> ;
-.
-<https://linked.data.gov.au/def/phs#DiagnosticMethod-identifiesPest>
-  a sh:PropertyShape ;
-  sh:path <https://linked.data.gov.au/def/phs#identifiesPest> ;
-  sh:class <https://linked.data.gov.au/def/phs#TargetPestGroup> ;
 .
 <https://linked.data.gov.au/def/phs#DiagnosticMethodType>
   a sh:NodeShape ;
