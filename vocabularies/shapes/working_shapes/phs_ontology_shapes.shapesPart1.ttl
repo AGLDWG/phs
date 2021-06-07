@@ -876,11 +876,6 @@ phs:Attractant
   rdfs:subClassOf owl:Thing ;
   sh:property phs:Attractant-hasAttractantType ;
 .
-phs:Attractant-hasAttractantType
-  a sh:PropertyShape ;
-  sh:path phs:hasAttractantType ;
-  sh:class phs:AttractantType ;
-.
 phs:Attractant-type
   a sh:PropertyShape ;
   sh:path dct:type ;
@@ -1014,9 +1009,6 @@ phs:Lure-lureType
   a sh:PropertyShape ;
   sh:path phs:lureType ;
   sh:class skos:Concept ;
-  sh:class phs:LureType ;
-  sh:qualifiedMaxCount 1 ;
-  sh:qualifiedMinCount 1 ;
 .
 phs:Lure-luresPest
   a sh:PropertyShape ;

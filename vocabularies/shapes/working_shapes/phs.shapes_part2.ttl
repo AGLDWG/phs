@@ -50,10 +50,6 @@ sosa:Sampler
   a sh:NodeShape ;
   sh:property <https://linked.data.gov.au/def/phs#Attractant-dcterms_type> ;
 .
-<https://linked.data.gov.au/def/phs#Attractant-dcterms_type>
-  a sh:PropertyShape ;
-  sh:path dcterms:type ;
-.
 <https://linked.data.gov.au/def/phs#AttractantType>
   a sh:NodeShape ;
 .
@@ -159,29 +155,6 @@ sosa:Sampler
   sh:property <https://linked.data.gov.au/def/phs#Lure-dcterms_type> ;
   sh:property <https://linked.data.gov.au/def/phs#Lure-lureType> ;
   sh:property <https://linked.data.gov.au/def/phs#Lure-luresPest> ;
-  sh:property [
-      a sh:PropertyShape ;
-      sh:path dcterms:type ;
-      sh:qualifiedMaxCount 1 ;
-      sh:qualifiedMinCount 1 ;
-      sh:qualifiedValueShape [
-          sh:class <https://linked.data.gov.au/def/phs#LureType> ;
-        ] ;
-    ] ;
-.
-<https://linked.data.gov.au/def/phs#Lure-dcterms_type>
-  a sh:PropertyShape ;
-  sh:path dcterms:type ;
-.
-<https://linked.data.gov.au/def/phs#Lure-lureType>
-  a sh:PropertyShape ;
-  sh:path <https://linked.data.gov.au/def/phs#lureType> ;
-  sh:class skos:Concept ;
-.
-<https://linked.data.gov.au/def/phs#Lure-luresPest>
-  a sh:PropertyShape ;
-  sh:path <https://linked.data.gov.au/def/phs#luresPest> ;
-  sh:class <https://linked.data.gov.au/def/phs#TargetPestGroup> ;
 .
 <https://linked.data.gov.au/def/phs#LureType>
   a sh:NodeShape ;

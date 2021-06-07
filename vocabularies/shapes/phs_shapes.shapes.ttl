@@ -23,6 +23,23 @@
   sh:path <https://linked.data.gov.au/def/phs#hasAttractantType> ;
   sh:class <https://linked.data.gov.au/def/phs#AttractantType> ;
 .
+<https://linked.data.gov.au/def/phs#Lure-dcterms_type>
+  a sh:PropertyShape ;
+  sh:path <http://purl.org/dc/terms/type> ;
+.
+<https://linked.data.gov.au/def/phs#Lure-lureType>
+  a sh:PropertyShape ;
+  sh:path <https://linked.data.gov.au/def/phs#lureType> ;
+  sh:class <http://www.w3.org/2004/02/skos/core#Concept> ;
+  sh:class <https://linked.data.gov.au/def/phs#LureType> ;
+  sh:qualifiedMaxCount 1 ;
+  sh:qualifiedMinCount 1 ;
+.
+<https://linked.data.gov.au/def/phs#Lure-luresPest>
+  a sh:PropertyShape ;
+  sh:path <https://linked.data.gov.au/def/phs#luresPest> ;
+  sh:class <https://linked.data.gov.au/def/phs#TargetPestGroup> ;
+.
 <https://linked.data.gov.au/def/phs.shapes>
   a owl:Ontology ;
   owl:imports <http://datashapes.org/dash> ;
