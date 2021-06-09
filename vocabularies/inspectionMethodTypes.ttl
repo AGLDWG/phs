@@ -96,6 +96,7 @@ inspect:
         tpg:saywer-beetle , 
         tpg:xylella-vectors , 
         tpg:ants ,
+        tpg:fruit-fly ,
      tpg:snails ;  
 .
 

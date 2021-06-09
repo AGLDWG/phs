@@ -873,8 +873,6 @@ sh:Validator
 .
 phs:Attractant
   a sh:NodeShape ;
-  rdfs:subClassOf owl:Thing ;
-  sh:property phs:Attractant-hasAttractantType ;
 .
 phs:Attractant-hasAttractantType
   a sh:PropertyShape ;
@@ -895,10 +893,6 @@ phs:CaptureSystem
   rdfs:label "Capture system" ;
   rdfs:subClassOf <http://www.w3.org/ns/sosa/Sampler> ;
   skos:prefLabel "Capture system" ;
-.
-phs:Capturing
-  a sh:NodeShape ;
-  rdfs:subClassOf owl:Thing ;
 .
 phs:Capturing-hasFeatureOfInterest
   a sh:PropertyShape ;
@@ -1046,6 +1040,10 @@ phs:OccurrenceStatusType
   a sh:NodeShape ;
   rdfs:subClassOf owl:Thing ;
 .
+phs:Sampling
+  a sh:NodeShape ;
+  rdfs:subClassOf owl:Thing ;
+.
 phs:Substrate
   a sh:NodeShape ;
   rdfs:subClassOf owl:Thing ;
@@ -1122,8 +1120,6 @@ phs:Trap
   rdfs:subClassOf owl:Thing ;
   owl:equivalentClass phs:CaptureSystem ;
   sh:property phs:Trap-catchesPest ;
-  sh:property phs:Trap-hasAttractantType ;
-  sh:property phs:Trap-hasBait ;
   sh:property phs:Trap-hasTrapType ;
   sh:property phs:Trap-lureType ;
 .
@@ -1135,7 +1131,6 @@ phs:Trap-catchesPest
 phs:Trap-hasAttractantType
   a sh:PropertyShape ;
   sh:path phs:hasAttractantType ;
-  sh:class phs:AttractantType ;
 .
 phs:Trap-hasBait
   a sh:PropertyShape ;

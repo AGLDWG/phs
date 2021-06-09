@@ -28,9 +28,6 @@
 dcterms:Dataset
   a sh:NodeShape ;
 .
-dwc:Taxon
-  a sh:NodeShape ;
-.
 <http://www.opengis.net/ont/geosparql#Feature>
   a sh:NodeShape ;
 .
@@ -43,26 +40,8 @@ skos:Collection
 skos:Concept
   a sh:NodeShape ;
 .
-sosa:Sampler
-  a sh:NodeShape ;
-.
-<https://linked.data.gov.au/def/phs#Attractant>
-  a sh:NodeShape ;
-  sh:property <https://linked.data.gov.au/def/phs#Attractant-dcterms_type> ;
-.
-<https://linked.data.gov.au/def/phs#AttractantType>
-  a sh:NodeShape ;
-.
 <https://linked.data.gov.au/def/phs#Bait>
   a sh:NodeShape ;
-.
-<https://linked.data.gov.au/def/phs#Capturing>
-  a sh:NodeShape ;
-  sh:property <https://linked.data.gov.au/def/phs#Capturing-sosa_hasResult> ;
-  sh:property <https://linked.data.gov.au/def/phs#Capturing-sosa_madeBySampler> ;
-  sh:property <https://linked.data.gov.au/def/phs#Capturing-sosa_phenomenonTime> ;
-  sh:property <https://linked.data.gov.au/def/phs#Capturing-sosa_resultTime> ;
-  sh:property <https://linked.data.gov.au/def/phs#Capturing-sosa_usedProcedure> ;
 .
 <https://linked.data.gov.au/def/phs#Capturing-sosa_hasResult>
   a sh:PropertyShape ;
@@ -185,6 +164,14 @@ sosa:Sampler
   a sh:PropertyShape ;
   sh:path dcterms:type ;
 .
+<https://linked.data.gov.au/def/phs#Sampling>
+  a sh:NodeShape ;
+  sh:property <https://linked.data.gov.au/def/phs#Capturing-sosa_hasResult> ;
+  sh:property <https://linked.data.gov.au/def/phs#Capturing-sosa_madeBySampler> ;
+  sh:property <https://linked.data.gov.au/def/phs#Capturing-sosa_phenomenonTime> ;
+  sh:property <https://linked.data.gov.au/def/phs#Capturing-sosa_resultTime> ;
+  sh:property <https://linked.data.gov.au/def/phs#Capturing-sosa_usedProcedure> ;
+.
 <https://linked.data.gov.au/def/phs#Substrate>
   a sh:NodeShape ;
   sh:property <https://linked.data.gov.au/def/phs#Substrate-supportsPest> ;
@@ -260,37 +247,11 @@ sosa:Sampler
 .
 <https://linked.data.gov.au/def/phs#TaxonOccurrence>
   a sh:NodeShape ;
-  sh:property <https://linked.data.gov.au/def/phs#TaxonOccurrence-dwc_scientificName> ;
-  sh:property <https://linked.data.gov.au/def/phs#TaxonOccurrence-dwc_taxonConceptID> ;
-  sh:property <https://linked.data.gov.au/def/phs#TaxonOccurrence-dwc_taxonRank> ;
-  sh:property <https://linked.data.gov.au/def/phs#TaxonOccurrence-dwc_vernacularName> ;
-  sh:property <https://linked.data.gov.au/def/phs#TaxonOccurrence-taxonomicReferenceSource> ;
-.
-<https://linked.data.gov.au/def/phs#TaxonOccurrence-dwc_scientificName>
-  a sh:PropertyShape ;
-  sh:path dwc:scientificName ;
-.
-<https://linked.data.gov.au/def/phs#TaxonOccurrence-dwc_taxonConceptID>
-  a sh:PropertyShape ;
-  sh:path dwc:taxonConceptID ;
-.
-<https://linked.data.gov.au/def/phs#TaxonOccurrence-dwc_taxonRank>
-  a sh:PropertyShape ;
-  sh:path dwc:taxonRank ;
-.
-<https://linked.data.gov.au/def/phs#TaxonOccurrence-dwc_vernacularName>
-  a sh:PropertyShape ;
-  sh:path dwc:vernacularName ;
-.
-<https://linked.data.gov.au/def/phs#TaxonOccurrence-taxonomicReferenceSource>
-  a sh:PropertyShape ;
-  sh:path <https://linked.data.gov.au/def/phs#taxonomicReferenceSource> ;
 .
 <https://linked.data.gov.au/def/phs#Trap>
   a sh:NodeShape ;
   sh:property <https://linked.data.gov.au/def/phs#Trap-catchesPest> ;
   sh:property <https://linked.data.gov.au/def/phs#Trap-dcterms_type> ;
-  sh:property <https://linked.data.gov.au/def/phs#Trap-hasBait> ;
   sh:property <https://linked.data.gov.au/def/phs#Trap-hasTrapType> ;
   sh:property [
       a sh:PropertyShape ;
