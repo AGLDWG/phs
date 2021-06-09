@@ -1,0 +1,78 @@
+# baseURI: https://linked.data.gov.au/def/phs/prof/trapTypes-shapes_usingOwlCreatedShapes
+# imports: http://datashapes.org/dash
+# imports: https://linked.data.gov.au/def/phs
+# imports: https://linked.data.gov.au/def/phs/voc/traps
+
+@prefix dash: <http://datashapes.org/dash#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix trapTypes-shapes: <https://linked.data.gov.au/def/phs/prof/trapTypes-shapes#> .
+@prefix traps: <https://linked.data.gov.au/def/phs/voc/traps/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://linked.data.gov.au/def/phs#TrapType>
+  a rdfs:Class ;
+  sh:property <https://linked.data.gov.au/def/phs#TrapType-broader> ;
+  sh:property <https://linked.data.gov.au/def/phs#TrapType-catchesPest> ;
+  sh:property <https://linked.data.gov.au/def/phs#TrapType-definition> ;
+  sh:property <https://linked.data.gov.au/def/phs#TrapType-inScheme> ;
+  sh:property <https://linked.data.gov.au/def/phs#TrapType-prefLabel> ;
+  sh:property <https://linked.data.gov.au/def/phs#TrapType-topConceptOf> ;
+.
+<https://linked.data.gov.au/def/phs#TrapType-broader>
+  a sh:PropertyShape ;
+  sh:path <http://www.w3.org/2004/02/skos/core#broader> ;
+  sh:class <http://www.w3.org/2004/02/skos/core#Concept> ;
+  sh:maxCount 1 ;
+  sh:name "broader" ;
+  sh:nodeKind sh:IRI ;
+.
+<https://linked.data.gov.au/def/phs#TrapType-catchesPest>
+  a sh:PropertyShape ;
+  sh:path <https://linked.data.gov.au/def/phs#catchesPest> ;
+  sh:description "A device that is designed to catch the target pest"@en ;
+  sh:description "An object which provides refuge to the target pest, and can thus be used as a trap"@en ;
+  sh:name "catches pest" ;
+  sh:nodeKind sh:IRI ;
+.
+<https://linked.data.gov.au/def/phs#TrapType-definition>
+  a sh:PropertyShape ;
+  sh:path <http://www.w3.org/2004/02/skos/core#definition> ;
+  sh:datatype rdf:langString ;
+  sh:maxCount 1 ;
+  sh:minCount 1 ;
+  sh:name "definition" ;
+  sh:nodeKind sh:Literal ;
+.
+<https://linked.data.gov.au/def/phs#TrapType-inScheme>
+  a sh:PropertyShape ;
+  sh:path <http://www.w3.org/2004/02/skos/core#inScheme> ;
+  sh:maxCount 1 ;
+  sh:name "in scheme" ;
+  sh:nodeKind sh:IRI ;
+.
+<https://linked.data.gov.au/def/phs#TrapType-prefLabel>
+  a sh:PropertyShape ;
+  sh:path <http://www.w3.org/2004/02/skos/core#prefLabel> ;
+  sh:datatype rdf:langString ;
+  sh:maxCount 1 ;
+  sh:minCount 1 ;
+  sh:name "pref label" ;
+  sh:nodeKind sh:Literal ;
+.
+<https://linked.data.gov.au/def/phs#TrapType-topConceptOf>
+  a sh:PropertyShape ;
+  sh:path <http://www.w3.org/2004/02/skos/core#topConceptOf> ;
+  sh:maxCount 1 ;
+  sh:name "top concept of" ;
+  sh:nodeKind sh:IRI ;
+.
+<https://linked.data.gov.au/def/phs/prof/trapTypes-shapes_usingOwlCreatedShapes>
+  a owl:Ontology ;
+  owl:imports <http://datashapes.org/dash> ;
+  owl:imports <https://linked.data.gov.au/def/phs> ;
+  owl:imports <https://linked.data.gov.au/def/phs/voc/traps> ;
+  owl:versionInfo "Created with TopBraid Composer" ;
+.

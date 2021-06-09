@@ -1,0 +1,54 @@
+# baseURI: https://linked.data.gov.au/def/phs/prof
+# imports: http://www.w3.org/ns/dx/prof
+
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prof: <http://www.w3.org/ns/dx/prof/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix role: <http://www.w3.org/ns/prov#> .
+@prefix sdo: <https://schema.org/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://linked.data.gov.au/def/phs/prof>
+  a owl:Ontology ;
+  a prof:Profile ;
+  dcterms:conformsTo <https://linked.data.gov.au/def/agop> ;
+  dcterms:description "This ontology is a data model for plant health surveillance conducted by Australian biosecurity agencies and industry to maintain food quality, prevent the spread of pests and facilitate trade in foodstuffs."@en ;
+  dcterms:title "Plant Health Surveillance Ontology"@en ;
+  owl:imports <http://www.w3.org/ns/dx/prof> ;
+  prof:hasResource [
+      dcterms:conformsTo <https://www.w3.org/TR/shacl/> ;
+      dcterms:format "text/turtle" ;
+      prof:hasArtifact <https://linked.data.gov.au/def/validator.shape.ttl> ;
+      prof:hasRole role:validation ;
+    ] ;
+  prof:hasResource [
+      dcterms:format "text/html" ;
+      prof:hasArtifact <https://linked.data.gov.au/def/phs/prof> ;
+      prof:hasRole role:guidance ;
+    ] ;
+  prof:hasResource [
+      dcterms:format "text/turtle" ;
+      prof:hasArtifact <https://linked.data.gov.au/def/phs/prof.ttl> ;
+      prof:hasRole role:schema ;
+    ] ;
+  prof:isProfileOf <http://dx.doi.org/10.5281/zenodo.46972> ;
+  prof:isProfileOf <http://www.opengis.net/doc/IS/geosparql/1.0> ;
+  prof:isProfileOf <https://www.w3.org/TR/prov-o/> ;
+  prof:isProfileOf <https://www.w3.org/TR/vocab-ssn/> ;
+  prof:isTransitiveProfileOf <https://www.w3.org/TR/owl2-syntax/> ;
+.
+<https://linked.data.gov.au/def/phs/profCapturingMethodTypesProfile>
+  a prof:Profile ;
+  dcterms:title "Capturing Method Types Profile" ;
+  prof:isProfileOf <https://linked.data.gov.au/def/phs/voc/capturing-methods/> ;
+.
+<https://www.w3.org/TR/vocab-ssn/>
+  a prof:Profile ;
+  dcterms:title "Semantic Sensor Network Ontology"@en ;
+  skos:scopeNote "SSN, and SOSA within it, profiles PROV and an alignment is given within SSN"@en ;
+  prof:isProfileOf <https://www.w3.org/TR/prov-o/> ;
+.
