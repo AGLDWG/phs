@@ -177,7 +177,6 @@ sosa:phenomenonTime
   skos:definition "The subtype of a Diagnostic Method"@en ;
   skos:prefLabel "Diagnostic Method Type"@en ;
 .
-
 :EffortUnitType
   a owl:Class ;
   rdfs:subClassOf skos:Concept ;
@@ -244,31 +243,6 @@ sosa:phenomenonTime
   skos:definition "A statement of whether a pest, which was the target of a surveillance event, was detected or not by a specified Inspection Method."@en ;
   skos:prefLabel "Pest Occurrence Status"@en ;
   sosa:isResultOf :SurveillanceEvent ;
-.
-:Sampling
-  a owl:Class ;
-  rdfs:subClassOf sosa:Sampling ;
-  rdfs:subClassOf [
-      a owl:Restriction ;
-      owl:minQualifiedCardinality "0"^^xsd:nonNegativeInteger ;
-      owl:onClass sosa:Sample ;
-      owl:onProperty sosa:hasResult ;
-    ] ;
-  rdfs:subClassOf [
-      a owl:Restriction ;
-      owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-      owl:onClass :CaptureSystem ;
-      owl:onProperty sosa:madeBySampler ;
-    ] ;
-  rdfs:subClassOf [
-      a owl:Restriction ;
-      owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-      owl:onClass :InspectionMethod ;
-      owl:onProperty sosa:usedProcedure ;
-    ] ;
-  skos:definition "We may split it into trap clearing and other types of sample taking.  The restrictions need to be reviewed too. "@en ;
-  skos:prefLabel "Sampling"@en ;
-  sosa:hasFeatureOfInterest :TargetPestGroup ;
 .
 :Substrate
   a owl:Class ;
@@ -409,11 +383,11 @@ sosa:phenomenonTime
 :hasEffortUnit
   a owl:ObjectProperty ;
   rdfs:comment "Always used in conjunction with effortValue" ;
-  rdfs:comment "Units of effort are selected from the EffortUnitType vocabulary" ;
   rdfs:comment "Effort is recorded with a value and a Unit that is an EffortUnitType"@en ;
-  skos:definition "Effort is the amount of time, number of plants inspected, or area surveyed while carrying out a Surveillance Event"@en ;
+  rdfs:comment "Units of effort are selected from the EffortUnitType vocabulary" ;
   rdfs:domain :SurveillanceEvent ;
   rdfs:range :EffortUnitType ;
+  skos:definition "Effort is the amount of time, number of plants inspected, or area surveyed while carrying out a Surveillance Event"@en ;
   skos:example "Visual inspection of 1 square metre of ground: effortUnit='square metre' ; effortValue='1'." ;
   skos:prefLabel "has effort unit" ;
 .

@@ -33,6 +33,8 @@ instance_data_using_shacl:SurveillanceEvent_1
   skos:prefLabel "Surveillance event 1" ;
   sosa:hasFeatureOfInterest <https://linked.data.gov.au/def/phs/voc/targetpestgroup/fruit-fly> ;
   sosa:usedProcedure <https://linked.data.gov.au/def/phs/voc/inspection-methods/trapping> ;
+  <https://linked.data.gov.au/def/phs#effortValue> "2"^^xsd:decimal ;
+  <https://linked.data.gov.au/def/phs#hasEffortUnit> <https://linked.data.gov.au/def/phs/voc/effort-units/week> ;
   <https://linked.data.gov.au/def/phs#observedAtLocation> instance_data_using_shacl:ObservationLocation_1 ;
   <sosa:resultTime/sosa:phenomenonTime> "2021-06-09"^^xsd:date ;
 .

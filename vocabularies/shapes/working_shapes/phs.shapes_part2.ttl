@@ -43,35 +43,6 @@ skos:Concept
 <https://linked.data.gov.au/def/phs#Bait>
   a sh:NodeShape ;
 .
-<https://linked.data.gov.au/def/phs#Capturing-sosa_hasResult>
-  a sh:PropertyShape ;
-  sh:path sosa:hasResult ;
-.
-<https://linked.data.gov.au/def/phs#Capturing-sosa_madeBySampler>
-  a sh:PropertyShape ;
-  sh:path sosa:madeBySampler ;
-.
-<https://linked.data.gov.au/def/phs#Capturing-sosa_phenomenonTime>
-  a sh:PropertyShape ;
-  sh:path sosa:phenomenonTime ;
-  rdfs:comment """Simon 7-06-2021. The conversion of the multple property restriction from the owl format below into two separate node shapes needs checking for validty. Also a sh:sameAs or similar may be required to tie the two shapes together. Currently they are independent. :Capturing
-  a owl:Class ;
-  rdfs:subClassOf sosa:Sampling ;
-    rdfs:subClassOf [
-      a owl:Restriction ;
-      owl:onClass <http://www.w3.org/2006/time#TemporalEntity> ;
-      owl:onProperty <sosa:resultTime/sosa:phenomenonTime> ;
-      owl:qualifiedCardinality \"1\"^^xsd:nonNegativeInteger ;
-    ] """ ;
-.
-<https://linked.data.gov.au/def/phs#Capturing-sosa_resultTime>
-  a sh:PropertyShape ;
-  sh:path sosa:resultTime ;
-.
-<https://linked.data.gov.au/def/phs#Capturing-sosa_usedProcedure>
-  a sh:PropertyShape ;
-  sh:path sosa:usedProcedure ;
-.
 <https://linked.data.gov.au/def/phs#DiagnosticMethod>
   a sh:NodeShape ;
 .
@@ -166,11 +137,40 @@ skos:Concept
 .
 <https://linked.data.gov.au/def/phs#Sampling>
   a sh:NodeShape ;
-  sh:property <https://linked.data.gov.au/def/phs#Capturing-sosa_hasResult> ;
-  sh:property <https://linked.data.gov.au/def/phs#Capturing-sosa_madeBySampler> ;
-  sh:property <https://linked.data.gov.au/def/phs#Capturing-sosa_phenomenonTime> ;
-  sh:property <https://linked.data.gov.au/def/phs#Capturing-sosa_resultTime> ;
-  sh:property <https://linked.data.gov.au/def/phs#Capturing-sosa_usedProcedure> ;
+  sh:property <https://linked.data.gov.au/def/phs#Sampling-sosa_hasResult> ;
+  sh:property <https://linked.data.gov.au/def/phs#Sampling-sosa_madeBySampler> ;
+  sh:property <https://linked.data.gov.au/def/phs#Sampling-sosa_phenomenonTime> ;
+  sh:property <https://linked.data.gov.au/def/phs#Sampling-sosa_resultTime> ;
+  sh:property <https://linked.data.gov.au/def/phs#Sampling-sosa_usedProcedure> ;
+.
+<https://linked.data.gov.au/def/phs#Sampling-sosa_hasResult>
+  a sh:PropertyShape ;
+  sh:path sosa:hasResult ;
+.
+<https://linked.data.gov.au/def/phs#Sampling-sosa_madeBySampler>
+  a sh:PropertyShape ;
+  sh:path sosa:madeBySampler ;
+.
+<https://linked.data.gov.au/def/phs#Sampling-sosa_phenomenonTime>
+  a sh:PropertyShape ;
+  sh:path sosa:phenomenonTime ;
+  rdfs:comment """Simon 7-06-2021. The conversion of the multple property restriction from the owl format below into two separate node shapes needs checking for validty. Also a sh:sameAs or similar may be required to tie the two shapes together. Currently they are independent. :Capturing
+  a owl:Class ;
+  rdfs:subClassOf sosa:Sampling ;
+    rdfs:subClassOf [
+      a owl:Restriction ;
+      owl:onClass <http://www.w3.org/2006/time#TemporalEntity> ;
+      owl:onProperty <sosa:resultTime/sosa:phenomenonTime> ;
+      owl:qualifiedCardinality \"1\"^^xsd:nonNegativeInteger ;
+    ] """ ;
+.
+<https://linked.data.gov.au/def/phs#Sampling-sosa_resultTime>
+  a sh:PropertyShape ;
+  sh:path sosa:resultTime ;
+.
+<https://linked.data.gov.au/def/phs#Sampling-sosa_usedProcedure>
+  a sh:PropertyShape ;
+  sh:path sosa:usedProcedure ;
 .
 <https://linked.data.gov.au/def/phs#Substrate>
   a sh:NodeShape ;
@@ -186,58 +186,6 @@ skos:Concept
 .
 <https://linked.data.gov.au/def/phs#SurveillanceEvent>
   a sh:NodeShape ;
-  sh:property <https://linked.data.gov.au/def/phs#SurveillanceEvent-dwc_eventID> ;
-  sh:property <https://linked.data.gov.au/def/phs#SurveillanceEvent-dwc_recordedBy> ;
-  sh:property <https://linked.data.gov.au/def/phs#SurveillanceEvent-sosa_hasFeatureOfInterest> ;
-  sh:property <https://linked.data.gov.au/def/phs#SurveillanceEvent-sosa_phenomenonTime> ;
-  sh:property <https://linked.data.gov.au/def/phs#SurveillanceEvent-sosa_usedProcedure> ;
-  sh:property [
-      a sh:PropertyShape ;
-      sh:path sosa:hasFeatureOfInterest ;
-      sh:qualifiedMaxCount 1 ;
-      sh:qualifiedMinCount 1 ;
-      sh:qualifiedValueShape [
-          sh:class <https://linked.data.gov.au/def/phs#ObservationLocation> ;
-        ] ;
-    ] ;
-  sh:property [
-      a sh:PropertyShape ;
-      sh:path sosa:hasFeatureOfInterest ;
-      sh:qualifiedMinCount 1 ;
-      sh:qualifiedValueShape [
-          sh:class <https://linked.data.gov.au/def/phs#TargetPestGroup> ;
-        ] ;
-    ] ;
-  sh:property [
-      a sh:PropertyShape ;
-      sh:path sosa:usedProcedure ;
-      sh:qualifiedMaxCount 1 ;
-      sh:qualifiedMinCount 1 ;
-      sh:qualifiedValueShape [
-          sh:class <https://linked.data.gov.au/def/phs#InspectionMethod> ;
-        ] ;
-    ] ;
-.
-<https://linked.data.gov.au/def/phs#SurveillanceEvent-dwc_eventID>
-  a sh:PropertyShape ;
-  sh:path dwc:eventID ;
-.
-<https://linked.data.gov.au/def/phs#SurveillanceEvent-dwc_recordedBy>
-  a sh:PropertyShape ;
-  sh:path dwc:recordedBy ;
-.
-<https://linked.data.gov.au/def/phs#SurveillanceEvent-sosa_hasFeatureOfInterest>
-  a sh:PropertyShape ;
-  sh:path sosa:hasFeatureOfInterest ;
-.
-<https://linked.data.gov.au/def/phs#SurveillanceEvent-sosa_phenomenonTime>
-  a sh:PropertyShape ;
-  sh:path sosa:phenomenonTime ;
-  sh:hasValue xsd:date ;
-.
-<https://linked.data.gov.au/def/phs#SurveillanceEvent-sosa_usedProcedure>
-  a sh:PropertyShape ;
-  sh:path sosa:usedProcedure ;
 .
 <https://linked.data.gov.au/def/phs#TargetPestGroup>
   a sh:NodeShape ;

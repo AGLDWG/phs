@@ -49,7 +49,7 @@ effortUnit:day
   skos:inScheme <https://linked.data.gov.au/def/phs/voc/effort-units> ;
   skos:prefLabel "day"@en ;
   skos:topConceptOf <https://linked.data.gov.au/def/phs/voc/effort-units> ;
-  phs:hasvalue phs:EffortValue ;
+  
 .
 effortUnit:hectare
   a skos:Concept ;
@@ -58,7 +58,7 @@ effortUnit:hectare
   skos:inScheme <https://linked.data.gov.au/def/phs/voc/effort-units> ;
   skos:prefLabel "hectare"@en ;
   skos:topConceptOf <https://linked.data.gov.au/def/phs/voc/effort-units> ;
-  phs:hasvalue phs:EffortValue ;
+  
 .
 effortUnit:hour
   a skos:Concept ;
@@ -67,7 +67,7 @@ effortUnit:hour
   skos:inScheme <https://linked.data.gov.au/def/phs/voc/effort-units> ;
   skos:prefLabel "hour"@en ;
   skos:topConceptOf <https://linked.data.gov.au/def/phs/voc/effort-units> ;
-  phs:hasvalue phs:EffortValue ;
+  
 .
 effortUnit:metre
   a skos:Concept ;
@@ -76,7 +76,7 @@ effortUnit:metre
   skos:inScheme <https://linked.data.gov.au/def/phs/voc/effort-units> ;
   skos:prefLabel "metre"@en ;
   skos:topConceptOf <https://linked.data.gov.au/def/phs/voc/effort-units> ;
-  phs:hasvalue phs:EffortValue ;
+  
 .
 effortUnit:squaremetre
   a skos:Concept ;
@@ -85,7 +85,7 @@ effortUnit:squaremetre
   skos:inScheme <https://linked.data.gov.au/def/phs/voc/effort-units> ;
   skos:prefLabel "square metre"@en ;
   skos:topConceptOf <https://linked.data.gov.au/def/phs/voc/effort-units> ;
-  phs:hasvalue phs:EffortValue ;
+  
 .
 effortUnit:tree
   a skos:Concept ;
@@ -94,7 +94,7 @@ effortUnit:tree
   skos:inScheme <https://linked.data.gov.au/def/phs/voc/effort-units> ;
   skos:prefLabel "tree"@en ;
   skos:topConceptOf <https://linked.data.gov.au/def/phs/voc/effort-units> ;
-  phs:hasvalue phs:EffortValue ;
+  
 .
 effortUnit:week
   a skos:Concept ;
@@ -103,7 +103,7 @@ effortUnit:week
   skos:inScheme <https://linked.data.gov.au/def/phs/voc/effort-units> ;
   skos:prefLabel "week"@en ;
   skos:topConceptOf <https://linked.data.gov.au/def/phs/voc/effort-units> ;
-  phs:hasvalue phs:EffortValue ;
+  
 .
 <https://linked.data.gov.au/org/dawe>
   a owl:NamedIndividual ;

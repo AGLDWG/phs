@@ -887,45 +887,6 @@ phs:Bait
   a sh:NodeShape ;
   rdfs:subClassOf owl:Thing ;
 .
-phs:CaptureSystem
-  a owl:Class ;
-  a sh:NodeShape ;
-  rdfs:label "Capture system" ;
-  rdfs:subClassOf <http://www.w3.org/ns/sosa/Sampler> ;
-  skos:prefLabel "Capture system" ;
-.
-phs:Capturing-hasFeatureOfInterest
-  a sh:PropertyShape ;
-  sh:path <http://www.w3.org/ns/sosa/hasFeatureOfInterest> ;
-  sh:class phs:TaxonDistribution ;
-  sh:maxCount 1 ;
-  sh:minCount 1 ;
-.
-phs:Capturing-hasResult
-  a sh:PropertyShape ;
-  sh:path <http://www.w3.org/ns/sosa/hasResult> ;
-  sh:class <http://www.w3.org/ns/sosa/Sample> ;
-.
-phs:Capturing-madeBySampler
-  a sh:PropertyShape ;
-  sh:path <http://www.w3.org/ns/sosa/madeBySampler> ;
-  sh:class phs:CaptureSystem ;
-  sh:minCount 1 ;
-.
-phs:Capturing-phenomenonTime
-  a sh:PropertyShape ;
-  sh:path <sosa:resultTime/sosa:phenomenonTime> ;
-  sh:class <http://www.w3.org/2006/time#TemporalEntity> ;
-  sh:datatype xsd:date ;
-  sh:maxCount 1 ;
-  sh:minCount 1 ;
-.
-phs:Capturing-usedProcedure
-  a sh:PropertyShape ;
-  sh:path <http://www.w3.org/ns/sosa/usedProcedure> ;
-  sh:class phs:InspectionMethod ;
-  sh:minCount 1 ;
-.
 phs:DiagnosticMethod
   a sh:NodeShape ;
   rdfs:subClassOf owl:Thing ;
@@ -1044,6 +1005,37 @@ phs:Sampling
   a sh:NodeShape ;
   rdfs:subClassOf owl:Thing ;
 .
+phs:Sampling-hasFeatureOfInterest
+  a sh:PropertyShape ;
+  sh:path <http://www.w3.org/ns/sosa/hasFeatureOfInterest> ;
+  sh:class phs:TaxonDistribution ;
+  sh:maxCount 1 ;
+  sh:minCount 1 ;
+.
+phs:Sampling-hasResult
+  a sh:PropertyShape ;
+  sh:path <http://www.w3.org/ns/sosa/hasResult> ;
+  sh:class <http://www.w3.org/ns/sosa/Sample> ;
+.
+phs:Sampling-madeBySampler
+  a sh:PropertyShape ;
+  sh:path <http://www.w3.org/ns/sosa/madeBySampler> ;
+  sh:minCount 1 ;
+.
+phs:Sampling-phenomenonTime
+  a sh:PropertyShape ;
+  sh:path <sosa:resultTime/sosa:phenomenonTime> ;
+  sh:class <http://www.w3.org/2006/time#TemporalEntity> ;
+  sh:datatype xsd:date ;
+  sh:maxCount 1 ;
+  sh:minCount 1 ;
+.
+phs:Sampling-usedProcedure
+  a sh:PropertyShape ;
+  sh:path <http://www.w3.org/ns/sosa/usedProcedure> ;
+  sh:class phs:InspectionMethod ;
+  sh:minCount 1 ;
+.
 phs:Substrate
   a sh:NodeShape ;
   rdfs:subClassOf owl:Thing ;
@@ -1118,7 +1110,6 @@ phs:TaxonIdentification
 phs:Trap
   a sh:NodeShape ;
   rdfs:subClassOf owl:Thing ;
-  owl:equivalentClass phs:CaptureSystem ;
   sh:property phs:Trap-catchesPest ;
   sh:property phs:Trap-hasTrapType ;
   sh:property phs:Trap-lureType ;
