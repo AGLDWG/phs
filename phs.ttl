@@ -177,19 +177,7 @@ sosa:phenomenonTime
   skos:definition "The subtype of a Diagnostic Method"@en ;
   skos:prefLabel "Diagnostic Method Type"@en ;
 .
-:Effort
-  a owl:Class ;
-  a [
-      a owl:Restriction ;
-      owl:onClass :EffortUnitType ;
-      owl:onProperty dcterms:type ;
-      owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    ] ;
-  rdfs:comment "Effort is recorded with a value and a Unit that is an EffortUnitType"@en ;
-  skos:definition "The amount of time, number of plants inspected, or area surveyed while acrrying out a Surveillance Event"@en ;
-  skos:prefLabel "Surveillance Effort"@en ;
-  sosa:isFeatureOfInterestOf :SurveillanceEvent ;
-.
+
 :EffortUnitType
   a owl:Class ;
   rdfs:subClassOf skos:Concept ;
@@ -278,14 +266,8 @@ sosa:phenomenonTime
       owl:onClass :InspectionMethod ;
       owl:onProperty sosa:usedProcedure ;
     ] ;
-  rdfs:subClassOf [
-      a owl:Restriction ;
-      owl:onClass <http://www.w3.org/2006/time#TemporalEntity> ;
-      owl:onProperty <sosa:resultTime/sosa:phenomenonTime> ;
-      owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    ] ;
-  skos:definition "Rename this class. Will be a subclass of Sampling. We may split it into trap clearing and other types of sample taking.  The restictions need to be reviewed too. "@en ;
-  skos:prefLabel "Capturing"@en ;
+  skos:definition "We may split it into trap clearing and other types of sample taking.  The restrictions need to be reviewed too. "@en ;
+  skos:prefLabel "Sampling"@en ;
   sosa:hasFeatureOfInterest :TargetPestGroup ;
 .
 :Substrate
@@ -413,7 +395,7 @@ sosa:phenomenonTime
   a owl:DatatypeProperty ;
   rdfs:comment "Always used in conjunction with effortUnit" ;
   rdfs:comment "Amount or quantity of 'effort' expended in the making of an observation." ;
-  rdfs:domain :Effort ;
+  rdfs:domain :SurveillanceEvent ;
   rdfs:range [
       a rdfs:Datatype ;
       owl:onDatatype xsd:decimal ;
@@ -428,7 +410,9 @@ sosa:phenomenonTime
   a owl:ObjectProperty ;
   rdfs:comment "Always used in conjunction with effortValue" ;
   rdfs:comment "Units of effort are selected from the EffortUnitType vocabulary" ;
-  rdfs:domain :Effort ;
+  rdfs:comment "Effort is recorded with a value and a Unit that is an EffortUnitType"@en ;
+  skos:definition "Effort is the amount of time, number of plants inspected, or area surveyed while carrying out a Surveillance Event"@en ;
+  rdfs:domain :SurveillanceEvent ;
   rdfs:range :EffortUnitType ;
   skos:example "Visual inspection of 1 square metre of ground: effortUnit='square metre' ; effortValue='1'." ;
   skos:prefLabel "has effort unit" ;
