@@ -37,6 +37,13 @@ dcterms:modified
 dcterms:publisher
   a owl:AnnotationProperty ;
 .
+dcterms:source
+  a owl:DatatypeProperty ;
+  rdfs:comment "Likely the model should use dcat but as at 10-Jun-2021 the existing dcterms:dataset is being used" ;
+  rdfs:label "source" ;
+  rdfs:range dcterms:Dataset ;
+  skos:prefLabel "source" ;
+.
 dcterms:type
   a owl:ObjectProperty ;
   skos:prefLabel "type"@en ;

@@ -109,6 +109,7 @@
   sh:property <https://linked.data.gov.au/def/phs#SurveillanceEvent-sosa_hasFeatureOfInterest> ;
   sh:property <https://linked.data.gov.au/def/phs#SurveillanceEvent-sosa_phenomenonTime> ;
   sh:property <https://linked.data.gov.au/def/phs#SurveillanceEvent-sosa_usedProcedure> ;
+  sh:property <https://linked.data.gov.au/def/phs#SurveillanceEvent-source> ;
   sh:property <https://linked.data.gov.au/def/phs#SurveillanceEvent-usedProcedure> ;
 .
 <https://linked.data.gov.au/def/phs#SurveillanceEvent-dwc_eventID>
@@ -167,6 +168,13 @@
 <https://linked.data.gov.au/def/phs#SurveillanceEvent-sosa_usedProcedure>
   a sh:PropertyShape ;
   sh:path <http://www.w3.org/ns/sosa/usedProcedure> ;
+.
+<https://linked.data.gov.au/def/phs#SurveillanceEvent-source>
+  a sh:PropertyShape ;
+  sh:path <http://purl.org/dc/terms/source> ;
+  sh:class <http://purl.org/dc/terms/Dataset> ;
+  sh:minCount 1 ;
+  sh:name "Source Dataset" ;
 .
 <https://linked.data.gov.au/def/phs#SurveillanceEvent-usedProcedure>
   a sh:PropertyShape ;

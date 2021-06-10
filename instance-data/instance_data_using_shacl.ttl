@@ -2,6 +2,7 @@
 # imports: https://linked.data.gov.au/def/phs.shapes
 # prefix: instance_data_using_shacl
 
+@prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix instance_data_using_shacl: <https://linked.data.gov.au/def/instance_data_using_shacl#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
@@ -17,6 +18,11 @@
   owl:imports <https://linked.data.gov.au/def/phs.shapes> ;
   owl:versionInfo "Created with TopBraid Composer" ;
 .
+instance_data_using_shacl:Dataset_1
+  a dcterms:Dataset ;
+  rdfs:label "Dataset 1" ;
+  skos:prefLabel "Dataset 1" ;
+.
 instance_data_using_shacl:ObservationLocation_1
   a <https://linked.data.gov.au/def/phs#ObservationLocation> ;
   dwc:decimalLatitude "-36.9719" ;
@@ -27,6 +33,7 @@ instance_data_using_shacl:ObservationLocation_1
 .
 instance_data_using_shacl:SurveillanceEvent_1
   a <https://linked.data.gov.au/def/phs#SurveillanceEvent> ;
+  dcterms:source instance_data_using_shacl:Dataset_1 ;
   dwc:eventID "1234" ;
   dwc:recordedBy "John Doe" ;
   rdfs:label "Surveillance event 1" ;

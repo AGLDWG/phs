@@ -999,41 +999,7 @@ phs:OccurrenceStatusType
   a sh:NodeShape ;
   rdfs:subClassOf owl:Thing ;
 .
-phs:Sampling
-  a sh:NodeShape ;
-  rdfs:subClassOf owl:Thing ;
-.
-phs:Sampling-hasFeatureOfInterest
-  a sh:PropertyShape ;
-  sh:path <http://www.w3.org/ns/sosa/hasFeatureOfInterest> ;
-  sh:class phs:TaxonDistribution ;
-  sh:maxCount 1 ;
-  sh:minCount 1 ;
-.
-phs:Sampling-hasResult
-  a sh:PropertyShape ;
-  sh:path <http://www.w3.org/ns/sosa/hasResult> ;
-  sh:class <http://www.w3.org/ns/sosa/Sample> ;
-.
-phs:Sampling-madeBySampler
-  a sh:PropertyShape ;
-  sh:path <http://www.w3.org/ns/sosa/madeBySampler> ;
-  sh:minCount 1 ;
-.
-phs:Sampling-phenomenonTime
-  a sh:PropertyShape ;
-  sh:path <sosa:resultTime/sosa:phenomenonTime> ;
-  sh:class <http://www.w3.org/2006/time#TemporalEntity> ;
-  sh:datatype xsd:date ;
-  sh:maxCount 1 ;
-  sh:minCount 1 ;
-.
-phs:Sampling-usedProcedure
-  a sh:PropertyShape ;
-  sh:path <http://www.w3.org/ns/sosa/usedProcedure> ;
-  sh:class phs:InspectionMethod ;
-  sh:minCount 1 ;
-.
+
 phs:Substrate
   a sh:NodeShape ;
   rdfs:subClassOf owl:Thing ;
