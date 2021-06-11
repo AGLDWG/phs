@@ -220,7 +220,6 @@ EAfDe6H3Dy6Ll456WEJsRZS630MwCAOI20ei5OBpxse5zcBZw8eS4uPpfIuDiCainIg9umBCU0GZzgLZ
     <span style="color:#329545;">p</span><span style="color:#f9cb33;">y</span>LODE</a>
     <span style="font-size:smaller;">2.10.0</span>
   </div>
-  <img src="images/dawe.png" alt="DAWE logo" />
   <h1>Plant Health Surveillance Ontology</h1>
 <section id="metadata">
     <h2 style="display:none;">Metadata</h2>
@@ -318,7 +317,7 @@ EAfDe6H3Dy6Ll456WEJsRZS630MwCAOI20ei5OBpxse5zcBZw8eS4uPpfIuDiCainIg9umBCU0GZzgLZ
         <dt><a class="proplink" href="https://www.dublincore.org/specifications/dublin-core/dcmi-terms/#http://purl.org/dc/terms/modified">Modified</a></dt>
         <dd>2021-06-11</dd>
         <dt>Version URI</dt>
-        <dd><a href="https://linked.data.gov.au/def/phs/0.1">https://linked.data.gov.au/def/phs/0.1</a></dd>
+        <dd><a href="https://linked.data.gov.au/def/phs/0.2">https://linked.data.gov.au/def/phs/0.2</a></dd>
         <dt>Imports</dt>
         <dd>
             <a href="http://rs.tdwg.org/dwc/terms/">dwc:</a><br/>
@@ -480,16 +479,16 @@ EAfDe6H3Dy6Ll456WEJsRZS630MwCAOI20ei5OBpxse5zcBZw8eS4uPpfIuDiCainIg9umBCU0GZzgLZ
             <tr>
                 <th>Sub-classes</th>
                 <td>
-                    <a href="#InspectionMethodType">Inspection Method Type</a><sup class="sup-c" title="class">c</sup><br/>
                     <a href="#LureType">Lure Type</a><sup class="sup-c" title="class">c</sup><br/>
-                    <a href="#OccurrenceStatusType">Occurrence Status Type</a><sup class="sup-c" title="class">c</sup><br/>
-                    <a href="#TargetPestGroupType">Target Pest Group Type</a><sup class="sup-c" title="class">c</sup><br/>
                     <a href="#TrapType">Trap Type</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="#InspectionMethodType">Inspection Method Type</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="#AttractantType">Attractant Type</a><sup class="sup-c" title="class">c</sup><br/>
                     <a href="#HostType">Host Type</a><sup class="sup-c" title="class">c</sup><br/>
-                    <a href="#SubstrateType">Substrate Type</a><sup class="sup-c" title="class">c</sup><br/>
                     <a href="#DiagnosticMethodType">Diagnostic Method Type</a><sup class="sup-c" title="class">c</sup><br/>
                     <a href="#EffortUnitType">Effort Unit Type</a><sup class="sup-c" title="class">c</sup><br/>
-                    <a href="#AttractantType">Attractant Type</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="#OccurrenceStatusType">Occurrence Status Type</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="#SubstrateType">Substrate Type</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="#TargetPestGroupType">Target Pest Group Type</a><sup class="sup-c" title="class">c</sup><br/>
                 </td>
             </tr>
             <tr>
@@ -606,7 +605,7 @@ EAfDe6H3Dy6Ll456WEJsRZS630MwCAOI20ei5OBpxse5zcBZw8eS4uPpfIuDiCainIg9umBCU0GZzgLZ
     <div class="entity class" id="Capturing">
         <h3>
           Capturing<sup title="class" class="sup-c">c</sup>
-          <span style="float:right; margin-right:10px; font-size:smaller;"><a href="#Capturing" title="fragment link to here">#</a> <a href="#classes" title="Classes Index">Classes</a></span>        
+          <span style="float:right; margin-right:10px; font-size:smaller;"><a href="#Capturing" title="fragment link to here">#</a> <a href="#classes" title="Classes Index">Classes</a></span>
         </h3>
         <table>
             <tr>
@@ -628,10 +627,10 @@ EAfDe6H3Dy6Ll456WEJsRZS630MwCAOI20ei5OBpxse5zcBZw8eS4uPpfIuDiCainIg9umBCU0GZzgLZ
             <tr>
                 <th>Restrictions</th>
                 <td>
+                    <a href="http://www.w3.org/ns/sosa/hasResult">sosa:hasResult</a> <span class="cardinality">min</span> 0 <a href="http://www.w3.org/ns/sosa/Sample">sosa:Sample</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="sosa:resultTime/sosa:phenomenonTime">sosa:resultTime/sosa:phenomenonTime</a> <span class="cardinality">exactly</span> 1 <a href="http://www.w3.org/2006/time#TemporalEntity">time:TemporalEntity</a><sup class="sup-c" title="class">c</sup><br/>
                     <a href="http://www.w3.org/ns/sosa/madeBySampler">sosa:madeBySampler</a> <span class="cardinality">min</span> 1 <a href="https://linked.data.gov.au/def/phs#CaptureSystem">https://linked.data.gov.au/def/phs#CaptureSystem</a><sup class="sup-c" title="class">c</sup><br/>
                     <a href="http://www.w3.org/ns/sosa/usedProcedure">sosa:usedProcedure</a> <span class="cardinality">min</span> 1 <a href="#InspectionMethod">Inspection Method</a><sup class="sup-c" title="class">c</sup><br/>
-                    <a href="sosa:resultTime/sosa:phenomenonTime">sosa:resultTime/sosa:phenomenonTime</a> <span class="cardinality">exactly</span> 1 <a href="http://www.w3.org/2006/time#TemporalEntity">time:TemporalEntity</a><sup class="sup-c" title="class">c</sup><br/>
-                    <a href="http://www.w3.org/ns/sosa/hasResult">sosa:hasResult</a> <span class="cardinality">min</span> 0 <a href="http://www.w3.org/ns/sosa/Sample">sosa:Sample</a><sup class="sup-c" title="class">c</sup><br/>
                 </td>
             </tr>
         </table>
@@ -703,7 +702,7 @@ EAfDe6H3Dy6Ll456WEJsRZS630MwCAOI20ei5OBpxse5zcBZw8eS4uPpfIuDiCainIg9umBCU0GZzgLZ
             <tr>
                 <th>Description</th>
                 <td>
-                    <p>Effort is recorded with a value and a Unit that is an EffortUnitType</p>
+                    <p>The amount of time, number of plants inspected, or area surveyed while acrrying out a Surveillance Event</p>
                 </td>
             </tr>
             <tr>
@@ -879,7 +878,7 @@ EAfDe6H3Dy6Ll456WEJsRZS630MwCAOI20ei5OBpxse5zcBZw8eS4uPpfIuDiCainIg9umBCU0GZzgLZ
             <tr>
                 <th>Description</th>
                 <td>
-                    <p>Lures are distinguished from Attractants in that Lures elicit behavioural responses in target organisms with high specificity. Pheromones and kairomones are examples of Lures. Foodstuffs or food mimics (such as protein or carbohydrate derivatives) produce responses in a wider range of organisms, and are thus classified as Attractants.</p>
+                    <p>A substance that lures Pests into a Trap</p>
                 </td>
             </tr>
             <tr>
@@ -897,8 +896,8 @@ EAfDe6H3Dy6Ll456WEJsRZS630MwCAOI20ei5OBpxse5zcBZw8eS4uPpfIuDiCainIg9umBCU0GZzgLZ
             <tr>
                 <th>In domain of</th>
                 <td>
-                    <a href="#lureType">lureType</a><sup class="sup-op" title="object property">op</sup><br/>
                     <a href="#lurespest">lures pest</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="#lureType">lureType</a><sup class="sup-op" title="object property">op</sup><br/>
                 </td>
             </tr>
         </table>
@@ -946,17 +945,17 @@ EAfDe6H3Dy6Ll456WEJsRZS630MwCAOI20ei5OBpxse5zcBZw8eS4uPpfIuDiCainIg9umBCU0GZzgLZ
             <tr>
                 <th>Super-classes</th>
                 <td>
-                    <a href="http://rs.tdwg.org/dwc/terms/Location">dwc:Location</a><sup class="sup-c" title="class">c</sup><br/>
                     <a href="http://www.w3.org/ns/sosa/FeatureOfInterest">sosa:FeatureOfInterest</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://rs.tdwg.org/dwc/terms/Location">dwc:Location</a><sup class="sup-c" title="class">c</sup><br/>
                 </td>
             </tr>
             <tr>
                 <th>Restrictions</th>
                 <td>
                     <a href="http://purl.org/dc/terms/type">dcterms:type</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">exactly</span> 1<br/>
+                    <a href="http://rs.tdwg.org/dwc/terms/geodeticDatum">dwc:geodeticDatum</a> <span class="cardinality">exactly</span> 1<br/>
                     <a href="http://rs.tdwg.org/dwc/terms/coordinateUncertaintyInMeters">dwc:coordinateUncertaintyInMeters</a> <span class="cardinality">exactly</span> 0<br/>
                     <a href="http://rs.tdwg.org/dwc/terms/decimalLatitude">dwc:decimalLatitude</a> <span class="cardinality">exactly</span> 1<br/>
-                    <a href="http://purl.org/dc/terms/type">dcterms:type</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">exactly</span> 1<br/>
                 </td>
             </tr>
         </table>
@@ -1028,7 +1027,7 @@ EAfDe6H3Dy6Ll456WEJsRZS630MwCAOI20ei5OBpxse5zcBZw8eS4uPpfIuDiCainIg9umBCU0GZzgLZ
             <tr>
                 <th>Description</th>
                 <td>
-                    <p>Thing or material on or in which a pest may occur</p>
+                    <p>A Substrate is a Stratum that is not a Host. Usually non-living, such as a rock or leaf litter.</p>
                 </td>
             </tr>
             <tr>
@@ -1082,7 +1081,7 @@ EAfDe6H3Dy6Ll456WEJsRZS630MwCAOI20ei5OBpxse5zcBZw8eS4uPpfIuDiCainIg9umBCU0GZzgLZ
             <tr>
                 <th>Description</th>
                 <td>
-                    <p>Also called 'Targetted' or 'Active' surveillance. The observation/s made during a Surveillance Event are directed towards establishing whether a Pest is present or not, insofar that the inspection method is capable of detecting the pest.</p>
+                    <p>An act of surveillance for a target pest, performed according to a specified procedure</p>
                 </td>
             </tr>
             <tr>
@@ -1095,9 +1094,9 @@ EAfDe6H3Dy6Ll456WEJsRZS630MwCAOI20ei5OBpxse5zcBZw8eS4uPpfIuDiCainIg9umBCU0GZzgLZ
                 <th>Restrictions</th>
                 <td>
                     <a href="http://www.w3.org/ns/sosa/hasFeatureOfInterest">sosa:hasFeatureOfInterest</a> <span class="cardinality">min</span> 1 <a href="#TargetPestGroup">Target Pest Group</a><sup class="sup-c" title="class">c</sup><br/>
-                    <a href="http://www.w3.org/ns/sosa/hasFeatureOfInterest">sosa:hasFeatureOfInterest</a> <span class="cardinality">exactly</span> 1 <a href="#ObservationLocation">Observation Location</a><sup class="sup-c" title="class">c</sup><br/>
                     <a href="http://www.w3.org/ns/sosa/usedProcedure">sosa:usedProcedure</a> <span class="cardinality">exactly</span> 1 <a href="#InspectionMethod">Inspection Method</a><sup class="sup-c" title="class">c</sup><br/>
-                    <a href="http://www.w3.org/ns/sosa/phenomenonTime">sosa:phenomenonTime</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">value</span> <a href="http://www.w3.org/2001/XMLSchema#date">xsd:date</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.w3.org/ns/sosa/hasFeatureOfInterest">sosa:hasFeatureOfInterest</a> <span class="cardinality">exactly</span> 1 <a href="#ObservationLocation">Observation Location</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.w3.org/ns/sosa/phenomenonTime">sosa:phenomenonTime</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">exactly</span> 1<br/>
                 </td>
             </tr>
         </table>
@@ -1115,7 +1114,7 @@ EAfDe6H3Dy6Ll456WEJsRZS630MwCAOI20ei5OBpxse5zcBZw8eS4uPpfIuDiCainIg9umBCU0GZzgLZ
             <tr>
                 <th>Description</th>
                 <td>
-                    <p>Pest or Pests that are the subject of a surveillance event</p>
+                    <p>x</p>
                 </td>
             </tr>
             <tr>
@@ -1127,12 +1126,12 @@ EAfDe6H3Dy6Ll456WEJsRZS630MwCAOI20ei5OBpxse5zcBZw8eS4uPpfIuDiCainIg9umBCU0GZzgLZ
             <tr>
                 <th>In range of</th>
                 <td>
-                    <a href="#Identifiespest">Identifies pest</a><sup class="sup-op" title="object property">op</sup><br/>
-                    <a href="#detectspest">detects pest</a><sup class="sup-op" title="object property">op</sup><br/>
-                    <a href="#lurespest">lures pest</a><sup class="sup-op" title="object property">op</sup><br/>
-                    <a href="#hostspest">hosts pest</a><sup class="sup-op" title="object property">op</sup><br/>
-                    <a href="#catchespest">catches pest</a><sup class="sup-op" title="object property">op</sup><br/>
                     <a href="#supportspest">supports pest</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="#hostspest">hosts pest</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="#detectspest">detects pest</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="#catchespest">catches pest</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="#lurespest">lures pest</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="#Identifiespest">Identifies pest</a><sup class="sup-op" title="object property">op</sup><br/>
                 </td>
             </tr>
         </table>
@@ -1222,10 +1221,10 @@ EAfDe6H3Dy6Ll456WEJsRZS630MwCAOI20ei5OBpxse5zcBZw8eS4uPpfIuDiCainIg9umBCU0GZzgLZ
             <tr>
                 <th>Restrictions</th>
                 <td>
-                    <a href="http://purl.org/dc/terms/type">dcterms:type</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">min</span> 0 <a href="#LureType">Lure Type</a><sup class="sup-c" title="class">c</sup><br/>
                     <a href="#hasbait">has bait</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">only</span> <a href="#Bait">Bait</a><sup class="sup-c" title="class">c</sup><br/>
-                    <a href="http://purl.org/dc/terms/type">dcterms:type</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">exactly</span> 1 <a href="#TrapType">Trap Type</a><sup class="sup-c" title="class">c</sup><br/>
                     <a href="http://purl.org/dc/terms/type">dcterms:type</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">min</span> 0 <a href="#AttractantType">Attractant Type</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://purl.org/dc/terms/type">dcterms:type</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">exactly</span> 1 <a href="#TrapType">Trap Type</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://purl.org/dc/terms/type">dcterms:type</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">min</span> 0 <a href="#LureType">Lure Type</a><sup class="sup-c" title="class">c</sup><br/>
                 </td>
             </tr>
             <tr>
@@ -1251,7 +1250,7 @@ EAfDe6H3Dy6Ll456WEJsRZS630MwCAOI20ei5OBpxse5zcBZw8eS4uPpfIuDiCainIg9umBCU0GZzgLZ
             <tr>
                 <th>Description</th>
                 <td>
-                    <p>Trap Type must not to be confused with Trap ID, which is an identifier assigned to a single trap.</p>
+                    <p>The make, model or design of a Trap</p>
                 </td>
             </tr>
             <tr>
@@ -1287,9 +1286,9 @@ EAfDe6H3Dy6Ll456WEJsRZS630MwCAOI20ei5OBpxse5zcBZw8eS4uPpfIuDiCainIg9umBCU0GZzgLZ
             <tr>
                 <th>Members</th>
                 <td>
-                    <a href="https://surroundaustralia.com">https://surroundaustralia.com</a><br/>
                     <a href="https://linked.data.gov.au/org/dawe">https://linked.data.gov.au/org/dawe</a><br/>
                     <a href="https://www.csiro.au">https://www.csiro.au</a><br/>
+                    <a href="https://surroundaustralia.com">https://surroundaustralia.com</a><br/>
                 </td>
             </tr>
         </table>
@@ -1307,9 +1306,9 @@ EAfDe6H3Dy6Ll456WEJsRZS630MwCAOI20ei5OBpxse5zcBZw8eS4uPpfIuDiCainIg9umBCU0GZzgLZ
             <tr>
                 <th>Members</th>
                 <td>
-                    <a href="https://orcid.org/0000-0002-8742-7730">https://orcid.org/0000-0002-8742-7730</a><br/>
-                    <a href="https://orcid.org/0000-0003-3357-2307">https://orcid.org/0000-0003-3357-2307</a><br/>
                     <a href="https://orcid.org/0000-0002-3884-3420">https://orcid.org/0000-0002-3884-3420</a><br/>
+                    <a href="https://orcid.org/0000-0003-3357-2307">https://orcid.org/0000-0003-3357-2307</a><br/>
+                    <a href="https://orcid.org/0000-0002-8742-7730">https://orcid.org/0000-0002-8742-7730</a><br/>
                 </td>
             </tr>
         </table>
@@ -1395,7 +1394,7 @@ EAfDe6H3Dy6Ll456WEJsRZS630MwCAOI20ei5OBpxse5zcBZw8eS4uPpfIuDiCainIg9umBCU0GZzgLZ
             <tr>
                 <th>Description</th>
                 <td>
-                    <p>A device that is designed to catch the target pest</p>
+                    <p>An object which provides refuge to the target pest, and can thus be used as a trap</p>
                 </td>
             </tr>
             <tr>
@@ -1453,7 +1452,7 @@ EAfDe6H3Dy6Ll456WEJsRZS630MwCAOI20ei5OBpxse5zcBZw8eS4uPpfIuDiCainIg9umBCU0GZzgLZ
             <tr>
                 <th>Description</th>
                 <td>
-                    <p>Units of effort are selected from the EffortUnitType vocabulary</p>
+                    <p>Always used in conjunction with effortValue</p>
                 </td>
             </tr>
             <tr>
@@ -1700,7 +1699,7 @@ EAfDe6H3Dy6Ll456WEJsRZS630MwCAOI20ei5OBpxse5zcBZw8eS4uPpfIuDiCainIg9umBCU0GZzgLZ
             <tr>
                 <th>Description</th>
                 <td>
-                    <p>Always used in conjunction with effortUnit</p>
+                    <p>Amount or quantity of 'effort' expended in the making of an observation.</p>
                 </td>
             </tr>
             <tr>

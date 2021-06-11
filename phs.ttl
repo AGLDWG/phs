@@ -14,7 +14,7 @@
 @base <https://linked.data.gov.au/def/phs> .
 
 <https://linked.data.gov.au/def/phs> rdf:type owl:Ontology ;
-                                      owl:versionIRI <https://linked.data.gov.au/def/phs/0.1> ;
+                                      owl:versionIRI <https://linked.data.gov.au/def/phs/0.2> ;
                                       owl:imports sosa: ;
                                       owl:imports dwc: ;
                                       dcterms:contributor <https://orcid.org/0000-0002-3884-3420> ;
