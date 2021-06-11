@@ -1,0 +1,55 @@
+# baseURI: https://linked.data.gov.au/def/instance_data_using_shacl
+# imports: https://linked.data.gov.au/def/phs.shapes
+# prefix: instance_data_using_shacl
+
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
+@prefix instance_data_using_shacl: <https://linked.data.gov.au/def/instance_data_using_shacl#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix phs: <https://linked.data.gov.au/def/phs.shapes#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix sosa: <http://www.w3.org/ns/sosa/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://linked.data.gov.au/def/instance_data_using_shacl>
+  a owl:Ontology ;
+  owl:imports <https://linked.data.gov.au/def/phs.shapes> ;
+  owl:versionInfo "Created with TopBraid Composer" ;
+.
+instance_data_using_shacl:Dataset_1
+  a dcterms:Dataset ;
+  rdfs:label "Dataset 1" ;
+  skos:prefLabel "Dataset 1" ;
+.
+instance_data_using_shacl:ObservationLocation_1
+  a <https://linked.data.gov.au/def/phs#ObservationLocation> ;
+  dwc:decimalLatitude "-36.9719" ;
+  dwc:decimalLongitude "125.2826" ;
+  dwc:geodeticDatum "WGS84" ;
+  rdfs:label "Observation location 1" ;
+  skos:prefLabel "Observation location 1" ;
+.
+instance_data_using_shacl:SurveillanceEvent_1
+  a <https://linked.data.gov.au/def/phs#SurveillanceEvent> ;
+  dcterms:source instance_data_using_shacl:Dataset_1 ;
+  dwc:eventID "1234" ;
+  dwc:recordedBy "John Doe" ;
+  rdfs:label "Surveillance event 1" ;
+  skos:prefLabel "Surveillance event 1" ;
+  sosa:hasFeatureOfInterest <https://linked.data.gov.au/def/phs/voc/targetpestgroup/fruit-fly> ;
+  sosa:usedProcedure <https://linked.data.gov.au/def/phs/voc/inspection-methods/trapping> ;
+  <https://linked.data.gov.au/def/phs#effortValue> "2"^^xsd:decimal ;
+  <https://linked.data.gov.au/def/phs#hasEffortUnit> <https://linked.data.gov.au/def/phs/voc/effort-units/week> ;
+  <https://linked.data.gov.au/def/phs#observedAtLocation> instance_data_using_shacl:ObservationLocation_1 ;
+  <sosa:resultTime/sosa:phenomenonTime> "2021-06-09"^^xsd:date ;
+.
+instance_data_using_shacl:Trap_1
+  a <https://linked.data.gov.au/def/phs#Trap> ;
+  rdfs:label "Trap 1" ;
+  skos:prefLabel "Trap 1" ;
+  sosa:usedProcedure <https://linked.data.gov.au/def/phs/voc/inspection-methods/trapping> ;
+  <https://linked.data.gov.au/def/phs#catchesPest> <https://linked.data.gov.au/def/phs/voc/targetpestgroup/fruit-fly> ;
+  <https://linked.data.gov.au/def/phs#lureType> <https://linked.data.gov.au/def/phs/voc/lures/capilure-terpinyl-acetate> ;
+.

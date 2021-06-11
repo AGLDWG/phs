@@ -22,7 +22,7 @@ inspect:
     skos:definition "Methods used to perform surveillance for plant pests"@en ;
     rdfs:comment "Inspection methods are distinguished from identification methods or diagnostic methods by considering where the action is carried out. If it is in the field, then it is an inspection method. The other methods are performed in a laboatory setting. Sometimes there is overlap between these distinctions, such as when simple 'diagnostic' actions are carried out in the field." ;
     skos:prefLabel "Inspection Method Types"@en ;
-    owl:versionIRI <https://linked.data.gov.au/def/phs/voc/obsMethods/1.0> ;
+    owl:versionIRI <https://linked.data.gov.au/def/phs/voc/inspectionMethods/1.0> ;
     skos:hasTopConcept 
         :beating-tray , 
         :brush-and-vacuum ,
@@ -96,6 +96,7 @@ inspect:
         tpg:saywer-beetle , 
         tpg:xylella-vectors , 
         tpg:ants ,
+        tpg:fruit-fly ,
      tpg:snails ;  
 .
 
