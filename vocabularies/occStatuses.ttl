@@ -32,21 +32,22 @@ occstatuses:
 :present
     a skos:Concept , phs:OccurrenceStatus
     skos:prefLabel "Present"@en ;
-    skos:definition "The target pest group was detected by the observation"@en ;
+    skos:definition "The target pest group was detected by the observation event"@en ;
     skos:inScheme occstatuses ;
     skos:topConceptOf occstatuses ;
 
 :absent
     a skos:Concept , phs:OccurrenceStatus
     skos:prefLabel "Absent"@en ;
-    skos:definition "The target pest group was detected by the observation"@en ;
+    skos:definition "The target pest group was not detected by the observation event"@en ;
     skos:inScheme occstatuses ;
     skos:topConceptOf occstatuses ;
 
 :pending
     a skos:Concept , phs:OccurrenceStatus
     skos:prefLabel "Pending"@en ;
-    skos:definition "Diagnostic procedures are not complete"@en ;
+    skos:definition "Diagnostic procedures are not yet complete"@en ;
+    rdfs:comment "This status implies that the occurence status of the observation event will be updated once the diagnostic work is complete"@en ;
     skos:inScheme occstatuses ;
     skos:topConceptOf occstatuses ;
 
@@ -54,6 +55,7 @@ occstatuses:
     a skos:Concept , phs:OccurrenceStatus
     skos:prefLabel "Inconclusive"@en ;
     skos:definition "The identity of specimens was not able to be determined"@en ;
+    rdfs:comment "This status may change if subsequent diagnostic work is able to identify the specimen, but it may remain as 'Inconclusive if resources are not available to carry out the work, required specialist skills are not available, the specimen is degraded, or the taxonomy surrounding the specimen is uncertain."@en ;
     skos:inScheme occstatuses ;
     skos:topConceptOf occstatuses ;
 .
