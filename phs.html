@@ -205,8 +205,9 @@ code {
         </dd>
         <dt>Creator(s)</dt>
         <dd>
-            <a href="mailto:nicholas.car@surroundaustralia.com">Nicholas J. Car</a> of <a href="https://surroundaustralia.com">SURROUND Australia Pty Ltd</a><br/>
             <a href="mailto:stephen.pratt@awe.gov.au">Stephen J. Pratt</a> of <a href="https://www.awe.gov.au">Department of Agriculture, Water and the Environment</a><br/>
+            <a href="mailto:nicholas.car@surroundaustralia.com">Nicholas J. Car</a> of <a href="https://surroundaustralia.com">SURROUND Australia Pty Ltd</a><br/>
+            <a href="mailto:simon.opper@surroundaustralia.com">Simon J. Opper</a> of <a href="https://surroundaustralia.com">SURROUND Australia Pty Ltd</a><br/>
         </dd>
         <dt>Contributors(s)</dt>
         <dd>
@@ -215,7 +216,7 @@ code {
         <dt>Created</dt>
         <dd>2020-02-11</dd>
         <dt>Modified</dt>
-        <dd>2021-06-11</dd>
+        <dd>2021-06-12</dd>
         <dt>Version IRI</dt>
         <dd><a href="https://linked.data.gov.au/def/phs/0.2.1">https://linked.data.gov.au/def/phs/0.2.1</a></dd>
         <dt>Imports</dt>
@@ -249,15 +250,15 @@ code {
     <h2>Overview</h2>
     <div class="figure">
         <a href="images/Overview.png">
-            <img src="images/test.png" style="width: 80%;" alt="Overview Diagram" />
+            <img src="images/overview1.png" style="width: 80%;" alt="Overview Diagram" />
         </a>
-        <div class="caption"><strong>Figure 1: A test image inserted manually to the HTML after pyLODEing</strong> Ontology overview</div>
+
+        <div class="caption"><strong>Figure 1:</strong>Overview of the ontology</div>
     </div>
 </section>
 <section id="classes">
     <h2>Classes <span style="float:right; font-size:smaller;"><a href="">&uparrow;</a></span></h2>
     <ul class="hlist">
-        <li><a href="#AttractantType">Attractant Type</a></li>
         <li><a href="#Collection">Collection</a></li>
         <li><a href="#Concept">Concept</a></li>
         <li><a href="#Dataset">Dataset</a></li>
@@ -282,7 +283,6 @@ code {
         <li><a href="#SurveillanceEvent">SurveillanceEvent</a></li>
         <li><a href="#TargetPestGroup">Target Pest Group</a></li>
         <li><a href="#TargetPestGroupType">Target Pest Group Type</a></li>
-        <li><a href="#Taxon">Taxon</a></li>
         <li><a href="#TaxonIdentity">Taxon Identity</a></li>
         <li><a href="#Trap">Trap</a></li>
         <li><a href="#TrapType">Trap Type</a></li>
@@ -300,15 +300,6 @@ code {
                 <td>
                     <a href="http://purl.org/dc/terms/source">dcterms:source</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
                 </td>
-            </tr>
-        </table>
-    </div>
-    <div class="entity class" id="Taxon">
-        <h3>Taxon<sup title="class" class="sup-c">c</sup></h3>
-        <table>
-            <tr>
-                <th>IRI</th>
-                <td><code>http://rs.tdwg.org/dwc/terms/Taxon</code></td>
             </tr>
         </table>
     </div>
@@ -359,21 +350,14 @@ code {
                 <th>Sub-classes</th>
                 <td>
                     <a href="#SubstrateType">SubstrateType</a><sup class="sup-c" title="class">c</sup><br/>
-                    <a href="#EffortUnitType">EffortUnitType</a><sup class="sup-c" title="class">c</sup><br/>
-                    <a href="#OccurrenceStatusType">OccurrenceStatusType</a><sup class="sup-c" title="class">c</sup><br/>
-                    <a href="#AttractantType">AttractantType</a><sup class="sup-c" title="class">c</sup><br/>
-                    <a href="#DiagnosticMethodType">DiagnosticMethodType</a><sup class="sup-c" title="class">c</sup><br/>
-                    <a href="#TrapType">TrapType</a><sup class="sup-c" title="class">c</sup><br/>
-                    <a href="#InspectionMethodType">InspectionMethodType</a><sup class="sup-c" title="class">c</sup><br/>
-                    <a href="#LureType">LureType</a><sup class="sup-c" title="class">c</sup><br/>
-                    <a href="#TargetPestGroupType">TargetPestGroupType</a><sup class="sup-c" title="class">c</sup><br/>
                     <a href="#HostType">HostType</a><sup class="sup-c" title="class">c</sup><br/>
-                </td>
-            </tr>
-            <tr>
-                <th>In range of</th>
-                <td>
-                    <a href="#lureType">lureType</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="#TrapType">TrapType</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="#LureType">LureType</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="#EffortUnitType">EffortUnitType</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="#InspectionMethodType">InspectionMethodType</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="#OccurrenceStatusType">OccurrenceStatusType</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="#TargetPestGroupType">TargetPestGroupType</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="#DiagnosticMethodType">DiagnosticMethodType</a><sup class="sup-c" title="class">c</sup><br/>
                 </td>
             </tr>
         </table>
@@ -389,27 +373,6 @@ code {
                 <th>Sub-classes</th>
                 <td>
                     <a href="#Trap">Trap</a><sup class="sup-c" title="class">c</sup><br/>
-                </td>
-            </tr>
-        </table>
-    </div>
-    <div class="entity class" id="AttractantType">
-        <h3>Attractant Type<sup title="class" class="sup-c">c</sup></h3>
-        <table>
-            <tr>
-                <th>IRI</th>
-                <td><code>https://linked.data.gov.au/def/phs#AttractantType</code></td>
-            </tr>
-            <tr>
-                <th>Description</th>
-                <td>
-                    The subtype of a Attractant. XXX delete me!
-                </td>
-            </tr>
-            <tr>
-                <th>Super-classes</th>
-                <td>
-                    <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a><sup class="sup-c" title="class">c</sup><br/>
                 </td>
             </tr>
         </table>
@@ -547,7 +510,7 @@ code {
             <tr>
                 <th>Description</th>
                 <td>
-                    A technique used to carry out an act of surveillance. Inspection Methods are chosen according to the target pest and/or host|substrate. The sensitivity of an observation may depend on the method that was used.
+                    The units used to record Surveillance Effort vary according to the Inspection method.
                 </td>
             </tr>
             <tr>
@@ -604,6 +567,12 @@ code {
                     <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a><sup class="sup-c" title="class">c</sup><br/>
                 </td>
             </tr>
+            <tr>
+                <th>In range of</th>
+                <td>
+                    <a href="#hasluretype">hasLureType</a><sup class="sup-op" title="object property">op</sup><br/>
+                </td>
+            </tr>
         </table>
     </div>
     <div class="entity class" id="ObservationLocation">
@@ -623,15 +592,16 @@ code {
                 <th>Super-classes</th>
                 <td>
                     <a href="http://rs.tdwg.org/dwc/terms/Location">dwc:Location</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.w3.org/ns/sosa/FeatureOfInterest">sosa:FeatureOfInterest</a><sup class="sup-c" title="class">c</sup><br/>
                 </td>
             </tr>
             <tr>
                 <th>In domain of</th>
                 <td>
-                    <a href="http://rs.tdwg.org/dwc/terms/coordinateUncertaintyInMeters">dwc:coordinateUncertaintyInMeters</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
+                    <a href="http://rs.tdwg.org/dwc/terms/geodeticDatum">dwc:geodeticDatum</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
                     <a href="http://rs.tdwg.org/dwc/terms/decimalLongitude">dwc:decimalLongitude</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
                     <a href="http://rs.tdwg.org/dwc/terms/decimalLatitude">dwc:decimalLatitude</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
-                    <a href="http://rs.tdwg.org/dwc/terms/geodeticDatum">dwc:geodeticDatum</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
+                    <a href="http://rs.tdwg.org/dwc/terms/coordinateUncertaintyInMeters">dwc:coordinateUncertaintyInMeters</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
                 </td>
             </tr>
         </table>
@@ -742,7 +712,7 @@ code {
             <tr>
                 <th>Description</th>
                 <td>
-                    Also called 'Targetted' or 'Active' surveillance. The observation/s made during a Surveillance Event are directed towards establishing whether a Pest is present or not, insofar that the inspection method is capable of detecting the pest.
+                    An act of surveillance for a target pest, performed according to a specified procedure
                 </td>
             </tr>
             <tr>
@@ -754,19 +724,19 @@ code {
             <tr>
                 <th>Restrictions</th>
                 <td>
-                    <a href="http://www.w3.org/ns/sosa/phenomenonTime">sosa:phenomenonTime</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">value</span> <a href="http://www.w3.org/2001/XMLSchema#date">xsd:date</a><sup class="sup-c" title="class">c</sup><br/>
-                    <a href="http://www.w3.org/ns/sosa/hasFeatureOfInterest">sosa:hasFeatureOfInterest</a> <span class="cardinality">min</span> 1 <a href="#TargetPestGroup">TargetPestGroup</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.w3.org/ns/sosa/phenomenonTime">sosa:phenomenonTime</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">exactly</span> 1<br/>
                     <a href="http://www.w3.org/ns/sosa/hasFeatureOfInterest">sosa:hasFeatureOfInterest</a> <span class="cardinality">exactly</span> 1 <a href="#ObservationLocation">ObservationLocation</a><sup class="sup-c" title="class">c</sup><br/>
                     <a href="http://www.w3.org/ns/sosa/usedProcedure">sosa:usedProcedure</a> <span class="cardinality">exactly</span> 1 <a href="#InspectionMethod">InspectionMethod</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="http://www.w3.org/ns/sosa/hasFeatureOfInterest">sosa:hasFeatureOfInterest</a> <span class="cardinality">min</span> 1 <a href="#TargetPestGroup">TargetPestGroup</a><sup class="sup-c" title="class">c</sup><br/>
                 </td>
             </tr>
             <tr>
                 <th>In domain of</th>
                 <td>
-                    <a href="#haseffortunit">hasEffortUnit</a><sup class="sup-op" title="object property">op</sup><br/>
-                    <a href="#effortvalue">effortValue</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
                     <a href="http://rs.tdwg.org/dwc/terms/eventID">dwc:eventID</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
+                    <a href="#haseffortunit">hasEffortUnit</a><sup class="sup-op" title="object property">op</sup><br/>
                     <a href="http://rs.tdwg.org/dwc/terms/recordedBy">dwc:recordedBy</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
+                    <a href="#effortvalue">effortValue</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
                 </td>
             </tr>
         </table>
@@ -781,18 +751,18 @@ code {
             <tr>
                 <th>Description</th>
                 <td>
-                    Pest or Pests that are the subject of a surveillance event
+                    x
                 </td>
             </tr>
             <tr>
                 <th>In range of</th>
                 <td>
                     <a href="#lurespest">luresPest</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="#Identifiespest">identifiesPest</a><sup class="sup-op" title="object property">op</sup><br/>
                     <a href="#catchespest">catchesPest</a><sup class="sup-op" title="object property">op</sup><br/>
                     <a href="#detectspest">detectsPest</a><sup class="sup-op" title="object property">op</sup><br/>
                     <a href="#hostspest">hostsPest</a><sup class="sup-op" title="object property">op</sup><br/>
                     <a href="#supportspest">supportsPest</a><sup class="sup-op" title="object property">op</sup><br/>
-                    <a href="#Identifiespest">identifiesPest</a><sup class="sup-op" title="object property">op</sup><br/>
                 </td>
             </tr>
         </table>
@@ -840,11 +810,11 @@ code {
             <tr>
                 <th>In domain of</th>
                 <td>
+                    <a href="#taxonomicreferencesource">taxonomicReferenceSource</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
                     <a href="http://rs.tdwg.org/dwc/terms/taxonConceptID">dwc:taxonConceptID</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
-                    <a href="http://rs.tdwg.org/dwc/terms/taxonRank">dwc:taxonRank</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
                     <a href="http://rs.tdwg.org/dwc/terms/vernacularName">dwc:vernacularName</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
                     <a href="http://rs.tdwg.org/dwc/terms/scientificName">dwc:scientificName</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
-                    <a href="#taxonomicreferencesource">taxonomicReferenceSource</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
+                    <a href="http://rs.tdwg.org/dwc/terms/taxonRank">dwc:taxonRank</a><sup class="sup-dp" title="datatype property">dp</sup><br/>
                 </td>
             </tr>
         </table>
@@ -871,17 +841,17 @@ code {
             <tr>
                 <th>Restrictions</th>
                 <td>
-                    <a href="#haslure">hasLureType</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">only</span> <a href="#LureType">LureType</a><sup class="sup-c" title="class">c</sup><br/>
                     <a href="http://purl.org/dc/terms/type">dcterms:type</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">exactly</span> 1 <a href="#TrapType">TrapType</a><sup class="sup-c" title="class">c</sup><br/>
+                    <a href="#hasluretype">hasLureType</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">only</span> <a href="#LureType">LureType</a><sup class="sup-c" title="class">c</sup><br/>
                     <a href="http://purl.org/dc/terms/type">dcterms:type</a><sup class="sup-op" title="object property">op</sup> <span class="cardinality">min</span> 0 <a href="#LureType">LureType</a><sup class="sup-c" title="class">c</sup><br/>
                 </td>
             </tr>
             <tr>
                 <th>In domain of</th>
                 <td>
-                    <a href="#haslure">hasLureType</a><sup class="sup-op" title="object property">op</sup><br/>
-                    <a href="#hastraptype">hasTrapType</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="#hasluretype">hasLureType</a><sup class="sup-op" title="object property">op</sup><br/>
                     <a href="#catchespest">catchesPest</a><sup class="sup-op" title="object property">op</sup><br/>
+                    <a href="#hastraptype">hasTrapType</a><sup class="sup-op" title="object property">op</sup><br/>
                 </td>
             </tr>
         </table>
@@ -896,7 +866,7 @@ code {
             <tr>
                 <th>Description</th>
                 <td>
-                    The make, model or design of a Trap
+                    Trap Type must not to be confused with Trap ID, which is an identifier assigned to a single trap.
                 </td>
             </tr>
             <tr>
@@ -942,11 +912,10 @@ code {
         <li><a href="#catchespest">catches pest</a></li>
         <li><a href="#detectspest">detects pest</a></li>
         <li><a href="#haseffortunit">has effort unit</a></li>
-        <li><a href="#haslure">has lure</a></li>
+        <li><a href="#hasluretype">has lure type</a></li>
         <li><a href="#hastraptype">has trap type</a></li>
         <li><a href="#hostspest">hosts pest</a></li>
         <li><a href="#Identifiespest">Identifies pest</a></li>
-        <li><a href="#lureType">lureType</a></li>
         <li><a href="#lurespest">lures pest</a></li>
         <li><a href="#supportspest">supports pest</a></li>
     </ul>
@@ -1002,7 +971,7 @@ code {
             <tr>
                 <th>Description</th>
                 <td>
-                    A device that is designed to catch the target pest
+                    An object which provides refuge to the target pest, and can thus be used as a trap
                 </td>
             </tr>
             <tr>
@@ -1056,7 +1025,7 @@ code {
             <tr>
                 <th>Description</th>
                 <td>
-                    Units of effort are selected from the EffortUnitType vocabulary
+                    Effort is the amount of time, number of plants inspected, or area surveyed while carrying out a Surveillance Event
                 </td>
             </tr>
             <tr>
@@ -1073,8 +1042,8 @@ code {
             </tr>
         </table>
     </div>
-    <div class="entity property" id="haslure">
-        <h3>has lure<sup title="object property" class="sup-op">op</sup></h3>
+    <div class="entity property" id="hasluretype">
+        <h3>has lure type<sup title="object property" class="sup-op">op</sup></h3>
         <table>
             <tr>
                 <th>IRI</th>
@@ -1083,7 +1052,7 @@ code {
             <tr>
                 <th>Description</th>
                 <td>
-                    A Trap may have a Lure as one of its parts
+                    Names of lures are selected from the LureTypes vocabulary
                 </td>
             </tr>
             <tr>
@@ -1098,6 +1067,12 @@ code {
                     <a href="#Trap">Trap</a><sup class="sup-c" title="class">c</sup>
                 </td>
             </tr>
+            <tr>
+                <th>Range(s)</th>
+                <td>
+                    <a href="#LureType">LureType</a><sup class="sup-c" title="class">c</sup>
+                </td>
+            </tr>
         </table>
     </div>
     <div class="entity property" id="hastraptype">
@@ -1110,7 +1085,7 @@ code {
             <tr>
                 <th>Description</th>
                 <td>
-                    The make or model of a trap
+                    The make or model of a trap, selected from the TrapTypes vocabulary
                 </td>
             </tr>
             <tr>
@@ -1181,21 +1156,6 @@ code {
             </tr>
         </table>
     </div>
-    <div class="entity property" id="lureType">
-        <h3>lureType<sup title="object property" class="sup-op">op</sup></h3>
-        <table>
-            <tr>
-                <th>IRI</th>
-                <td><code>https://linked.data.gov.au/def/phs#lureType</code></td>
-            </tr>
-            <tr>
-                <th>Range(s)</th>
-                <td>
-                    <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a><sup class="sup-c" title="class">c</sup>
-                </td>
-            </tr>
-        </table>
-    </div>
     <div class="entity property" id="lurespest">
         <h3>lures pest<sup title="object property" class="sup-op">op</sup></h3>
         <table>
@@ -1250,12 +1210,12 @@ code {
     <h2>Datatype Properties <span style="float:right; font-size:smaller;"><a href="">&uparrow;</a></span></h2>
     <ul class="hlist">
         <li><a href="#source">source</a></li>
-        <li><a href="#coordinateUncertaintyInMeters">coordinateUncertaintyInMeters</a></li>
-        <li><a href="#decimalLatitude">decimalLatitude</a></li>
-        <li><a href="#decimalLongitude">decimalLongitude</a></li>
-        <li><a href="#eventID">eventID</a></li>
-        <li><a href="#geodeticDatum">geodeticDatum</a></li>
-        <li><a href="#recordedBy">recordedBy</a></li>
+        <li><a href="#co-ordinateuncertaintyinmeters">co-ordinate uncertainty in meters</a></li>
+        <li><a href="#decimallatitude">decimal latitude</a></li>
+        <li><a href="#decimallongitude">decimal longitude</a></li>
+        <li><a href="#eventID">event ID</a></li>
+        <li><a href="#geodeticdatum">geodetic datum</a></li>
+        <li><a href="#recordedby">recorded by</a></li>
         <li><a href="#scientificname">scientific name</a></li>
         <li><a href="#taxonconceptID">taxon concept ID</a></li>
         <li><a href="#taxonRank">scientific name</a></li>
@@ -1285,8 +1245,8 @@ code {
             </tr>
         </table>
     </div>
-    <div class="entity property" id="coordinateUncertaintyInMeters">
-        <h3>coordinateUncertaintyInMeters<sup title="datatype property" class="sup-dp">dp</sup></h3>
+    <div class="entity property" id="co-ordinateuncertaintyinmeters">
+        <h3>co-ordinate uncertainty in meters<sup title="datatype property" class="sup-dp">dp</sup></h3>
         <table>
             <tr>
                 <th>IRI</th>
@@ -1300,8 +1260,8 @@ code {
             </tr>
         </table>
     </div>
-    <div class="entity property" id="decimalLatitude">
-        <h3>decimalLatitude<sup title="datatype property" class="sup-dp">dp</sup></h3>
+    <div class="entity property" id="decimallatitude">
+        <h3>decimal latitude<sup title="datatype property" class="sup-dp">dp</sup></h3>
         <table>
             <tr>
                 <th>IRI</th>
@@ -1315,8 +1275,8 @@ code {
             </tr>
         </table>
     </div>
-    <div class="entity property" id="decimalLongitude">
-        <h3>decimalLongitude<sup title="datatype property" class="sup-dp">dp</sup></h3>
+    <div class="entity property" id="decimallongitude">
+        <h3>decimal longitude<sup title="datatype property" class="sup-dp">dp</sup></h3>
         <table>
             <tr>
                 <th>IRI</th>
@@ -1331,7 +1291,7 @@ code {
         </table>
     </div>
     <div class="entity property" id="eventID">
-        <h3>eventID<sup title="datatype property" class="sup-dp">dp</sup></h3>
+        <h3>event ID<sup title="datatype property" class="sup-dp">dp</sup></h3>
         <table>
             <tr>
                 <th>IRI</th>
@@ -1345,8 +1305,8 @@ code {
             </tr>
         </table>
     </div>
-    <div class="entity property" id="geodeticDatum">
-        <h3>geodeticDatum<sup title="datatype property" class="sup-dp">dp</sup></h3>
+    <div class="entity property" id="geodeticdatum">
+        <h3>geodetic datum<sup title="datatype property" class="sup-dp">dp</sup></h3>
         <table>
             <tr>
                 <th>IRI</th>
@@ -1360,12 +1320,18 @@ code {
             </tr>
         </table>
     </div>
-    <div class="entity property" id="recordedBy">
-        <h3>recordedBy<sup title="datatype property" class="sup-dp">dp</sup></h3>
+    <div class="entity property" id="recordedby">
+        <h3>recorded by<sup title="datatype property" class="sup-dp">dp</sup></h3>
         <table>
             <tr>
                 <th>IRI</th>
                 <td><code>http://rs.tdwg.org/dwc/terms/recordedBy</code></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>
+                    It is a requirement of ISPM 6 that a pest record includes the name of the individual who performed the surveillance observation. There are no formatting requirements or requirements that the name unambiguously identifies a person. Thus, a name in the form of <Surname, Initials> is acceptable.
+                </td>
             </tr>
             <tr>
                 <th>Domain(s)</th>
@@ -1385,7 +1351,7 @@ code {
             <tr>
                 <th>Description</th>
                 <td>
-                    The ystematic name for an organism found by a Surveillance Event
+                    The systematic name for an organism found by a Surveillance Event, and recorded as a TaxonOccurrence
                 </td>
             </tr>
             <tr>
@@ -1469,7 +1435,7 @@ code {
             <tr>
                 <th>Description</th>
                 <td>
-                    Always used in conjunction with effortUnit
+                    Amount or quantity of 'effort' expended in the making of an observation.
                 </td>
             </tr>
             <tr>
