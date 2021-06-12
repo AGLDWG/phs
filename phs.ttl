@@ -167,12 +167,6 @@ sosa:phenomenonTime
   skos:prefLabel "Plant Health Surveillance Ontology"@en ;
   sdo:codeRepository "<https://github.com/AGLDWG/phs-ont>"^^xsd:anyURI ;
 .
-:AttractantType
-  a owl:Class ;
-  rdfs:subClassOf skos:Concept ;
-  skos:definition "The subtype of a Attractant. XXX delete me!"@en ;
-  skos:prefLabel "Attractant Type"@en ;
-.
 :DiagnosticMethod
   a owl:Class ;
   rdfs:comment "A procedure or method used to determine the taxonomic identity of a plant pest. May be carried out in the field, or more usually, in a laboratory." ;
