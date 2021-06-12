@@ -1,0 +1,52 @@
+# baseURI: https://linked.data.gov.au/def/phs/voc/trapsValidator
+# prefix: trapsValidator
+
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix trapsValidator: <https://linked.data.gov.au/def/phs/voc/trapsValidator#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://linked.data.gov.au/def/phs#Trap>
+  <http://www.w3.org/ns/shacl#property> <https://linked.data.gov.au/def/phs#Trap-catchesPest> ;
+  <http://www.w3.org/ns/shacl#property> <https://linked.data.gov.au/def/phs#Trap-dcterms_type> ;
+  <http://www.w3.org/ns/shacl#property> <https://linked.data.gov.au/def/phs#Trap-hasTrapType> ;
+  <http://www.w3.org/ns/shacl#property> <https://linked.data.gov.au/def/phs#Trap-lureType> ;
+.
+<https://linked.data.gov.au/def/phs#Trap-catchesPest>
+  a <http://www.w3.org/ns/shacl#PropertyShape> ;
+  <http://www.w3.org/ns/shacl#path> <https://linked.data.gov.au/def/phs#catchesPest> ;
+  <http://www.w3.org/ns/shacl#class> <https://linked.data.gov.au/def/phs#TargetPestGroup> ;
+.
+<https://linked.data.gov.au/def/phs#Trap-dcterms_type>
+  a <http://www.w3.org/ns/shacl#PropertyShape> ;
+  <http://www.w3.org/ns/shacl#path> <http://purl.org/dc/terms/type> ;
+.
+<https://linked.data.gov.au/def/phs#Trap-hasAttractantType>
+  a <http://www.w3.org/ns/shacl#PropertyShape> ;
+  <http://www.w3.org/ns/shacl#path> <https://linked.data.gov.au/def/phs#hasAttractantType> ;
+  <http://www.w3.org/ns/shacl#class> <https://linked.data.gov.au/def/phs#AttractantType> ;
+.
+<https://linked.data.gov.au/def/phs#Trap-hasBait>
+  a <http://www.w3.org/ns/shacl#PropertyShape> ;
+  <http://www.w3.org/ns/shacl#path> <https://linked.data.gov.au/def/phs#hasBait> ;
+  <http://www.w3.org/ns/shacl#class> <https://linked.data.gov.au/def/phs#Bait> ;
+  <http://www.w3.org/ns/shacl#name> "has bait" ;
+.
+<https://linked.data.gov.au/def/phs#Trap-hasTrapType>
+  a <http://www.w3.org/ns/shacl#PropertyShape> ;
+  <http://www.w3.org/ns/shacl#path> <https://linked.data.gov.au/def/phs#hasTrapType> ;
+  <http://www.w3.org/ns/shacl#class> <https://linked.data.gov.au/def/phs#TrapType> ;
+  <http://www.w3.org/ns/shacl#maxCount> 1 ;
+  <http://www.w3.org/ns/shacl#minCount> 1 ;
+.
+<https://linked.data.gov.au/def/phs#Trap-lureType>
+  a <http://www.w3.org/ns/shacl#PropertyShape> ;
+  <http://www.w3.org/ns/shacl#path> <https://linked.data.gov.au/def/phs#lureType> ;
+  <http://www.w3.org/ns/shacl#class> <https://linked.data.gov.au/def/phs#Lure> ;
+  <http://www.w3.org/ns/shacl#name> "lure type" ;
+.
+<https://linked.data.gov.au/def/phs/voc/trapsValidator>
+  a owl:Ontology ;
+  owl:versionInfo "Created with TopBraid Composer" ;
+.
