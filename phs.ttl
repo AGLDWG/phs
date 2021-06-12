@@ -269,7 +269,6 @@ sosa:phenomenonTime
 .
 :SurveillanceEvent
   a owl:Class ;
-  rdfs:comment "Also called 'Targetted' or 'Active' surveillance. The observation/s made during a Surveillance Event are directed towards establishing whether a Pest is present or not, insofar that the inspection method is capable of detecting the pest."@en ;
   rdfs:subClassOf sosa:Observation ;
   rdfs:subClassOf [
       a owl:Restriction ;
@@ -297,11 +296,13 @@ sosa:phenomenonTime
     ] ;
   skos:PrefLabel "Surveillance Event"@en ;
   skos:definition "An act of surveillance for a target pest, performed according to a specified procedure"@en ;
+  rdfs:comment "Also called 'Targetted' or 'Active' surveillance. The observation/s made during a Surveillance Event are directed towards establishing whether a Pest is present or not, insofar that the inspection method is capable of detecting the pest."@en ;
   sosa:hasFeatureofInterest :TargetPestGroup ;
   sosa:usedProcedure :InspectionMethod ;
 .
 :TargetPestGroup
   a owl:Class ;
+  rdfs:subClassOf  sosa:FeatureOfInterest ;
   a [
       a owl:Restriction ;
       owl:onProperty dcterms:type ;
@@ -309,7 +310,7 @@ sosa:phenomenonTime
     ] ;
   rdfs:comment "The IPPC definition of Pest is 'Any species, strain or biotype of plant, animal or pathogenic agent injurious to plants or plant products.'"@en ;
   rdfs:comment "x"@en ;
-  skos:definition "Pest or Pests that are the subject of a surveillance event"@en ;
+  skos:definition "Pest or Pests that are the subject of a surveillance event. The primary goal of a surveillance event is to determine the presence or absence of a Target Pest Group according to an Inspection Method. Thus the Target Pest Group is the thing whose prorty is being estimated in the course of a Surveillance Event, to arrive at an Occurrence Status for the target pest."@en ;
   skos:prefLabel "Target Pest Group"@en ;
   sosa:isFeatureOfInterestOf :SurveillanceEvent ;
 .
@@ -326,6 +327,7 @@ sosa:phenomenonTime
   skos:comment "A record of the identity of a taxon that was observed or taken as a sample by a Surveillance Event" ;
   skos:definition "The identity of an organism whose occurrence was detected during a surveillance event."@en ;
   skos:prefLabel "Taxon Identity"@en ;
+  sosa:observedProperty :SurveillanceEvent ;
   sosa:isResultOf :SurveillanceEvent ;
 .
 :Trap
