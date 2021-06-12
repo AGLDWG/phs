@@ -224,6 +224,7 @@ sosa:phenomenonTime
   a owl:Class ;
   rdfs:comment "x"@en ;
   rdfs:subClassOf dwc:Location ;
+  rdfs:subClassOf sosa:FeatureOfInterest ;
   skos:definition "The point location at which a surveillance event occured."@en ;
   skos:prefLabel "Observation Location"@en ;
   sosa:isFeatureOfInterestOf :SurveillanceEvent ;
@@ -291,7 +292,6 @@ sosa:phenomenonTime
     ] ;
   skos:PrefLabel "Surveillance Event"@en ;
   skos:definition "An act of surveillance for a target pest, performed according to a specified procedure"@en ;
-  sosa:hasFeatureofInterest :Effort ;
   sosa:hasFeatureofInterest :TargetPestGroup ;
   sosa:usedProcedure :InspectionMethod ;
 .
