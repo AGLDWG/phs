@@ -192,11 +192,13 @@ sosa:phenomenonTime
 .
 :Host
   a owl:Class ;
+  skos:definition "A living thing (usually a plant) from which a sample was taken for identification. In the case of trapping, the tree in which the trap was hung"@en ;
   rdfs:comment "Particular pests are often associated with certain substrates or hosts. In the field, when targetting a pest, a surveyor will look for substrates or hosts that are more likely to harbour the target pest. Recording the substrate assists diagnosticians when they are identifying a specimen. It also aids analysis aimed at estimating pest prevalence based on absence records. Lastly, some protocols require the host or substrate to be recorded for each observation." ;
   rdfs:subClassOf sosa:Platform ;
   owl:disjointWith :Substrate ;
   skos:example "An orange tree, host of the pathogen that causes citrus canker" ;
   skos:example "Bee; a Varroa Mite may be found in a bee's trachea" ;
+  sosa:hosts :Trap ;
   skos:prefLabel "Host" ;
 .
 :HostType
@@ -257,7 +259,7 @@ sosa:phenomenonTime
 :Substrate
   a owl:Class ;
   rdfs:comment "A Substrate is a Stratum that is not a Host. Usually non-living, such as a rock or leaf litter." ;
-  rdfs:comment "Thing or material on or in which a pest may occur" ;
+  rdfs:definition "Thing or material on or in which a sample was taken for identification." ;
   rdfs:subClassOf sosa:Platform ;
   skos:prefLabel "Substrate" ;
 .
@@ -348,7 +350,7 @@ sosa:phenomenonTime
   rdfs:subClassOf [
       a owl:Restriction ;
       owl:onClass :TrapType ;
-      owl:onProperty dcterms:type ;
+      owl:onProperty: dcterms:type ;
       owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
     ] ;
   skos:prefLabel "Trap" ;
