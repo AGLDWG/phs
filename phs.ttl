@@ -202,7 +202,9 @@ sosa:phenomenonTime
 .
 :InspectionMethod
   a owl:Class ;
-  rdfs:comment "A technique used to carry out an act of surveillance. Inspection Methods are chosen according to the target pest and/or host|substrate. The sensitivity of an observation may depend on the method that was used." ;
+  skos:definition "A technique used to carry out an act of surveillance"@en ;
+  rdfs:comment "Inspection Methods are chosen according to the target pest and/or host|substrate. The sensitivity of an observation may depend on the method that was used." ;
+  rdfs:comment "The units used to record Surveillance Effort vary according to the Inspection method."@en ;
   rdfs:subClassOf sosa:Procedure ;
   skos:prefLabel "Inspection Method" ;
 .
@@ -397,6 +399,7 @@ sosa:phenomenonTime
   a owl:ObjectProperty ;
   rdfs:domain :Trap ;
   rdfs:subPropertyOf dcterms:hasPart ;
+  rdfs:range :LureType ;
   skos:definition "A Trap may have a Lure as one of its parts"@en ;
   skos:prefLabel "has lure"@en ;
 .
@@ -420,10 +423,6 @@ sosa:phenomenonTime
   rdfs:domain :DiagnosticMethod ;
   rdfs:range :TargetPestGroup ;
   skos:prefLabel "Identifies pest"@en ;
-.
-:lureType
-  a owl:ObjectProperty ;
-  rdfs:range skos:Concept ;
 .
 :luresPest
   a owl:ObjectProperty ;
