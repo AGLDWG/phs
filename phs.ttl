@@ -157,6 +157,7 @@ sosa:phenomenonTime
   dcterms:created "2020-02-11"^^xsd:date ;
   dcterms:creator <https://orcid.org/0000-0002-8742-7730> ;
   dcterms:creator <https://orcid.org/0000-0003-3357-2307> ;
+  dcterms:creator <https://orcid.org/0000-0003-3932-5614> ;
   dcterms:modified "2021-06-11"^^xsd:date ;
   dcterms:publisher <https://linked.data.gov.au/org/dawe> ;
   owl:imports <http://datashapes.org/dash> ;
@@ -463,6 +464,15 @@ sosa:phenomenonTime
   sdo:email <mailto:simon.cox@csiro.au> ;
   sdo:jobTitle "Research Scientist" ;
   sdo:name "Simon J.D. Cox" ;
+.
+
+<https://orcid.org/0000-0003-3932-5614>
+  rdf:type owl:NamedIndividual ;
+  rdf:type sdo:Person ;
+  sdo:affiliation <https://surroundaustralia.com> ;
+  sdo:email <mailto:simon.opper@surroundaustralia.com> ;
+  sdo:jobTitle "Chief Data Scientist" ;
+  sdo:name "Simon J. Opper" ;
 .
 <https://orcid.org/0000-0002-8742-7730>
   a owl:NamedIndividual ;
