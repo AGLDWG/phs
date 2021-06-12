@@ -52,36 +52,40 @@ dcterms:type
 vann:preferredNamespacePrefix
   a owl:AnnotationProperty ;
 .
-dwc:Taxon
-  a owl:Class ;
-.
 dwc:coordinateUncertaintyInMeters
   a owl:DatatypeProperty ;
   rdfs:domain :ObservationLocation ;
+  skos:prefLabel "co-ordinate uncertainty in meters" ;
 .
 dwc:decimalLatitude
   a owl:DatatypeProperty ;
   rdfs:domain :ObservationLocation ;
+  skos:prefLabel "decimal latitude" ;
 .
 dwc:decimalLongitude
   a owl:DatatypeProperty ;
   rdfs:domain :ObservationLocation ;
+  skos:prefLabel "decimal longitude" ;
 .
 dwc:eventID
   a owl:DatatypeProperty ;
   rdfs:domain :SurveillanceEvent ;
+  skos:prefLabel "event ID" ;
 .
 dwc:geodeticDatum
   a owl:DatatypeProperty ;
   rdfs:domain :ObservationLocation ;
+  skos:prefLabel "geodetic datum" ;
 .
 dwc:recordedBy
   a owl:DatatypeProperty ;
   rdfs:domain :SurveillanceEvent ;
+  skos:prefLabel "recorded by" ;
+  rdfs:comment "It is a requirement of ISPM 6 that a pest record includes the name of the individual who performed the surveillance observation. There are no formatting requirements or requirements that the name unambiguously identifies a person. Thus, a name in the form of <Surname, Initials> is acceptable."@en ;
 .
 dwc:scientificName
   a owl:DatatypeProperty ;
-  rdfs:comment "The ystematic name for an organism found by a Surveillance Event" ;
+  rdfs:comment "The systematic name for an organism found by a Surveillance Event, and recorded as a TaxonOccurrence" ;
   rdfs:domain :TaxonOccurrence ;
   skos:example "Erwinia amylovora" ;
   skos:prefLabel "scientific name" ;
@@ -158,7 +162,7 @@ sosa:phenomenonTime
   dcterms:creator <https://orcid.org/0000-0002-8742-7730> ;
   dcterms:creator <https://orcid.org/0000-0003-3357-2307> ;
   dcterms:creator <https://orcid.org/0000-0003-3932-5614> ;
-  dcterms:modified "2021-06-11"^^xsd:date ;
+  dcterms:modified "2021-06-12"^^xsd:date ;
   dcterms:publisher <https://linked.data.gov.au/org/dawe> ;
   owl:imports <http://datashapes.org/dash> ;
   owl:imports dwc: ;
@@ -401,12 +405,12 @@ sosa:phenomenonTime
   rdfs:domain :Trap ;
   rdfs:subPropertyOf dcterms:hasPart ;
   rdfs:range :LureType ;
-  skos:definition "A Trap may have a Lure as one of its parts"@en ;
-  skos:prefLabel "has lure"@en ;
+  skos:definition "Names of lures are selected from the LureTypes vocabulary"@en ;
+  skos:prefLabel "has lure type"@en ;
 .
 :hasTrapType
   a owl:ObjectProperty ;
-  rdfs:comment "The make or model of a trap" ;
+  rdfs:comment "The make or model of a trap, selected from the TrapTypes vocabulary" ;
   rdfs:domain :Trap ;
   rdfs:range :TrapType ;
   skos:prefLabel "has trap type" ;
