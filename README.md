@@ -1,9 +1,9 @@
 # Plant Health Surveillance Ontology
 RDF documentation of the **Pest Record Specification** (PRS) for *Plant Health Surveillance*.
-* During developmemt, view the [latest rendering of the phs ontology](https://raw.githack.com/AGLDWG/phs-ont/master/phs.html) here.
+* During development, view the [latest rendering of the phs ontology](https://raw.githack.com/AGLDWG/phs-ont/master/phs.html) here.
 
 ### Vocabularies
-This PHS ontology referest to a number of vocabularies which are presented in the [vocabularies/](vocabularies/README.md) folder.
+This PHS ontology refers to a number of [vocabularies](https://github.com/surroundaustralia/dawe-vocabs).
 
 We are currently automating the documentation and publication of the vocabularies. Prototypes are at this [interim address](http://dawe.surroundaustralia.com/). 
 
