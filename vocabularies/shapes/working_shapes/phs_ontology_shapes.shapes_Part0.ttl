@@ -271,7 +271,6 @@ graphql:WriterTestCase
   a sh:NodeShape ;
 .
 dct:Dataset
-  a sh:NodeShape ;
   rdfs:subClassOf owl:Thing ;
 .
 <http://purl.org/vocommons/voaf#Vocabulary>

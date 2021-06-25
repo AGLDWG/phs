@@ -24,6 +24,9 @@
 @prefix targetpestgroup: <https://linked.data.gov.au/def/phs/voc/targetpestgroup/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
+<http://purl.org/dc/terms/Dataset>
+  a sh:NodeShape ;
+.
 <http://rs.tdwg.org/dwc/terms/Taxon>
   a sh:NodeShape ;
 .
