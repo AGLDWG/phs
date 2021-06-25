@@ -1,0 +1,62 @@
+# baseURI: https://linked.data.gov.au/def/phs/voc/trapsValidator
+# imports: http://www.w3.org/ns/shacl#
+# prefix: trapsValidator
+
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
+@prefix instance_data_using_shacl: <https://linked.data.gov.au/def/instance_data_using_shacl#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix phs: <https://linked.data.gov.au/def/phs#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix sosa: <http://www.w3.org/ns/sosa/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix trapsValidator: <https://linked.data.gov.au/def/phs/voc/trapsValidator#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://linked.data.gov.au/def/phs#Trap>
+  sh:property <https://linked.data.gov.au/def/phs#Trap-catchesPest> ;
+  sh:property <https://linked.data.gov.au/def/phs#Trap-dcterms_type> ;
+  sh:property <https://linked.data.gov.au/def/phs#Trap-hasTrapType> ;
+  sh:property <https://linked.data.gov.au/def/phs#Trap-lureType> ;
+.
+<https://linked.data.gov.au/def/phs#Trap-catchesPest>
+  a sh:PropertyShape ;
+  sh:path <https://linked.data.gov.au/def/phs#catchesPest> ;
+  sh:class <https://linked.data.gov.au/def/phs#TargetPestGroup> ;
+.
+<https://linked.data.gov.au/def/phs#Trap-dcterms_type>
+  a sh:PropertyShape ;
+  sh:path <http://purl.org/dc/terms/type> ;
+.
+<https://linked.data.gov.au/def/phs#Trap-hasAttractantType>
+  a sh:PropertyShape ;
+  sh:path <https://linked.data.gov.au/def/phs#hasAttractantType> ;
+  sh:class <https://linked.data.gov.au/def/phs#AttractantType> ;
+.
+<https://linked.data.gov.au/def/phs#Trap-hasBait>
+  a sh:PropertyShape ;
+  sh:path <https://linked.data.gov.au/def/phs#hasBait> ;
+  sh:class <https://linked.data.gov.au/def/phs#Bait> ;
+  sh:name "has bait" ;
+.
+<https://linked.data.gov.au/def/phs#Trap-hasTrapType>
+  a sh:PropertyShape ;
+  sh:path <https://linked.data.gov.au/def/phs#hasTrapType> ;
+  sh:class <https://linked.data.gov.au/def/phs#TrapType> ;
+  sh:maxCount 1 ;
+  sh:minCount 1 ;
+.
+<https://linked.data.gov.au/def/phs#Trap-lureType>
+  a sh:PropertyShape ;
+  sh:path <https://linked.data.gov.au/def/phs#lureType> ;
+  sh:class <https://linked.data.gov.au/def/phs#Lure> ;
+  sh:name "lure type" ;
+.
+<https://linked.data.gov.au/def/phs/voc/trapsValidator>
+  a owl:Ontology ;
+  owl:imports sh: ;
+  owl:versionInfo "Created with TopBraid Composer" ;
+.

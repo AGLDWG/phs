@@ -1,0 +1,153 @@
+# baseURI: https://linked.data.gov.au/def/phs.shapes
+# imports: http://datashapes.org/dash
+# imports: https://linked.data.gov.au/def/phs
+# imports: https://linked.data.gov.au/def/phs/voc/effort-units
+# imports: https://linked.data.gov.au/def/phs/voc/inspection-methods
+# imports: https://linked.data.gov.au/def/phs/voc/lures
+# imports: https://linked.data.gov.au/def/phs/voc/surveillanceEventValidator
+# imports: https://linked.data.gov.au/def/phs/voc/targetpestgroup
+# imports: https://linked.data.gov.au/def/phs/voc/traps
+# imports: https://linked.data.gov.au/def/phs/voc/trapsValidator
+# prefix: phs-shapes
+
+@prefix dash: <http://datashapes.org/dash#> .
+@prefix inspection-methods: <https://linked.data.gov.au/def/phs/voc/inspection-methods/> .
+@prefix lures: <https://linked.data.gov.au/def/phs/voc/lures/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix phs: <https://linked.data.gov.au/def/phs#> .
+@prefix phs-shapes: <https://linked.data.gov.au/def/phs.shapes#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix targetpestgroup: <https://linked.data.gov.au/def/phs/voc/targetpestgroup/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://rs.tdwg.org/dwc/terms/Taxon>
+  a sh:NodeShape ;
+.
+<http://www.w3.org/ns/sosa/FeatureOfInterest>
+  sh:property <http://www.w3.org/ns/sosa/FeatureOfInterest-observedAtLocation> ;
+.
+<http://www.w3.org/ns/sosa/FeatureOfInterest-observedAtLocation>
+  a sh:PropertyShape ;
+  sh:path phs:observedAtLocation ;
+  sh:name "observed at location" ;
+.
+<http://www.w3.org/ns/sosa/Sampler>
+  a sh:NodeShape ;
+.
+phs:Attractant-dcterms_type
+  a sh:PropertyShape ;
+  sh:path <http://purl.org/dc/terms/type> ;
+.
+phs:Attractant-hasAttractantType
+  a sh:PropertyShape ;
+  sh:path phs:hasAttractantType ;
+  sh:class phs:AttractantType ;
+.
+phs:AttractantType
+  a sh:NodeShape ;
+.
+phs:DiagnosticMethod
+  sh:property phs:DiagnosticMethod-identifiesPest ;
+.
+phs:DiagnosticMethod-identifiesPest
+  a sh:PropertyShape ;
+  sh:path phs:identifiesPest ;
+  sh:class phs:TargetPestGroup ;
+.
+phs:InspectionMethod
+  sh:property phs:InspectionMethod-usesInspectionMethod ;
+.
+phs:InspectionMethod-usesInspectionMethod
+  a sh:PropertyShape ;
+  sh:path phs:usesInspectionMethod ;
+  sh:class phs:InspectionMethodType ;
+  sh:maxCount 1 ;
+  sh:minCount 1 ;
+  sh:nodeKind sh:IRI ;
+.
+phs:Lure-dcterms_type
+  a sh:PropertyShape ;
+  sh:path <http://purl.org/dc/terms/type> ;
+.
+phs:Lure-lureType
+  a sh:PropertyShape ;
+  sh:path phs:lureType ;
+  sh:class skos:Concept ;
+  sh:class phs:LureType ;
+  sh:qualifiedMaxCount 1 ;
+  sh:qualifiedMinCount 1 ;
+.
+phs:Lure-luresPest
+  a sh:PropertyShape ;
+  sh:path phs:luresPest ;
+  sh:class phs:TargetPestGroup ;
+.
+phs:TaxonOccurrence
+  sh:property phs:TaxonOccurrence-dwc_scientificName ;
+  sh:property phs:TaxonOccurrence-dwc_taxonConceptID ;
+  sh:property phs:TaxonOccurrence-dwc_taxonRank ;
+  sh:property phs:TaxonOccurrence-dwc_vernacularName ;
+  sh:property phs:TaxonOccurrence-occurrenceID ;
+  sh:property phs:TaxonOccurrence-taxonomicReferenceSource ;
+.
+phs:TaxonOccurrence-dwc_scientificName
+  a sh:PropertyShape ;
+  sh:path <http://rs.tdwg.org/dwc/terms/scientificName> ;
+.
+phs:TaxonOccurrence-dwc_taxonConceptID
+  a sh:PropertyShape ;
+  sh:path <http://rs.tdwg.org/dwc/terms/taxonConceptID> ;
+.
+phs:TaxonOccurrence-dwc_taxonRank
+  a sh:PropertyShape ;
+  sh:path <http://rs.tdwg.org/dwc/terms/taxonRank> ;
+.
+phs:TaxonOccurrence-dwc_vernacularName
+  a sh:PropertyShape ;
+  sh:path <http://rs.tdwg.org/dwc/terms/vernacularName> ;
+.
+phs:TaxonOccurrence-occurrenceID
+  a sh:PropertyShape ;
+  sh:path phs:occurrenceID ;
+  sh:maxCount 1 ;
+  sh:minCount 1 ;
+  sh:name "occurrence ID" ;
+.
+phs:TaxonOccurrence-taxonomicReferenceSource
+  a sh:PropertyShape ;
+  sh:path phs:taxonomicReferenceSource ;
+.
+phs:Trap
+  sh:property phs:Trap-usedProcedure ;
+.
+phs:Trap-usedProcedure
+  a sh:PropertyShape ;
+  sh:path <http://www.w3.org/ns/sosa/usedProcedure> ;
+  sh:class phs:InspectionMethod ;
+  sh:maxCount 1 ;
+  sh:minCount 1 ;
+  sh:name "used procedure" ;
+  sh:nodeKind sh:IRI ;
+.
+phs:usesInspectionMethod
+  a owl:ObjectProperty ;
+  rdfs:label "uses inspection method" ;
+  rdfs:range phs:InspectionMethodType ;
+  skos:prefLabel "uses inspection method" ;
+.
+<https://linked.data.gov.au/def/phs.shapes>
+  a owl:Ontology ;
+  owl:imports <http://datashapes.org/dash> ;
+  owl:imports <https://linked.data.gov.au/def/phs> ;
+  owl:imports <https://linked.data.gov.au/def/phs/voc/effort-units> ;
+  owl:imports <https://linked.data.gov.au/def/phs/voc/inspection-methods> ;
+  owl:imports <https://linked.data.gov.au/def/phs/voc/lures> ;
+  owl:imports <https://linked.data.gov.au/def/phs/voc/surveillanceEventValidator> ;
+  owl:imports <https://linked.data.gov.au/def/phs/voc/targetpestgroup> ;
+  owl:imports <https://linked.data.gov.au/def/phs/voc/traps> ;
+  owl:imports <https://linked.data.gov.au/def/phs/voc/trapsValidator> ;
+  owl:versionInfo "Created with TopBraid Composer" ;
+.

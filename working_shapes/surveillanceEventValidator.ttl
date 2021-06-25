@@ -1,0 +1,107 @@
+# baseURI: https://linked.data.gov.au/def/phs/voc/surveillanceEventValidator
+# imports: http://www.w3.org/ns/shacl#
+# prefix: surveillanceEventValidator
+
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
+@prefix effortUnit: <https://linked.data.gov.au/def/phs/voc/effort-units/> .
+@prefix instance_data_using_shacl: <https://linked.data.gov.au/def/instance_data_using_shacl#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix phs: <https://linked.data.gov.au/def/phs#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix sosa: <http://www.w3.org/ns/sosa/> .
+@prefix surveillanceEventValidator: <https://linked.data.gov.au/def/phs/voc/surveillanceEventValidator#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+phs:SurveillanceEvent
+  sh:property phs:SurveillanceEvent-dwc_eventID ;
+  sh:property phs:SurveillanceEvent-dwc_recordedBy ;
+  sh:property phs:SurveillanceEvent-effortValue ;
+  sh:property phs:SurveillanceEvent-hasEffortUnit ;
+  sh:property phs:SurveillanceEvent-hasFeatureOfInterest ;
+  sh:property phs:SurveillanceEvent-observedAtLocation ;
+  sh:property phs:SurveillanceEvent-phenomenonTime ;
+  sh:property phs:SurveillanceEvent-source ;
+  sh:property phs:SurveillanceEvent-usedProcedure ;
+.
+phs:SurveillanceEvent-dwc_eventID
+  a sh:PropertyShape ;
+  sh:path dwc:eventID ;
+  sh:message "Each Surveillance Event must have one unique event ID" ;
+  sh:minCount 1 ;
+  sh:targetClass phs:SurveillanceEvent ;
+.
+phs:SurveillanceEvent-dwc_recordedBy
+  a sh:PropertyShape ;
+  sh:path dwc:recordedBy ;
+  sh:targetClass phs:SurveillanceEvent ;
+.
+phs:SurveillanceEvent-effortValue
+  a sh:PropertyShape ;
+  sh:path phs:effortValue ;
+  sh:datatype xsd:decimal ;
+  sh:maxCount 1 ;
+  sh:minCount 1 ;
+  sh:name "effort value" ;
+  sh:targetClass phs:SurveillanceEvent ;
+.
+phs:SurveillanceEvent-hasEffortUnit
+  a sh:PropertyShape ;
+  sh:path phs:hasEffortUnit ;
+  sh:class skos:Concept ;
+  sh:class phs:EffortUnitType ;
+  sh:maxCount 1 ;
+  sh:minCount 1 ;
+  sh:name "has effort unit" ;
+  sh:nodeKind sh:IRI ;
+  sh:targetClass phs:SurveillanceEvent ;
+  sh:targetObjectsOf phs:hasEffortUnit ;
+.
+phs:SurveillanceEvent-hasFeatureOfInterest
+  a sh:PropertyShape ;
+  sh:path sosa:hasFeatureOfInterest ;
+  sh:Class phs:TargetPestGroupType ;
+  sh:message "At least One valid target pest must be declared. Surveillance events must be directed to the defined set of target pests. Ensure the target pest is selected from the target pest groups vocabulary." ;
+  sh:minCount 1 ;
+  sh:nodeKind sh:IRI ;
+  sh:targetClass phs:SurveillanceEvent ;
+.
+phs:SurveillanceEvent-observedAtLocation
+  a sh:PropertyShape ;
+  sh:path phs:observedAtLocation ;
+  sh:class phs:ObservationLocation ;
+  sh:targetClass phs:SurveillanceEvent ;
+.
+phs:SurveillanceEvent-phenomenonTime
+  a sh:PropertyShape ;
+  sh:path <sosa:resultTime/sosa:phenomenonTime> ;
+  sh:datatype xsd:date ;
+  sh:maxCount 1 ;
+  sh:minCount 1 ;
+  sh:name "phenomenon time" ;
+  sh:targetClass phs:SurveillanceEvent ;
+.
+phs:SurveillanceEvent-source
+  a sh:PropertyShape ;
+  sh:path dcterms:source ;
+  sh:class dcterms:Dataset ;
+  sh:minCount 1 ;
+  sh:name "Source Dataset" ;
+  sh:targetClass phs:SurveillanceEvent ;
+.
+phs:SurveillanceEvent-usedProcedure
+  a sh:PropertyShape ;
+  sh:path sosa:usedProcedure ;
+  sh:class phs:InspectionMethod ;
+  sh:maxCount 1 ;
+  sh:minCount 1 ;
+  sh:targetClass phs:SurveillanceEvent ;
+.
+<https://linked.data.gov.au/def/phs/voc/surveillanceEventValidator>
+  a owl:Ontology ;
+  owl:imports sh: ;
+  owl:versionInfo "Created with TopBraid Composer" ;
+.

@@ -1,0 +1,31 @@
+# baseURI: https://linked.data.gov.au/def/phs/voc/effortValidator
+# prefix: effortValidator
+
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
+@prefix effortValidator: <https://linked.data.gov.au/def/phs/voc/effortValidator#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix phs: <https://linked.data.gov.au/def/phs#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix sosa: <http://www.w3.org/ns/sosa/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+phs:Effort
+  sh:property phs:Effort-hasEffortUnit ;
+.
+phs:Effort-effortValue
+  a sh:PropertyShape ;
+  sh:path phs:effortValue ;
+.
+phs:Effort-hasEffortUnit
+  a sh:PropertyShape ;
+  sh:path phs:hasEffortUnit ;
+  sh:class phs:EffortUnitType ;
+.
+<https://linked.data.gov.au/def/phs/voc/effortValidator>
+  a owl:Ontology ;
+  owl:versionInfo "Created with TopBraid Composer" ;
+.
