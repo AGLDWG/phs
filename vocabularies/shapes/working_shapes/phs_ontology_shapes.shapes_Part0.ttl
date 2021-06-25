@@ -933,25 +933,7 @@ phs:LureType
 phs:ObservationLocation
   rdfs:subClassOf owl:Thing ;
 .
-phs:OccurrenceStatus
-  a sh:NodeShape ;
-  rdfs:subClassOf owl:Thing ;
-  sh:property [
-      a sh:PropertyShape ;
-      sh:path dct:type ;
-    ] ;
-  sh:property [
-      a sh:PropertyShape ;
-      sh:path dct:type ;
-      sh:qualifiedMaxCount 1 ;
-      sh:qualifiedMinCount 1 ;
-      sh:qualifiedValueShape [
-          sh:class phs:OccurrenceStatusType ;
-        ] ;
-    ] ;
-.
 phs:OccurrenceStatusType
-  a sh:NodeShape ;
   rdfs:subClassOf owl:Thing ;
 .
 phs:Sampling

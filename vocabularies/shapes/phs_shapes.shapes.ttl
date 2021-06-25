@@ -145,6 +145,14 @@
   sh:property <https://linked.data.gov.au/def/phs#ObservationLocation-dwc_decimalLongitude> ;
   sh:property <https://linked.data.gov.au/def/phs#ObservationLocation-dwc_geodeticDatum> ;
 .
+<https://linked.data.gov.au/def/phs#OccurrenceStatus>
+  a sh:NodeShape ;
+  rdfs:subClassOf owl:Thing ;
+  sh:property <https://linked.data.gov.au/def/phs#OccurrenceStatus-type> ;
+.
+<https://linked.data.gov.au/def/phs#OccurrenceStatusType>
+  a sh:NodeShape ;
+.
 <https://linked.data.gov.au/def/phs#SurveillanceEvent>
   sh:property <https://linked.data.gov.au/def/phs#SurveillanceEvent-dwc_eventID> ;
   sh:property <https://linked.data.gov.au/def/phs#SurveillanceEvent-dwc_recordedBy> ;
