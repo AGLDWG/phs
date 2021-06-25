@@ -82,6 +82,20 @@
 <https://linked.data.gov.au/def/phs#EffortUnitType>
   a sh:NodeShape ;
 .
+<https://linked.data.gov.au/def/phs#Host>
+  a sh:NodeShape ;
+  sh:not [] ;
+  sh:not [] ;
+  sh:not [] ;
+  sh:not [] ;
+  sh:not [] ;
+  sh:property <https://linked.data.gov.au/def/phs#Host-hostsPest> ;
+  sh:property [] ;
+  sh:property [] ;
+.
+<https://linked.data.gov.au/def/phs#HostType>
+  a sh:NodeShape ;
+.
 <https://linked.data.gov.au/def/phs#InspectionMethod>
   sh:property <https://linked.data.gov.au/def/phs#InspectionMethod-usesInspectionMethod> ;
 .

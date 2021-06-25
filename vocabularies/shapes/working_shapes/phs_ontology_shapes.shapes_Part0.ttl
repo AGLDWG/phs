@@ -900,32 +900,9 @@ phs:EffortUnitType
   rdfs:subClassOf owl:Thing ;
 .
 phs:Host
-  a sh:NodeShape ;
   rdfs:subClassOf owl:Thing ;
-  sh:not [
-      rdfs:label "Instance of Substrate" ;
-      sh:class phs:Substrate ;
-    ] ;
-  sh:not [
-      rdfs:label "Instance of Substrate" ;
-      sh:class phs:Substrate ;
-    ] ;
-  sh:property [
-      a sh:PropertyShape ;
-      sh:path phs:hostsPest ;
-      sh:class phs:TargetPestGroup ;
-    ] ;
-  sh:property [
-      a sh:PropertyShape ;
-      sh:path phs:taxonomicReferenceSource ;
-    ] ;
-  sh:property [
-      a sh:PropertyShape ;
-      sh:path phs:vernacularName ;
-    ] ;
 .
 phs:HostType
-  a sh:NodeShape ;
   rdfs:subClassOf owl:Thing ;
 .
 phs:InspectionMethod
@@ -1400,5 +1377,21 @@ phs:observedAtLocation
 ].
 [
   a sh:PropertyShape ;
+  sh:path phs:taxonomicReferenceSource ;
+].
+[
+  a sh:PropertyShape ;
+  sh:path phs:vernacularName ;
+].
+[
+  a sh:PropertyShape ;
   sh:class rdfs:Datatype ;
+].
+[
+  rdfs:label "Instance of Substrate" ;
+  sh:class phs:Substrate ;
+].
+[
+  rdfs:label "Instance of Substrate" ;
+  sh:class phs:Substrate ;
 ].

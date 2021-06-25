@@ -57,11 +57,6 @@ skos:Concept
 .
 <https://linked.data.gov.au/def/phs#Host>
   a sh:NodeShape ;
-  sh:not [
-      rdfs:label "Instance of Substrate" ;
-      sh:class <https://linked.data.gov.au/def/phs#Substrate> ;
-    ] ;
-  sh:property <https://linked.data.gov.au/def/phs#Host-hostsPest> ;
 .
 <https://linked.data.gov.au/def/phs#Host-hostsPest>
   a sh:PropertyShape ;
@@ -261,3 +256,7 @@ sdo:Organization
 sdo:Person
   a sh:NodeShape ;
 .
+[
+  rdfs:label "Instance of Substrate" ;
+  sh:class <https://linked.data.gov.au/def/phs#Substrate> ;
+].
