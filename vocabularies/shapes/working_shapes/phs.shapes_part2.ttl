@@ -126,11 +126,6 @@ skos:Concept
 .
 <https://linked.data.gov.au/def/phs#Sampling>
   a sh:NodeShape ;
-  sh:property <https://linked.data.gov.au/def/phs#Sampling-sosa_hasResult> ;
-  sh:property <https://linked.data.gov.au/def/phs#Sampling-sosa_madeBySampler> ;
-  sh:property <https://linked.data.gov.au/def/phs#Sampling-sosa_phenomenonTime> ;
-  sh:property <https://linked.data.gov.au/def/phs#Sampling-sosa_resultTime> ;
-  sh:property <https://linked.data.gov.au/def/phs#Sampling-sosa_usedProcedure> ;
 .
 <https://linked.data.gov.au/def/phs#Sampling-sosa_hasResult>
   a sh:PropertyShape ;

@@ -44,6 +44,9 @@
 <http://www.w3.org/ns/sosa/Sampler>
   a sh:NodeShape ;
 .
+<http://www.w3.org/ns/sosa/Sampling>
+  a sh:NodeShape ;
+.
 <http://xmlns.com/foaf/0.1/Agent>
   a sh:NodeShape ;
 .
@@ -152,6 +155,15 @@
 .
 <https://linked.data.gov.au/def/phs#OccurrenceStatusType>
   a sh:NodeShape ;
+.
+<https://linked.data.gov.au/def/phs#Sampling>
+  a sh:NodeShape ;
+  rdfs:subClassOf owl:Thing ;
+  sh:property <https://linked.data.gov.au/def/phs#Sampling-sosa_hasResult> ;
+  sh:property <https://linked.data.gov.au/def/phs#Sampling-sosa_madeBySampler> ;
+  sh:property <https://linked.data.gov.au/def/phs#Sampling-sosa_phenomenonTime> ;
+  sh:property <https://linked.data.gov.au/def/phs#Sampling-sosa_resultTime> ;
+  sh:property <https://linked.data.gov.au/def/phs#Sampling-sosa_usedProcedure> ;
 .
 <https://linked.data.gov.au/def/phs#SurveillanceEvent>
   sh:property <https://linked.data.gov.au/def/phs#SurveillanceEvent-dwc_eventID> ;

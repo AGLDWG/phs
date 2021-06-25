@@ -858,7 +858,6 @@ sh:Validator
   rdfs:subClassOf owl:Thing ;
 .
 <http://www.w3.org/ns/sosa/Sampling>
-  a sh:NodeShape ;
   rdfs:subClassOf owl:Thing ;
 .
 <http://www.w3.org/ns/sosa/Sensor>
@@ -934,10 +933,6 @@ phs:ObservationLocation
   rdfs:subClassOf owl:Thing ;
 .
 phs:OccurrenceStatusType
-  rdfs:subClassOf owl:Thing ;
-.
-phs:Sampling
-  a sh:NodeShape ;
   rdfs:subClassOf owl:Thing ;
 .
 phs:Sampling-hasFeatureOfInterest
