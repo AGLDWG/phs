@@ -912,10 +912,7 @@ phs:InspectionMethodType
   rdfs:subClassOf owl:Thing ;
 .
 phs:Lure
-  a sh:NodeShape ;
   rdfs:subClassOf owl:Thing ;
-  sh:property phs:Lure-lureType ;
-  sh:property phs:Lure-luresPest ;
 .
 phs:Lure-lureType
   a sh:PropertyShape ;
@@ -931,7 +928,6 @@ phs:Lure-luresPest
   sh:class phs:TargetPestGroup ;
 .
 phs:LureType
-  a sh:NodeShape ;
   rdfs:subClassOf owl:Thing ;
 .
 phs:ObservationLocation
