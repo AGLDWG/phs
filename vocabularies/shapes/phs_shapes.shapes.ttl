@@ -138,6 +138,13 @@
 <https://linked.data.gov.au/def/phs#LureType>
   a sh:NodeShape ;
 .
+<https://linked.data.gov.au/def/phs#ObservationLocation>
+  a sh:NodeShape ;
+  sh:property <https://linked.data.gov.au/def/phs#ObservationLocation-dwc_coordinateUncertaintyInMeters> ;
+  sh:property <https://linked.data.gov.au/def/phs#ObservationLocation-dwc_decimalLatitude> ;
+  sh:property <https://linked.data.gov.au/def/phs#ObservationLocation-dwc_decimalLongitude> ;
+  sh:property <https://linked.data.gov.au/def/phs#ObservationLocation-dwc_geodeticDatum> ;
+.
 <https://linked.data.gov.au/def/phs#SurveillanceEvent>
   sh:property <https://linked.data.gov.au/def/phs#SurveillanceEvent-dwc_eventID> ;
   sh:property <https://linked.data.gov.au/def/phs#SurveillanceEvent-dwc_recordedBy> ;

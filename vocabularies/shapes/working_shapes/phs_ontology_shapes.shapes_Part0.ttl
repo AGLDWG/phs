@@ -931,16 +931,7 @@ phs:LureType
   rdfs:subClassOf owl:Thing ;
 .
 phs:ObservationLocation
-  a sh:NodeShape ;
   rdfs:subClassOf owl:Thing ;
-  sh:property [
-      a sh:PropertyShape ;
-      sh:path dct:type ;
-    ] ;
-  sh:property [
-      a sh:PropertyShape ;
-      sh:path <http://rs.tdwg.org/dwc/terms/decimalLatitude> ;
-    ] ;
 .
 phs:OccurrenceStatus
   a sh:NodeShape ;
