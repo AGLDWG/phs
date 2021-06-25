@@ -165,6 +165,18 @@
   sh:property <https://linked.data.gov.au/def/phs#Sampling-sosa_resultTime> ;
   sh:property <https://linked.data.gov.au/def/phs#Sampling-sosa_usedProcedure> ;
 .
+<https://linked.data.gov.au/def/phs#Substrate>
+  a sh:NodeShape ;
+  rdfs:comment "Thing or material on or in which a pest may occur" ;
+  rdfs:subClassOf owl:Thing ;
+  sh:property <https://linked.data.gov.au/def/phs#Substrate-supportsPest> ;
+  sh:property [] ;
+  sh:property [] ;
+.
+<https://linked.data.gov.au/def/phs#SubstrateType>
+  a sh:NodeShape ;
+  rdfs:subClassOf owl:Thing ;
+.
 <https://linked.data.gov.au/def/phs#SurveillanceEvent>
   sh:property <https://linked.data.gov.au/def/phs#SurveillanceEvent-dwc_eventID> ;
   sh:property <https://linked.data.gov.au/def/phs#SurveillanceEvent-dwc_recordedBy> ;

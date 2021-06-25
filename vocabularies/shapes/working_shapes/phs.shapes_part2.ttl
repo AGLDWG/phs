@@ -158,7 +158,6 @@ skos:Concept
 .
 <https://linked.data.gov.au/def/phs#Substrate>
   a sh:NodeShape ;
-  sh:property <https://linked.data.gov.au/def/phs#Substrate-supportsPest> ;
 .
 <https://linked.data.gov.au/def/phs#Substrate-supportsPest>
   a sh:PropertyShape ;

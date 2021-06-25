@@ -254,7 +254,6 @@ sosa:phenomenonTime
 :Substrate
   a owl:Class ;
   rdfs:comment "A Substrate is a Stratum that is not a Host. Usually non-living, such as a rock or leaf litter." ;
-  rdfs:comment "Thing or material on or in which a pest may occur" ;
   rdfs:subClassOf sosa:Platform ;
   skos:prefLabel "Substrate" ;
 .

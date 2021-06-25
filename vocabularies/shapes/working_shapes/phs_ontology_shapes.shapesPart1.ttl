@@ -964,11 +964,6 @@ phs:OccurrenceStatusType
 phs:Substrate
   a sh:NodeShape ;
   rdfs:subClassOf owl:Thing ;
-  sh:property [
-      a sh:PropertyShape ;
-      sh:path phs:supportsPest ;
-      sh:class phs:TargetPestGroup ;
-    ] ;
 .
 phs:SubstrateType
   a sh:NodeShape ;
@@ -1297,6 +1292,11 @@ phs:observedAtLocation
 ].
 [
   a sh:PropertyShape ;
+].
+[
+  a sh:PropertyShape ;
+  sh:path phs:supportsPest ;
+  sh:class phs:TargetPestGroup ;
 ].
 [
   a sh:PropertyShape ;
