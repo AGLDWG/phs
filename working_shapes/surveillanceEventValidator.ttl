@@ -4,6 +4,7 @@
 
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
+@prefix effortUnit: <https://linked.data.gov.au/def/phs/voc/effort-units/> .
 @prefix instance_data_using_shacl: <https://linked.data.gov.au/def/instance_data_using_shacl#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix phs: <https://linked.data.gov.au/def/phs#> .
@@ -23,22 +24,20 @@ phs:SurveillanceEvent
   sh:property phs:SurveillanceEvent-hasFeatureOfInterest ;
   sh:property phs:SurveillanceEvent-observedAtLocation ;
   sh:property phs:SurveillanceEvent-phenomenonTime ;
-  sh:property phs:SurveillanceEvent-sosa_hasFeatureOfInterest ;
-  sh:property phs:SurveillanceEvent-sosa_phenomenonTime ;
-  sh:property phs:SurveillanceEvent-sosa_usedProcedure ;
   sh:property phs:SurveillanceEvent-source ;
   sh:property phs:SurveillanceEvent-usedProcedure ;
 .
 phs:SurveillanceEvent-dwc_eventID
   a sh:PropertyShape ;
   sh:path dwc:eventID ;
+  sh:message "Each Surveillance Event must have one unique event ID" ;
   sh:minCount 1 ;
-  sh:targetClass <<https://linked.data.gov.au/def/phs##SurveillanceEvent> ;
+  sh:targetClass phs:SurveillanceEvent ;
 .
 phs:SurveillanceEvent-dwc_recordedBy
   a sh:PropertyShape ;
   sh:path dwc:recordedBy ;
-  sh:targetClass <<https://linked.data.gov.au/def/phs##SurveillanceEvent> ;
+  sh:targetClass phs:SurveillanceEvent ;
 .
 phs:SurveillanceEvent-effortValue
   a sh:PropertyShape ;
@@ -47,30 +46,34 @@ phs:SurveillanceEvent-effortValue
   sh:maxCount 1 ;
   sh:minCount 1 ;
   sh:name "effort value" ;
-  sh:targetClass <<https://linked.data.gov.au/def/phs##SurveillanceEvent> ;
+  sh:targetClass phs:SurveillanceEvent ;
 .
 phs:SurveillanceEvent-hasEffortUnit
   a sh:PropertyShape ;
   sh:path phs:hasEffortUnit ;
+  sh:class skos:Concept ;
   sh:class phs:EffortUnitType ;
   sh:maxCount 1 ;
   sh:minCount 1 ;
   sh:name "has effort unit" ;
   sh:nodeKind sh:IRI ;
-  sh:targetClass <<https://linked.data.gov.au/def/phs##SurveillanceEvent> ;
+  sh:targetClass phs:SurveillanceEvent ;
+  sh:targetObjectsOf phs:hasEffortUnit ;
 .
 phs:SurveillanceEvent-hasFeatureOfInterest
   a sh:PropertyShape ;
   sh:path sosa:hasFeatureOfInterest ;
-  sh:class phs:TargetPestGroup ;
+  sh:Class phs:TargetPestGroupType ;
+  sh:message "At least One valid target pest must be declared. Surveillance events must be directed to the defined set of target pests. Ensure the target pest is selected from the target pest groups vocabulary." ;
   sh:minCount 1 ;
-  sh:targetClass <<https://linked.data.gov.au/def/phs##SurveillanceEvent> ;
+  sh:nodeKind sh:IRI ;
+  sh:targetClass phs:SurveillanceEvent ;
 .
 phs:SurveillanceEvent-observedAtLocation
   a sh:PropertyShape ;
   sh:path phs:observedAtLocation ;
   sh:class phs:ObservationLocation ;
-  sh:targetClass <<https://linked.data.gov.au/def/phs##SurveillanceEvent> ;
+  sh:targetClass phs:SurveillanceEvent ;
 .
 phs:SurveillanceEvent-phenomenonTime
   a sh:PropertyShape ;
@@ -79,23 +82,7 @@ phs:SurveillanceEvent-phenomenonTime
   sh:maxCount 1 ;
   sh:minCount 1 ;
   sh:name "phenomenon time" ;
-  sh:targetClass <<https://linked.data.gov.au/def/phs##SurveillanceEvent> ;
-.
-phs:SurveillanceEvent-sosa_hasFeatureOfInterest
-  a sh:PropertyShape ;
-  sh:path sosa:hasFeatureOfInterest ;
-  sh:targetClass <<https://linked.data.gov.au/def/phs##SurveillanceEvent> ;
-.
-phs:SurveillanceEvent-sosa_phenomenonTime
-  a sh:PropertyShape ;
-  sh:path sosa:phenomenonTime ;
-  sh:hasValue xsd:date ;
-  sh:targetClass <<https://linked.data.gov.au/def/phs##SurveillanceEvent> ;
-.
-phs:SurveillanceEvent-sosa_usedProcedure
-  a sh:PropertyShape ;
-  sh:path sosa:usedProcedure ;
-  sh:targetClass <<https://linked.data.gov.au/def/phs##SurveillanceEvent> ;
+  sh:targetClass phs:SurveillanceEvent ;
 .
 phs:SurveillanceEvent-source
   a sh:PropertyShape ;
@@ -103,7 +90,7 @@ phs:SurveillanceEvent-source
   sh:class dcterms:Dataset ;
   sh:minCount 1 ;
   sh:name "Source Dataset" ;
-  sh:targetClass <<https://linked.data.gov.au/def/phs##SurveillanceEvent> ;
+  sh:targetClass phs:SurveillanceEvent ;
 .
 phs:SurveillanceEvent-usedProcedure
   a sh:PropertyShape ;
@@ -111,7 +98,7 @@ phs:SurveillanceEvent-usedProcedure
   sh:class phs:InspectionMethod ;
   sh:maxCount 1 ;
   sh:minCount 1 ;
-  sh:targetClass <<https://linked.data.gov.au/def/phs##SurveillanceEvent> ;
+  sh:targetClass phs:SurveillanceEvent ;
 .
 <https://linked.data.gov.au/def/phs/voc/surveillanceEventValidator>
   a owl:Ontology ;

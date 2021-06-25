@@ -1,0 +1,32 @@
+# baseURI: https://linked.data.gov.au/def/phs/voc/targetPestValidator
+# imports: http://www.w3.org/ns/shacl#
+# prefix: targetPestValidator
+
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
+@prefix instance_data_using_shacl: <https://linked.data.gov.au/def/instance_data_using_shacl#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix phs: <https://linked.data.gov.au/def/phs#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix sosa: <http://www.w3.org/ns/sosa/> .
+@prefix targetPestValidator: <https://linked.data.gov.au/def/phs/voc/targetPestValidator#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+phs:TargetPestGroup
+  sh:property phs:TargetPestGroup-hasTargetPestGroupType ;
+.
+phs:TargetPestGroup-hasTargetPestGroupType
+  a sh:PropertyShape ;
+  sh:path phs:hasTargetPestGroupType ;
+  sh:class skos:Concept ;
+  sh:class phs:TargetPestGroupType ;
+  sh:nodeKind sh:IRI ;
+  sh:targetClass phs:TargetPestGroupType ;
+.
+<https://linked.data.gov.au/def/phs/voc/targetPestValidator>
+  a owl:Ontology ;
+  owl:imports sh: ;
+.

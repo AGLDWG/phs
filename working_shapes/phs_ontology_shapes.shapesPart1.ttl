@@ -999,7 +999,6 @@ phs:OccurrenceStatusType
   a sh:NodeShape ;
   rdfs:subClassOf owl:Thing ;
 .
-
 phs:Substrate
   a sh:NodeShape ;
   rdfs:subClassOf owl:Thing ;
@@ -1020,14 +1019,6 @@ phs:SurveillanceEvent
 phs:TargetPestGroup
   a sh:NodeShape ;
   rdfs:subClassOf owl:Thing ;
-  sh:property phs:TargetPestGroup-hasTargetPestGroupType ;
-.
-phs:TargetPestGroup-hasTargetPestGroupType
-  a sh:PropertyShape ;
-  sh:path phs:hasTargetPestGroupType ;
-  sh:class skos:Concept ;
-  sh:class phs:TargetPestGroupType ;
-  sh:nodeKind sh:IRI ;
 .
 phs:TargetPestGroupType
   a sh:NodeShape ;

@@ -198,7 +198,6 @@ skos:Concept
 .
 <https://linked.data.gov.au/def/phs#Trap>
   a sh:NodeShape ;
-  sh:property <https://linked.data.gov.au/def/phs#Trap-catchesPest> ;
   sh:property <https://linked.data.gov.au/def/phs#Trap-hasTrapType> ;
   sh:property [
       a sh:PropertyShape ;
