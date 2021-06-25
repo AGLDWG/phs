@@ -897,7 +897,6 @@ phs:Effort
   rdfs:subClassOf owl:Thing ;
 .
 phs:EffortUnitType
-  a sh:NodeShape ;
   rdfs:subClassOf owl:Thing ;
 .
 phs:Host

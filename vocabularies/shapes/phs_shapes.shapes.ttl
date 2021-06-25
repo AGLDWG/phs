@@ -79,6 +79,9 @@
   sh:path <https://linked.data.gov.au/def/phs#hasEffortUnit> ;
   sh:class <https://linked.data.gov.au/def/phs#EffortUnitType> ;
 .
+<https://linked.data.gov.au/def/phs#EffortUnitType>
+  a sh:NodeShape ;
+.
 <https://linked.data.gov.au/def/phs#InspectionMethod>
   sh:property <https://linked.data.gov.au/def/phs#InspectionMethod-usesInspectionMethod> ;
 .
