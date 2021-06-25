@@ -178,6 +178,7 @@
   rdfs:subClassOf owl:Thing ;
 .
 <https://linked.data.gov.au/def/phs#SurveillanceEvent>
+  a sh:NodeShape ;
   sh:property <https://linked.data.gov.au/def/phs#SurveillanceEvent-dwc_eventID> ;
   sh:property <https://linked.data.gov.au/def/phs#SurveillanceEvent-dwc_recordedBy> ;
   sh:property <https://linked.data.gov.au/def/phs#SurveillanceEvent-effortValue> ;
