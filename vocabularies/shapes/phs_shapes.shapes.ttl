@@ -97,6 +97,8 @@
   a sh:NodeShape ;
 .
 <https://linked.data.gov.au/def/phs#InspectionMethod>
+  a sh:NodeShape ;
+  sh:property <https://linked.data.gov.au/def/phs#InspectionMethod-detectsPest> ;
   sh:property <https://linked.data.gov.au/def/phs#InspectionMethod-usesInspectionMethod> ;
 .
 <https://linked.data.gov.au/def/phs#InspectionMethod-usesInspectionMethod>
@@ -106,6 +108,9 @@
   sh:maxCount 1 ;
   sh:minCount 1 ;
   sh:nodeKind sh:IRI ;
+.
+<https://linked.data.gov.au/def/phs#InspectionMethodType>
+  a sh:NodeShape ;
 .
 <https://linked.data.gov.au/def/phs#Lure-dcterms_type>
   a sh:PropertyShape ;

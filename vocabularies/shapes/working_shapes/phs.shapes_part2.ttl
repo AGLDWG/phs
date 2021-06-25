@@ -68,7 +68,6 @@ skos:Concept
 .
 <https://linked.data.gov.au/def/phs#InspectionMethod>
   a sh:NodeShape ;
-  sh:property <https://linked.data.gov.au/def/phs#InspectionMethod-detectsPest> ;
 .
 <https://linked.data.gov.au/def/phs#InspectionMethod-detectsPest>
   a sh:PropertyShape ;

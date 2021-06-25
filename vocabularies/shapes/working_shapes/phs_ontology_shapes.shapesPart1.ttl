@@ -915,11 +915,6 @@ phs:HostType
 phs:InspectionMethod
   a sh:NodeShape ;
   rdfs:subClassOf owl:Thing ;
-  sh:property [
-      a sh:PropertyShape ;
-      sh:path phs:detectsPest ;
-      sh:class phs:TargetPestGroup ;
-    ] ;
 .
 phs:InspectionMethodType
   a sh:NodeShape ;
