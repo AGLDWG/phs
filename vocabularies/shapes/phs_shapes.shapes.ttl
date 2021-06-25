@@ -263,6 +263,13 @@
   sh:maxCount 1 ;
   sh:minCount 1 ;
 .
+<https://linked.data.gov.au/def/phs#TargetPestGroup>
+  a sh:NodeShape ;
+  sh:property <https://linked.data.gov.au/def/phs#TargetPestGroup-hasTargetPestGroupType> ;
+.
+<https://linked.data.gov.au/def/phs#TargetPestGroupType>
+  a sh:NodeShape ;
+.
 <https://linked.data.gov.au/def/phs#TaxonOccurrence>
   sh:property <https://linked.data.gov.au/def/phs#TaxonOccurrence-dwc_scientificName> ;
   sh:property <https://linked.data.gov.au/def/phs#TaxonOccurrence-dwc_taxonConceptID> ;

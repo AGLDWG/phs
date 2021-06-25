@@ -1000,9 +1000,7 @@ phs:SurveillanceEvent-usedProcedure
   sh:minCount 1 ;
 .
 phs:TargetPestGroup
-  a sh:NodeShape ;
   rdfs:subClassOf owl:Thing ;
-  sh:property phs:TargetPestGroup-hasTargetPestGroupType ;
 .
 phs:TargetPestGroup-hasTargetPestGroupType
   a sh:PropertyShape ;
@@ -1012,7 +1010,6 @@ phs:TargetPestGroup-hasTargetPestGroupType
   sh:nodeKind sh:IRI ;
 .
 phs:TargetPestGroupType
-  a sh:NodeShape ;
   rdfs:subClassOf owl:Thing ;
 .
 phs:TaxonDistribution
