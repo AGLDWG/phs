@@ -867,7 +867,6 @@ sh:Validator
   rdfs:subClassOf owl:Thing ;
 .
 <http://xmlns.com/foaf/0.1/Agent>
-  a sh:NodeShape ;
   rdfs:subClassOf owl:Thing ;
 .
 phs:Attractant

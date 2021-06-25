@@ -41,6 +41,9 @@
 <http://www.w3.org/ns/sosa/Sampler>
   a sh:NodeShape ;
 .
+<http://xmlns.com/foaf/0.1/Agent>
+  a sh:NodeShape ;
+.
 <https://linked.data.gov.au/def/phs#Attractant-dcterms_type>
   a sh:PropertyShape ;
   sh:path <http://purl.org/dc/terms/type> ;
