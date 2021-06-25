@@ -294,7 +294,6 @@ dct:Dataset
   a sh:PropertyShape ;
 .
 geosparql:Feature
-  a sh:NodeShape ;
   rdfs:subClassOf owl:Thing ;
 .
 geosparql:Geometry

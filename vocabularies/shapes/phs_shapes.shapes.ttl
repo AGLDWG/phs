@@ -30,6 +30,9 @@
 <http://rs.tdwg.org/dwc/terms/Taxon>
   a sh:NodeShape ;
 .
+<http://www.opengis.net/ont/geosparql#Feature>
+  a sh:NodeShape ;
+.
 <http://www.w3.org/ns/sosa/FeatureOfInterest>
   sh:property <http://www.w3.org/ns/sosa/FeatureOfInterest-observedAtLocation> ;
 .
