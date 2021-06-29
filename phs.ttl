@@ -84,29 +84,29 @@ dwc:recordedBy
 .
 dwc:scientificName
   a owl:DatatypeProperty ;
-  skos:definition "The systematic name for an organism found by a Surveillance Event, and recorded as a TaxonOccurrence" ;
-  rdfs:domain :TaxonOccurrence ;
+  skos:definition "The systematic name for an organism found by a Surveillance Event, and recorded as a TaxonPresence" ;
+  rdfs:domain :TaxonPresence ;
   skos:example "Erwinia amylovora" ;
   skos:prefLabel "scientific name" ;
 .
 dwc:taxonConceptID
   a owl:DatatypeProperty ;
   skos:definition "The unique identifier for a taxon, referenced by `taxonomicReferenceSource`" ;
-  rdfs:domain :TaxonOccurrence ;
+  rdfs:domain :TaxonPresence ;
   skos:example "`3222012`, which when paired with `https://www.gbif.org/species`, prvides a link to Erwinia amylovora, Fire Blight." ;
   skos:prefLabel "taxon concept ID" ;
 .
 dwc:taxonRank
   a owl:DatatypeProperty ;
   skos:definition "The stematic name for an organism found by a Surveillance Event" ;
-  rdfs:domain :TaxonOccurrence ;
+  rdfs:domain :TaxonPresence ;
   skos:example "Erwinia amylovora" ;
   skos:prefLabel "scientific name" ;
 .
 dwc:vernacularName
   a owl:DatatypeProperty ;
   skos:definition "The vernacular (common) name for the host or pest" ;
-  rdfs:domain :TaxonOccurrence ;
+  rdfs:domain :TaxonPresence ;
   skos:example "Fire Blight" ;
   skos:prefLabel "vernacular name" ;
 .
@@ -317,14 +317,13 @@ sosa:phenomenonTime
   skos:definition "The subtype of a Target Pest. Perhaps a single Taxon or perhaps a Group"@en ;
   skos:prefLabel "Target Pest Type"@en ;
 .
-:TaxonOccurrence
+:TaxonPresence
   a owl:Class ;
-  rdfs:subClassOf sosa:ObservableProperty , dwc:Occurrence ;
+  rdfs:subClassOf sosa:ObservableProperty ;
   skos:scopeNote "A record of the identity of a taxon that was observed or taken as a sample by a Surveillance Event" ;
   skos:definition "The identity of an organism whose occurrence was detected during a surveillance event."@en ;
-  skos:prefLabel "Taxon Identity"@en ;
+  skos:prefLabel "Taxon Presence"@en ;
   sosa:observedProperty :SurveillanceEvent ;
-  sosa:isResultOf :SurveillanceEvent ;
 .
 :Trap
   a owl:Class ;
@@ -452,10 +451,16 @@ sosa:phenomenonTime
   rdfs:range :TargetPest ;
   skos:prefLabel "supports pest"@en ;
 .
+:identificationID
+  a owl:DatatypeProperty ;
+  skos:definition "Identifier assigned to specimen or sample by diagnostician or LIMS" ;
+  rdfs:domain :TaxonPresence ;
+  skos:prefLabel "identification ID" ;
+.
 :taxonomicReferenceSource
   a owl:DatatypeProperty ;
   skos:definition "The online taxonomic reference source" ;
-  rdfs:domain :TaxonOccurrence ;
+  rdfs:domain :TaxonPresence ;
   skos:example "https://www.gbif.org/species" ;
   skos:prefLabel "taxonomic reference source" ;
 .
