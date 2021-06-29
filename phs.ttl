@@ -280,7 +280,7 @@ sosa:phenomenonTime
       a owl:Restriction ;
       owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
       owl:onClass :TargetPest ;
-      owl:onProperty sosa:hasFeatureOfInterest ;
+      owl:onProperty :targetsPest ;
     ] ;
   rdfs:subClassOf [
       a owl:Restriction ;
@@ -302,22 +302,20 @@ sosa:phenomenonTime
 .
 :TargetPest
   a owl:Class ;
-  rdfs:subClassOf  sosa:FeatureOfInterest ;
   a [
       a owl:Restriction ;
       owl:onProperty dcterms:type ;
       owl:someValuesFrom :TargetPestType ;
     ] ;
   skos:scopeNote "The IPPC definition of Pest is 'Any species, strain or biotype of plant, animal or pathogenic agent injurious to plants or plant products.'"@en ;
-  skos:definition "Pest or Pests that are the subject of a surveillance event. The primary goal of a surveillance event is to determine the presence or absence of a Target Pest Group according to an Inspection Method. Thus the Target Pest Group is the thing whose prorty is being estimated in the course of a Surveillance Event, to arrive at an Occurrence Status for the target pest."@en ;
-  skos:prefLabel "Target Pest Group"@en ;
-  sosa:isFeatureOfInterestOf :SurveillanceEvent ;
+  skos:definition "Pest or Pests that are the subject of a surveillance event. The primary goal of a surveillance event is to determine the presence or absence of a Target Pest according to an Inspection Method. Thus the Target Pest is the thing whose prorty is being estimated in the course of a Surveillance Event, to arrive at an Occurrence Status for the target pest."@en ;
+  skos:prefLabel "Target Pest"@en ;
 .
 :TargetPestType
   a owl:Class ;
   rdfs:subClassOf skos:Concept ;
-  skos:definition "The subtype of a Target Pest Group. Perhaps a single Taxon or perhaps a Group"@en ;
-  skos:prefLabel "Target Pest Group Type"@en ;
+  skos:definition "The subtype of a Target Pest. Perhaps a single Taxon or perhaps a Group"@en ;
+  skos:prefLabel "Target Pest Type"@en ;
 .
 :TaxonOccurrence
   a owl:Class ;
@@ -373,6 +371,15 @@ sosa:phenomenonTime
   rdfs:range :TargetPest ;
   skos:prefLabel "detects pest"@en ;
 .
+
+:targetsPest
+  a owl:ObjectProperty ;
+  skos:definition "The pest that is the target of the surveillance event"@en ;
+  rdfs:domain :InspectionMethod ;
+  rdfs:range :TargetPest ;
+  skos:prefLabel "targets pest"@en ;
+.
+
 :effortValue
   a owl:DatatypeProperty ;
   skos:scopeNote "Always used in conjunction with effortUnit" ;
