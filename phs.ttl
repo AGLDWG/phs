@@ -425,7 +425,7 @@ sosa:phenomenonTime
   skos:definition "This diagnostic method is appropriate for the target pest"@en ;
   rdfs:domain :DiagnosticMethod ;
   rdfs:range :TargetPestGroup ;
-  skos:prefLabel "Identifies pest"@en ;
+  skos:prefLabel "identifies pest"@en ;
 .
 :luresPest
   a owl:ObjectProperty ;
