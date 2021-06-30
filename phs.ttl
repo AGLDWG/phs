@@ -80,7 +80,7 @@ dwc:recordedBy
   a owl:DatatypeProperty ;
   rdfs:domain :SurveillanceEvent ;
   skos:prefLabel "recorded by" ;
-  skos:definition "It is a requirement of ISPM 6 that a pest record includes the name of the individual who performed the surveillance observation. There are no formatting requirements or requirements that the name unambiguously identifies a person. Thus, a name in the form of <Surname, Initials> is acceptable."@en ;
+  skos:definition "It is a requirement of ISPM 6 that a pest record includes the name of the individual who performed the surveillance observation. There are no formatting requirements or requirements that the name unambiguously identifies a person. Thus, a name in the form of 'Surname, Initials' is acceptable."@en ;
 .
 dwc:scientificName
   a owl:DatatypeProperty ;
@@ -413,7 +413,6 @@ sosa:phenomenonTime
 :hasEffortUnit
   a owl:ObjectProperty ;
   skos:scopeNote "Always used in conjunction with effortValue. Effort is recorded with a value and a Unit that is an EffortUnitType"@en ;
-  skos:definition "Units of effort are selected from the EffortUnitType vocabulary" ;
   rdfs:domain :SurveillanceEvent ;
   rdfs:range :EffortUnitType ;
   skos:definition "Effort is the amount of time, number of plants inspected, or area surveyed while carrying out a Surveillance Event"@en ;
@@ -425,6 +424,7 @@ sosa:phenomenonTime
   rdfs:domain :Trap ;
   rdfs:subPropertyOf dcterms:hasPart ;
   rdfs:range :LureType ;
+  skos:scopeNote ""@en ;
   skos:definition "Names of lures are selected from the LureTypes vocabulary"@en ;
   skos:prefLabel "has lure type"@en ;
 .
@@ -447,7 +447,7 @@ sosa:phenomenonTime
   skos:definition "This diagnostic method is appropriate for the target pest"@en ;
   rdfs:domain :DiagnosticMethod ;
   rdfs:range :TargetPest ;
-  skos:prefLabel "Identifies pest"@en ;
+  skos:prefLabel "identifies pest"@en ;
 .
 :luresPest
   a owl:ObjectProperty ;
