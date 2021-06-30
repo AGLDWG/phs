@@ -89,6 +89,19 @@ dwc:scientificName
   skos:example "Erwinia amylovora" ;
   skos:prefLabel "scientific name" ;
 .
+
+:openNomenclature
+  a owl:DatatypeProperty ;
+  skos:definition "An annotation that may be applied to a specimen to indicate the 'reason for stopping' where an identifaction to Rank species was not performed. " ;
+  rdfs:domain :TaxonPresence ;
+  skos:scopeNote "Open nomenclature annotations are recorded as latin abbreviations." ;
+  skos:scopeNote "In a future version of the ontology, a Vocabulary of terms, along with defintions and business rules, will be created. It is recommended to follow the open nomenclature devised by Sigovini (see link)." ;
+  rdfs:seeAlso <https://besjournals.onlinelibrary.wiley.com/doi/full/10.1111/2041-210X.12594> ;
+  skos:example "sp." ;
+  skos:example "stet." ;
+  skos:prefLabel "open nomenclature" ;
+.
+
 dwc:taxonConceptID
   a owl:DatatypeProperty ;
   skos:definition "The unique identifier for a taxon, referenced by `taxonomicReferenceSource`" ;
@@ -96,12 +109,15 @@ dwc:taxonConceptID
   skos:example "`3222012`, which when paired with `https://www.gbif.org/species`, prvides a link to Erwinia amylovora, Fire Blight." ;
   skos:prefLabel "taxon concept ID" ;
 .
+
 dwc:taxonRank
   a owl:DatatypeProperty ;
-  skos:definition "The stematic name for an organism found by a Surveillance Event" ;
+  skos:definition "The taxonomic rank at which an identification was applied to a specimen" ;
+  skos:scopeNote "In most cases, a 'full' identification will allow a specimen to be named to the rank of 'species'. However, in some cases this is not possible. These circumstances include a) lack of expertise by the diagnostician b) unclear nomenclature (i.e. the taxa have not been classified) c) time or importance constraints d) incomplete specimen e) incorrect life stage. The phs:openNomenclature property records 'reasons for stopping'." ;
   rdfs:domain :TaxonPresence ;
-  skos:example "Erwinia amylovora" ;
-  skos:prefLabel "scientific name" ;
+  skos:example "species" ;
+  skos:example "family" ;
+  skos:prefLabel "taxon rank" ;
 .
 dwc:vernacularName
   a owl:DatatypeProperty ;
