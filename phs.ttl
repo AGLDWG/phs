@@ -84,29 +84,45 @@ dwc:recordedBy
 .
 dwc:scientificName
   a owl:DatatypeProperty ;
-  skos:definition "The systematic name for an organism found by a Surveillance Event, and recorded as a TaxonOccurrence" ;
-  rdfs:domain :TaxonOccurrence ;
+  skos:definition "The systematic name for an organism found by a Surveillance Event, and recorded as a TaxonPresence" ;
+  rdfs:domain :TaxonPresence ;
   skos:example "Erwinia amylovora" ;
   skos:prefLabel "scientific name" ;
 .
+
+:openNomenclature
+  a owl:DatatypeProperty ;
+  skos:definition "An annotation that may be applied to a specimen to indicate the 'reason for stopping' where an identifaction to Rank species was not performed. " ;
+  rdfs:domain :TaxonPresence ;
+  skos:scopeNote "Open nomenclature annotations are recorded as latin abbreviations." ;
+  skos:scopeNote "In a future version of the ontology, a Vocabulary of terms, along with defintions and business rules, will be created. It is recommended to follow the open nomenclature devised by Sigovini (see link)." ;
+  rdfs:seeAlso <https://besjournals.onlinelibrary.wiley.com/doi/full/10.1111/2041-210X.12594> ;
+  skos:example "sp." ;
+  skos:example "stet." ;
+  skos:prefLabel "open nomenclature" ;
+.
+
 dwc:taxonConceptID
   a owl:DatatypeProperty ;
   skos:definition "The unique identifier for a taxon, referenced by `taxonomicReferenceSource`" ;
-  rdfs:domain :TaxonOccurrence ;
+  rdfs:domain :TaxonPresence ;
   skos:example "`3222012`, which when paired with `https://www.gbif.org/species`, prvides a link to Erwinia amylovora, Fire Blight." ;
   skos:prefLabel "taxon concept ID" ;
 .
+
 dwc:taxonRank
   a owl:DatatypeProperty ;
-  skos:definition "The stematic name for an organism found by a Surveillance Event" ;
-  rdfs:domain :TaxonOccurrence ;
-  skos:example "Erwinia amylovora" ;
-  skos:prefLabel "scientific name" ;
+  skos:definition "The taxonomic rank at which an identification was applied to a specimen" ;
+  skos:scopeNote "In most cases, a 'full' identification will allow a specimen to be named to the rank of 'species'. However, in some cases this is not possible. These circumstances include a) lack of expertise by the diagnostician b) unclear nomenclature (i.e. the taxa have not been classified) c) time or importance constraints d) incomplete specimen e) incorrect life stage. The phs:openNomenclature property records 'reasons for stopping'." ;
+  rdfs:domain :TaxonPresence ;
+  skos:example "species" ;
+  skos:example "family" ;
+  skos:prefLabel "taxon rank" ;
 .
 dwc:vernacularName
   a owl:DatatypeProperty ;
   skos:definition "The vernacular (common) name for the host or pest" ;
-  rdfs:domain :TaxonOccurrence ;
+  rdfs:domain :TaxonPresence ;
   skos:example "Fire Blight" ;
   skos:prefLabel "vernacular name" ;
 .
@@ -279,8 +295,8 @@ sosa:phenomenonTime
   rdfs:subClassOf [
       a owl:Restriction ;
       owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-      owl:onClass :TargetPestGroup ;
-      owl:onProperty sosa:hasFeatureOfInterest ;
+      owl:onClass :TargetPest ;
+      owl:onProperty :targetsPest ;
     ] ;
   rdfs:subClassOf [
       a owl:Restriction ;
@@ -297,36 +313,33 @@ sosa:phenomenonTime
   skos:PrefLabel "Surveillance Event"@en ;
   skos:definition "An act of surveillance for a target pest, performed according to a specified procedure"@en ;
   skos:scopeNote "Also called 'Targetted' or 'Active' surveillance. The observation/s made during a Surveillance Event are directed towards establishing whether a Pest is present or not, insofar that the inspection method is capable of detecting the pest."@en ;
-  sosa:hasFeatureofInterest :TargetPestGroup ;
+  sosa:hasFeatureofInterest :TargetPest ;
   sosa:usedProcedure :InspectionMethod ;
 .
-:TargetPestGroup
+:TargetPest
   a owl:Class ;
-  rdfs:subClassOf  sosa:FeatureOfInterest ;
   a [
       a owl:Restriction ;
       owl:onProperty dcterms:type ;
-      owl:someValuesFrom :TargetPestGroupType ;
+      owl:someValuesFrom :TargetPestType ;
     ] ;
   skos:scopeNote "The IPPC definition of Pest is 'Any species, strain or biotype of plant, animal or pathogenic agent injurious to plants or plant products.'"@en ;
-  skos:definition "Pest or Pests that are the subject of a surveillance event. The primary goal of a surveillance event is to determine the presence or absence of a Target Pest Group according to an Inspection Method. Thus the Target Pest Group is the thing whose prorty is being estimated in the course of a Surveillance Event, to arrive at an Occurrence Status for the target pest."@en ;
-  skos:prefLabel "Target Pest Group"@en ;
-  sosa:isFeatureOfInterestOf :SurveillanceEvent ;
+  skos:definition "Pest or Pests that are the subject of a surveillance event. The primary goal of a surveillance event is to determine the presence or absence of a Target Pest according to an Inspection Method. Thus the Target Pest is the thing whose prorty is being estimated in the course of a Surveillance Event, to arrive at an Occurrence Status for the target pest."@en ;
+  skos:prefLabel "Target Pest"@en ;
 .
-:TargetPestGroupType
+:TargetPestType
   a owl:Class ;
   rdfs:subClassOf skos:Concept ;
-  skos:definition "The subtype of a Target Pest Group. Perhaps a single Taxon or perhaps a Group"@en ;
-  skos:prefLabel "Target Pest Group Type"@en ;
+  skos:definition "The subtype of a Target Pest. Perhaps a single Taxon or perhaps a Group"@en ;
+  skos:prefLabel "Target Pest Type"@en ;
 .
-:TaxonOccurrence
+:TaxonPresence
   a owl:Class ;
-  rdfs:subClassOf sosa:ObservableProperty , dwc:Occurrence ;
+  rdfs:subClassOf sosa:ObservableProperty ;
   skos:scopeNote "A record of the identity of a taxon that was observed or taken as a sample by a Surveillance Event" ;
   skos:definition "The identity of an organism whose occurrence was detected during a surveillance event."@en ;
-  skos:prefLabel "Taxon Identity"@en ;
+  skos:prefLabel "Taxon Presence"@en ;
   sosa:observedProperty :SurveillanceEvent ;
-  sosa:isResultOf :SurveillanceEvent ;
 .
 :Trap
   a owl:Class ;
@@ -363,16 +376,25 @@ sosa:phenomenonTime
   a owl:ObjectProperty ;
   skos:definition "An object which provides refuge to the target pest, and can thus be used as a trap"@en ;
   rdfs:domain :Trap ;
-  rdfs:range :TargetPestGroup ;
+  rdfs:range :TargetPest ;
   skos:prefLabel "catches pest"@en ;
 .
 :detectsPest
   a owl:ObjectProperty ;
   skos:definition "The pest for which the inspection method is useful"@en ;
   rdfs:domain :InspectionMethod ;
-  rdfs:range :TargetPestGroup ;
+  rdfs:range :TargetPest ;
   skos:prefLabel "detects pest"@en ;
 .
+
+:targetsPest
+  a owl:ObjectProperty ;
+  skos:definition "The pest that is the target of the surveillance event"@en ;
+  rdfs:domain :InspectionMethod ;
+  rdfs:range :TargetPest ;
+  skos:prefLabel "targets pest"@en ;
+.
+
 :effortValue
   a owl:DatatypeProperty ;
   skos:scopeNote "Always used in conjunction with effortUnit" ;
@@ -417,20 +439,20 @@ sosa:phenomenonTime
   a owl:ObjectProperty ;
   skos:definition "A living thing (usually a plant) on which the target pest may be found"@en ;
   rdfs:domain :Host ;
-  rdfs:range :TargetPestGroup ;
+  rdfs:range :TargetPest ;
   skos:prefLabel "hosts pest"@en ;
 .
 :identifiesPest
   a owl:ObjectProperty ;
   skos:definition "This diagnostic method is appropriate for the target pest"@en ;
   rdfs:domain :DiagnosticMethod ;
-  rdfs:range :TargetPestGroup ;
+  rdfs:range :TargetPest ;
   skos:prefLabel "identifies pest"@en ;
 .
 :luresPest
   a owl:ObjectProperty ;
   skos:definition "The target pest which is attracted by this lure"@en ;
-  rdfs:range :TargetPestGroup ;
+  rdfs:range :TargetPest ;
   skos:prefLabel "lures pest"@en ;
 .
 :occurrenceID
@@ -442,13 +464,19 @@ sosa:phenomenonTime
   a owl:ObjectProperty ;
   skos:definition "A substrate on which the target pest is likely be found, if it were present"@en ;
   rdfs:domain :Substrate ;
-  rdfs:range :TargetPestGroup ;
+  rdfs:range :TargetPest ;
   skos:prefLabel "supports pest"@en ;
+.
+:identificationID
+  a owl:DatatypeProperty ;
+  skos:definition "Identifier assigned to specimen or sample by diagnostician or LIMS" ;
+  rdfs:domain :TaxonPresence ;
+  skos:prefLabel "identification ID" ;
 .
 :taxonomicReferenceSource
   a owl:DatatypeProperty ;
   skos:definition "The online taxonomic reference source" ;
-  rdfs:domain :TaxonOccurrence ;
+  rdfs:domain :TaxonPresence ;
   skos:example "https://www.gbif.org/species" ;
   skos:prefLabel "taxonomic reference source" ;
 .
