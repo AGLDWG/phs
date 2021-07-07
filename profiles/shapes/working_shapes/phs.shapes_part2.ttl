@@ -176,7 +176,7 @@ skos:Concept
 <https://linked.data.gov.au/def/phs#TargetPestGroupType>
   a sh:NodeShape ;
 .
-<https://linked.data.gov.au/def/phs#TaxonOccurrence>
+<https://linked.data.gov.au/def/phs#TaxonPresent>
   a sh:NodeShape ;
 .
 <https://linked.data.gov.au/def/phs#Trap>

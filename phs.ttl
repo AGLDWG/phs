@@ -1,19 +1,20 @@
 # baseURI: https://linked.data.gov.au/def/phs
 # imports: http://datashapes.org/dash
 # imports: http://rs.tdwg.org/dwc/terms/
+# imports: http://www.w3.org/ns/prov-o
 # imports: http://www.w3.org/ns/sosa/
 
 @prefix : <https://linked.data.gov.au/def/phs#> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix dwc: <http://rs.tdwg.org/dwc/terms/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix sdo: <https://schema.org/> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix sosa: <http://www.w3.org/ns/sosa/> .
 @prefix vann: <http://purl.org/vocab/vann/> .
-@base <https://linked.data.gov.au/def/phs> .
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
@@ -40,8 +41,8 @@ dcterms:publisher
 .
 dcterms:source
   a owl:DatatypeProperty ;
-  skos:definition "Likely the model should use dcat but as at 10-Jun-2021 the existing dcterms:dataset is being used" ;
   rdfs:range dcterms:Dataset ;
+  skos:definition "Likely the model should use dcat but as at 10-Jun-2021 the existing dcterms:dataset is being used" ;
   skos:prefLabel "source" ;
 .
 dcterms:type
@@ -79,34 +80,34 @@ dwc:geodeticDatum
 dwc:recordedBy
   a owl:DatatypeProperty ;
   rdfs:domain :SurveillanceEvent ;
-  skos:prefLabel "recorded by" ;
   skos:definition "It is a requirement of ISPM 6 that a pest record includes the name of the individual who performed the surveillance observation. There are no formatting requirements or requirements that the name unambiguously identifies a person. Thus, a name in the form of <Surname, Initials> is acceptable."@en ;
+  skos:prefLabel "recorded by" ;
 .
 dwc:scientificName
   a owl:DatatypeProperty ;
+  rdfs:domain :TaxonPresent ;
   skos:definition "The systematic name for an organism found by a Surveillance Event, and recorded as a TaxonOccurrence" ;
-  rdfs:domain :TaxonOccurrence ;
   skos:example "Erwinia amylovora" ;
   skos:prefLabel "scientific name" ;
 .
 dwc:taxonConceptID
   a owl:DatatypeProperty ;
+  rdfs:domain :TaxonPresent ;
   skos:definition "The unique identifier for a taxon, referenced by `taxonomicReferenceSource`" ;
-  rdfs:domain :TaxonOccurrence ;
   skos:example "`3222012`, which when paired with `https://www.gbif.org/species`, prvides a link to Erwinia amylovora, Fire Blight." ;
   skos:prefLabel "taxon concept ID" ;
 .
 dwc:taxonRank
   a owl:DatatypeProperty ;
+  rdfs:domain :TaxonPresent ;
   skos:definition "The stematic name for an organism found by a Surveillance Event" ;
-  rdfs:domain :TaxonOccurrence ;
   skos:example "Erwinia amylovora" ;
   skos:prefLabel "scientific name" ;
 .
 dwc:vernacularName
   a owl:DatatypeProperty ;
+  rdfs:domain :TaxonPresent ;
   skos:definition "The vernacular (common) name for the host or pest" ;
-  rdfs:domain :TaxonOccurrence ;
   skos:example "Fire Blight" ;
   skos:prefLabel "vernacular name" ;
 .
@@ -165,6 +166,7 @@ sosa:phenomenonTime
   dcterms:publisher <https://linked.data.gov.au/org/dawe> ;
   owl:imports <http://datashapes.org/dash> ;
   owl:imports dwc: ;
+  owl:imports <http://www.w3.org/ns/prov-o> ;
   owl:imports sosa: ;
   owl:versionIRI <https://linked.data.gov.au/def/phs/0.2.1> ;
   skos:definition "An ontology for surveillance events relating to plant pests. These events comprise field observations and associated diagnostic work (i.e. taxonomic identification) of samples taken as part of the observation. Surveillance is one of the core activities of national plant protection organizations (NPPOs). It provides NPPOs with a technical basis for many phytosanitary measures; including phytosanitary import requirements, pest free areas, pest reporting and eradication, and pest status in an area. All terms are defined by ISPM 5."@en ;
@@ -173,8 +175,8 @@ sosa:phenomenonTime
 .
 :DiagnosticMethod
   a owl:Class ;
-  skos:definition "A procedure or method used to determine the taxonomic identity of a plant pest. May be carried out in the field, or more usually, in a laboratory." ;
   rdfs:subClassOf sosa:Procedure ;
+  skos:definition "A procedure or method used to determine the taxonomic identity of a plant pest. May be carried out in the field, or more usually, in a laboratory." ;
   skos:prefLabel "Diagnostic method" ;
 .
 :DiagnosticMethodType
@@ -191,14 +193,14 @@ sosa:phenomenonTime
 .
 :Host
   a owl:Class ;
-  skos:definition "A living thing (usually a plant) from which a sample was taken for identification. In the case of trapping, the tree in which the trap was hung"@en ;
-  skos:scopeNote "Particular pests are often associated with certain substrates or hosts. In the field, when targetting a pest, a surveyor will look for substrates or hosts that are more likely to harbour the target pest. Recording the substrate assists diagnosticians when they are identifying a specimen. It also aids analysis aimed at estimating pest prevalence based on absence records. Lastly, some protocols require the host or substrate to be recorded for each observation." ;
   rdfs:subClassOf sosa:Platform ;
   owl:disjointWith :Substrate ;
-  skos:example "Orange tree: host of the pathogen that causes citrus canker" ;
+  skos:definition "A living thing (usually a plant) from which a sample was taken for identification. In the case of trapping, the tree in which the trap was hung"@en ;
   skos:example "Bee; a Varroa Mite may be found in a bee's trachea" ;
-  sosa:hosts :Trap ;
+  skos:example "Orange tree: host of the pathogen that causes citrus canker" ;
   skos:prefLabel "Host" ;
+  skos:scopeNote "Particular pests are often associated with certain substrates or hosts. In the field, when targetting a pest, a surveyor will look for substrates or hosts that are more likely to harbour the target pest. Recording the substrate assists diagnosticians when they are identifying a specimen. It also aids analysis aimed at estimating pest prevalence based on absence records. Lastly, some protocols require the host or substrate to be recorded for each observation." ;
+  sosa:hosts :Trap ;
 .
 :HostType
   a owl:Class ;
@@ -208,11 +210,11 @@ sosa:phenomenonTime
 .
 :InspectionMethod
   a owl:Class ;
-  skos:definition "A technique used to carry out an act of surveillance"@en ;
-  skos:scopeNote "Inspection Methods are chosen according to the target pest and/or host|substrate. The sensitivity of an observation may depend on the method that was used." ;
-  skos:definition "The units used to record Surveillance Effort vary according to the Inspection method."@en ;
   rdfs:subClassOf sosa:Procedure ;
+  skos:definition "A technique used to carry out an act of surveillance"@en ;
+  skos:definition "The units used to record Surveillance Effort vary according to the Inspection method."@en ;
   skos:prefLabel "Inspection Method" ;
+  skos:scopeNote "Inspection Methods are chosen according to the target pest and/or host|substrate. The sensitivity of an observation may depend on the method that was used." ;
 .
 :InspectionMethodType
   a owl:Class ;
@@ -249,17 +251,31 @@ sosa:phenomenonTime
       owl:onProperty dcterms:type ;
       owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
     ] ;
-  skos:scopeNote "If an organism that is a pest, but not the target of the specified Inspection Method, were detected, a new record would have to be created to register the 'bycatch' pest's status." ;
   skos:definition "A statement of whether a pest, which was the target of a surveillance event, was detected or not by a specified Inspection Method."@en ;
   skos:prefLabel "Pest Occurrence Status"@en ;
+  skos:scopeNote "If an organism that is a pest, but not the target of the specified Inspection Method, were detected, a new record would have to be created to register the 'bycatch' pest's status." ;
   sosa:isResultOf :SurveillanceEvent ;
+.
+:Sample
+  a rdfs:Class ;
+  a owl:Class ;
+  rdfs:label "Sample" ;
+  rdfs:subClassOf sosa:Sample ;
+  skos:prefLabel "Sample" ;
+.
+:Sampling
+  a rdfs:Class ;
+  a owl:Class ;
+  rdfs:label "Sampling" ;
+  rdfs:subClassOf sosa:Sampling ;
+  skos:prefLabel "Sampling" ;
 .
 :Substrate
   a owl:Class ;
-  skos:scopeNote "A Substrate is a Stratum that is not a Host. Usually non-living, such as a rock or leaf litter." ;
-  skos:definition "Thing or material on or in which a sample was taken for identification." ;
   rdfs:subClassOf sosa:Platform ;
+  skos:definition "Thing or material on or in which a sample was taken for identification." ;
   skos:prefLabel "Substrate" ;
+  skos:scopeNote "A Substrate is a Stratum that is not a Host. Usually non-living, such as a rock or leaf litter." ;
 .
 :SubstrateType
   a owl:Class ;
@@ -279,7 +295,7 @@ sosa:phenomenonTime
   rdfs:subClassOf [
       a owl:Restriction ;
       owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-      owl:onClass :TargetPestGroup ;
+      owl:onClass :TargetPest ;
       owl:onProperty sosa:hasFeatureOfInterest ;
     ] ;
   rdfs:subClassOf [
@@ -297,40 +313,40 @@ sosa:phenomenonTime
   skos:PrefLabel "Surveillance Event"@en ;
   skos:definition "An act of surveillance for a target pest, performed according to a specified procedure"@en ;
   skos:scopeNote "Also called 'Targetted' or 'Active' surveillance. The observation/s made during a Surveillance Event are directed towards establishing whether a Pest is present or not, insofar that the inspection method is capable of detecting the pest."@en ;
-  sosa:hasFeatureofInterest :TargetPestGroup ;
+  sosa:hasFeatureofInterest :TargetPest ;
   sosa:usedProcedure :InspectionMethod ;
 .
-:TargetPestGroup
+:TargetPest
   a owl:Class ;
-  rdfs:subClassOf  sosa:FeatureOfInterest ;
   a [
       a owl:Restriction ;
       owl:onProperty dcterms:type ;
-      owl:someValuesFrom :TargetPestGroupType ;
+      owl:someValuesFrom :TargetPestType ;
     ] ;
-  skos:scopeNote "The IPPC definition of Pest is 'Any species, strain or biotype of plant, animal or pathogenic agent injurious to plants or plant products.'"@en ;
+  rdfs:subClassOf owl:Thing ;
   skos:definition "Pest or Pests that are the subject of a surveillance event. The primary goal of a surveillance event is to determine the presence or absence of a Target Pest Group according to an Inspection Method. Thus the Target Pest Group is the thing whose prorty is being estimated in the course of a Surveillance Event, to arrive at an Occurrence Status for the target pest."@en ;
-  skos:prefLabel "Target Pest Group"@en ;
+  skos:prefLabel "Target Pest"@en ;
+  skos:scopeNote "The IPPC definition of Pest is 'Any species, strain or biotype of plant, animal or pathogenic agent injurious to plants or plant products.'"@en ;
   sosa:isFeatureOfInterestOf :SurveillanceEvent ;
 .
-:TargetPestGroupType
+:TargetPestType
   a owl:Class ;
   rdfs:subClassOf skos:Concept ;
   skos:definition "The subtype of a Target Pest Group. Perhaps a single Taxon or perhaps a Group"@en ;
-  skos:prefLabel "Target Pest Group Type"@en ;
+  skos:prefLabel "Target Pest Type"@en ;
 .
-:TaxonOccurrence
+:TaxonPresent
   a owl:Class ;
-  rdfs:subClassOf sosa:ObservableProperty , dwc:Occurrence ;
-  skos:scopeNote "A record of the identity of a taxon that was observed or taken as a sample by a Surveillance Event" ;
-  skos:definition "The identity of an organism whose occurrence was detected during a surveillance event."@en ;
-  skos:prefLabel "Taxon Identity"@en ;
-  sosa:observedProperty :SurveillanceEvent ;
+  rdfs:comment "add inferencing to check whether a declared taxon is a pest within the allowed group" ;
+  rdfs:subClassOf sosa:ObservableProperty ;
+  skos:definition "Records whether a taxon was detected. This declaration may be at a high order of taxon or a low specific item." ;
+  skos:prefLabel "Taxon Present" ;
+  skos:scopeNote "A record of the presence of a taxon that was observed or taken as a sample by a Surveillance Event" ;
   sosa:isResultOf :SurveillanceEvent ;
+  sosa:observedProperty :SurveillanceEvent ;
 .
 :Trap
   a owl:Class ;
-  skos:definition "A device that catches or collects organisms or evidence of them." ;
   rdfs:subClassOf sosa:Sampler ;
   rdfs:subClassOf [
       a owl:Restriction ;
@@ -349,34 +365,33 @@ sosa:phenomenonTime
       owl:onProperty dcterms:type ;
       owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
     ] ;
+  skos:definition "A device that catches or collects organisms or evidence of them." ;
   skos:prefLabel "Trap" ;
 .
 :TrapType
   a owl:Class ;
-  skos:scopeNote "Trap Type must not to be confused with Trap ID, which is an identifier assigned to a single trap." ;
   rdfs:subClassOf skos:Concept ;
   skos:definition "The make, model or design of a Trap"@en ;
   skos:example "Patten; Bucket" ;
   skos:prefLabel "Trap Type" ;
+  skos:scopeNote "Trap Type must not to be confused with Trap ID, which is an identifier assigned to a single trap." ;
 .
 :catchesPest
   a owl:ObjectProperty ;
-  skos:definition "An object which provides refuge to the target pest, and can thus be used as a trap"@en ;
   rdfs:domain :Trap ;
-  rdfs:range :TargetPestGroup ;
+  rdfs:range :TargetPest ;
+  skos:definition "An object which provides refuge to the target pest, and can thus be used as a trap"@en ;
   skos:prefLabel "catches pest"@en ;
 .
 :detectsPest
   a owl:ObjectProperty ;
-  skos:definition "The pest for which the inspection method is useful"@en ;
   rdfs:domain :InspectionMethod ;
-  rdfs:range :TargetPestGroup ;
+  rdfs:range :TargetPest ;
+  skos:definition "The pest for which the inspection method is useful"@en ;
   skos:prefLabel "detects pest"@en ;
 .
 :effortValue
   a owl:DatatypeProperty ;
-  skos:scopeNote "Always used in conjunction with effortUnit" ;
-  skos:definition "Amount or quantity of 'effort' expended in the making of an observation." ;
   rdfs:domain :SurveillanceEvent ;
   rdfs:range [
       a rdfs:Datatype ;
@@ -385,70 +400,79 @@ sosa:phenomenonTime
           xsd:minInclusive 0 ;
         ] ;
     ] ;
+  skos:definition "Amount or quantity of 'effort' expended in the making of an observation." ;
   skos:example "A fruitfly trap is emptied after two weeks in a lemon tree: effortUnit='week' ; effortValue='2'." ;
   skos:prefLabel "effort value" ;
+  skos:scopeNote "Always used in conjunction with effortUnit" ;
 .
 :hasEffortUnit
   a owl:ObjectProperty ;
-  skos:scopeNote "Always used in conjunction with effortValue. Effort is recorded with a value and a Unit that is an EffortUnitType"@en ;
-  skos:definition "Units of effort are selected from the EffortUnitType vocabulary" ;
   rdfs:domain :SurveillanceEvent ;
   rdfs:range :EffortUnitType ;
   skos:definition "Effort is the amount of time, number of plants inspected, or area surveyed while carrying out a Surveillance Event"@en ;
+  skos:definition "Units of effort are selected from the EffortUnitType vocabulary" ;
   skos:example "Visual inspection of 1 square metre of ground: effortUnit='square metre' ; effortValue='1'." ;
   skos:prefLabel "has effort unit" ;
+  skos:scopeNote "Always used in conjunction with effortValue. Effort is recorded with a value and a Unit that is an EffortUnitType"@en ;
 .
 :hasLureType
   a owl:ObjectProperty ;
   rdfs:domain :Trap ;
-  rdfs:subPropertyOf dcterms:hasPart ;
   rdfs:range :LureType ;
+  rdfs:subPropertyOf dcterms:hasPart ;
   skos:definition "Names of lures are selected from the LureTypes vocabulary"@en ;
   skos:prefLabel "has lure type"@en ;
 .
 :hasTrapType
   a owl:ObjectProperty ;
-  skos:definition "The make or model of a trap, selected from the TrapTypes vocabulary" ;
   rdfs:domain :Trap ;
   rdfs:range :TrapType ;
+  skos:definition "The make or model of a trap, selected from the TrapTypes vocabulary" ;
   skos:prefLabel "has trap type" ;
 .
 :hostsPest
   a owl:ObjectProperty ;
-  skos:definition "A living thing (usually a plant) on which the target pest may be found"@en ;
   rdfs:domain :Host ;
-  rdfs:range :TargetPestGroup ;
+  rdfs:range :TargetPest ;
+  skos:definition "A living thing (usually a plant) on which the target pest may be found"@en ;
   skos:prefLabel "hosts pest"@en ;
 .
 :identifiesPest
   a owl:ObjectProperty ;
-  skos:definition "This diagnostic method is appropriate for the target pest"@en ;
   rdfs:domain :DiagnosticMethod ;
-  rdfs:range :TargetPestGroup ;
+  rdfs:range :TargetPest ;
+  skos:definition "This diagnostic method is appropriate for the target pest"@en ;
   skos:prefLabel "Identifies pest"@en ;
 .
 :luresPest
   a owl:ObjectProperty ;
+  rdfs:range :TargetPest ;
   skos:definition "The target pest which is attracted by this lure"@en ;
-  rdfs:range :TargetPestGroup ;
   skos:prefLabel "lures pest"@en ;
 .
 :occurrenceID
   a owl:DatatypeProperty ;
-  skos:scopeNote "This ID must be locally unique within the surveillance event" ;
   skos:prefLabel "occurrence ID" ;
+  skos:scopeNote "This ID must be locally unique within the surveillance event" ;
+.
+:pestObserved
+  a owl:DatatypeProperty ;
+  rdfs:domain :TaxonPresent ;
+  rdfs:label "pest observed" ;
+  rdfs:range xsd:boolean ;
+  skos:prefLabel "pest observed" ;
 .
 :supportsPest
   a owl:ObjectProperty ;
-  skos:definition "A substrate on which the target pest is likely be found, if it were present"@en ;
   rdfs:domain :Substrate ;
-  rdfs:range :TargetPestGroup ;
+  rdfs:range :TargetPest ;
+  skos:definition "A substrate on which the target pest is likely be found, if it were present"@en ;
   skos:prefLabel "supports pest"@en ;
 .
 :taxonomicReferenceSource
   a owl:DatatypeProperty ;
+  rdfs:domain :TaxonPresent ;
   skos:definition "The online taxonomic reference source" ;
-  rdfs:domain :TaxonOccurrence ;
   skos:example "https://www.gbif.org/species" ;
   skos:prefLabel "taxonomic reference source" ;
 .
@@ -466,15 +490,6 @@ sosa:phenomenonTime
   sdo:jobTitle "Research Scientist" ;
   sdo:name "Simon J.D. Cox" ;
 .
-
-<https://orcid.org/0000-0003-3932-5614>
-  rdf:type owl:NamedIndividual ;
-  rdf:type sdo:Person ;
-  sdo:affiliation <https://surroundaustralia.com> ;
-  sdo:email "simon.opper@surroundaustralia.com"^^xsd:anyURI ;
-  sdo:jobTitle "Chief Data Scientist" ;
-  sdo:name "Simon J. Opper" ;
-.
 <https://orcid.org/0000-0002-8742-7730>
   a owl:NamedIndividual ;
   a sdo:Person ;
@@ -490,6 +505,14 @@ sosa:phenomenonTime
   sdo:email "stephen.pratt@awe.gov.au"^^xsd:anyURI ;
   sdo:jobTitle "Project Manager: Implementation of Plant Health Surveillance Data Store" ;
   sdo:name "Stephen J. Pratt" ;
+.
+<https://orcid.org/0000-0003-3932-5614>
+  a owl:NamedIndividual ;
+  a sdo:Person ;
+  sdo:affiliation <https://surroundaustralia.com> ;
+  sdo:email "simon.opper@surroundaustralia.com"^^xsd:anyURI ;
+  sdo:jobTitle "Chief Data Scientist" ;
+  sdo:name "Simon J. Opper" ;
 .
 sdo:Organization
   a owl:Class ;

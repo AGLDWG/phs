@@ -270,14 +270,6 @@
 <https://linked.data.gov.au/def/phs#TargetPestGroupType>
   a sh:NodeShape ;
 .
-<https://linked.data.gov.au/def/phs#TaxonOccurrence>
-  sh:property <https://linked.data.gov.au/def/phs#TaxonOccurrence-dwc_scientificName> ;
-  sh:property <https://linked.data.gov.au/def/phs#TaxonOccurrence-dwc_taxonConceptID> ;
-  sh:property <https://linked.data.gov.au/def/phs#TaxonOccurrence-dwc_taxonRank> ;
-  sh:property <https://linked.data.gov.au/def/phs#TaxonOccurrence-dwc_vernacularName> ;
-  sh:property <https://linked.data.gov.au/def/phs#TaxonOccurrence-occurrenceID> ;
-  sh:property <https://linked.data.gov.au/def/phs#TaxonOccurrence-taxonomicReferenceSource> ;
-.
 <https://linked.data.gov.au/def/phs#TaxonOccurrence-dwc_scientificName>
   a sh:PropertyShape ;
   sh:path <http://rs.tdwg.org/dwc/terms/scientificName> ;
@@ -304,6 +296,14 @@
 <https://linked.data.gov.au/def/phs#TaxonOccurrence-taxonomicReferenceSource>
   a sh:PropertyShape ;
   sh:path <https://linked.data.gov.au/def/phs#taxonomicReferenceSource> ;
+.
+<https://linked.data.gov.au/def/phs#TaxonPresent>
+  sh:property <https://linked.data.gov.au/def/phs#TaxonOccurrence-dwc_scientificName> ;
+  sh:property <https://linked.data.gov.au/def/phs#TaxonOccurrence-dwc_taxonConceptID> ;
+  sh:property <https://linked.data.gov.au/def/phs#TaxonOccurrence-dwc_taxonRank> ;
+  sh:property <https://linked.data.gov.au/def/phs#TaxonOccurrence-dwc_vernacularName> ;
+  sh:property <https://linked.data.gov.au/def/phs#TaxonOccurrence-occurrenceID> ;
+  sh:property <https://linked.data.gov.au/def/phs#TaxonOccurrence-taxonomicReferenceSource> ;
 .
 <https://linked.data.gov.au/def/phs#Trap>
   sh:property <https://linked.data.gov.au/def/phs#Trap-usedProcedure> ;
