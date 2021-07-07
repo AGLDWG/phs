@@ -6,9 +6,6 @@
 # imports: https://linked.data.gov.au/def/phs/voc/lures
 # imports: https://linked.data.gov.au/def/phs/voc/targetpestgroup
 # imports: https://linked.data.gov.au/def/phs/voc/traps
-# imports: https://linked.data.gov.au/def/phs_part2.shapes
-# imports: https://linked.data.gov.au/def/phs_shapes_part0
-# imports: https://linked.data.gov.au/def/phs_shapes_v0_workingPart1
 # prefix: phs-shapes
 
 @prefix dash: <http://datashapes.org/dash#> .
@@ -27,13 +24,35 @@
 <http://purl.org/dc/terms/Dataset>
   a sh:NodeShape ;
 .
+<http://purl.org/vocommons/voaf#Vocabulary>
+  a sh:NodeShape ;
+.
 <http://rs.tdwg.org/dwc/terms/Taxon>
   a sh:NodeShape ;
 .
 <http://www.opengis.net/ont/geosparql#Feature>
   a sh:NodeShape ;
 .
+skos:Collection
+  a sh:NodeShape ;
+.
+skos:Concept
+  a sh:NodeShape ;
+.
+<http://www.w3.org/2006/time#TemporalEntity>
+  a sh:NodeShape ;
+.
+<http://www.w3.org/ns/sosa/ActuatableProperty>
+  a sh:NodeShape ;
+.
+<http://www.w3.org/ns/sosa/Actuation>
+  a sh:NodeShape ;
+.
+<http://www.w3.org/ns/sosa/Actuator>
+  a sh:NodeShape ;
+.
 <http://www.w3.org/ns/sosa/FeatureOfInterest>
+  a sh:NodeShape ;
   sh:property <http://www.w3.org/ns/sosa/FeatureOfInterest-observedAtLocation> ;
 .
 <http://www.w3.org/ns/sosa/FeatureOfInterest-observedAtLocation>
@@ -41,14 +60,40 @@
   sh:path <https://linked.data.gov.au/def/phs#observedAtLocation> ;
   sh:name "observed at location" ;
 .
+<http://www.w3.org/ns/sosa/ObservableProperty>
+  a sh:NodeShape ;
+.
+<http://www.w3.org/ns/sosa/Observation>
+  a sh:NodeShape ;
+.
+<http://www.w3.org/ns/sosa/Platform>
+  a sh:NodeShape ;
+.
+<http://www.w3.org/ns/sosa/Procedure>
+  a sh:NodeShape ;
+.
+<http://www.w3.org/ns/sosa/Result>
+  a sh:NodeShape ;
+.
+<http://www.w3.org/ns/sosa/Sample>
+  a sh:NodeShape ;
+.
 <http://www.w3.org/ns/sosa/Sampler>
   a sh:NodeShape ;
 .
 <http://www.w3.org/ns/sosa/Sampling>
   a sh:NodeShape ;
 .
+<http://www.w3.org/ns/sosa/Sensor>
+  a sh:NodeShape ;
+.
 <http://xmlns.com/foaf/0.1/Agent>
   a sh:NodeShape ;
+.
+<https://linked.data.gov.au/def/phs#Attractant>
+  a sh:NodeShape ;
+  rdfs:subClassOf owl:Thing ;
+  sh:property <https://linked.data.gov.au/def/phs#Attractant-hasAttractantType> ;
 .
 <https://linked.data.gov.au/def/phs#Attractant-dcterms_type>
   a sh:PropertyShape ;
@@ -59,10 +104,19 @@
   sh:path <https://linked.data.gov.au/def/phs#hasAttractantType> ;
   sh:class <https://linked.data.gov.au/def/phs#AttractantType> ;
 .
+<https://linked.data.gov.au/def/phs#Attractant-type>
+  a sh:PropertyShape ;
+  sh:path <http://purl.org/dc/terms/type> ;
+.
 <https://linked.data.gov.au/def/phs#AttractantType>
   a sh:NodeShape ;
 .
+<https://linked.data.gov.au/def/phs#Bait>
+  a sh:NodeShape ;
+  rdfs:subClassOf owl:Thing ;
+.
 <https://linked.data.gov.au/def/phs#DiagnosticMethod>
+  a sh:NodeShape ;
   sh:property <https://linked.data.gov.au/def/phs#DiagnosticMethod-identifiesPest> ;
 .
 <https://linked.data.gov.au/def/phs#DiagnosticMethod-identifiesPest>
@@ -70,7 +124,12 @@
   sh:path <https://linked.data.gov.au/def/phs#identifiesPest> ;
   sh:class <https://linked.data.gov.au/def/phs#TargetPestGroup> ;
 .
+<https://linked.data.gov.au/def/phs#DiagnosticMethodType>
+  a sh:NodeShape ;
+.
 <https://linked.data.gov.au/def/phs#Effort>
+  a sh:NodeShape ;
+  rdfs:subClassOf owl:Thing ;
   sh:property <https://linked.data.gov.au/def/phs#Effort-hasEffortUnit> ;
 .
 <https://linked.data.gov.au/def/phs#Effort-effortValue>
@@ -87,14 +146,14 @@
 .
 <https://linked.data.gov.au/def/phs#Host>
   a sh:NodeShape ;
-  sh:not [] ;
-  sh:not [] ;
-  sh:not [] ;
-  sh:not [] ;
-  sh:not [] ;
+ 
   sh:property <https://linked.data.gov.au/def/phs#Host-hostsPest> ;
-  sh:property [] ;
-  sh:property [] ;
+ 
+.
+<https://linked.data.gov.au/def/phs#Host-hostsPest>
+  a sh:PropertyShape ;
+  sh:path <https://linked.data.gov.au/def/phs#hostsPest> ;
+  sh:class <https://linked.data.gov.au/def/phs#TargetPestGroup> ;
 .
 <https://linked.data.gov.au/def/phs#HostType>
   a sh:NodeShape ;
@@ -103,6 +162,11 @@
   a sh:NodeShape ;
   sh:property <https://linked.data.gov.au/def/phs#InspectionMethod-detectsPest> ;
   sh:property <https://linked.data.gov.au/def/phs#InspectionMethod-usesInspectionMethod> ;
+.
+<https://linked.data.gov.au/def/phs#InspectionMethod-detectsPest>
+  a sh:PropertyShape ;
+  sh:path <https://linked.data.gov.au/def/phs#detectsPest> ;
+  sh:class <https://linked.data.gov.au/def/phs#TargetPestGroup> ;
 .
 <https://linked.data.gov.au/def/phs#InspectionMethod-usesInspectionMethod>
   a sh:PropertyShape ;
@@ -148,6 +212,22 @@
   sh:property <https://linked.data.gov.au/def/phs#ObservationLocation-dwc_decimalLongitude> ;
   sh:property <https://linked.data.gov.au/def/phs#ObservationLocation-dwc_geodeticDatum> ;
 .
+<https://linked.data.gov.au/def/phs#ObservationLocation-dwc_coordinateUncertaintyInMeters>
+  a sh:PropertyShape ;
+  sh:path <http://rs.tdwg.org/dwc/terms/coordinateUncertaintyInMeters> ;
+.
+<https://linked.data.gov.au/def/phs#ObservationLocation-dwc_decimalLatitude>
+  a sh:PropertyShape ;
+  sh:path <http://rs.tdwg.org/dwc/terms/decimalLatitude> ;
+.
+<https://linked.data.gov.au/def/phs#ObservationLocation-dwc_decimalLongitude>
+  a sh:PropertyShape ;
+  sh:path <http://rs.tdwg.org/dwc/terms/decimalLongitude> ;
+.
+<https://linked.data.gov.au/def/phs#ObservationLocation-dwc_geodeticDatum>
+  a sh:PropertyShape ;
+  sh:path <http://rs.tdwg.org/dwc/terms/geodeticDatum> ;
+.
 <https://linked.data.gov.au/def/phs#OccurrenceStatus>
   a sh:NodeShape ;
   rdfs:subClassOf owl:Thing ;
@@ -155,6 +235,11 @@
 .
 <https://linked.data.gov.au/def/phs#OccurrenceStatusType>
   a sh:NodeShape ;
+.
+<https://linked.data.gov.au/def/phs#PestOccurrenceStatus>
+  a sh:NodeShape ;
+  sh:property <https://linked.data.gov.au/def/phs#PestOccurrenceStatus-dcterms_type> ;
+  
 .
 <https://linked.data.gov.au/def/phs#Sampling>
   a sh:NodeShape ;
@@ -165,13 +250,77 @@
   sh:property <https://linked.data.gov.au/def/phs#Sampling-sosa_resultTime> ;
   sh:property <https://linked.data.gov.au/def/phs#Sampling-sosa_usedProcedure> ;
 .
+<https://linked.data.gov.au/def/phs#Sampling-hasFeatureOfInterest>
+  a sh:PropertyShape ;
+  sh:path <http://www.w3.org/ns/sosa/hasFeatureOfInterest> ;
+  sh:class <https://linked.data.gov.au/def/phs#TaxonDistribution> ;
+  sh:maxCount 1 ;
+  sh:minCount 1 ;
+.
+<https://linked.data.gov.au/def/phs#Sampling-hasResult>
+  a sh:PropertyShape ;
+  sh:path <http://www.w3.org/ns/sosa/hasResult> ;
+  sh:class <http://www.w3.org/ns/sosa/Sample> ;
+.
+<https://linked.data.gov.au/def/phs#Sampling-madeBySampler>
+  a sh:PropertyShape ;
+  sh:path <http://www.w3.org/ns/sosa/madeBySampler> ;
+  sh:minCount 1 ;
+.
+<https://linked.data.gov.au/def/phs#Sampling-phenomenonTime>
+  a sh:PropertyShape ;
+  sh:path <sosa:resultTime/sosa:phenomenonTime> ;
+  sh:class <http://www.w3.org/2006/time#TemporalEntity> ;
+  sh:datatype xsd:date ;
+  sh:maxCount 1 ;
+  sh:minCount 1 ;
+.
+<https://linked.data.gov.au/def/phs#Sampling-sosa_hasResult>
+  a sh:PropertyShape ;
+  sh:path <http://www.w3.org/ns/sosa/hasResult> ;
+.
+<https://linked.data.gov.au/def/phs#Sampling-sosa_madeBySampler>
+  a sh:PropertyShape ;
+  sh:path <http://www.w3.org/ns/sosa/madeBySampler> ;
+.
+<https://linked.data.gov.au/def/phs#Sampling-sosa_phenomenonTime>
+  a sh:PropertyShape ;
+  sh:path <http://www.w3.org/ns/sosa/phenomenonTime> ;
+  rdfs:comment """Simon 7-06-2021. The conversion of the multple property restriction from the owl format below into two separate node shapes needs checking for validty. Also a sh:sameAs or similar may be required to tie the two shapes together. Currently they are independent. :Capturing
+  a owl:Class ;
+  rdfs:subClassOf sosa:Sampling ;
+    rdfs:subClassOf [
+      a owl:Restriction ;
+      owl:onClass <http://www.w3.org/2006/time#TemporalEntity> ;
+      owl:onProperty <sosa:resultTime/sosa:phenomenonTime> ;
+      owl:qualifiedCardinality \"1\"^^xsd:nonNegativeInteger ;
+    ] """ ;
+.
+<https://linked.data.gov.au/def/phs#Sampling-sosa_resultTime>
+  a sh:PropertyShape ;
+  sh:path <http://www.w3.org/ns/sosa/resultTime> ;
+.
+<https://linked.data.gov.au/def/phs#Sampling-sosa_usedProcedure>
+  a sh:PropertyShape ;
+  sh:path <http://www.w3.org/ns/sosa/usedProcedure> ;
+.
+<https://linked.data.gov.au/def/phs#Sampling-usedProcedure>
+  a sh:PropertyShape ;
+  sh:path <http://www.w3.org/ns/sosa/usedProcedure> ;
+  sh:class <https://linked.data.gov.au/def/phs#InspectionMethod> ;
+  sh:minCount 1 ;
+.
 <https://linked.data.gov.au/def/phs#Substrate>
   a sh:NodeShape ;
   rdfs:comment "Thing or material on or in which a pest may occur" ;
   rdfs:subClassOf owl:Thing ;
   sh:property <https://linked.data.gov.au/def/phs#Substrate-supportsPest> ;
-  sh:property [] ;
-  sh:property [] ;
+ 
+.
+<https://linked.data.gov.au/def/phs#Substrate-supportsPest>
+  a sh:PropertyShape ;
+  sh:path <https://linked.data.gov.au/def/phs#supportsPest> ;
+  sh:class <https://linked.data.gov.au/def/phs#TargetPestGroup> ;
 .
 <https://linked.data.gov.au/def/phs#SubstrateType>
   a sh:NodeShape ;
@@ -267,8 +416,23 @@
   a sh:NodeShape ;
   sh:property <https://linked.data.gov.au/def/phs#TargetPestGroup-hasTargetPestGroupType> ;
 .
+<https://linked.data.gov.au/def/phs#TargetPestGroup-hasTargetPestGroupType>
+  a sh:PropertyShape ;
+  sh:path <https://linked.data.gov.au/def/phs#hasTargetPestGroupType> ;
+  sh:class skos:Concept ;
+  sh:class <https://linked.data.gov.au/def/phs#TargetPestGroupType> ;
+  sh:nodeKind sh:IRI ;
+.
 <https://linked.data.gov.au/def/phs#TargetPestGroupType>
   a sh:NodeShape ;
+.
+<https://linked.data.gov.au/def/phs#TaxonDistribution>
+  a sh:NodeShape ;
+  rdfs:subClassOf owl:Thing ;
+.
+<https://linked.data.gov.au/def/phs#TaxonIdentification>
+  a sh:NodeShape ;
+  rdfs:subClassOf owl:Thing ;
 .
 <https://linked.data.gov.au/def/phs#TaxonOccurrence-dwc_scientificName>
   a sh:PropertyShape ;
@@ -298,6 +462,7 @@
   sh:path <https://linked.data.gov.au/def/phs#taxonomicReferenceSource> ;
 .
 <https://linked.data.gov.au/def/phs#TaxonPresent>
+  a sh:NodeShape ;
   sh:property <https://linked.data.gov.au/def/phs#TaxonOccurrence-dwc_scientificName> ;
   sh:property <https://linked.data.gov.au/def/phs#TaxonOccurrence-dwc_taxonConceptID> ;
   sh:property <https://linked.data.gov.au/def/phs#TaxonOccurrence-dwc_taxonRank> ;
@@ -306,10 +471,77 @@
   sh:property <https://linked.data.gov.au/def/phs#TaxonOccurrence-taxonomicReferenceSource> ;
 .
 <https://linked.data.gov.au/def/phs#Trap>
+  a sh:NodeShape ;
+  sh:property <https://linked.data.gov.au/def/phs#Trap-catchesPest> ;
+  sh:property <https://linked.data.gov.au/def/phs#Trap-dcterms_type> ;
+  sh:property <https://linked.data.gov.au/def/phs#Trap-hasTrapType> ;
+  sh:property <https://linked.data.gov.au/def/phs#Trap-lureType> ;
   sh:property <https://linked.data.gov.au/def/phs#Trap-usedProcedure> ;
+  
+.
+<https://linked.data.gov.au/def/phs#Trap-catchesPest>
+  a sh:PropertyShape ;
+  sh:path <https://linked.data.gov.au/def/phs#catchesPest> ;
+  sh:class <https://linked.data.gov.au/def/phs#TargetPestGroup> ;
+.
+<https://linked.data.gov.au/def/phs#Trap-dcterms_type>
+  a sh:PropertyShape ;
+  sh:path <http://purl.org/dc/terms/type> ;
 .
 <https://linked.data.gov.au/def/phs#Trap-hasAttractantType>
+  a sh:PropertyShape ;
+  sh:path <https://linked.data.gov.au/def/phs#hasAttractantType> ;
   sh:class <https://linked.data.gov.au/def/phs#AttractantType> ;
+.
+<https://linked.data.gov.au/def/phs#Trap-hasBait>
+  a sh:PropertyShape ;
+  sh:path <https://linked.data.gov.au/def/phs#hasBait> ;
+  sh:class <https://linked.data.gov.au/def/phs#Bait> ;
+  sh:name "has bait" ;
+.
+<https://linked.data.gov.au/def/phs#Trap-hasTrapType>
+  a sh:PropertyShape ;
+  sh:path <https://linked.data.gov.au/def/phs#hasTrapType> ;
+  sh:class <https://linked.data.gov.au/def/phs#TrapType> ;
+  sh:maxCount 1 ;
+  sh:minCount 1 ;
+.
+<https://linked.data.gov.au/def/phs#Trap-lureType>
+  a sh:PropertyShape ;
+  sh:path <https://linked.data.gov.au/def/phs#lureType> ;
+  sh:class <https://linked.data.gov.au/def/phs#Lure> ;
+  sh:name "lure type" ;
+.
+<https://linked.data.gov.au/def/phs#Trap-type>
+  a sh:PropertyShape ;
+  sh:path <http://purl.org/dc/terms/type> ;
+.
+<https://linked.data.gov.au/def/phs#Trap-type_1>
+  a sh:PropertyShape ;
+  sh:path <http://purl.org/dc/terms/type> ;
+.
+<https://linked.data.gov.au/def/phs#Trap-type_2>
+  a sh:PropertyShape ;
+  sh:path <http://purl.org/dc/terms/type> ;
+.
+<https://linked.data.gov.au/def/phs#Trap-type_3>
+  a sh:PropertyShape ;
+  sh:path <http://purl.org/dc/terms/type> ;
+  sh:qualifiedMaxCount 1 ;
+  sh:qualifiedMinCount 1 ;
+  
+.
+<https://linked.data.gov.au/def/phs#Trap-type_4>
+  a sh:PropertyShape ;
+  sh:path <http://purl.org/dc/terms/type> ;
+  sh:qualifiedMinCount 0 ;
+  
+.
+<https://linked.data.gov.au/def/phs#Trap-type_5>
+  a sh:PropertyShape ;
+  sh:path <http://purl.org/dc/terms/type> ;
+  sh:qualifiedMinCount 0 ;
+  
 .
 <https://linked.data.gov.au/def/phs#Trap-usedProcedure>
   a sh:PropertyShape ;
@@ -319,6 +551,9 @@
   sh:minCount 1 ;
   sh:name "used procedure" ;
   sh:nodeKind sh:IRI ;
+.
+<https://linked.data.gov.au/def/phs#TrapType>
+  a sh:NodeShape ;
 .
 <https://linked.data.gov.au/def/phs#usesInspectionMethod>
   a owl:ObjectProperty ;
@@ -335,8 +570,11 @@
   owl:imports <https://linked.data.gov.au/def/phs/voc/lures> ;
   owl:imports <https://linked.data.gov.au/def/phs/voc/targetpestgroup> ;
   owl:imports <https://linked.data.gov.au/def/phs/voc/traps> ;
-  owl:imports <https://linked.data.gov.au/def/phs_part2.shapes> ;
-  owl:imports <https://linked.data.gov.au/def/phs_shapes_part0> ;
-  owl:imports <https://linked.data.gov.au/def/phs_shapes_v0_workingPart1> ;
   owl:versionInfo "Created with TopBraid Composer" ;
+.
+<https://schema.org/Organization>
+  a sh:NodeShape ;
+.
+<https://schema.org/Person>
+  a sh:NodeShape ;
 .
