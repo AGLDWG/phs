@@ -50,8 +50,9 @@ The **[Darwin Core](https://en.wikipedia.org/wiki/Darwin_Core)** is a set of dat
 
 * Practical guide to recording data using Darwin Core: [Simple Darwin Core](https://dwc.tdwg.org/simple/)
 
-## The Pest Record Specification
-The **PHS** is based on the Darwin Core, but adds terms that describe atttributes of an *observation*, or *collection event*, which is an attempt to detect a
+## This Specification
+The ontology defines this formal data model in this profile. In outline, it based on Darwin Core, but adds terms that describe atttributes of an *observation*, or *collection event*, which is an attempt to detect a:
+
 * a **target pest**
 * at a given **location**
 * at some **time** or **time period**
@@ -59,7 +60,7 @@ The **PHS** is based on the Darwin Core, but adds terms that describe atttribute
 
 One of the aims of the PHS is to document and define the data elements that must be recorded to create a usable plant health surveillance observation.
 
-Another function of the PHS is to enable the plant health surveillance to define the data quality standards for graph databases such as the **Plant Health Surveillance Data Store**, which aggregates plant health surveillance observations from various sources and allows them to be analysed and reported upon.
+Another function of the PHS is to enable the plant health surveillance to define the data quality standards for databases such as the **Plant Health Surveillance Data Store**, which aggregates plant health surveillance observations from various sources and allows them to be analysed and reported upon.
 
 ## Participation
 This is a public repository which permits almost any use, subject to providing credit and license notice. (see License section next).
