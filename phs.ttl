@@ -175,6 +175,7 @@ sosa:phenomenonTime
 .
 <https://linked.data.gov.au/def/phs>
   a owl:Ontology ;
+  dcterms:conformsTo <https://linked.data.gov.au/def/agop> ;
   dcterms:contributor <https://orcid.org/0000-0002-3884-3420> ;
   dcterms:created "2020-02-11"^^xsd:date ;
   dcterms:creator <https://orcid.org/0000-0002-8742-7730> ;
@@ -189,7 +190,7 @@ sosa:phenomenonTime
   owl:versionIRI <https://linked.data.gov.au/def/phs/0.2.1> ;
   skos:definition "An ontology for surveillance events relating to plant pests. These events comprise field observations and associated diagnostic work (i.e. taxonomic identification) of samples taken as part of the observation. Surveillance is one of the core activities of national plant protection organizations (NPPOs). It provides NPPOs with a technical basis for many phytosanitary measures; including phytosanitary import requirements, pest free areas, pest reporting and eradication, and pest status in an area. All terms are defined by ISPM 5."@en ;
   skos:prefLabel "Plant Health Surveillance Ontology"@en ;
-  sdo:codeRepository "<https://github.com/AGLDWG/phs-ont>"^^xsd:anyURI ;
+  sdo:codeRepository "<https://github.com/AGLDWG/phs>"^^xsd:anyURI ;
 .
 :DiagnosticMethod
   a owl:Class ;
