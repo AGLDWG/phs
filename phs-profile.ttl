@@ -1,0 +1,234 @@
+# baseURI: https://linked.data.gov.au/def/phs/prof
+# imports: http://www.w3.org/ns/dx/prof
+# imports: http://www.w3.org/ns/prov-o
+# imports: http://www.w3.org/ns/prov-o.shapes
+
+@prefix : <https://linked.data.gov.au/def/phs/prof#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prof: <http://www.w3.org/ns/dx/prof/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix role: <http://www.w3.org/ns/prov#> .
+@prefix sdo: <https://schema.org/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://linked.data.gov.au/def/phs/prof>
+  a owl:Ontology ;
+  a prof:Profile ;
+  owl:versionIRI <https://linked.data.gov.au/def/phs/prof> ;
+  sdo:codeRepository "<https://github.com/AGLDWG/phs>"^^xsd:anyURI ;
+  dcterms:conformsTo <https://linked.data.gov.au/def/agop> ;
+  dcterms:description "This is a Profile of SOSA, Darwin Core, GeoSPARQL and several other ontlogies/models related to species observation. It is intended for use with plant health surveillance conducted by Australian biosecurity agencies and industry to maintain food quality, prevent the spread of pests and facilitate trade in foodstuffs."@en ;
+  dcterms:title "Plant Health Surveillance Profile"@en ;
+  dcterms:creator <https://orcid.org/0000-0002-8742-7730> ;
+  dcterms:creator <https://orcid.org/0000-0003-3932-5614> ;
+  dcterms:modified "2021-07-27"^^xsd:date ;
+  dcterms:publisher <https://linked.data.gov.au/org/dawe> ;
+  owl:imports <http://www.w3.org/ns/dx/prof> ;
+  owl:imports <http://www.w3.org/ns/prov-o> ;
+  owl:imports <http://www.w3.org/ns/prov-o.shapes> ;
+  prof:hasResource
+  [
+    skos:prefLabel "TODO"@en ;
+    dcterms:description "TODO"@en ;
+    dcterms:creator <todo.com> ;
+    dcterms:format "text/turtle" ;
+    prof:hasRole role:validation ;
+    prof:hasArtifact <https://data.surroundaustralia.com/dataset/govkg/shapes/agents/> ;
+  ],
+  [
+    skos:prefLabel "TODO"@en ;
+    dcterms:description "TODO"@en ;
+    dcterms:creator <todo.com> ;
+    dcterms:format "text/turtle" ;
+    prof:hasRole role:validation ;
+    prof:hasArtifact <https://linked.data.gov.au/def/phs/voc/inspection-methods> ;
+  ],
+  [
+    skos:prefLabel "TODO"@en ;
+    dcterms:description "TODO"@en ;
+    dcterms:creator <todo.com> ;
+    dcterms:format "text/turtle" ;
+    prof:hasRole role:validation ;
+    prof:hasArtifact <https://linked.data.gov.au/def/phs/voc/lures> ;
+  ],
+  [
+    skos:prefLabel "TODO"@en ;
+    dcterms:description "TODO"@en ;
+    dcterms:creator <todo.com> ;
+    dcterms:format "text/turtle" ;
+    prof:hasRole role:validation ;
+    prof:hasArtifact <https://linked.data.gov.au/def/phs/voc/targetpestgroup> ;
+  ],
+  [
+    skos:prefLabel "TODO"@en ;
+    dcterms:description "TODO"@en ;
+    dcterms:creator <todo.com> ;
+    dcterms:format "text/turtle" ;
+    prof:hasRole role:validation ;
+    prof:hasArtifact <https://linked.data.gov.au/def/phs/voc/traps> ;
+  ],
+  [
+    skos:prefLabel "TODO"@en ;
+    dcterms:description "TODO"@en ;
+    dcterms:creator <todo.com> ;
+    dcterms:format "text/turtle" ;
+    prof:hasRole role:validation ;
+    prof:hasArtifact <https://linked.data.gov.au/def/phs/voc/effortValidator> ;
+  ],
+  [
+    skos:prefLabel "TODO"@en ;
+    dcterms:description "TODO"@en ;
+    dcterms:creator <todo.com> ;
+    dcterms:format "text/turtle" ;
+    prof:hasRole role:validation ;
+    prof:hasArtifact <https://linked.data.gov.au/def/phs/voc/surveillanceEventValidator> ;
+  ],
+  [
+    skos:prefLabel "TODO"@en ;
+    dcterms:description "TODO"@en ;
+    dcterms:creator <todo.com> ;
+    dcterms:format "text/turtle" ;
+    prof:hasRole role:validation ;
+    prof:hasArtifact <https://linked.data.gov.au/def/phs/voc/trapsValidator> ;
+  ],
+  [
+    skos:prefLabel "TODO"@en ;
+    dcterms:description "TODO"@en ;
+    dcterms:creator <todo.com> ;
+    dcterms:format "text/turtle" ;
+    prof:hasRole role:validation ;
+    prof:hasArtifact <https://data.surroundaustralia.com/shapes/conceptscheme/> ;
+  ],
+  [
+    skos:prefLabel "TODO"@en ;
+    dcterms:description "TODO"@en ;
+    dcterms:creator <todo.com> ;
+    dcterms:format "text/turtle" ;
+    prof:hasRole role:validation ;
+    prof:hasArtifact <https://linked.data.gov.au/def/phs/voc/targetPestValidator> ;
+  ],
+  [
+    skos:prefLabel "TODO"@en ;
+    dcterms:description "TODO"@en ;
+    dcterms:creator <todo.com> ;
+    dcterms:format "text/turtle" ;
+    prof:hasRole role:validation ;
+    prof:hasArtifact <https://linked.data.gov.au/def/phs/voc/lures> ;
+  ],
+  [
+    skos:prefLabel "TODO"@en ;
+    dcterms:description "TODO"@en ;
+    dcterms:creator <todo.com> ;
+    dcterms:format "text/turtle" ;
+    prof:hasRole role:validation ;
+    prof:hasArtifact <https://linked.data.gov.au/def/phs/voc/inspection-methods> ;
+  ],
+  [
+    skos:prefLabel "TODO"@en ;
+    dcterms:description "TODO"@en ;
+    dcterms:creator <todo.com> ;
+    dcterms:format "text/turtle" ;
+    prof:hasRole role:validation ;
+    prof:hasArtifact <https://linked.data.gov.au/def/phs/voc/occstatuses> ;
+  ],
+  [
+    skos:prefLabel "TODO"@en ;
+    dcterms:description "TODO"@en ;
+    dcterms:creator <todo.com> ;
+    dcterms:format "text/turtle" ;
+    prof:hasRole role:validation ;
+    prof:hasArtifact <https://linked.data.gov.au/def/phs/voc/targetpestgroup> ;
+  ],
+  [
+    skos:prefLabel "TODO"@en ;
+    dcterms:description "TODO"@en ;
+    dcterms:creator <todo.com> ;
+    dcterms:format "text/turtle" ;
+    prof:hasRole role:validation ;
+    prof:hasArtifact <https://linked.data.gov.au/def/phs/voc/substrates> ;
+  ],
+  [
+    skos:prefLabel "TODO"@en ;
+    dcterms:description "TODO"@en ;
+    dcterms:creator <todo.com> ;
+    dcterms:format "text/turtle" ;
+    prof:hasRole role:validation ;
+    prof:hasArtifact <https://linked.data.gov.au/def/phs/voc/id-methods> ;
+  ],
+  [
+    skos:prefLabel "TODO"@en ;
+    dcterms:description "TODO"@en ;
+    dcterms:creator <todo.com> ;
+    dcterms:format "text/turtle" ;
+    prof:hasRole role:validation ;
+    prof:hasArtifact <https://linked.data.gov.au/def/phs/voc/hosts/> ;
+  ],
+  [
+    skos:prefLabel "TODO"@en ;
+    dcterms:description "TODO"@en ;
+    dcterms:creator <todo.com> ;
+    dcterms:format "text/turtle" ;
+    prof:hasRole role:validation ;
+    prof:hasArtifact <https://linked.data.gov.au/def/phs/voc/effort-units/> ;
+  ];
+  prof:hasResource [
+      dcterms:conformsTo <https://www.w3.org/TR/shacl/> ;
+      dcterms:format "text/turtle" ;
+      dcterms:title "SHACL Validator"@en ;
+      prof:hasArtifact <https://linked.data.gov.au/def/phs/validator> ;
+      prof:hasRole role:validation ;
+    ] ;
+  prof:hasResource [
+      dcterms:format "text/html" ;
+      dcterms:title "PHS Vocabularies"@en ;
+      prof:hasArtifact <https://dawe.surroundaustralia.com> ;
+      prof:hasRole role:schema ;
+    ] ;
+  prof:hasResource [
+      dcterms:format "text/markdown" ;
+      dcterms:title "PHS Repository README file"@en ;
+      prof:hasArtifact <https://github.com/AGLDWG/phs/blob/master/README.md> ;
+      prof:hasRole role:guidance ;
+    ] ;
+  prof:hasResource [
+      dcterms:format "text/turtle" ;
+      dcterms:title "PHS Ontology"@en ;
+      prof:hasArtifact <https://linked.data.gov.au/def/phs> ;
+      prof:hasRole role:schema ;
+    ] ;
+  prof:hasResource [
+      dcterms:title "Online Version Control Repostory"@en ;
+      prof:hasArtifact <https://github.com/AGLDWG/phs> ;
+      prof:hasRole role:repository ;
+    ] ;
+  prof:isProfileOf <http://dx.doi.org/10.5281/zenodo.46972> ;
+  prof:isProfileOf <http://www.opengis.net/doc/IS/geosparql/1.0> ;
+  prof:isProfileOf <https://www.w3.org/TR/prov-o/> ;
+  prof:isProfileOf <https://www.w3.org/TR/vocab-ssn/> ;
+.
+<https://orcid.org/0000-0002-8742-7730>
+  a owl:NamedIndividual ;
+  a sdo:Person ;
+  sdo:affiliation <https://surroundaustralia.com> ;
+  sdo:email "nicholas.car@surroundaustralia.com"^^xsd:anyURI ;
+  sdo:jobTitle "Data Systems Architect" ;
+  sdo:name "Nicholas J. Car" ;
+.
+
+<https://linked.data.gov.au/org/surround> a sdo:Organization ;
+    sdo:name "SURROUND Australia Pty Ltd" ;
+    sdo:url "https://surroundaustralia.com"^^xsd:anyURI ;
+.
+
+<https://orcid.org/0000-0003-3932-5614>
+  a owl:NamedIndividual ;
+  a sdo:Person ;
+  sdo:affiliation <https://surroundaustralia.com> ;
+  sdo:email "simon.opper@surroundaustralia.com"^^xsd:anyURI ;
+  sdo:jobTitle "Chief Data Scientist" ;
+  sdo:name "Simon J. Opper" ;
+.
