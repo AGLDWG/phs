@@ -40,7 +40,11 @@ This profile's _specification_ - the resource that contains the normative rules 
 ** _NOTE: TODO align new profile file name phs-profile when master branch is updated. Simon Opper 27/7/2021_
 
 ### Validator
-This profile's rules, as defined in the _specification_ are presented for machine validation of RDF vocabularies in the shape file [validator.shacl.ttl](validator.shacl.ttl) which conforms to the [SHACL](https://www.w3.org/TR/shacl/) standard.
+This profile's rules, as defined in the _specification_ are presented for machine validation of RDF vocabularies in the _shapes data graph_ files at [validator/shapes](../validators/shapes) which conform to the [SHACL](https://www.w3.org/TR/shacl/) standard.
+
+A single aggregating SHACL data shapes graph which imports all the phs validators is at [phs_shapes.shapes.ttl](../validators/shapes/phs_shapes.shapes.ttl).
+
+The SHACL data shapes working in conjunction with test instance data located at [/phs-ont/instance-data/instance_data_using_shacl.ttl](/phs-ont/instance-data/instance_data_using_shacl.tt). This test data is work in progress and supports indicative demo's of validation using profiles.
 
 Tools such as [pySHACL](https://github.com/RDFLib/pySHACL) and the online [SHACL Playground](https://shacl.org/playground/) or [SHACL Play!](https://shacl-play.sparna.fr/play/) can be used with this shape file to validate vocabulary files.
 
