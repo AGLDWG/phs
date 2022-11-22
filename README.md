@@ -1,5 +1,5 @@
 # Plant Health Surveillance Profile
-This repository describes a `profile`, that is a standard that specialises other standards, for the recording of 'Plant Health Surviellance' data, as managed by the [Department of Agriculture, Water & the Environment  (DAWE)](https://www.awe.gov.au)'s PHS project.
+This repository describes a `profile`, that is a standard that specialises other standards, for the recording of 'Plant Health Surviellance' data, as managed by the [Department of Agriculture, Fisheries & Forestry (DAFF)](https://www.agriculture.gov.au)'s PHS project.
 
 This profile contains several major items, the content for most of which is in here but some of the content is managed else where but linked to, for example the vocabularies.
 
