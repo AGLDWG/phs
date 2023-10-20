@@ -179,7 +179,7 @@ sosa:phenomenonTime
   dcterms:creator <https://orcid.org/0000-0003-3357-2307> ;
   dcterms:creator <https://orcid.org/0000-0003-3932-5614> ;
   dcterms:modified "2021-06-12"^^xsd:date ;
-  dcterms:publisher <https://linked.data.gov.au/org/dawe> ;
+  dcterms:publisher <https://linked.data.gov.au/org/daff> ;
   owl:imports <http://datashapes.org/dash> ;
   owl:imports dwc: ;
   owl:imports sosa: ;
@@ -481,11 +481,11 @@ sosa:phenomenonTime
   skos:example "https://www.gbif.org/species" ;
   skos:prefLabel "taxonomic reference source" ;
 .
-<https://linked.data.gov.au/org/dawe>
+<https://linked.data.gov.au/org/daff>
   a owl:NamedIndividual ;
   a sdo:Organization ;
-  sdo:name "Department of Agriculture, Water and the Environment" ;
-  sdo:url "https://www.awe.gov.au"^^xsd:anyURI ;
+  sdo:name "Department of Agriculture, Fisheries & Forestry" ;
+  sdo:url "https://www.agriculture.gov.au"^^xsd:anyURI ;
 .
 <https://orcid.org/0000-0002-3884-3420>
   a owl:NamedIndividual ;
@@ -515,9 +515,9 @@ sosa:phenomenonTime
 <https://orcid.org/0000-0003-3357-2307>
   a owl:NamedIndividual ;
   a sdo:Person ;
-  sdo:affiliation <https://linked.data.gov.au/org/dawe> ;
-  sdo:email "stephen.pratt@awe.gov.au"^^xsd:anyURI ;
-  sdo:jobTitle "Project Manager: Implementation of Plant Health Surveillance Data Store" ;
+  sdo:affiliation <https://linked.data.gov.au/org/daff> ;
+  sdo:email "stephen.pratt@aff.gov.au"^^xsd:anyURI ;
+  sdo:jobTitle "Plant Health Surveillance and Diagnostics Data Standards" ;
   sdo:name "Stephen J. Pratt" ;
 .
 sdo:Organization
