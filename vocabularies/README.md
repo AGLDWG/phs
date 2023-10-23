@@ -6,4 +6,4 @@ The Plant Health Surveillance Ontology references a series of vocabularies which
 
 These vocabularies are made published at:
 
-* <[ARDC demo server](https://demo.vocabs.ardc.edu.au/search/#!/?activeTab=vocabularies&pp=15&v_publisher=Australia.%20Department%20of%20Agriculture,%20Water%20and%20Environment&v_p=1&q=&r_p=1&r_collapse_expand=vocabularyIdIri)https://demo.vocabs.ardc.edu.au/search/#!/?activeTab=vocabularies&pp=15&v_publisher=Australia.%20Department%20of%20Agriculture,%20Water%20and%20Environment&v_p=1&q=&r_p=1&r_collapse_expand=vocabularyIdIri/>
+* [ARDC demo server](https://tinyurl.com/3yrmaaw9)
