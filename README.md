@@ -104,8 +104,8 @@ This profile was created by DAWE and SURROUND Australia staff. DAWE is the produ
 
 Product Owner:  
 **Stephen Pratt**  
-_Department of Agriculture, Water and the Environment_  
-<stephen.pratt@awe.gov.au>
+_Department of Agriculture, Fisheries and Forestry_  
+<stephen.pratt@aff.gov.au>
 
 Technical contact:  
 **SURROUND Australia Pty Ltd**  
